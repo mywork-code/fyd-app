@@ -1,0 +1,17 @@
+<div class="eGet-creditLogin zhimalg">
+    <img class="logo" src="images/ajp-logo-zhima.png" alt=""/>
+    <div class="form-wrap">
+        <div class="list ajp-bb-b6">
+           姓名
+            <input class="fill-input com-box-siz" ng-model="name" type="text" placeholder="请输入真实姓名"/>
+        </div>
+        <div class="list">
+            身份证
+            <input class="fill-input com-box-siz" ng-model="identityNo" type="text" placeholder="请输入本人真实有效的身份证号" />
+        </div>
+    </div>
+
+    <div class="ajp-btn-wrap">
+        <button class="ajp-btn" ng-disabled="!name || !identityNo" ng-click="queryZMScore()">下一步</button>
+    </div>
+</div>

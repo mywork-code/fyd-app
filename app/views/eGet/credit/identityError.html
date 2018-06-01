@@ -1,0 +1,27 @@
+<div class="eGet-creditLogin eGet-code eGet-result pt-header"  style="padding-bottom: 12rem;" waittingResult>
+
+    <!--  头部 -->
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackHome()"></a>
+        <div class="UI-title">申请额度</div>
+        <show-alert></show-alert>
+    </header>
+    <!--  头部  结束 -->
+    <section class="eGet-plan-top">
+        <div class="one">信息认证</div>
+        <div class="two on">手机认证</div>
+        <div class="three on">征信认证</div>
+    </section>
+    <p class="PBOC"></p>
+    <img class="stateResult" src="images/ajp-coupons-Fail.png" alt=""/>
+    <dl class="gfb-result-txt">
+        <dt>您的征信报告身份证号与您上传的身份证号不一致。</dt>
+    </dl>
+
+    <div class="bottom-hint">
+        <div class="ajp-btn-wrap ">
+            <button class="ajp-btn" ng-click="reCreditApply()">重新获取征信</button>
+        </div>
+    </div>
+
+</div>

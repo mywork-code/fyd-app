@@ -1,0 +1,38 @@
+<div class="fydFeedback bg-fff" holl-page="" ng-click="showAleret()">
+	<div class="title">反馈内容</div>	
+	<div class="contain">
+		<textarea  class="fyd_textarea" ng-keyup="wordStatic()" placeholder="反馈问题时，请描述具体操作步骤及问题" maxlength="300"></textarea>
+		<div><span>{{totalWords}}</span>/300</div>
+	</div>
+	<div class="addPicture">
+		<div class="wrap">
+			<img class="delete" src="images/fyd-delete.png" ng-show="isUplod1" ng-click="deleteImg(1)"/>
+		<!-- 	<img class="uploadImg" src="{{imgSrc1}}" ng-show="isUplod1"/> -->
+		    <img class="uploadImg uploadImg1" src="{{imgSrc1}}" ng-show="isUplod1"/>
+			<div class="upload" ng-show="!isUplod1" ng-click="uploadImage(1)">
+				添加图片
+			</div>
+ 		</div>
+		<div class="wrap">
+			<img class="delete" src="images/fyd-delete.png" ng-show="isUplod2" ng-click="deleteImg(2)"/>
+			<img class="uploadImg uploadImg2" src="{{imgSrc2}}" ng-show="isUplod2"/>
+			<div class="upload" ng-show="!isUplod2" ng-click="uploadImage(2)">
+				添加图片
+			</div>
+		</div>
+		<div class="wrap">
+			<img class="delete" src="images/fyd-delete.png" ng-show="isUplod3" ng-click="deleteImg(3)"/>
+			<img class="uploadImg uploadImg3" src="{{imgSrc3}}" ng-show="isUplod3"/>
+			<div class="upload" ng-show="!isUplod3" ng-click="uploadImage(3)">
+				添加图片
+			</div>
+		</div>
+	</div>
+	<div class="addimg" style="width: 200px;height: 200px;">
+		
+	</div>
+	<div class="fyd-btn-wrap fyd-pos-flex-bottom">
+		<button class="fyd-btn" ng-click="toSubmit()">提交</button>
+	</div>
+
+</div>

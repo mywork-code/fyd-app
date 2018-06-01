@@ -1,0 +1,74 @@
+<div class="eGat-creditBankCard eGat-creditBankCard2 pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="#/creditLogin"></a>
+
+        <div class="UI-title">验证银行卡</div>
+    </header>
+
+    <div class="top-logo"></div>
+    <p class="com-wraning">本人正式授权安家派将以下信息向中国银联公司代为提交验证</p>
+
+    <div class="form-wrap ajp-formWrap ">
+        <div class="list ajp-bb-b6">
+            	银联卡号
+            <input class="fill-input com-box-siz" id="cardNo" type="tel" ng-model="ZhengxinInfo.cardNoWithSpace" readonly="readonly"/>
+        </div>
+        <div class="list ajp-bb-b6" ng-if="ZhengxinInfo.cardRule.name == true">
+            	姓名
+            <input class="fill-input com-box-siz" id="customerRealName" type="text" ng-model="ZhengxinInfo.realName" readonly="readonly" />
+        </div>
+        <div class="list ajp-bb-b6" ng-if="ZhengxinInfo.cardRule.credential == true">
+            	身份证号
+            <input class="fill-input com-box-siz" type="text" id="credential" placeholder="银行办理该卡时使用的身份证号" ng-model="ZhengxinInfo.certNo" readonly="readonly" />
+        </div>
+        <div class="list ajp-bb-b6" ng-if="ZhengxinInfo.cardRule.password == true">
+            	银行卡密码
+            <input class="fill-input com-box-siz" type="password" placeholder="请输入该银行卡密码" ng-blur="validatePassword()" ng-model="ZhengxinInfo.cardPassword" />
+        </div>
+        <div class="list ajp-bb-b6" ng-if="ZhengxinInfo.cardRule.mobile == true">
+            	银行预留手机号
+            <input class="fill-input com-box-siz" type="text" type="text" id="mobile" name="creditPhone" maxlength="11" 
+            placeholder="请输入银行预留手机号"  ng-model="ZhengxinInfo.mobile" required focus-show/>
+            <i class="phoneClose" ng-show="!creditForm.creditPhone.$error.required" ng-click="clearPhoneNum()"></i>
+        </div>
+        <div class="list ajp-bb-b6" ng-if="ZhengxinInfo.cardRule.smsCode == true">
+            	短信验证码
+            <input class="fill-input com-box-siz" type="text" placeholder="请输入短信验证码"  ng-model="ZhengxinInfo.smscode" />
+            <button class="ajp-btn ajp-pos-midd getcode" id="gfb-countdown" ng-click="sendSms()" ng-show="!CountdownObj.disFlag" >{{CountdownObj.content}}</button>            
+            <button class="ajp-btn ajp-pos-midd getcode" id="gfb-countdown"  ng-show="CountdownObj.disFlag" ng-disabled="CountdownObj.disFlag">{{CountdownObj.content}}</button>            
+        </div>
+    </div>
+
+    <div class="ajp-btn-wrap" ng-if="ZhengxinInfo.cardTypeConfirmed == 1">
+        <div class="ajp-agreement" ng-click="">
+            <input type="checkbox" checked="checked" name="checkbox" id="agreeUPProtocal"/>
+            	我已阅读并接受<a href="#/UPserviceProtocal">《银联用户服务协议》</a>
+        </div>
+        <button class="ajp-btn" ng-click="submitUnionPay()" ng-disabled="ZhengxinInfo.cardPassword==''||ZhengxinInfo.mobile==''||ZhengxinInfo.mobile==undefined||ZhengxinInfo.smscode==''">提交验证</button>
+    </div>
+    <div class="bottom-hint">
+        <p>数据来源 <span class="PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+    <div id="unionPayCode" class="ajp-mask bankList bankCode" ng-show="unionPayCodeShowFlag==true" ng-click="closeMASKw()">
+        <div class="wrap com-bdradius-1rem ajp-pos-center com-box-shadow bg-fff" ng-click="showMaskw()">
+            <h3>银联认证码获取成功</h3>
+            <div class="form-wrap ajp-formWrap">
+                <div class="list ajp-bb-b6">
+                    	银联认证码
+                    <input class="fill-input com-box-siz" type="text" id="uiopnpaycode" placeholder="请输入认证码" ng-model="ZhengxinInfo.unionPayCode" readonly="readonly"/>
+                </div>
+                <div class="list ajp-bb-b6">
+                    	验证码
+                    <input class="fill-input com-box-siz" id="vercode" type="text" placeholder="点击右侧刷新" ng-model="ZhengxinInfo.verCode"/>                                        
+					<a class="gfb-img-yzm" ng-click='refalshVerCode()'>
+						<img class="ajp-pos-midd yan" src="data:image/gif;base64,{{ZhengxinInfo.verCodeBase64}}" alt="验证码"/>
+					</a>
+                </div>
+                <div class="btnWRAP mt-1">
+                    <button type="button"  class="ajp-btn-white" ng-click="submitUnionPayConfirm()" ng-disabled="ZhengxinInfo.unionPayCode==''||ZhengxinInfo.unionPayCode==undefined||ZhengxinInfo.verCode==''||ZhengxinInfo.verCode==undefined">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class=" eGet-clearLoan com-box-siz bg-fff" holl-page>
+    <section class="com-bankCard">
+        <div class="wrap com-box-siz {{ClearInfo.bankCode}}"> <!--ICBC为不同银行控制class-->
+
+            <div class="top">
+                {{ClearInfo.cardBank}}
+                <span class="card">✲✲✲✲&nbsp;✲✲✲✲&nbsp;{{ClearInfo.cardNoStr}}</span>
+            </div>
+            <p class="count">还款金额 <span>{{ClearInfo.clearLoanAmount | thousandsFilter}}</span></p>
+        </div>
+    </section>
+    <div class="content">
+        <br />
+        <p class="com-hint" ng-show="ClearInfo.isExemption==0">一次还清费用=已出账单应还款额+剩余本金+当月应收利息+剩余本金*3%+逾期金额</p>
+        <p class="com-hint" ng-show="ClearInfo.isExemption==2">一次还清费用=已出账单应还款额+剩余本金+当月应收利息</p>
+        <p class="com-wraning">
+          温馨提示：请确保还款银行卡内剩余金额大于还款金额。
+        </p>
+    </div>
+    <div class="ajp-btn-wrap ajp-pos-flex-bottom">
+        <button class="ajp-btn" ng-click="clearLoanApply()">确认还款</button>
+    </div>
+</div>

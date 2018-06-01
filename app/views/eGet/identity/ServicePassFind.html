@@ -1,0 +1,71 @@
+<div class="eGet-creditMode eGet-servePassFind pt-header" holl-page>
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+
+        <div class="UI-title">服务密码找回</div>
+    </header>
+
+    <div class="eGet-servePassFindWrap wrap">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide  com-bdradius-8rem dianxin"></div>
+            <div class="swiper-slide  com-bdradius-8rem yidong"></div>
+            <div class="swiper-slide  com-bdradius-8rem liantong"></div>
+        </div>
+    </div>
+    <p class="title-center">为保护您的隐私，安家派不保存您的通讯账密信息。</p>
+
+    <div class="section-one section" ng-show="showFindWay == 0">
+        <div class="moth ajp-href">
+            <a  class="auto-msg" ng-click="resetPhonePassword('mmcz','10001')">
+                <img class="ajp-pos-midd" src="images/logo-findServe-msg.png" alt="短信找回"/>
+                <h3>短信找回</h3>
+                <p>中国电信用户可编辑短信<i>mmcz</i>至<i>10001</i></p>
+                <p>即可重置运营商服务密码</p>
+            </a>
+        </div>
+        <div class="moth ajp-href">
+            <a href="tel:10001">
+                <img class="ajp-pos-midd" src="images/logo-findServe-phone.png" alt="电话重置"/>
+                <h3>电话重置</h3>
+                <p>联系中国电信运营商户<i>10001</i>进行密码重置</p>
+            </a>
+        </div>
+    </div>
+    <div class="section-two section" ng-show="showFindWay == 1">
+        <div class="moth ajp-href">
+            <a  class="auto-msg" ng-click="resetPhonePassword('czmm','10086')">
+                <img class="ajp-pos-midd" src="images/logo-findServe-msg.png" alt="短信找回"/>
+                <h3>短信找回</h3>
+                <p>中国移动用户可编辑短信<i>czmm</i>至<i>10086</i></p>
+                <p>即可重置运营商服务密码</p>
+            </a>
+        </div>
+        <div class="moth ajp-href">
+            <a href="tel:10086">
+                <img class="ajp-pos-midd" src="images/logo-findServe-phone.png" alt="电话重置"/>
+                <h3>电话重置</h3>
+                <p>联系中国移动运营商户<i>10086</i>进行密码重置</p>
+            </a>
+        </div>
+    </div>
+    <div class="section-three section" ng-show="showFindWay == 2">
+        <div class="moth ajp-href">
+            <a  class="auto-msg" ng-click="resetPhonePassword('mmcz','10010')">
+                <img class="ajp-pos-midd" src="images/logo-findServe-msg.png" alt="短信找回"/>
+                <h3>短信找回</h3>
+                <p>中国联通用户可编辑短信<i>mmcz</i>至<i>10010</i></p>
+                <p>即可重置运营商服务密码</p>
+            </a>
+        </div>
+        <div class="moth ajp-href">
+            <a href="tel:10010">
+                <img class="ajp-pos-midd" src="images/logo-findServe-phone.png" alt="电话重置"/>
+                <h3>电话重置</h3>
+                <p>联系中国联通运营商户<i>10010</i>进行密码重置</p>
+            </a>
+        </div>
+    </div>
+
+
+
+</div>

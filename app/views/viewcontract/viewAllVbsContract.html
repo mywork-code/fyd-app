@@ -1,0 +1,12 @@
+<div class="eGet-bankList " holl-page style="overflow: scroll;">
+	<!-- <header id="ajp-header" class="BG-red" ng-if="!UserInfo.isBillH5">
+		<a class="UI-back" ng-click="goBackHome()"></a>
+		<div class="UI-title">安家派合同</div>
+	</header> -->
+<!--  头部 -->
+	<div class="wrap">
+		<div ng-repeat="contractName in ContractInfo.contractNameList">
+		    <div class="ajp-href" ng-click="viewVbsContractDetail(contractName.text,contractName.value);">{{contractName.text}}</div>
+		</div>
+	</div>
+</div>

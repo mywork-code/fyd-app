@@ -1,0 +1,446 @@
+<style>
+    .yibao-tip {
+        margin-bottom: 0;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        color: #7E7E7E;
+        font-size: 1.2rem;
+    }
+    .yuan-icon {
+        margin: 0 0.3rem;
+    }
+</style>
+<!--原绑卡样式-->
+<style>
+    .bank_list {
+        position: relative;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        margin-top: 1.2rem;
+    }
+   .bank_content {
+       height: 9.5rem;
+       overflow: hidden;
+       position: relative;
+       z-index: 10;
+
+   }
+   .bank_content .wrap {
+       position: relative;
+       margin:0 1.2rem;
+       width:35.1rem;
+       height:9.5rem;
+       -webkit-border-radius: 0.2rem;
+       border-radius: 0.2rem;
+       background-color: #fff;
+       overflow: hidden;
+       -weblit-box-shadow: 0 2px 13px 0 #C5C5C5;
+       box-shadow: 0 2px 13px 0 #C5C5C5;
+   }
+   .bank_content .wrap .icon_bank{
+       position: absolute;
+       left:1.2rem;
+       width:4.5rem;
+       top:50%;
+       -webkit-transform: translateY(-50%);
+       transform: translateY(-50%);
+   }
+   .bank_content .wrap >span{
+       position: absolute;
+       left:6.9rem;
+       top:50%;
+       -webkit-transform: translateY(-50%);
+       transform: translateY(-50%);
+       font-size: 1.6rem;
+       color: #303030;
+   }
+   .bank_content .wrap .icon_bank_bg{
+       position: absolute;
+       left:20.6rem;
+       width:10.9rem;
+       top:50%;
+       -webkit-transform: translateY(-50%);
+       transform: translateY(-50%);
+   }
+    .bank_content.no_bank .ui-href {
+        position: absolute;
+        right:1.2rem;
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding-right: 1.2rem;
+        text-align: right;
+        font-size:1.2rem;
+        color: #349FED;
+    }
+    .bank_content.no_bank .ui-href span {
+        width: 0.715rem;
+        height: 2.25rem;
+        margin-left: 0.5rem;
+        background: url("images/ajp-turnRright.png") no-repeat;
+        background-size: contain;
+        float: right;   
+    }
+    .bank_right {
+        height: 9.5rem;
+        width:7rem;
+        display: -webkit-box;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        position: absolute;
+        top: 0;
+        right: 1.2rem;
+        z-index: 0;
+        background-color: #E2262A;
+        color:#fff;
+        font-size: 1.4rem;
+        border-top-right-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+    }
+    .repayNew {
+        position: fixed;
+        width: 100%;
+        background: #efefef;
+        left: 0;
+        bottom: 0;
+        z-index: 200;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .yibao-mask {
+        width: 100%;
+        height: 70rem;
+        background: #000;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        display: none;
+    }    
+    .repayNew .tip {
+        margin-top: 4rem;
+        font-size: 1.2rem;
+        color: #7E7E7E;
+        text-align: center;
+    }
+    .getSmsReg .tip {
+        margin-top: 4rem;
+        font-size: 1.2rem;
+        color: #7E7E7E;
+        text-align: center;
+    }    
+   .getSmsReg {
+        background-color: #fff;
+        padding-top: 1.5rem;
+        -webkit-animation: slideFormRight 0.3s linear both;
+        animation: slideFormRight 0.3s linear both;
+    }
+    .getSmsReg .text{
+        font-size: 1.8rem;
+        color: #303030;
+        text-align: center;
+        border-bottom: 0.02rem solid #ccc;
+        padding: 0.5rem 0 2rem 0;
+    }
+    .getSmsReg .tip{
+        margin-top: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    .getSmsReg  .getReg{
+        display: block;
+        margin:0 auto;
+        font-size: 1.5rem;
+        color: #108EE9;
+    }
+    .getSmsReg  .getReg:disabled {
+        color: #C5C5C5;
+    }
+    @keyframes slideFormRight {
+        from {
+            display:block;
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+        to {
+            display:block;
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+    }
+
+</style>
+<style>
+    .smsRegwrap{
+        margin: 0 auto;
+        padding-top: 1.2rem;
+        overflow: hidden;
+    }
+    .inputBoxContainer{
+        width:32.4rem;
+        height: 4.5rem;
+        margin: 0 auto;
+        position: relative;
+
+    }
+    .inputBoxContainer .realInput{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        z-index: 0;
+        filter:alpha(opacity=0);
+        -moz-opacity:0;
+        opacity:0;
+    }
+    .inputBoxContainer .realInput:focus {
+        left:-10000px;
+    }
+    .inputBoxContainer .bogusInput span{
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 4.4rem;
+        height: 4.4rem;
+        background: #ffffff;
+        text-align: center;
+        font-size: 2rem;
+        border: 1px solid #C5C5C5;;
+        color: #303030;
+    }
+    .repayNew .ui-btnWrap {
+        position: absolute;
+        bottom:0;
+        left:0;
+        right:0;
+
+    }
+    .inputBoxContainer .bogusInput{
+        width: 100%;
+        height: 100%;
+        border-radius: 7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+        background-color: #fff;
+        
+    }
+    .inputBoxContainer .bogusInput span{
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+            float: left;
+        display:inline-block;
+        width: 4.4rem;
+        height: 4.4rem;
+        line-height:4.4rem;
+        background: #ffffff;
+        text-align: center;
+        font-size: 2rem;
+        border: 1px solid #C5C5C5;;
+        color: #303030;
+        margin: 0 0.5rem;
+    }        
+    .repay-bank {
+       font-size: 1.5rem;
+       height: 2rem;
+       text-align: center;
+       line-height: 2rem;
+    }
+    .sendMsgBack {
+        width: 3.5rem;
+        height: 4.2rem;
+        position: fixed;
+        top: 0.8rem;
+        left: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .sendMsg-back {
+     /*    width: 1.5rem;
+        height: 1.5rem;
+        margin: 1rem 0 0 1.2rem;
+        border-top: 1px solid #c5c5c5;
+        border-left: 1px solid #c5c5c5;
+        transform: rotate(-45deg); */
+        width: 1.5rem;
+        height: 2rem;
+        background: url("images/ajp-turnLeft.png") no-repeat;
+        background-size: contain;        
+    }
+    .yibaoRepayPage {
+        position: relative;
+        padding-bottom: 5rem;
+        height:100%;
+        overflow-y: initial;
+    }
+    .repayBtnWap {
+        position: fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        padding: 1rem 1.2rem 1.6rem;
+        background-color: #fff;
+    }
+    .repayBtnWap .paybtn{
+        display: block;
+        width:100%;
+        height:5rem;
+        line-height: 5rem;
+        text-align: center;
+        background-color: #bf0a12;
+        color:#fff;
+        -webkit-border-radius: 0.8rem;
+        -moz-border-radius: 0.8rem;
+        border-radius: 0.8rem;
+        font-size: 1.8rem;
+    }
+    .repayBtnWap .paybtn:disabled {
+        background-color: #a0a0a0;
+    }
+    .repayBtnWap .paybtn:active {
+        background-color: #b11620;
+    }
+    .newTip12 {
+        font-size: 1.4rem;
+        color: #000000;
+        height:3.6rem;
+        line-height: 3.6rem;
+        background-color: #F6CCCD;
+        text-align: center;
+        margin-bottom:1rem;
+    }
+</style>
+
+<div class="wToRepay repay com-box-siz" holl-page >
+    <div class="yibaoRepayPage com-box-siz">
+        <div class="yibao-tip no-overdue-tip">本期账单最后还款日{{YibaoPay.nextBillMonth}}月{{YibaoPay.nextBillDay}}日</div>
+        <div class="info sucState no-overdue">
+           <!--  <img class="icon" src="../../img/icon_repan_sucN.png" alt="icon"/> -->
+            <p class="sum"><span class="yuan-icon">&yen</span><span class="nextBillAmt-sum">{{YibaoPay.nextBillAmt}}</span></p>
+            <div class="current-balance">
+                本期应还
+            </div>
+            <div class="deductions-bank" style="color:#303030;">
+                扣款银行卡：<span class="cardbank"></span>(<span class="cardnumber"></span>)
+            </div>
+        </div>
+         <div class="yibao-tip no-overdue-tip">温馨提示：</div>
+        <div class="yibao-tip no-overdue-tip">1.此金额将在最后还款日自动扣款，请确保还款日扣款卡卡内余额大于应还金额。</div>
+        <div class="yibao-tip no-overdue-tip" style="position: relative;left:0;top:2.5rem;">2.您也可对此金额进行主动还款。</div>
+        <div class="contain-overdue">
+        <!--     <div class="ui-tip">本期应还金额（最后还款日01月25日）</div> -->
+            <div class="info overdue ">
+
+                <p class="bill_sum sum" ><img src="img/ajp-botton-on.png" alt="icon"/><span class="yuan-icon">&yen</span><span class="dueAmt-sum"></span></p>
+                <div class="deductions-bank" style="color:#303030;">
+                    扣款银行卡：<span class="cardbank"></span>(<span class="cardnumber"></span>)
+                </div>        
+            </div>
+            <div class="yibao-tip yibao-zero" ng-if="YibaoPay.nextBillAmt!='0.00'" style="margin: 0.3rem 0 -0.6rem 0;">本期应还金额（最后还款日{{YibaoPay.nextBillMonth}}月{{YibaoPay.nextBillDay}}日）</div>
+            <div class="info vbs  yibao-zero"  ng-if="YibaoPay.nextBillAmt!='0.00'">
+                <p class="bill_sum sum" ><img src="{{YibaoPay.selectSrc}}"  ng-click="changeSelectbox()"/><span class="yuan-icon">&yen</span><span class="nextBillAmt-sum">{{YibaoPay.nextBillAmt}}</span></p>
+                 <div class="deductions-bank" style="color:#303030;">
+                    扣款银行卡：<span class="cardbank"></span>(<span class="cardnumber"></span>)
+                </div>        
+            </div>
+            <div class="yibao-tip">温馨提示：</div>
+            <div class="yibao-tip">1.请确保还款日扣款卡卡内余额大于应还金额。<div>
+            <div class="yibao-tip">2.您也可对此金额进行主动还款。</div>
+
+        </div>
+       
+    </div>
+</div>
+<div class="fydBtn-wrap" ng-show="YibaoPay.dueAmt>0||YibaoPay.nextBillAmt>0">
+    <button class="fydBill-btn" ng-click="repayment()">立即还款</button>
+</div>
+<!--原绑卡页面-->
+<div class="repayNew com-box-siz" style="display: none;height: 40.3rem;background: #fff;">
+    <div class="newTip12">主动还款后，需到该账单还款日之后才能进行一次还清</div>
+        <div class="repay-bank" ng-show="YibaoPay.bankCardNumber == 0">请添加还款银行卡</div>
+        <div class="repay-bank" ng-show="YibaoPay.bankCardNumber > 0">请选择还款银行卡</div>
+        <div class="bank_list"  ng-repeat="list in YibaoPay.userBankCardInfoList">
+            <div class="bank_content" ng-click="showSmsReg(list)">
+                <div class="wrap">
+                    <img src="img/bankyibao/{{list.bankCode}}-BG.png" class="icon_bank" alt=""/>
+                    <span>{{list.bankName}}（<span class="yibao-cardNo">{{list.cardNo | lastFour}}</span>）</span>
+                    <img src="img/bankyibao/{{list.bankCode}}-mask.png" class="icon_bank_bg"/>
+                </div>
+            </div>
+            <div class="bank_right" ng-click="yibaodelete(list)">解绑</div>
+        </div>
+        <div class="bank_list" ng-show="YibaoPay.bankCardNumber<3" ng-click="AddBankCard()">
+            <div class="bank_content no_bank">
+                <div class="wrap">
+                    <img src="img/no-tied-card.png" class="icon_bank" alt=""/>
+                    <span ng-show="YibaoPay.bankCardNumber == 0">暂无还款银行卡</span>
+                    <span ng-show="YibaoPay.bankCardNumber > 0">新增还款银行卡</span>
+                    <p class="ui-href">立即添加<span></span></p>
+                </div>
+            </div>
+            <!-- <div class="bank_right">删除</div> -->
+        </div>
+
+        <div class="tip" ng-show="YibaoPay.bankCardNumber == 3">仅支持绑定3张银行卡，可左滑卡片解绑后添加新卡</div>
+    
+
+</div>
+<div class="yibao-mask" style="opacity: 0.5;" ng-click="CloseYibaoMask()">
+
+</div>
+<div class="ajp-mask-white" ng-show="isShowKeyboard" slip-stop ng-click="isShowKeyboard = false">
+    <div id="UI-keyboard" class="maskCtrl " style="bottom:0;" click-stop>
+        <p class="done"><span ng-click="isShowKeyboard = false">完成</span></p>
+        <ul>
+            <li class="num" ng-click="addKeyBd(1)">1</li>
+            <li class="num" ng-click="addKeyBd(2)">2</li>
+            <li class="num" ng-click="addKeyBd(3)">3</li>
+            <li class="num" ng-click="addKeyBd(4)">4</li>
+            <li class="num" ng-click="addKeyBd(5)">5</li>
+            <li class="num" ng-click="addKeyBd(6)">6</li>
+            <li class="num" ng-click="addKeyBd(7)">7</li>
+            <li class="num" ng-click="addKeyBd(8)">8</li>
+            <li class="num" ng-click="addKeyBd(9)">9</li>
+            <li class="active"></li>
+            <li class="num" ng-click="addKeyBd(0)">0</li>
+            <li class="active remove" ng-click="removKeyBD()"></li>
+        </ul>
+    </div>
+</div>
+<div class="getSmsReg com-box-siz" ng-show="isShowSmsReg" style="width:37.5rem;height:40.3rem;position: fixed;left: 0;bottom: 0rem;z-index: 1000;">
+        <div class="sendMsgBack" ng-click="sendMsgBack()"><div class="sendMsg-back"></div></div>
+        <div class="text">验证码发送至{{bindMobile | MobileReplaceFilter}}</div>
+<!--       <div class="text">请输入已收到的验证码</div> -->
+    <div class="smsRegwrap" ng-click="isShowKeyboard = true">
+        <div class="inputBoxContainer" id="inputBoxContainer">
+            <div class="bogusInput pay-bogusInput">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <p class="showValue" id="showValue"></p>
+    </div>
+    <div class="tip">*请输入短信验证码，验证码30分钟内有效，每日仅可获取3次。</div>
+    <!--      <button class="getReg" id="getSmsReg" ng-click="ReGetMsg()">获取验证码</button> -->
+    <button class="UI-verify getReg ajp-pos-midd" id="getSmsReg" ng-disabled="CountdownObj.disFlag"
+            ng-if="!CountdownObj.disFlag" ng-click="ReGetMsg()" style="position: fixed;left: 15rem;top: 18rem;">
+        {{CountdownObj.content}}
+    </button>
+    <button class="UI-verify getReg ajp-pos-midd" id="getSmsReg" ng-disabled="CountdownObj.disFlag"
+            ng-if="CountdownObj.disFlag" ng-click="ReGetMsg()" style="position: fixed;left: 15rem;top: 18rem;">
+        {{CountdownObj.content}}秒
+    </button>
+    <div class="fydBtn-wrap">
+        <button class="fydBill-btn" ng-click="CheckSmsReg()" ng-disabled="keyMsg.length < 6">确认</button>
+    </div>
+
+</div>
+
+

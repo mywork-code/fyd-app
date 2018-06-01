@@ -1,0 +1,336 @@
+<style>
+table {table-layout:fixed;width:100%;}
+td {
+word-wrap: break-word
+}
+</style>
+<div class="pb-12 pt-header bg-fff bg-fff">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackWithdraw()"></a>
+        <div class="UI-title">《贷款合同》</div>
+        <show-alert></show-alert>
+    </header>
+    <div class="pact-service-agtee pact-wrap">
+        <p class="number">合同编号:</p>
+        <p> 本贷款合同于<b style="color:red;">{{ContractInfo.nowyear}}年{{ContractInfo.nowMonth}}月{{ContractInfo.nowDay}} 日</b>于中华人民共和国
+        省 市签署并履行：</p>
+        <p>甲方：</p>
+        <p>借款人：<b style="color:red;">{{ContractInfo.realName}}</b> </p>
+        <p>身份证号码：<b style="color:red;">{{ContractInfo.identityNo}}</b> </p>
+        <p>移动电话：<b style="color:red;">{{ContractInfo.mobile}}</b></p>
+        <p>固定电话： <b style="color:red;"></b></p>
+        <p>电子邮箱：<b style="color:red;"></b></p>
+        <p>地址：<b style="color:red;">{{ContractInfo.liveAddress}}</b></p><br/>
+        <p>乙方（贷款人）：中国对外经济贸易信托有限公司 </p>
+        <p>公司地址：<b style="color:red;">中国北京市复兴门大街28号凯晨世贸中心中座F6层</b></p>
+        <p style="color:red;"><b>第一条 贷款具体信息</b></p>
+        <table class="loan-con">
+            <tr>
+                <td>贷款详细用途</td>
+                <td colspan="5">仅限用于个人消费或生产经营，具体为</td>
+                <td>百万</td>
+                <td>十万</td>
+                <td>万</td>
+                <td>千</td>
+                <td>百</td>
+                <td>十</td>
+                <td>元</td>
+                <td>角</td>
+                <td>分</td>
+            </tr>
+            <tr>
+                <td>贷款本金数额</td>
+                <td colspan="5">人民币（大写）</td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatMillion}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatShiwan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatWan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatThousand}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatHundred}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatShi}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatYuan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatJiao}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatFen}}</b></td>
+            </tr>
+            <tr>
+                <td>甲方每期偿还本息数额</td>
+                <td colspan="5">
+                    <input id="check1-1" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                    固定数额：人民币（大写）
+                    <u><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|number:2|moneyformatChinese}}</b></u>
+                </td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatMillion}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatShiwan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatWan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatThousand}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatHundred}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatShi}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatYuan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatJiao}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatFen}}</b></td>
+            </tr>
+            <tr>
+                <td>本息数额</td>
+                <td colspan="14">
+                    <input id="check1-2" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                    非固定数额：<b style="color:red;">详见还款分期表</b>
+                </td>
+            </tr>
+            <tr>
+                <td>贷款利率（非固定数额还款的详见还款分期表）</td>
+                <td colspan="2">
+                    <label for="check2-1">
+                        <input id="check2-1" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                        <u>{{ContractInfo.monthInterest|number:2}}%/月</u>
+                        </lable><br/>
+                        <label for="check2-1">
+                            <input id="check2-2" class="art-checkbox" type="checkbox" disabled/>
+                            <u>&nbsp;&nbsp;/年</u>
+                            </lable>
+                        </td>
+                        <td colspan="2">还款方式（非固定数额还款的详见还款分期表）</td>
+                        <td colspan="6">
+                            <p><label for="check3-1"><input id="check3-1" class="art-checkbox" type="checkbox" checked="checked"
+                            disabled/>等额本息</label></p>
+                            <p>
+                                <label for="check3-2">
+                                    <input id="check3-2" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                                    按月等额偿还贷款本金、利息，每月应还本息为：贷款总本金×月利率＋贷款总本金/贷款期限
+                                </label>
+                            </p>
+                        </td>
+                        <td colspan="2">还款分期期数</td>
+                        <td colspan="2"><u>{{ContractInfo.loanPeriods}}</u>期</td>
+                    </tr>
+                    <tr>
+                        <td>还款日</td>
+                        <td colspan="14">
+                            <label for="check4-1">
+                                <input id="check4-1" class="art-checkbox" checked type="checkbox" checked="checked" disabled/>
+                                固定还款日：每月与放款日对应之日期的前一日；若放款日晚于当月<b style="color:red;">25</b>日，则为每月<b style="color:red;">24</b>日
+                            </label><br/>
+                            <label for="check4-2">
+                                <input id="check4-2" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                                <i style="color:red;">详见还款分期表</i>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">甲方专用银行账户1</td>
+                        <td colspan="2">户名</td>
+                        <td colspan="2"><b style="color:red;">{{ContractInfo.realName}}</b></td>
+                        <td colspan="2">账号</td>
+                        <td colspan="8"><b style="color:red;">{{ContractInfo.cardNo}}</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">开户行</td>
+                        <td colspan="10"><b style="color:red;">{{ContractInfo.cardBank}}</b></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">甲方专用银行账户2</td>
+                        <td colspan="2">户名</td>
+                        <td colspan="2"></td>
+                        <td colspan="2">账号</td>
+                        <td colspan="8"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">开户行</td>
+                        <td colspan="10"></td>
+                    </tr>
+                </table>
+                <br/>
+                <p><b>第二条 贷款发放</b></p>
+                <p class="text-indent">本合同项下贷款期限为<span class="short"><b style="color:red;">{{ContractInfo.loanPeriods}}</b></span>
+                ，贷款起始日以贷款本金划离乙方账户之日为准。乙方委托第三方支付机构/银行以资金代付的方式将本合同项下的贷款本金数额从乙方账户按以下方案划付至甲方专用账户中:将人民币（大写）
+                <span class="short"><b style="color:red;">{{ContractInfo.loanAmt|moneyformatChinese}}</b></span>（小写）￥<span class="short"><b style="color:red;">{{ContractInfo.loanAmt}}</b></span>
+                元划入甲方专用账户1；将人民币（大写）<span class="short">零元整</span>（小写）￥
+                <span class="short">0.00</span>元划入甲方专用账户2。</p>
+                <p><b>第三条 还款</b></p>
+                <ul class="decimal">
+                    <li>甲方应按照本合同第一条确定的还款方式及还款期限按期偿还贷款本金及利息。甲方必须在每期还款日或之前将当期应偿还本息数额存入甲方专用账户<span class="short"><b style="color:red;">2</b></span>中,甲方同意乙方委托合作的第三方支付机构/银行从甲方的专用银行账户
+                    <span class="short"><b style="color:red;">2</b></span>中，将当期甲方应当偿还的贷款本息、逾期违约金（如有）直接扣除并划付至乙方的账户中。
+                </li>
+                <li>
+                    乙方将以成功扣划还款账户的还款金额时间为准记录甲方的还款时间。如果还款日遇到法定节假日或公休日，还款日期不进行顺延,还款方式是固定数额的，还款日的确定原则：还款日为每月与放款日（放款日即：贷款本金划离乙方账户之日）对应之日期的前一日；若放款日晚于当月<b style="color:red;">25</b>日，则还款日为每月<b style="color:red;">24</b>日。还款方式是非固定数额的，还款日请见
+                <i style="color:red;">详见还款分期表。</i></li>
+                <li>贷款存续期间，甲方要求提前还款的，除须向乙方支付当前未还的本金、利息、逾期违约金以及剩余未还本金外，还须遵照借款借据的相关约定。</li>
+                <li>4.无论由于任何原因导致发生错误还款(即将不应支付乙方账户内的款项支付至乙方账户),甲方均认可由乙方委托的第三方公司代为处理还款错误金额的退款相关事宜。</li>
+            </ul>
+            <br/>
+            <p><b>第四条 双方的权利和义务</b></p>
+            <p><b>（一） 甲方的权利和义务</b></p>
+            <ul class="decimal">
+                <li>甲方按本合同约定的用途使用贷款，未经乙方书面同意，甲方不得擅自改变贷款用途。甲方申请的贷款不得用于认购和买卖股票或其它权益性投资；贷款用途不得违反法律、行政法规、规章、司法解释的禁止性规定;</li>
+                <li>甲方应按本合同的约定按期、足额偿还贷款本息；</li>
+                <li>未经乙方书面同意，甲方不得将本合同项下的任何权利、义务转让给他人；</li>
+                <li>甲方在向乙方申请贷款的过程中，应当按照乙方及其委托的第三方要求提供相关的个人信息和材料，并保证该等材料的真实、完整、准确和有效，不得隐瞒或夸大；</li>
+                <li>甲方有义务接受乙方及其委托的第三方对甲方个人信用资料及贷款使用情况的监督检查，甲方应当全力配合并按照要求提供相关的个人信息、材料；</li>
+                <li>贷款期限内，甲方不得随意变更第一条所列甲方专用账户。若确需变更的，应当及时通知乙方及乙方委托的第三方。因未及时通知造成的全部损失，均由甲方负责进行赔偿。</li>
+            </ul>
+            <p><b>（二） 乙方的权利和义务</b></p>
+            <ul class="decimal">
+                <li>乙方有权了解甲方对贷款的使用情况，甲方应当无条件配合；</li>
+                <li>甲方未按照本合同规定还款的，乙方及其委托的第三方有权在法律法规约定的范围内采取相应措施进行催收和追讨；</li>
+                <li>甲方未按照乙方的要求提供各项与本贷款合同相关的信息、材料或者提供的信息、材料存在虚假、不准确、隐瞒有关事实等情况的，或者甲方逾期还款的，乙方及其委托的第三方有权公开甲方的违约失信情形。</li>
+                <li>
+                    乙方或其委托第三方有权要求甲方提供贷款审查所需的全部资料，乙方除可将该资料用于评估甲方贷款资格外，并可将该资料及征信信息用于市场推广或提供给征信机构。乙方或其委托第三方有权主动收集甲方资料，对甲方进行信用调查，包括但不限于向征信机构、身份信息系统等合法机构查询甲方的信用信息；
+                </li>
+            </ul>
+            <p><b>第五条 违约责任</b></p>
+            <ul class="decimal">
+                <li>发生如下情形时，视为甲方违约：
+                    <p>（1）未能按期、足额偿还贷款本息；</p>
+                    <p>（2）甲方提供的信息、材料虚假、不准确或故意隐瞒身份、联系方式、资产状况等重要事实；</p>
+                    <p>（3）甲方拒绝或不配合乙方及其委托第三方对甲方个人信用资料、贷款使用情况进行监督检查；</p>
+                    <p>（4）甲方违反约定的贷款用途的；</p>
+                    <p>（5）甲方存在可能无法正常还款的情况（包括但不限于甲方财务状况恶化、无法联系、注销还款账户、账户被冻结、拒绝承认欠款等情形）；</p>
+                    <p>（6）甲方违反本合同其他约定</p>
+                </li>
+                <li>违约救济措施：
+                    <p>（1）甲方出现本条第1款（1）项规定的违约情形的，乙方有权按照下列条款的约定行使权利：甲方未能按时、足额偿还贷款本息的，应按向乙方支付逾期违约金，逾期违约金 =当期应还未还金额×
+                        <span class="short"><b style="color:red;">0.2%</b></span>%×逾期天数，各期应还款项逾期违约金分别计算，直至清偿本息为止。</p>
+                        <p>
+                        （2）甲方逾期偿还贷款本息达30日（含）以上的，乙方有权宣布贷款提前到期，甲方应当在乙方发出贷款提前到期通知后3日内一次性偿还本合同项下贷款的全部本息、逾期违约金及因此给乙方造成的全部损失，包括但不限于因实现债权而产生的各项费用，如律师费、诉讼费、仲裁费、交通费、差旅费等费用。</p>
+                        <p>（3）甲方连续逾期偿还贷款本息达到90日的，本合同项下的贷款将被认定为坏账，乙方将启动相应的坏账处置程序。</p>
+                        <p>
+                        （4）甲方发生本条第1款除（1）项外其他违约情形的，乙方有权宣布贷款提前到期，甲方应当在乙方向甲方发出贷款提前到期的通知后3日内一次性偿还本合同项下贷款的全部本息、逾期违约金及因此给乙方造成的全部损失，包括但不限于因收回债权而产生的律师费、诉讼费、仲裁费、交通费、差旅费等费用。</p>
+                        <p>（5）在乙方宣布贷款提前到期后，甲方怠于履行其还款义务的，若贷款存在担保人，则乙方有权要求担保人承担担保责任，担保人承担担保责任后，有权向甲方进行担保追偿</p>
+                    </li>
+                    <li>甲方偿还金额不足时，偿还的先后顺序为：本金、应还利息、逾期违约金、为因收回债权而产生的费用。</li>
+                </ul>
+                <p><b>第六条 通知</b></p>
+                <ul class="decimal">
+                    <li>甲方变更通知 <br/>本合同签订之日起至本合同项下贷款本息全部得到清偿之日止，甲方下列信息发生变更后的3日内，
+                        应当以书面方式向乙方或其委托的第三方提交《借款人客户信息变更申请书》：甲方本人、其家庭联系人及其紧急联系人
+                        的工作单位、居住地址、住址电话、手机号码、传真号码、电子邮箱等发生变更。因甲方未能及时向乙方变更上述信息而产生的相关费用及损失均由甲方负责承担。
+                    </li>
+                    <li>乙方通知 <br/>乙方需将本合同项下有关贷款确认、提前还款等内容通知甲方的，由其委托的第三方代为执行，有效通知方式包括但不限于电话、
+                        短信、传真、信件、电子邮件、微信、QQ、APP通知等。<br/>乙方的通知由专人送达的，以签收之日视为送达，以快递形式发送的，以快递发
+                        出单据上所示时间后4个自然日视为送达；通过挂号信邮递的，以国内挂号函件收据所示日后7个自然日视为送达；以传真、电子邮件、短信、微
+                        信消息、QQ消息、APP消息等方式通知的，以发送之日视为送达日；一经送达乙方即完成通知义务，甲方不得以未收到通知为不履行合同义务的抗辩理由。
+                        <br/>法院、仲裁机关、行政机关处理案件需要需通知甲方的，适用上述通知条款。
+                    </li>
+                </ul>
+                <p><b>第七条 债权转让</b></p>
+                <ul class="decimal">
+                    <li>乙方可以根据自己的意愿进行本协议下其对甲方债权的转让，甲方同意债权转让，乙方有权委托第三方代为通知甲方债权转让事宜。在乙方的债权转让后，甲方需对债权受让人继续履行本协议下的还款义务。</li>
+                    <li>借款期间或是借款期限届满后乙方将相应债权转让时，甲方不可撤销的同意授权新的债权受让人及其委托第三方对其相应的还款账户进行划扣。</li>
+                </ul>
+                <p><b>第八条 其他</b></p>
+                <ul class="decimal">
+                    <li>甲乙双方签署本合同后，本合同于文首所载日期成立，自乙方将本合同第一条所规定的贷款金额划离乙方专用账户之日起生效。本协议成立至生效期间，
+                        如果甲方提供资料在真实性、准确性或完整性方面存在瑕疵，经通知仍不能依照要求提供的，或乙方在放款前审查时发现甲方不符合放款条件，导致乙
+                        方付款迟延或拒绝付款的，乙方依据本协议不承担任何经济及相关法律责任。
+                    </li>
+                    <li>双方签署合同的方式包括：当面签署和远程签署。远程签署是指在甲乙双方身处异地时，甲方应在远程拍摄或录音设备下提供身份证明等必要资料，并
+                        在合同上签字，经乙方确认无误后合同成立,或者<b>甲乙双方在
+                        <i style="color:red;">[<span class="short" style="color:red;">{{Constant.ContractNeedPath}}</span>]</i>
+                        网络平台（平台运营方：<span class="short" style="color:red;">上海维信荟智金融科技有限公司</span>，
+                        甲方之平台账户名：<span class="short" style="color:red;border-bottom-color:red;">{{ContractInfo.mobile}}</span>，
+                        平台展现形式包括不限于微信、APP、网页等）以线上点击确认的方式进行签署后合同成立(甲方应妥善保管自己在
+                        <i style="color:red;">[<span class="short" style="color:red;">{{Constant.ContractNeedPath}}</span>]</i>
+                        网络平台的注册用户名和密码，自行承担因注册用户名和密码丢失、泄露或允许他人使用所产生的后果。通过甲方用户名和密码登陆的任何操作均视为
+                        该方本人的真实意思表示)</b>。远程签署的合同效力与当面签署的合同效力一致。
+                    </li>
+                    <li>甲方在此特别声明：甲方知道、了解电子印章的概念、定义和作用效力，甲方同意本贷款合同可以采用电子印章的方式进行签署，并对于采用电子印章
+                        签署的本合同效力不存在任何质疑，不对本合同电子印章的效力提出任何异议。
+                    </li>
+                    <li>
+                        甲乙双方一致确认：在经乙方事先认可的前提下，除本合同及补充合同、附件等明确约定的事项外，本合同所涉及的其他具体业务的操作可由甲乙双方，或
+                        甲方与乙方的委托方通过电话联系予以完成，甲乙双方对此业务办理的效力均予以确认。
+                    </li>
+                    <li>本合同及其附件的任何修改、补充均须以书面形式作出。本合同的补充合同及附件与本合同具有同等的法律效力。本合同的传真件、复印件、扫描件等
+                        有效副本的效力与本合同原件效力一致。
+                    </li>
+                    <li>
+                        甲乙双方承诺，为达成及/或履行本合同，其及其关联方的董事、管理人员、雇员、代理人或顾问不曾也不会违反任何相关的法律法规，向任何政府官员、本
+                        协议对方、任何相关第三方及其关联方的董事、管理人员、雇员、代理人或者顾问在内的任何有关人员直接或间接地提供资金、礼品或其他任何有价物品、服
+                        务，或者从事任何其他贿赂行为。甲乙双方确认，任何一方违反前述规定的行为都将给对方造成损害，并应当向对方支付违约金作为补偿，违约金金额为违反
+                        前述规定的一方履行本合同可获得的全部收益。
+                    </li>
+                    <li>如果甲乙双方在本合同履行过程中发生任何争议，应友好协商解决；如协商不成，不论争议金额大小，均选择向合同签订地所在的
+                        <span class="short"><b style="color:red;">上海市浦东新区</b></span>人民法院提起诉讼，本合同签订地为<span class="short"><b style="color:red;">上海市浦东新区</b></span></li>
+                    <li>本合同一式叁份，甲方保留壹份，乙方保留贰份。</li>
+                    <li>
+                        特别条款[无]<br/>
+                        本合同附件：<br/>
+                        附件1、《还款代扣授权书》<br/>
+                        附件2、《还款事项提醒函》<br/>
+                        附件3、《<i style="color:red;">还款分期表</i>》（仅在非固定数额还款时适用）<br/>
+                        （以下无正文,为贷款合同签署处）<br/><br/>
+                    </li>
+                    </ul>
+                    <!-- 新增 不完善的内容 -->
+                   
+                <!-- 转介绍居间协议 start -->
+                <div class="page-content" ng-if="WithdrawRecordObject.loanType=='0' && WithdrawRecordObject.channelByHelp=='1'">
+                    <article>
+                        <div class="content-block-inner">
+                            <section>
+                                <p class="ui-txt-justify">
+                                    <br/>
+                                    <h1 class="mt2">居间服务协议</h1>
+                                    <br/> 甲方：{{ContractInfo.realName}}
+                                    <br/>身份证号码：{{ContractInfo.identityNo}}
+                                    <br/>
+                                    <br/>乙方：上海维信荟智金融科技有限公司
+                                    <br/>住所：上海市虹口区乍浦路89号办公楼1幢2801室
+                                    <br/>
+                                    <br/>丙方：
+                                    <br/>身份证号码：
+                                    <br/>丙方为甲方申请安家派产品提供居间服务，乙方受托为丙方居间服务成功后代为从甲方处扣收居间服务费，并在扣收成功后，代为支付给丙方。现各方本着自愿、公平、诚实信用的原则，依据<span>《中华人民共和国合同法》</span>等法律法规，经各方确认，达成如下协议：
+                                    <br/>1.经丙方居间服务，甲方与贷款方签订了<span>《贷款合同》</span>（编号： 借款金额为 大写人民币 元）。
+                                    <br/>2.基于丙方的居间服务，甲方同意向丙方支付相应的居间服务费，居间服务费的收取方式为：在甲方成功获取借款后，收取XX元人民币。
+                                    <br/>3.丙方故意隐瞒贷款有关的重要事项或提供虚假资料，损害甲方及（或）乙方利益的，不得要求甲方支付居间服务费。
+                                    <br/>4.居间活动所发生的费用由丙方自行承担。
+                                    <br/>5.为便于甲方与丙方的居间服务费支付，甲、丙双方同意授权乙方或其受托人委托银行或第三方支付公司从甲方指定账户（户名： 开户行： 账号
+                                    ）代为扣收本协议第2条约定的居间服务费，并代为支付给丙方。丙方收取该居间服务费的账户以丙方在乙方处预留的为准。
+                                    <br/>6.在代扣代付中，乙方仅为甲方与丙方提供居间服务费用结算服务。乙方并不保证能够成功扣收到相应金额的款项，若乙方未成功从甲方扣收到相应金额的居间服务费，乙方不承担支付义务。甲方与丙方就居间服务费发生纠纷，由甲方与丙方自行解决，在任何情形下与乙方无关。
+                                    <br/>7.乙方特别说明：丙方仅为居间服务方，丙方向甲方的承诺内容与乙方无关。贷款产品的具体内容请以甲方与乙方或相关贷款权利方签订的合同为准。如甲方签订的贷款合同与丙方介绍的具体信息不一致的，请以合同条款为准。
+                                    <br/>8.本协议自各方签字或盖章及/或点击确认之日起成立生效，签字或盖章时间及/或点击确认不一致的，以最后一方签字或盖章及/或点击确认之日起成立并生效。
+                                    <br/>9.若因本协议发生争议，各方可协商解决。协商不成时，任何一方有权向上海市浦东新区人民法院提起诉讼解决。
+                                    <br/>10. 本协议采用电子文本形式制成，并在安家派平台上保留存档，各方均认可本协议的法律效力。
+                                    <br/><br/>
+                                    甲方：乙方： 丙方：
+                                    <br/><br/>
+                                    日期： 日期： 日期：
+                                    <br/><br/>
+                                </p>
+                                <p class="text-bold">
+                                    授权人已阅读上述全部内容并同意的，请点击“同意”按钮，本授权立即生效，若授权人不同意授权，请立即停止操作，退出本申请页面。
+                                </p>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+                <table style="width:100%;">
+                    <tr>
+                        <td>甲方/借款人（签字）:（请用正楷书写）<b style="color:red;">{{ContractInfo.realName}}</b></td>
+                        <td>乙方/贷款人：<b style="color:red;">中国对外经济贸易信托有限公司</b></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>盖章：</td>
+                    </tr>
+                    <tr>
+                        <td>签约日期:<a href=""><b style="color:red;">{{ContractInfo.nowyear}}</b></a>/
+                        <a href=""><b style="color:red;">{{ContractInfo.nowMonth}}</b></a>/
+                        <a href=""><b style="color:red;">{{ContractInfo.nowDay}}</b></a>
+                    </td>
+                    <td>签约日期:<a href=""><b style="color:red;">{{ContractInfo.nowyear}}</b></a>/
+                    <a href=""><b style="color:red;">{{ContractInfo.nowMonth}}</b></a>/
+                    <a href=""><b style="color:red;">{{ContractInfo.nowDay}}</b></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">签署处：<b style="color:red;">{{ContractInfo.realName}}</b></td>
+            </tr>
+        </table>
+        <div class="ajp-pos-flex-bottom ajp-btn-wrap-con bg-fff ajp-button-flex">
+            <button class="ajp-btn" ng-click="singature()">下个合同</button>
+        </div>
+    </div>
+</div>

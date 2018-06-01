@@ -1,0 +1,33 @@
+<div class="wToRepay com-box-siz" holl-page>
+    <div class="info sucState suc" ng-if="result == 'suc'">
+        <p class="sum">¥{{YibaoPay.payAmount}}</p>
+        <div class="ui-tip done">
+		            真棒！当前取现金额已还清！<br/>
+		            请继续保持哦~
+        </div>
+    </div>
+    <div class="info waitState wait" ng-if="result == 'wait'">
+        <p class="sum">¥{{YibaoPay.payAmount}}</p>
+        <div class="ui-tip done">
+		            还款中... <br/>
+		            请稍后查看还款结果
+        </div>
+    </div>
+    <div class="info failState fail" ng-if="result == 'fail'">
+        <p class="sum">¥{{YibaoPay.payAmount}}</p>
+        <div class="ui-tip done">
+		            还款失败 <br/>
+		            订单冻结，请稍后重试
+        </div>
+    </div>
+
+
+    <div  class="fydBtn-wrap" id="checkBill" ng-if="result == 'suc'">
+        <button class="fydBill-btn" ng-click="checkBill()">查看账单</button>
+        <br/>
+    </div>
+    <div class="fydBtn-wrap" id="refresh" ng-if="result == 'wait'">
+        <button class="fydBill-btn" ng-click="refresh()">刷新</button>
+        <br/>
+    </div>
+</div>

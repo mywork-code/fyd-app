@@ -1,0 +1,16 @@
+<div class="eGet-bankList pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="#/bindBandCard"></a>
+        <div class="UI-title">银行卡绑定</div>
+        <show-alert></show-alert>
+    </header>
+    <div class="wrap">
+		<div ng-repeat="bank in bankList"
+			ng-click="selectedBank(bank.bankCode,bank.cardBank,bank.cardType)">
+			<img ng-src="img/bank/{{bank.bankCode}}.png"
+				alt="{{bank.cardBank}}" />{{bank.cardBank}}
+				<span>单卡单日限额{{bank.limitCredit}}万</span>
+		</div>
+	</div>
+</div>
+

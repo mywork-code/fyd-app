@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小安为您服务</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no">
+</head>
+<body>
+<button id="target" style="opacity:0;">快联系我</button>
+</body>
+<script src='easemob.js'></script>
+<script>
+    window.easemobim = window.easemobim || {};
+    var aopai = {
+        WCustomerImg:'',
+        Wmobile:'1111112',
+        Wname:'测试2',
+        url:'https://a1-vip5.easemob.com/'+'1447171226061260/'+'kefuchannelapp48329',
+        token:'',
+        username:'',
+        password:'',
+        grant_type:"client_credentials",
+        client_id:"YXA6aTQHUOn7EeeIW6_i-LwFFg",
+        client_secret:"YXA6aG3Q1Eobm9ipun4wba-tJMl8a8w",
+    }
+    try{
+          // var getUser= appModel.getUserInfo();//获得用户头像
+        // var getUserInfo = JSON.parse(getUser);
+       var url = location.search; //获取url中"?"符后的字串  
+       var theRequest = new Object();  
+       if (url.indexOf("?") != -1) {  
+          var str = url.substr(1);  
+          strs = str.split("&");  
+          for(var i = 0; i < strs.length; i ++) {  
+             theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+
+          }  
+       }  
+       // return theRequest;
+       console.log(theRequest)
+        console.log("realName===",theRequest.realName)
+        console.log("mobile===",theRequest.mobile)
+         console.log("token===",theRequest.token)
+         console.log("realName2222222===",decodeURI(theRequest.realName))
+        // aopai.WCustomerImg = getUserInfo.avatar;
+        aopai.Wmobile = theRequest.mobile;
+        aopai.Wname =  theRequest.realName;
+        aopai.username = 'ajqh'+aopai.Wmobile
+         aopai.token =theRequest.token;
+           checkRegister()
+        // getToken();
+    }catch(e){
+        aopai.WCustomerImg = "";
+        login()
+    }
+
+    try {
+        var platform = window.Android || window;
+        platform.setTitle("小安为您服务");
+    } catch (e) {
+    }
+
+    function login(){
+        // 配置
+        easemobim.config = {
+            //设置为您的网页插件页面显示的configId的值
+//        configId: '8d7165bf-843c-4205-a268-3a69b64267e3',
+            //环信移动客服域，固定值，请按照示例配置
+            domain: '//kefu.easemob.com',
+            //您网站上im.html文件的完整路径
+            path: '//'+window.location.host+'/huanxin',
+            //访客插件static的路径
+            staticPath: '//'+window.location.host+'/huanxin/static',
+            agentName:"sunshine@apass.cn",
+            // 按钮
+            hide: true,
+            autoConnect: true,
+            user: {
+                // username 必填，password 和 token 任选一项填写
+                username: aopai.username,
+                password: aopai.password,
+                token: ''
+            },
+            visitor: {
+                trueName: aopai.Wname,
+                photo:aopai.WCustomerImg,
+                qq: '',
+                phone: aopai.Wmobile,
+                companyName: '',
+                userNickname: aopai.Wname,
+                description: '',
+                email: ''
+            },
+            // 聊天窗口加载成功回调
+            onready: function () {
+                var wExt = {};
+                try {
+                    var wAppExt = appModel.getGoodsInfo();
+                    if(wAppExt !== undefined && wAppExt !== null && wAppExt !== ' ' ){
+                        wExt = JSON.parse(wAppExt);
+                        wExt.title = "我正在看：";
+                        easemobim.sendExt({
+                            ext:{
+                                "imageName": "测试img",
+                                //custom代表自定义消息，无需修改
+                                "type": "custom",
+                                "msgtype": {
+                                    "track":wExt
+                                }
+                            }
+                        });
+                    }
+                }catch(e){
+//                wExt = {
+//                    "title":"我正在看：",
+//                    "price":"¥: 235.00",
+//                    "desc":"女装小香风气质蕾丝假两件短袖",
+//                    "img_url":"http://images2015.cnblogs.com/blog/51946/201606/51946-20160626234328656-1680481413.jpg",
+//                    "item_url":"https://www.yourdomain.com/item/a.html"
+//                }
+                }
+            },
+            onmessage: function (msg) {
+//                console.log('收到客服消息')
+            }
+        };
+
+        // 配置
+        var btn = document.getElementById("target");
+        btn.onclick = function () {
+            easemobim.bind({configId: "525584af-5a11-4f17-bb68-49af6faba0a3"})
+        }
+
+        var btn = document.getElementById("target");
+        btn.onclick()
+    }
+
+
+    function getToken(){
+        ajax({
+            method: 'POST',
+            url:aopai.url+ '/token',
+            data: {
+                "grant_type":aopai.grant_type,
+                "client_id":aopai.client_id,
+                "client_secret":aopai.client_secret,
+            },
+            success: function (response) {
+                aopai.token = JSON.parse(response).access_token;
+                checkRegister()
+            },
+            fail:function(response){
+                login()
+            }
+        })
+        function checkRegister(token){
+            ajax({
+                method: 'GET',
+                url: aopai.url+ '/users/' +aopai.username,
+                Authorization:aopai.token,
+                success: function (response) {
+                    aopai.password = aopai.username+'ajqh';
+//                    console.log(response)
+                    login()
+                },
+                fail:function(response){
+                    if(response.readyState == 4 && response.status == 404){//未注册
+                        register()
+                    }
+                }
+            })
+        }
+        function register(){
+            ajax({
+                method: 'POST',
+                url: aopai.url+ '/users',
+                Authorization:aopai.token,
+                data: {
+                    "username": aopai.username,
+                    "password": aopai.username+'ajqh',
+                },
+                success: function (response) {
+                    aopai.password = aopai.username+'ajqh';
+                    login()
+                },
+                fail:function(response){
+                    login()
+                }
+            })
+        }
+
+
+
+        function ajax(opt) {
+            opt = opt || {};
+            opt.method = opt.method.toUpperCase() || 'POST';
+            opt.url = opt.url || '';
+            opt.async = opt.async || true;
+            opt.data = opt.data || null;
+            opt.Authorization = opt.Authorization || null;
+            opt.success = opt.success || function () {
+                    };
+            opt.fail = opt.fail || function () {
+                    };
+            var xmlHttp = null;
+            if (XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            }
+            else {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            var params = [];
+            for (var key in opt.data) {
+                params.push(key + '=' + opt.data[key]);
+            }
+            var postData = params.join('&');
+            if (opt.method.toUpperCase() === 'POST') {
+                xmlHttp.open(opt.method, opt.url, opt.async);
+                xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+                opt.Authorization&&xmlHttp.setRequestHeader("Authorization", "Bearer " + opt.Authorization);
+                xmlHttp.send(JSON.stringify(opt.data));
+            }
+            else if (opt.method.toUpperCase() === 'GET') {
+                xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+//                console.log(opt.Authorization)
+                opt.Authorization&&xmlHttp.setRequestHeader("Authorization", "Bearer " + opt.Authorization);
+                xmlHttp.send(null);
+            }
+            xmlHttp.onreadystatechange = function () {
+                if(xmlHttp.readyState == 4){
+                    if (xmlHttp.status == 200) {
+                        opt.success(xmlHttp.responseText);
+                    }else {
+                        opt.fail(xmlHttp);
+                    }
+                }
+
+            };
+        }
+    }
+</script>
+<!--<script src='//kefu.easemob.com/webim/easemob.js'></script>-->
+
+<script>
+    // 触发
+
+</script>
+
+<script>
+</script>
+</html>

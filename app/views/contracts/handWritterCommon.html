@@ -1,0 +1,36 @@
+<div class="handWritter pt-header com-box-siz bg-fff" holl-page>
+    <header id="ajp-header" class="BG-red" ng-show="headerShowFlag">
+        <a class="UI-back" id="UI-back-normal" ng-click="goToLocation()"></a>
+        <a class="UI-back" id="UI-back-unnormal" ng-click="goToNormal()"></a>
+
+        <div class="UI-title">在线签署</div>
+        <show-alert></show-alert>
+    </header>
+
+    <!--  头部  结束 -->
+    <div class="gfd-sign-district">
+        <p class="tip">尊敬的客户：请您在下方区域内正楷书写本人完整签名，并点击保存，该签字将影响合同的生效,并适用于你点击同意的《个人信息授权书》等，请知悉谢谢！
+        </p>
+
+        <div id="gfd-signaturePlace" style="position: relative; width: 90%; margin: 3rem auto ;">
+            <div class="rect rect1"></div>
+            <div class="rect rect2"></div>
+            <div class="rect rect3"></div>
+            <div class="rect rect4"></div>
+        </div>
+
+        <div class="warn">
+            温馨提示：请保证名称和身份证相符且字体清晰可辨
+        </div>
+    </div>
+
+    <div class="ajp-btn-wrap ajp-button-flex" style="">
+        <button class="ajp-btn gfb-btn-reset">重置</button>
+        <button class="ajp-btn gfb-btn-save" style=" margin: 0 1rem;">保存</button>
+        <button class="ajp-btn disabled gfb-btn-cancel">取消</button>
+    </div>
+</div>
+
+		
+		
+

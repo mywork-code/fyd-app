@@ -1,0 +1,44 @@
+<div class="change-loginPass pt-header">
+	<header id="ajp-header" class="BG-red">
+		<a class="UI-back" href="javascript:history.back(-1);"></a>
+		<div class="UI-title">设置交易密码</div>
+		<show-alert></show-alert>
+	</header>
+	<div class="content">
+		<p class="com-wraning">为了您的资金安全，请设置交易密码</p>
+
+		<div class="keyboard-pass">
+			<ul class="grid">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+
+			<input type="password" class=""/>
+		</div>
+		<div class="ajp-btn-wrap">
+			<button class="ajp-btn mt-4" id="keyboardPass" ng-disabled="isPassDone" ng-click="addTranPass()">提交</button>
+		</div>
+
+
+	</div>
+	<!--修改成功弹窗-->
+	<div class="ajp-mask  changeState change-seccess" ng-show="">
+		<div class="wrap com-bdradius-1rem">
+			<img src="images/icon-success.gif" alt="" />
+			<p>设置成功！</p>
+		</div>
+	</div>
+	<!--修改成功弹窗-->
+	<!--修改失败弹窗-->
+	<div class="ajp-mask changeState change-fail" ng-show="">
+		<div class="wrap com-bdradius-1rem">
+			<img src="images/icon-fail.gif" alt="" />
+			<p>设置失败！</p>
+		</div>
+	</div>
+	<!--修改失败弹窗-->
+</div>

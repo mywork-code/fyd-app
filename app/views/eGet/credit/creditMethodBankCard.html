@@ -1,0 +1,34 @@
+<div class="eGat-creditBankCard pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="#/creditLogin"></a>
+        <div class="UI-title">验证银行卡</div>
+    </header>
+    <div class="top-logo mb-6"></div>
+    <p class="com-wraning just">本人明确知晓：本人如实填写本页上述信息的行为，即视为本人正式授权安家派将以下信息向中国银联公司代为提交验证。 </p>
+    <div class="form-wrap ajp-formWrap ">
+        <div class="list">
+            	银联卡号
+            <input class="fill-input com-box-siz" type="tel" id="cardNo" placeholder="请输入完整银联卡号" ng-keyup="formatcardNo()" ng-model="ZhengxinInfo.cardNoWithSpace" />
+        </div>
+    </div>
+    <p class="com-info tar">点击查看<a href="javascript:void(0)" id="gfb-bank-list" ng-click="openBandlistMask()">银行卡验证支持的银行卡列表</a></p>
+    <div class="ajp-btn-wrap">
+        <button class="ajp-btn" ng-click="getCardInfo()" ng-disabled="ZhengxinInfo.cardNoWithSpace==''||ZhengxinInfo.cardNoWithSpace==undefined">下一步</button>
+    </div>
+    <div class="bottom-hint">
+        <p>数据来源 <span class="PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+    <div class="ajp-mask bankList" id="gfb-dialog-banklst" ng-show = "maskShow.bankList" ng-click="hideBandlistMask()">
+        <div class="wrap com-bdradius-1rem ajp-pos-center com-box-shadow bg-fff" ng-click="openBandlistMask()">
+            <h3>支持的银行卡列表</h3>
+            <p class="title">信用卡(贷记卡)</p>
+            <p class="bank ajp-bb-b6">工商银行／农业银行／中国银行／建设银行交通银行／招商银行／光大银行／兴业银行浦发银行／平安银行／上海银行／北京银行华夏银行／中信银行／民生银行／广发银行</p>
+            <p class="title">储蓄卡(借记卡)</p>
+            <p class="bank">工商银行／农业银行／中国银行／建设银行交通银行／光大银行／兴业银行浦发银行／平安银行／上海银行／北京银行华夏银行／中信银行／广发银行</p>
+            <div class="btnWRAP">
+                <button class="ajp-btn-white" type="button" data-role="button"  ng-click="hideBandlistMask()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

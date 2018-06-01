@@ -1,0 +1,39 @@
+<div class="eGet-creditLogin eGet-code pt-header" holl-page>
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackHome()"></a>
+
+        <div class="UI-title">征信认证</div>
+    </header>
+    <section class="eGet-plan-top">
+        <div class="one">信息认证</div>
+        <div class="two on">手机认证</div>
+        <div class="three on">征信认证</div>
+    </section>
+    <p class="PBOC"></p>
+
+    <p class="com-wraning center">请填写真实信息，有利于额度申请审批成功。</p>
+
+    <div class="form-wrap mt-1" ng-init="getLoginVerifyCode('init')">
+        <div class="list ajp-bb-b6">
+        		查询码
+            <input class="fill-input com-box-siz" type="text" placeholder="请输入征信查询码" ng-model="ZhengxinInfo.activeCode" focus-show/>
+        </div>
+        <div class="list">
+            	验证码
+            <input class="fill-input com-box-siz" type="text" maxlength="10" placeholder="请输入右侧验证码" ng-model="ZhengxinInfo.vercode" focus-show/>
+            <img class="ajp-pos-midd yan" src="{{ZhengxinInfo.LoginrandomCodeUrl}}" alt="验证码" ng-show='flag!=1' ng-click="getLoginVerifyCode('hand')" />             
+            <img class="loading ajp-pos-midd yan" src="images/loading.gif" alt="验证码" ng-show='flag==1'/>
+        </div>
+    </div>
+    <p class="com-info tar">如果征信报告申请失败，可<a href="" ng-click="repeatLogin()" title="重新申请">重新申请></a></p>
+    <div class="ajp-btn-wrap">
+        <button class="ajp-btn" ng-click="submitActiveCode()" ng-disabled="ZhengxinInfo.activeCode==''||ZhengxinInfo.vercode==''">获取征信</button>
+    </div>
+    <p class="infoTitle">温馨提示：</p>
+    <p class="hintInfo">• 查询请求提交后，将在24小时内返回相应结果，请耐心等待。</p>
+    <p class="hintInfo">• 信用报告生成后，征信查询码有效期为7天</p>
+    <div class="bottom-hint">
+        <p>数据来源 <span class="PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="eGet-creditLogin eGet-creditMode pt-header" holl-page>
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+        <div class="UI-title">征信认证</div>
+    </header>
+    <section class="eGet-plan-top">
+        <div class="one">信息认证</div>
+        <div class="two on">手机认证</div>
+        <div class="three on">征信认证</div>
+    </section>
+    <div class="hint">登录成功，请选择获取征信报告的验证方式：</div>
+    
+    <div class="moth ajp-href" ng-click="redirectUnionPay()">
+        <img class="ajp-pos-midd" src="images/ajp-bank-card.png" alt="银行卡认证"/>
+        <h3>银行卡认证</h3>
+        <p>安全等级为高的用户可选择此方式</p>
+        <p>(银行卡需开通银联在线支付功能）</p>
+    </div>
+
+    <div class="moth ajp-href" ng-click="redirectFiveQuestion()">
+        <img class="ajp-pos-midd" src="images/ahp-authentication.png" alt="问题认证"/>
+        <h3>问题认证</h3>
+        <p>正确回答关于本人征信的5个问题</p>
+    </div>
+    <div class="bottom-hint">
+        <p>数据来源 <span class="PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+</div>

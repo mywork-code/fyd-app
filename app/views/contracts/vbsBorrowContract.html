@@ -1,0 +1,14 @@
+<!--头部-->
+
+<div class=" pt-header bg-fff">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+
+        <div class="UI-title">{{titleContractName}}</div>
+    </header>
+
+    <!--合同内容-->
+    <div id="pdfShow" ng-repeat="imageInfo in ContractInfo.vbsContractInfoList track by $index">
+        <img src="data:image/gif;base64,{{imageInfo}}" width="100%"/>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="change-loginPass pt-header">
+	<header id="ajp-header" class="BG-red">
+		<a class="UI-back" href="javascript:history.back(-1);"></a>
+		<div class="UI-title">找回交易密码</div>
+		<show-alert></show-alert>
+	</header>
+		<div class="bg-fff form-wrap new-top com-bdradius-8rem p-tb2">
+			<div class="form-list ajp-bb-dc">
+				姓名
+				<input  type="text" readonly ng-model="UserInfo.realName|NameReplaceFilter">
+			</div>
+			<div class="form-list ajp-bb-dc">
+				<img src="images/agent-Id.png" />
+				<input  type="text" ng-model="UserInfo.identityNoText" placeholder="请输入身份证"/>
+			</div>
+			<div class="form-list">
+				 <img src="images/agent-IDcard.png" />
+				<input type="text" ng-model="UserInfo.cardNoText" placeholder="请输入银行卡号"/>
+			</div>
+		</div>
+		<p class="com-wraning">以上内容权作为银行信息比对，安家派将严格保密。</p>
+		<div class="ajp-btn-wrap">
+			<button class="ajp-btn" ng-disabled="transactionInfoidentityNoFlag||transactionInfocardNoFlag" ng-click="backTransactionInfo()">提交</button>
+		</div>
+	</div>

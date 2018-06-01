@@ -1,0 +1,77 @@
+<div class="pt-header pb-10 bg-fff">
+
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="gotoEtakeForIdentity()"></a>
+
+        <div class="UI-title">个人信息授权书</div>
+    </header>
+    <div class="pact-service-agtee pact-wrap">      
+
+        <p><b>致：被授权人</b>（被授权人明细见第五条）</p>
+
+        <p class="text-justify">一、因本人（姓名：{{ContractInfo.realName}}，身份证号：{{ContractInfo.identityNo}}）存在贷款需求，通过被授权人申请贷款相关业务（包括不限于贷款、贷款咨询与服务、贷款担保等业务，下同），故本人不可撤销地授权被授权人：</p>
+
+        <p class="text-justify">1、有权在与开展的贷款业务相关的范围内向中国人民银行个人信用信息基础数据库（以下简称“人行数据库”）查询及使用授权人个人信息，包括基本信息和信用报告，并将本人之基本信息和信用记录发送给人行数据库。</p>
+
+        <p class="text-justify">
+            2、有权向依法设立的征信机构、资信评估机构、身份信息验证机构、数据分析处理机构、或有关法律、监管机构许可的类似机构（以下统称“信用机构”，包括不限于前海征信、百度征信、芝麻信用等机构）、以及为本人申请的业务和产品提供必要技术和服务的被授权人或被授权人的合作机构（简称“被授权机构及其合作机构”，包括不限于中国对外经济贸易信托有限公司之FOTIC小微数据库）查询本人在信用机构、被授权机构及其合作机构的个人信息，包括基本信息和信用信息，并有权采集、保存以及向信用机构、被授权机构及其合作机构提供本人与被授权人之业务往来中提供或产生的个人信息。且本人亦授权信用机构、被授权机构及其合作机构有权采集、保存、整理、加工、使用其在本次贷款相关业务中通过合法途径获取的本人个人信息并依法对外提供。</p>
+
+        <p class="text-justify">二、为使被授权人能够履行上述授权事宜，授权人同意向被授权人提交有效身份证明文件以及被授权人要求的其他证明材料。</p>
+
+        <p class="text-justify">三、本人同意被授权人及信用机构、被授权机构及其合作机构将合法获取的本人个人信息用于下述范围：</p>
+
+        <p class="text-justify">1、受理、审批、办理贷款相关业务，贷后服务和管理、以及在该业务存续期间监控本人的信用变化；</p>
+
+        <p class="text-justify">2、向本人推荐产品及服务、开展市场调查与信息数据分析；</p>
+
+        <p class="text-justify">3、其他经过本人同意的合法用途。</p>
+
+        <p class="text-justify">四、本授权书自本人签字之日起生效，至本人通过被授权人办理的所有贷款相关业务之应付款项完全结清且本人向被授权人送达签署解除授权的书面文件之日终止。</p>
+
+        <p class="text-justify">五、本人同意：本次授权的被授权人可包括下列主体中的一个或者多个：</p>
+
+        <p class="text-justify small">上海静安维信小额贷款有限公司</p>
+
+        <p class="text-justify small">成都维仕小额贷款有限公司</p>
+
+        <p class="text-justify small">青岛市市北区维信小额贷款有限公司</p>
+
+        <p class="text-justify small">中国对外经济贸易信托有限公司</p>
+
+        <p class="text-justify small">维仕担保有限公司</p>
+
+        <p class="text-justify small">上海维信荟智金融科技有限公司</p>
+
+        <p class="text-justify small">上海维信智荟互联网金融信息服务有限公司</p>
+
+        <p class="text-justify small">杭州维仕金融服务有限公司</p>
+
+        <p class="text-justify small">杭州维仕信息技术有限公司</p>
+
+        <p class="text-justify small">维信融资租赁（苏州）有限公司</p>
+
+        <p class="text-justify small">杭州银行</p>
+        
+        <p class="text-justify small">晋城银行</p>
+        
+        <p class="text-justify small">恒丰银行</p>
+
+        <p class="text-justify">本人已知晓并认可：上述被授权人若出现名称变更，不视为被授权人变更，无需本人另行签署授权书；若因为本人所办理贷款之实际情况而需由上述被授权人之关联企业提供相关服务的，则亦视为本人通过签署本授权书已授权该等关联企业，无需本人另行签署授权书。</p>
+
+        <p class="text-justify" style="text-align:right;">
+            <b>授&nbsp;&nbsp;权&nbsp;&nbsp;人&nbsp;&nbsp;: <span ng-show='UserInfo.personInfoSignature==1'>{{ContractInfo.realName}}</span></b>
+        </p>
+
+        <p class="text-justify">
+            <b>签署时间：{{ContractInfo.nowyear}}年{{ContractInfo.nowMonth}}月
+                {{ContractInfo.nowDay}}日&nbsp;&nbsp;{{ContractInfo.nowHours}}:
+                {{ContractInfo.nowMinutes}}:{{ContractInfo.nowSeconds}}
+            </b>
+        </p>
+
+        <div class="ajp-btn-wrap-con ajp-button-flex ajp-pos-flex-bottom bg-fff" ng-show='UserInfo.personInfoSignature!=1' style="padding:1rem;">
+            <button class="ajp-btn disabled mr-1" ng-click='cancel()'>取消</button>
+            <button class="ajp-btn" ng-click="singature()">同意</button>
+        </div>
+    </div>
+</div>

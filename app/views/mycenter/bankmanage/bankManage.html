@@ -1,0 +1,29 @@
+<div class="eGet-bindCard pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+
+        <div class="UI-title">银行卡管理</div>
+        <show-alert></show-alert>
+    </header>
+    <section class="com-bankCard">
+        <div class="wrap com-box-siz {{BindCardObject.bankCode}}" ng-show="BindCardObject.bindCardFlag=='1'">
+            <!--ICBC为不同银行控制class-->
+
+            <div class="top">
+                {{ClearInfo.cardBank}}
+                <span class="card">✲✲✲✲&nbsp;✲✲✲✲&nbsp;{{ClearInfo.cardNoStr}}</span>
+            </div>
+            <p class="change" ng-show="BindCardObject.isChangeBankCard=='1'">
+                <a class="ajp-btn-white" ng-click="replaceBankCard()">更换银行卡</a>
+            </p>
+        </div>
+    </section>
+    <section class="com-bankCard" ng-show="BindCardObject.bindCardFlag!='1'">
+        <div class="wrap com-box-siz}"> <!--没绑定银行卡-->
+            <div class="top">
+                暂未绑定银行卡
+            </div>
+            <p class="change"><a class="ajp-btn-white">立刻绑定</a></p>
+        </div>
+    </section>
+</div>

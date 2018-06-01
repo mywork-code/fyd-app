@@ -1,0 +1,29 @@
+<div class="Ct-helpCente Ct-msgCenter pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+
+        <div class="UI-title">消息中心</div>
+    </header>
+    <ul class="nav">
+        <li  ng-click="megShowDetail(0)" ng-class="{'active':showMeg == 0}">通知信息({{info.msg}})</li>
+        <li  ng-click="megShowDetail(1)" ng-class="{'active':showMeg == 1}">账户信息({{info.Account}})</li>
+    </ul>
+    <div class="notification" ng-show="showMeg == 0">
+        <msg-list>
+            <msg-body class='expander' ng-repeat='expander in expanders' expander-title='expander.title' expander-checked="expander.checked" ng-click="changeMsg()">
+                {{expander.text}}
+            </msg-body>
+        </msg-list>
+    </div>
+
+    <div class="account" ng-show="showMeg == 1">
+        <msg-list>
+            <msg-body class='expander' ng-repeat='account in accounts' expander-title='account.title' expander-checked="account.checked" ng-click="changeAccount()">
+                {{account.text}}
+            </msg-body>
+        </msg-list>
+    </div>
+
+
+    <!--直接在controller里获取问题就好了-->
+</div>

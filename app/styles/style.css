@@ -1,0 +1,4836 @@
+﻿@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}
+.IndexLoading {
+}
+.IndexLoading .loading {
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right:0;
+    margin:auto;
+    width:6rem;
+    height:6rem;
+    -webkit-animation: rotate 1s linear infinite;
+    animation: rotate 1s linear infinite;
+}
+.ajp_relaName:disabled {
+    background: none;
+}
+/*
+绑定银行卡*/
+.eGet-withdrawal {
+    background-color: #fff;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*银行卡片*/
+.com-bankCard {
+    padding:1rem 2rem;
+    background-color: #eeeeee;
+}
+.com-bankCard .wrap {
+    height:12.8rem;
+    padding:0 0.5rem;
+    background-color: #fff;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    -webkit-box-shadow: 0 0 2rem #D4D4D4;
+    -moz-box-shadow:  0 0 2rem #D4D4D4;
+    box-shadow:  0 0 2rem #D4D4D4;
+    color:#313131;
+    font-size: 1.4rem;
+}
+.com-bankCard .wrap .top {
+    height:2.5rem;
+    padding:3.6rem 0 2rem 4.6rem;
+    margin:0 2rem;
+    position: relative;
+    border-bottom: 1px #b6b6b6 solid;
+}
+
+.com-bankCard .wrap .top:before {
+    content: '';
+    position: absolute;
+    top:2.1rem;
+    left:0rem;
+    display: block;
+    width:4.6rem;
+    height:4rem;
+}
+.com-bankCard .wrap .goBind {
+    color:#00a0e9;
+    text-decoration: none;
+    float:right;
+}
+.com-bankCard .wrap .top .card {
+    float:right;
+}
+.com-bankCard .wrap .count {
+    padding-top: 1.5rem;
+    margin:0 2rem;
+}
+.com-bankCard .wrap .count>span {
+    color:#bf0a12;
+    font-size: 1.8rem;
+    float: right;
+}
+.com-bankCard .wrap .change {
+    text-align: center;
+}
+.com-bankCard .wrap .change .ajp-btn-white {
+    padding:0.2rem 1rem;
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+    font-size: 1.4rem;
+}
+
+/*未绑卡*/
+
+.com-bankCard .wrap.AJP {
+    background: #fff url("../img/ajp-bankBG.png") no-repeat right center;
+    -webkit-background-size: auto 94%;
+    background-size: auto 94%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.AJP .top:before {
+    content: '';
+    background: url("../img/ajp-logo.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+/*银行卡logo*/
+.com-bankCard .wrap.ICBC {
+    background: #fff url("../img/bank/ICBC-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap .top:before {
+    content: '';
+    background: url("../images/ajp-logo.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.ICBC .top:before {
+    content: '';
+    background: url("../img/bank/ICBC.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.ABC {
+    background: #fff url("../img/bank/ABC-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.ABC .top:before {
+    content: '';
+    background: url("../img/bank/ABC.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.BOC {
+    background: #fff url("../img/bank/BOC-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.BOC .top:before {
+    content: '';
+    background: url("../img/bank/BOC.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.BOS {
+    background: #fff url("../img/bank/BOS-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.BOS .top:before {
+    content: '';
+    background: url("../img/bank/BOS.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CCB {
+    background: #fff url("../img/bank/CCB-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CCB .top:before {
+    content: '';
+    background: url("../img/bank/CCB.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CEB {
+    background: #fff url("../img/bank/CEB-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CEB .top:before {
+    content: '';
+    background: url("../img/bank/CEB.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CGB {
+    background: #fff url("../img/bank/CGB-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CGB .top:before {
+    content: '';
+    background: url("../img/bank/CGB.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CIB {
+    background: #fff url("../img/bank/CIB-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CIB .top:before {
+    content: '';
+    background: url("../img/bank/CIB.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CITIC {
+    background: #fff url("../img/bank/CITIC-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CITIC .top:before {
+    content: '';
+    background: url("../img/bank/CITIC.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CMB {
+    background: #fff url("../img/bank/CMB-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CMB .top:before {
+    content: '';
+    background: url("../img/bank/CMB.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CMBC {
+    background: #fff url("../img/bank/CMBC-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CMBC .top:before {
+    content: '';
+    background: url("../img/bank/CMBC.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.COMM {
+    background: #fff url("../img/bank/COMM-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.COMM .top:before {
+    content: '';
+    background: url("../img/bank/COMM.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.CZBANK {
+    background: #fff url("../img/bank/CZBANK-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.CZBANK .top:before {
+    content: '';
+    background: url("../img/bank/CZBANK.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.PAB {
+    background: #fff url("../img/bank/PAB-bg.png") no-repeat right center;
+    -webkit-background-size: auto 80%;
+    background-size: auto 80%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.PAB .top:before {
+    content: '';
+    background: url("../img/bank/PAB.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.PSBOC {
+    background: #fff url("../img/bank/PSBOC-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.PSBOC .top:before {
+    content: '';
+    background: url("../img/bank/PSBOC.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.com-bankCard .wrap.SPDB {
+    background: #fff url("../img/bank/SPDB-bg.png") no-repeat right -1rem;
+    -webkit-background-size: auto 124%;
+    background-size: auto 124%;
+    background-origin: content-box;
+}
+.com-bankCard .wrap.SPDB .top:before {
+    content: '';
+    background: url("../img/bank/SPDB.png") no-repeat left center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+
+.eGet-withdrawal .withdrawal-detail{
+    padding:2.1rem 2rem 2rem;
+    font-size: 1.4rem;
+    color:#666;
+}
+.eGet-withdrawal .withdrawal-detail .title {
+    margin-bottom: 0.7rem;
+}
+.eGet-withdrawal .withdrawal-detail .title i {
+    color:#b6b6b6;
+}
+.eGet-withdrawal  .form-list {
+
+}
+.eGet-withdrawal .withdrawal-detail .amount {
+    position: absolute;
+    left:0rem;
+    top:0rem;
+    width:23.2rem;
+    height:4rem;
+    line-height: 4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    border-radius: 0.4rem;
+    border:1px #dcdcdc solid;
+}
+.eGet-withdrawal .withdrawal-detail .amount:after {
+    content: '元';
+    position: absolute;
+    top:50%;
+    right:5.4rem;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color:#ccc;
+    font-size: 1.2rem;
+
+}
+.eGet-withdrawal .withdrawal-detail .amount>button {
+    position: absolute;
+    top:0.2rem;
+    display: block;
+    width:4rem;
+    height:3.6rem;
+    color:#bcbbbb;
+    background-color: #fff;
+}
+.eGet-withdrawal .withdrawal-detail .amount>button:active {
+    background-color: #fefefe;
+}
+.eGet-withdrawal .withdrawal-detail .amount>button.reduce {
+    left:0rem;
+    border-right: 1px #dcdcdc solid;
+}
+.eGet-withdrawal .withdrawal-detail .amount>button.add {
+    right:0rem;
+    border-left: 1px #dcdcdc solid;
+}
+.eGet-withdrawal .withdrawal-detail .amount .num {
+    font-size: 1.8rem;
+    color:#333;
+    margin-left: 4rem;
+    width:15rem;
+    text-align: center;
+    background:none;
+}
+.eGet-withdrawal .withdrawal-detail .ajp-btn-sm {
+    position: absolute;
+    top:0rem;
+    right:0rem;
+}
+.eGet-withdrawal .withdrawal-detail .form-list .ajp-pos-midd {
+    right:1.5rem;
+    text-align: right;
+    color:#333;
+}
+.eGet-withdrawal .withdrawal-detail .form-list .poundage {
+    position:absolute;
+    top:0rem;
+    right:1.5rem;
+    display: block;
+    height:4.3rem;
+    line-height: 4.3rem;
+    color:#333;
+    font-size: 1.2rem;
+}
+.eGet-withdrawal .withdrawal-detail .form-list .poundage i {
+    font-size: 1.8rem;
+}
+.eGet-withdrawal .borrow-detail {
+    height:26rem;
+    margin:2rem auto 0;
+}
+.eGet-withdrawal .borrow-detail .wrap {
+    width:29.4rem;
+    border:1px #b6b6b6 solid;
+    margin:0 auto;
+    overflow: hidden;
+}
+.eGet-withdrawal .borrow-detail .wrap .form-list {
+    width:28rem;
+    margin:0 auto;
+}
+.eGet-withdrawal .borrow-detail .wrap .form-list .poundage {
+    right:0rem;
+}
+.eGet-withdrawal .borrow-detail .wrap .count {
+    text-align: center;
+    height:1.6rem;
+    line-height: 1.6rem;
+    background-color: #b6b6b6;
+    color:#fff;
+    font-size: 1.2rem;
+}
+.eGet-withdrawal .ajp-btn-wrap  ,.eGet-bindCard .ajp-btn-wrap{
+    padding-bottom: 1rem;
+}
+.eGet-withdrawal .fix-bot ,.eGet-bindCard .fix-bot{
+    position:absolute;
+    bottom: 0rem;
+    padding:0 2rem;
+    width:100%;
+}
+/*银行卡绑定*/
+.eGet-bindCard {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 8rem;
+}
+.eGet-bindCard .info{
+    margin:2rem 2rem 0;
+    background-color: #fff;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    padding: 0 2rem;
+}
+.eGet-bindCard .info div {
+    height: 5.3rem;
+    line-height: 5.3rem;
+    color: #666;
+}
+.eGet-bindCard .info div input {
+    float: right;
+    height: 2rem;
+    padding: 1.65rem 0;
+    text-align: right;
+}
+.eGet-bindCard .formWrap {
+    padding:0 2rem;
+    background-color: #fff;
+}
+.eGet-bindCard .formWrap .list {
+    height:4.4rem;
+    line-height: 4.4rem;
+}
+.eGet-bindCard .formWrap .list span {
+    display: inline-block;
+    width:12rem;
+    color:#000;
+}
+/*银行卡列表*/
+.eGet-bankList {
+    background-color: #fff;
+}
+.eGet-bankList .wrap {
+    padding:0.5rem 0 0 1.9rem;
+}
+.eGet-bankList .wrap div {
+    height:5.3rem;
+    line-height: 5.3rem;
+    padding-right: 2rem;
+    font-size: 1.4rem;
+    border-bottom: 2px #ececec solid;
+}
+.eGet-bankList .wrap div img {
+    width: 3rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+.eGet-bankList .wrap div span {
+    float: right;
+    font-size: 1.1rem;
+}
+
+/*
+信息认证*/
+.eGet-identity {
+    color:#666;
+    font-size: 1.4rem;
+}
+.eGet-plan-top {
+    display:-webkit-box;
+    display:box;
+    background-color: #fff;
+}
+.eGet-plan-top > div {
+    -webkit-box-flex:1;
+    box-flex:1;
+    text-align: center;
+    padding-top: 11rem;
+    height:3.5rem;
+    font-size: 1.4rem;
+}
+.eGet-plan-top .one {
+    background: url("../images/ajp-plan-step1.png") no-repeat center 3.6rem ;
+    -webkit-background-size: 6rem 6rem;
+    background-size: 6rem 6rem;
+    color:#313131;
+}
+.eGet-plan-top .two {
+    background: url("../images/ajp-plan-step2.png") no-repeat center 3.6rem ;
+    -webkit-background-size: 6rem 6rem;
+    background-size: 6rem 6rem;
+}
+.eGet-plan-top .three {
+    background: url("../images/ajp-plan-step3.png") no-repeat center 3.6rem ;
+    -webkit-background-size: 6rem 6rem;
+    background-size: 6rem 6rem;
+}
+.eGet-plan-top .two.on {
+    background: url("../images/ajp-plan-step2-on.png") no-repeat center 3.6rem ;
+    -webkit-background-size: 6rem 6rem;
+    background-size: 6rem 6rem;
+    color:#313131;
+}
+.eGet-plan-top .three.on {
+    background: url("../images/ajp-plan-step3-on.png") no-repeat center 3.6rem ;
+    -webkit-background-size: 6rem 6rem;
+    background-size: 6rem 6rem;
+    color:#313131;
+}
+.eGet-identity .infoWrap {}
+.eGet-identity .infoWrap> div{
+    padding:0 2rem 0 1.2rem;
+    position: relative;
+    font-size: 1.6rem;
+    height:4.3rem;
+    line-height: 4.3rem;
+}
+.eGet-identity .infoWrap> div:before {
+    content: '';
+    position: absolute;
+    left:0rem;
+    top:1.75rem;
+    display: block;
+    width:0.8rem;
+    height:0.8rem;
+    background: url("../images/icon-startred.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.eGet-identity .infoWrap> div input {
+    font-size: 1.4rem;
+    text-align: right;
+    height:1.9rem;
+    padding:1.2rem 0;
+    float:right;
+}
+.eGet-identity .photographWrap {
+    height:19rem;
+    margin-top: 1rem;
+}
+.eGet-identity .photograph {
+    height:19rem;
+    width:100%;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+.eGet-identity .photograph.HIDE {
+    opacity: 1 !important;
+    pointer-events: auto;
+}
+.eGet-identity .photograph .photo-list {
+    width:20rem;
+    height:18rem;
+    background-color: #fff;
+    margin:0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    position: relative;
+    -webkit-box-shadow: 0 0 1rem #dcdcdc;
+    -moz-box-shadow: 0 0 1rem #dcdcdc;
+    box-shadow: 0 0 1rem #dcdcdc;
+    transform:rotate(180deg);
+}
+.eGet-identity .photograph .islider-outer {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.eGet-identity .photograph .islider-outer> li {
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width:100%;
+}
+.eGet-identity .photograph .photo-list .photo {
+    width:18.2rem;
+    height:11.7rem;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    display:block;
+    margin:0 auto;
+    -webkit-transform: rotateZ(270deg);
+    -moz-transform: rotateZ(270deg);
+    -o-transform: rotateZ(270deg);
+    -ms-transform: rotateZ(270deg);
+    transform: rotateZ(270deg);
+}
+.eGet-identity .photograph .photo-list .photos {
+    width:18.2rem;
+    height:11.7rem;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    display:block;
+    margin:0 auto;
+}
+.eGet-identity .photograph .photo-list .openCamera {
+    position: absolute;
+    right:2.5rem;
+    top:9.6rem;
+    width:2rem;
+}
+.eGet-identity .photograph .photo-list .title {
+    text-align: center;
+    color:#666;
+    margin-top: 1.5rem;
+}
+.eGet-identity .photograph .photo-list .hint {
+    position: absolute;
+    bottom:0.8rem;
+    left:0rem;
+    right:0rem;
+    text-align: center;
+    font-size: 1rem;
+    color:#fa9d35;
+}
+.eGet-identity .btnWrap {
+    padding:0rem 2rem 2rem;
+}
+/*
+获取征信*/
+.eGet-creditLogin {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 5rem;
+}
+.eGet-creditLogin .PBOC ,.eGat-creditBankCard .PBOC ,.eGet-PBOC{
+    height:4rem;
+    background:url("../images/ajp-icon-PBOC.png") no-repeat center;
+    -webkit-background-size: auto 2.2rem;
+    background-size: auto 2.2rem;
+}
+.eGet-creditLogin .form-wrap ,.ajp-formWrap{
+    padding:0 2rem;
+    background-color: #fff;
+}
+.eGet-creditLogin .form-wrap .list,.ajp-formWrap .list{
+    height:4.3rem;
+    line-height: 4.3rem;
+    position: relative;
+    font-size: 1.6rem;
+}
+.eGet-creditLogin .fill-input ,.ajp-formWrap .fill-input {
+    position: absolute;
+    left:0rem;
+    top:0rem;
+    height:4.3rem;
+    width:100%;
+    padding:1.2rem 0 1.2rem 12.3rem;
+    background: transparent;
+    font-size: 1.4rem;
+    line-height: normal;
+}
+.eGet-creditLogin .form-wrap .list .ajp-pos-midd ,.ajp-formWrap .list .ajp-pos-midd {
+    right:0rem;
+    color:#00a0e9;
+    font-size: 1.4rem;
+}
+.eGet-creditLogin .form-wrap .list .ajp-pos-midd.yan ,.ajp-formWrap .list .ajp-pos-midd.yan{
+    height:3.5rem;
+    width:8rem;
+}
+.eGet-creditLogin .form-wrap .list .ajp-pos-midd.yan.loading ,.ajp-formWrap .list .ajp-pos-midd.yan.loading{
+    height:3.5rem;
+    width:3.5rem;
+    right:2.2rem;
+}
+.eGet-creditLogin .form-wrap .list .ajp-pos-midd.loading {
+    right:2.2rem;
+}
+.eGet-creditLogin .bottom-hint ,.eGat-creditBankCard .bottom-hint ,.eGet-credit .bottom-hint{
+    position: absolute;
+    bottom:0rem;
+    left:0rem;
+    right:0rem;
+    padding-bottom: 1rem;
+    margin-top: 4rem;
+}
+.eGet-creditLogin .bottom-hint p ,.eGat-creditBankCard .bottom-hint p,.eGet-credit .bottom-hint p{
+    text-align: center;
+    font-size: 1.2rem;
+    color:#666;
+    height:2rem;
+    line-height: 2rem;
+}
+.eGet-creditLogin .bottom-hint p .PBOC ,.eGat-creditBankCard  .bottom-hint p .PBOC,.eGet-credit  .bottom-hint p .PBOC{
+    display: inline-block;
+    width:15rem;
+    height:2rem;
+    -webkit-background-size:auto 1.5rem;
+    background-size: auto 1.5rem;
+    vertical-align: middle;
+}
+
+/*
+获取征信方式*/
+.eGet-creditMode {}
+.eGet-creditMode .hint{
+    font-size: 1.4rem;
+    color:#313131;
+    line-height: 3.5rem;
+    padding-left:2rem;
+}
+.eGet-creditMode .moth {
+    height:10rem;
+    position: relative;
+    background-color: #fff;
+    padding-right: 2rem;
+    margin-bottom: 1rem;
+}
+.eGet-creditMode .moth.ajp-href {
+    background: #fff url("../images/ajp-turnRight2.png") no-repeat right center;
+    -webkit-background-size: auto 2rem;
+    background-size: auto 2rem;
+    background-origin: content-box;
+}
+.eGet-creditMode .moth.ajp-href a {
+    display: block;
+    position: relative;
+    height:100%;
+}
+.eGet-creditMode .moth .ajp-pos-midd {
+    width:5rem;
+    height:5rem;
+    left:2rem;
+}
+.eGet-creditMode .moth h3 {
+    color:#313131;
+    font-size: 1.8rem;
+    padding-top: 2.2rem;
+    text-indent: 9.8rem;
+    margin-bottom: 1rem;
+}
+.eGet-creditMode .moth p {
+    font-size: 1.4rem;
+    color:#666;
+    text-indent: 9.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.eGet-creditLogin.eGet-code {
+    padding-bottom: 7rem;
+}
+.eGet-code .infoTitle ,.eGet-credit .infoTitle {
+    font-size: 1.4rem;
+    color:#666;
+    padding-left: 2rem;
+    line-height: 2rem;
+}
+.eGet-code .hintInfo,.eGet-credit .hintInfo{
+    font-size: 1.2rem;
+    color:#666;
+    padding:0 1rem 0 2rem;
+    line-height: 2rem;
+}
+
+/*
+验证银行卡*/
+.eGat-creditBankCard {
+    position: relative;
+    padding-bottom: 6rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.eGat-creditBankCard .top-logo ,.eGet-top-logo{
+    height:13rem;
+    background:url("../images/ajp-eGet-bankCard1.png") no-repeat center bottom;
+    -webkit-background-size: 8rem auto;
+    background-size: 8rem auto;
+}
+.ajp-mask.bankList {}
+.ajp-mask.bankList .wrap{
+    width:29.5rem;
+    overflow: hidden;
+    font-size: 1.4rem;
+}
+.ajp-mask.bankList .wrap H3{
+    text-align: center;
+    height:4.3rem;
+    line-height: 4.3rem;
+    background-color: #b0191a;
+    color:#fff;
+    font-size: 1.6rem;
+}
+.ajp-mask.bankList .wrap .title {
+    font-size: 1.4rem;
+    color:#313131;
+    line-height: 3.7rem;
+    padding:0.7rem 2rem 0;
+}
+.ajp-mask.bankList .wrap .bank {
+    color:#b6b6b6;
+    line-height: 1.8rem;
+    margin:0 2rem;
+    padding-bottom: 1rem;
+}
+.ajp-mask.bankList .wrap .btnWRAP {
+    padding:1rem;
+}
+.eGat-creditBankCard2 .ajp-formWrap .list .getcode ,.eGet-credit .ajp-formWrap .list .getcode{
+    height:2.5rem;
+    width:7.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    color:#fff;
+    -webkit-border-radius: 0.4rem;
+    border-radius: 0.4rem;
+}
+
+.ajp-mask.bankCode .form-wrap {
+    padding:0 1rem;
+}
+.ajp-mask.bankCode .form-wrap .fill-input {
+    padding: 1.4rem 0 1.4rem 10.8rem;
+    line-height: normal;
+}
+.ajp-mask.bankCode .form-wrap .ajp-pos-midd {
+    width:8rem;
+    height:3.5rem;
+}
+.ajp-mask.bankCode .form-wrap .ajp-pos-midd.yan {
+    width:6rem;
+    right:0rem;
+}
+/*问题验证*/
+.eGet-creditQuestion {
+    font-size: 1.4rem;
+    color:#666;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 16rem;
+}
+.eGet-creditQuestion .Countdown{
+    margin:1.7rem 2rem;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    height:3.6rem;
+    line-height: 3.6rem;
+
+    text-align: center;
+    background-color: #dcdcdc;
+}
+.eGet-creditQuestion .Countdown span {
+    color:#b0191a;
+}
+.eGet-creditQuestion .quesWrap{
+    list-style: decimal;
+}
+.eGet-creditQuestion .quesWrap>li{
+    list-style: decimal;
+    margin:0 3rem 0 4rem;
+}
+.eGet-creditQuestion .quesWrap .listWrap {
+    padding:1rem 0;
+}
+.eGet-creditQuestion .quesWrap .listWrap li {
+    position: relative;
+    padding-left: 2rem;
+    line-height: 3rem;
+
+}
+.eGet-creditQuestion .quesWrap .listWrap li label {
+    display: block;
+}
+.eGet-creditQuestion .quesWrap .listWrap .com-check {
+    left:0rem;
+    top:0.75rem;
+}
+/*
+我的账单*/
+.ajp-order {
+    color: #333;
+}
+
+.ajp-order .info {
+    padding: 2rem 2.5rem 0;
+    margin-bottom: 1.2rem;
+}
+
+.ajp-order .info .wrap {
+    padding: 0rem 1.1rem 2rem;
+}
+
+.ajp-order .info .canvasWrap {
+    float: left;
+    width: 12.6rem;
+    height: 12.6rem;
+    position: relative;
+}
+
+.ajp-order .info .canvasWrap canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.ajp-order .info .canvasWrap p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.ajp-order .info .canvasWrap .limit {
+    top: 4rem;
+    font-size: 1.4rem;
+}
+
+.ajp-order .info .canvasWrap .count {
+    top: 6.3rem;
+    font-size: 1.8rem;
+}
+
+.ajp-order .info .canvasWrap .withdraw {
+    top: 9rem;
+}
+
+.ajp-order .info .canvasWrap .withdraw button {
+    font-size: 1.3rem;
+    color: #ef0a2b;
+    padding: 0.1rem 0.6rem;
+    border: 1px #ef0a2b solid;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.ajp-order .info .canvasWrap .withdraw button:disabled {
+    color: #a2a2a2;
+    border: 1px #d2d2d2 solid;
+}
+
+.ajp-order .info .record {
+    padding-top: 4.5rem;
+    float: right;
+    font-size: 1.1rem;
+}
+
+.ajp-order .info .record p {
+    position: relative;
+    width: 13rem;
+    margin-bottom: 1.5rem;
+}
+
+.ajp-order .info .record p:after {
+    position: absolute;
+    content: '';
+    left: -0.8rem;
+    top:0.2rem;
+    display: block;
+    width:0.6rem;
+    height:0.6rem;
+    background: url("../images/icon-point.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.ajp-order .info .record p span {
+    float: right;
+}
+
+.ajp-order .info .recent {
+    line-height: 3.5rem;
+    font-size: 1.2rem;
+    padding: 0 1.1rem;
+    position: relative;
+    text-indent: 1.6rem;
+    border-top: 1px #eee solid;
+}
+
+.ajp-order .info .recent:after {
+    position: absolute;
+    content: '';
+    left: 1.8rem;
+    top: 1.4rem;
+    display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: url("../images/icon-point.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.ajp-order .info .recent i {
+    color: #ee3410;
+}
+.ajp-order .noOrder {
+    height: 43rem;
+    background:#fff url("../images/ajp-noOrder.png") no-repeat center 6rem;
+    -webkit-background-size: 18rem auto;
+    background-size: 18rem auto;
+    text-align: center;
+    color: #666;
+    font-size: 1.6rem;
+    line-height: 54rem;
+}
+.ajp-order .billLIst {
+    padding: 1.3rem 0 0 0;
+    background-color: #fff;
+    font-size: 1.2rem;
+    color: #999;
+    margin: 0 1.5rem 1.2rem;
+    position: relative;
+}
+
+.ajp-order .billLIst p {
+    padding: 0 1.9rem;
+}
+
+.ajp-order .billLIst p.count {
+    font-size: 1.3rem;
+    padding: 2rem 1.9rem 1.8rem;
+}
+
+.ajp-order .billLIst p.count b {
+    color: #333;
+    font-size: 1.6rem;
+    margin: 0 2rem 0 1rem;
+}
+
+.ajp-order .billLIst p.count>a {
+    font-size: 1.3rem;
+    color: #ef0a2b;
+    padding: 0.1rem 0.6rem;
+    border: 1px #ef0a2b solid;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-top-left-radius: 4px; /* 左上角 */
+    border-top-right-radius: 4px; /* 右上角 */
+    border-bottom-right-radius: 4px; /* 右下角 */
+    border-bottom-left-radius: 4px; /* 左下角 */
+    border-radius: 4px;
+    background-clip: padding-box;
+}
+
+.ajp-order .billLIst p span {
+    float: right;
+}
+.ajp-order .billLIst p span.bill-state> a {
+    text-decoration: underline;
+    color:#17a6e8;
+}
+.ajp-order .billLIst .checkBill {
+    position: relative;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    border-top: 1px #e7e7e7 solid;
+    padding: 0 1.9rem;
+}
+
+.ajp-order .billLIst .checkBill .detail {
+    margin-right: 2.4rem;
+    float: right;
+}
+
+/* .ajp-order .billLIst .checkBill:after {
+    position: absolute;
+    content: '';
+    right: 2rem;
+    top: 0.4rem;
+    width: 2rem;
+    height: 2rem;
+    background: url("../images/arrow-down.png") no-repeat center;
+    -webkit-background-size: 2rem;
+    background-size: 2rem;
+    transition: transform .6s ease;
+    transition: -webkit-transform .6s ease;
+} */
+
+.ajp-order .billLIst.slideDown .checkBill:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.ajp-order .billLIst.slideDown .checkBill .detail {
+    display: none;
+}
+
+.ajp-order .billLIst .wran-info {
+    display: none;
+    margin-top: 0.7rem;
+    background: url("../images/ajp-wrning.png") no-repeat left 0.1rem;
+    -webkit-background-size: 1.4rem auto;
+    background-size: 1.4rem auto;
+    color: #fa9d35;
+    font-size: 1.2rem;
+    padding-left: 1.8rem;
+    line-height: 1.7rem;
+}
+
+.ajp-order .billLIst.slideDown .checkBill .wran-info {
+    display: block;
+}
+
+.ajp-order .billLIst .wran-info b {
+    line-height: 1rem;
+}
+
+.ajp-order .billLIst a.checkContract {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    bottom: 0rem;
+    right: 6rem;
+    color: #17a6e8;
+    text-decoration: underline;
+    padding: 0.6rem 1rem;
+}
+.ajp-order .billLIst.slideDown a.checkContract {
+    display: block;
+    pointer-events:auto;
+}
+.ajp-order .billLIst .payList {
+    display: block;
+    height:0rem;
+    position: relative;
+    padding: 0 1.9rem;
+    font-size: 1.1rem;
+    color: #333;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.ajp-order .billLIst.slideDown .payList {
+    height:auto;
+}
+
+.ajp-order .billLIst table {
+    width: 100%;
+}
+
+.ajp-order .billLIst .payList:after {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    content: '';
+    width: 100%;
+    height: 2.7rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ajp-order .billLIst table tr {
+    height: 2.7rem;
+    border-bottom: 1px #c8c8c8 solid;
+}
+
+.ajp-order .billLIst table tr:last-child,.ajp-order .billLIst table tr:first-child {
+    border: none;
+}
+
+.ajp-order .billLIst table td, .ajp-order .billLIst table th {
+    text-align: center;
+}
+
+.ajp-order .billLIst table td:first-child, .ajp-order .billLIst table th:first-child {
+    text-align: left;
+}
+
+.ajp-order .billLIst table td:nth-child(4), .ajp-order .billLIst table th::nth-child(4) {
+    text-align: right;
+}
+.ajp-order .billLIst table td.statE.overdue{
+    color: #ee3410;
+}
+.ajp-order .billLIst table td.statE.process{
+    color: #ff7d01;
+}
+.ajp-order .billLIst table td.statE {
+    color: #17a6e8;
+    text-align: right;
+}
+
+.ajp-order .done .bill-state {
+    color: #17a6e8;
+}
+
+.ajp-order .process .bill-state, .ajp-order .process table tr.state td:last-child {
+    color: #ff7d01;
+}
+
+.ajp-order .overdue .bill-state, .ajp-order .overdue .state i, .ajp-order .overdue .state .statE {
+    color: #ee3410;
+}
+/*开通征信查询*/
+.eGet-creditReg {
+    position: relative;
+    padding-bottom: 6rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.eGet-creditReg {}
+.eGet-creditReg .div1 {
+    height:1.4rem;
+    background-color: #eee;
+}
+.eGet-creditReg .state {
+    width:18rem;
+    height:18rem;
+    display: block;
+    margin:8rem auto 0;
+}
+.eGet-creditReg .state-done {
+    width:10rem;
+    display: block;
+    margin:6rem auto 0;
+}
+.eGet-creditReg .title {
+    text-align: center;
+    font-size: 1.4rem;
+    color:#333;
+    margin-top: 6rem;
+}
+.eGet-credit-top {
+    height:9rem;
+    display: -webkit-box;
+    display:box;
+    color:#b6b6b6;
+    font-size: 1.4rem;
+}
+.eGet-credit-top >div{
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    text-align: center;
+    padding-top: 6.3rem;
+}
+.eGet-credit-top .one {
+    background: url("../images/credit-step1.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+    color:#313131;
+}
+.eGet-credit-top .two {
+    background: url("../images/credit-step2.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+}
+.eGet-credit-top .three {
+    background: url("../images/credit-step3.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+}
+.eGet-credit-top .two.on{
+    background: url("../images/credit-step2-on.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+    color:#313131;
+}
+.eGet-credit-top .three.on {
+    background: url("../images/credit-step3-on.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+    color:#313131;
+}
+
+/*
+服务密码找回*/
+.eGet-servePassFind {}
+.eGet-servePassFind .wrap{}
+.eGet-servePassFind .swiper-wrapper{
+    position: relative;
+    padding:1rem 0;
+}
+.eGet-servePassFind .wrap .swiper-slide{
+    position: relative;
+    height:12.5rem;
+    width:21rem;
+    -webkit-box-shadow: 0 0 1rem #CCCCCC;
+    box-shadow: 0 0 1rem #CCCCCC;
+}
+.eGet-servePassFind .wrap .swiper-slide.dianxin {
+    background: #fff url("../images/logo-dianxin.png") no-repeat center;
+    -webkit-background-size: 12rem auto;
+    background-size: 12rem auto;
+}
+.eGet-servePassFind .wrap .swiper-slide.yidong {
+    background:#fff url("../images/logo-yidong.png") no-repeat center;
+    -webkit-background-size: 8rem auto;
+    background-size: 8rem auto;
+}
+.eGet-servePassFind .wrap .swiper-slide.liantong {
+    background:#fff url("../images/logo-liantong.png") no-repeat center;
+    -webkit-background-size: 14rem auto;
+    background-size: 14rem auto;
+}
+.eGet-servePassFind .title-center {
+    color:#666;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 3rem;
+}
+.eGet-servePassFind .section .moth h3 {
+    color:#313131;
+    font-size: 1.8rem;
+
+}
+.eGet-servePassFind .section .moth i {
+    color:#bf0a12;
+}
+.eGet-servePassFind .section .moth p {
+    font-size: 1.2rem;
+    color:#666;
+}
+.eGet-result.eGet-creditLogin {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 16rem;
+}
+.eGet-result .stateResult {
+    display: block;
+    margin:4rem auto 0;
+    width:18rem;
+    height:18rem;
+}
+.eGet-result .ajp-btn.again {
+
+}
+.eGet-result .ajp-btn.again i{
+    font-size: 2.2rem;
+    color:#bf0a12;
+}
+.eGet-result .gfb-result-txt ,.eGet-credit .gfb-result-txt{
+    text-align: center;
+    font-size: 1.6rem;
+    color:#333;
+    margin-top: 2rem;
+    padding:0 2rem;
+}
+/*
+帮助中心*/
+.Ct-helpCente {
+    padding-bottom: 3rem;
+}
+.Ct-helpCente .help-top {
+    height:7.5rem;
+    margin-top: 1rem;
+    position: relative;
+}
+.Ct-helpCente .help-top:before {
+    content: '';
+    position: absolute;
+    top:2.1rem;
+    bottom:1.9rem;
+    left:0;
+    right:0;
+    display: block;
+    width:1px;
+    margin:auto;
+    background-color: #b6b6b6;
+}
+.Ct-helpCente .help-top li{
+    display: inline-block;
+    float:left;
+    width:50%;
+    height:7.5rem;
+}
+.Ct-helpCente .help-top li .title {
+    font-size: 1.6rem;
+    color:#313131;
+    padding-top: 2.1rem;
+    margin-bottom: 1rem;
+}
+.Ct-helpCente .help-top li  p {
+    font-size: 1.2rem;
+    color:#666;
+    text-indent: 5.4rem;
+}
+.Ct-helpCente .help-top li.tu {
+    background:url("../images/icon-help-msg.png") no-repeat 2.1rem center;
+    -webkit-background-size: 2.5rem;
+    background-size: 2.5rem;
+}
+.Ct-helpCente .help-top li.serve {
+    background:url("../images/icon-help-phone.png") no-repeat 1rem center;
+    -webkit-background-size: 2.5rem;
+    background-size: 2.5rem;
+}
+.Ct-helpCente .help-top li.serve  p {
+    text-indent: 4.2rem;
+}
+.Ct-helpCente .quesTitle {
+    font-size: 1.6rem;
+    color:#313131;
+    text-align: center;
+    line-height: 3.5rem;
+    padding-top: 1rem;
+}
+.Ct-helpCente .quesTitle .fire {
+    display: inline-block;
+    height:1.5rem;
+    width:1.5rem;
+    vertical-align: middle;
+    background: url("../images/icon-fire.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.Ct-helpCente .quesList {
+    padding:1.1rem 2rem 0;
+    font-size: 1.4rem;
+    background:#fff url("../images/icon-question.png") no-repeat 2rem 1.9rem;
+    -webkit-background-size: 1.5rem 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    margin-bottom: 1rem;
+}
+.Ct-helpCente .quesList .title{
+    color: #313131;
+    line-height: 3.4rem;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    padding:0 2.4rem;
+    position: relative;
+}
+.Ct-helpCente .quesList .title.open {
+    white-space:normal;
+}
+.Ct-helpCente .quesList .title:after {
+    content: '';
+    position: absolute;
+    top:0rem;
+    right:0rem;
+    display: block;
+    width:1.5rem;
+    height:3.4rem;
+    background:url("../images/arrow-down.png") no-repeat center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.Ct-helpCente .quesList .title.open:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.Ct-helpCente .quesList .detail {
+    color:#666;
+    padding:1.7rem 0.5rem 1.7rem 2.5rem;
+    text-align:justify;
+    line-height: 1.8rem;
+    border-top: 1px #b6b6b6 solid;
+}
+.Ct-helpCente .tucaoImg {
+    padding:2rem;
+}
+.Ct-helpCente .tucaoImg img {
+    width:100%;
+    margin-bottom: 0.4rem;
+}
+/*
+消息中心*/
+.Ct-msgCenter {}
+.Ct-msgCenter .nav{
+    height:2.6rem;
+    margin:0 2rem 1rem;
+    border-bottom: 1px #666 solid;
+    padding-top: 1rem;
+}
+.Ct-msgCenter .nav li {
+    display: inline-block;
+    float:left;
+    width:10rem;
+    height:2.6rem;
+    text-align: center;
+    line-height: 2.6rem;
+    background-color: #b5b5b5;
+    color:#fff;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+    margin-right: 1px;
+}
+.Ct-msgCenter .nav li.active {
+    background-color: #b0191a;
+}
+.Ct-msgCenter.Ct-helpCente .quesList {
+    background:#fff url("../images/icon-msg-close.png") no-repeat 2rem 2rem;
+    -webkit-background-size: 1.8rem;
+    background-size: 1.8rem;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.Ct-msgCenter.Ct-helpCente .quesList.touched{
+    background:#fff url("../images/icon-msg-open.png") no-repeat 2rem 1.6rem;
+    -webkit-background-size: 1.6rem ;
+    background-size:  1.6rem;
+}
+
+/*
+提前清贷 */
+.eGet-clearLoan {
+    position: relative;
+}
+.eGet-clearLoan .content .form-list{
+    padding:0 2rem;
+}
+.eGet-clearLoan .content .form-list .count {
+    float: right;
+    font-size: 1.2rem;
+    color: #333;
+    letter-spacing: 2px;
+}
+.eGet-clearLoan .content .form-list .count i {
+    font-size: 1.4rem;
+    color: #ff7d01;
+}
+
+/*
+奖励金额详情*/
+
+.withDetail {
+    font-size: 1.2rem;
+    color: #999;
+    padding-bottom: 6rem;
+}
+
+.withDetail .top {
+    padding: 1.4rem 2rem 0;
+    height: 5.1rem;
+    margin: 1.2rem 0;
+}
+
+.withDetail .top p {
+    margin-bottom: 1.1rem;
+}
+
+.withDetail .top p span {
+    font-size: 1.4rem;
+    color: #333;
+    margin-left: 4.4rem;
+}
+
+.withDetail-detail .top p b {
+    font-size: 1.6rem;
+    color: #ff8108;
+    margin-left: 4.4rem;
+}
+
+.withDetail table {
+    width: 100%;
+}
+
+.withDetail table td {
+    line-height: 3.5rem;
+    border: none;
+}
+
+.withDetail table td:last-child {
+    color: #ff8108;
+}
+
+.withDetail .detail {
+    color: #333;
+    line-height: 3.5rem;
+    min-height: 20rem;
+}
+
+.withDetail table th {
+    text-align: center;
+    background-color: #c8c8c8;
+}
+
+.withDetail .detail tr {
+    height: 3.5rem;
+    text-align: center;
+    border-bottom: 1px #c8c8c8 solid;
+}
+
+/*
+提现状态*/
+.withdrawState {
+    padding-bottom: 4rem;
+}
+.withdrawState .progress{
+    padding:1.7rem 2rem 0 4rem;
+}
+.withdrawState .progress p:first-child {
+    margin-bottom: 1.8rem;
+    color:#000;
+}
+.withdrawState .progress p span {
+    float:right;
+}
+.withdrawState .progress .state {
+    margin-bottom: 3.2rem;
+    line-height: 1.2rem;
+    position: relative;
+}
+.withdrawState .progress .state i {
+    display: inline-block;
+    height: 1.4rem;
+    width: 1.4rem;
+    background: #fff url("../images/icon-chenkoff.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    vertical-align: top;
+    margin-right: 0.9rem;
+    background-color: #fff;
+}
+
+.withdrawState .progress .state i.success {
+    background: #fff url("../images/icon-check.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.withdrawState .progress .state i.fail {
+    background: #fff url("../images/icon-fail.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    border: none;
+}
+
+.withdrawState .progress .stateLine i.box-size.success:after ,.withdrawState .progress .stateLine i.box-size.fail:after{
+    content: '';
+    position: absolute;
+    bottom: 2.2rem;
+    left: 0.6rem;
+    width: 0.3rem;
+    height: 1.5rem;
+    background: url("../images/icon-proceSuccess.png") no-repeat left top;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.withdrawState .progress .stateLine i.box-size:after {
+    content: '';
+    position: absolute;
+    bottom: 2.2rem;
+    left: 0.6rem;
+    width: 0.3rem;
+    height: 1.5rem;
+    background: url("../images/icon-proceFail.png") no-repeat left top;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.ajp-NewLoading {
+    position: relative;
+}
+.ajp-NewLoading>section {
+    opacity: 0;
+    -webkit-animation: show 1s ease 4s forwards;
+    animation: show 1s ease 4s forwards;
+    padding-top: 10.5rem;
+}
+.ajp-NewLoading>section>p {
+    color:#313131;
+    font-size: 1.8rem;
+    text-align: center;
+    margin:3.5rem 0 3rem;
+}
+.ajp-NewLoading .error {
+    width:18rem;
+    height:18rem;
+    display: block;
+    margin:0 auto;
+
+}
+.ajp-NewLoading .ajp-btn-white {
+    height:3rem;
+    width:10.3rem;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    color:#c81624;
+    margin:0 auto;
+    display: block;
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+}
+.ajp-NewLoading .ajp-btn-white:active {
+    color:#fff;
+}
+/*
+签名*/
+.handWritter .warn{
+	    padding: 0 2rem;
+    color: #fa9d35;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+.handWritter .tip{
+	    color: #303030;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    margin: 1rem 1.6rem;
+    text-align: justify;
+}
+.handWritter .gfd-sign-tip{
+    padding: 15px 20px;
+    color: #009fe9;
+}
+
+.handWritter .rect{
+    width:3rem;
+    height: 3rem;
+    border-width: 4px;
+    border-style: solid;
+    position: absolute;
+}
+.handWritter .rect1{
+    top:0;
+    left: 0;
+    border-color:#E2262A  transparent transparent #E2262A;
+}
+.handWritter .rect2{
+    top:0;
+    right: 0;
+    border-color:#E2262A  #E2262A  transparent transparent;
+}
+.handWritter .rect3{
+    bottom:0;
+    right: 0;
+    border-color:transparent #E2262A  #E2262A   transparent;
+}
+.handWritter .rect4{
+    bottom:0;
+    left: 0;
+    border-color:transparent transparent #E2262A  #E2262A;
+}
+.handWritter .gfd-signaturePlace-warmTip {
+
+}
+
+/*交易密码*/
+.change-loginPass form {
+    padding-top: 2.75rem;
+}
+
+.change-loginPass .form-list {
+    height: 5.1rem;
+    line-height: 5.1rem;
+    position: relative;
+    font-size: 1.4rem;
+}
+.change-loginPass .form-list input {
+    position:absolute;
+    top:0;
+    left:8rem;
+    width:70%;
+    height:100%;
+    text-indent: 0.6rem;
+}
+.change-loginPass .form-list img {
+    width: 2.6rem;
+    height: 2.6rem;
+    vertical-align: -0.7rem;
+}
+
+.change-loginPass .form-list .forget {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #ee3410;
+    text-decoration: underline;
+}
+.change-loginPass .new-top {
+    margin:2rem 2rem 0 2rem;
+}
+.set-dealPass .content {
+    margin:2rem 2rem 0;
+}
+.set-dealPass .UI-btn {
+    margin-top: 3.5rem;
+}
+.set-dealPass .UI-right-hint a {
+    color:#00b7ee;
+}
+.keyboard-pass {
+}
+.keyboard-pass .grid{
+    width:33rem;
+    height:5.5rem;
+    border:2px #bf0a12 solid;
+    margin:0 auto;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    border-radius: 0.4rem;
+}
+.keyboard-pass .grid>li {
+    display: inline-block;
+    float:left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 2px #bfbfbf solid;
+    width:5.5rem;
+    height:5.5rem;
+    position: relative;
+    background-color: #fff;
+}
+.keyboard-pass .grid>li:first-child {
+    border-top-left-radius:0.8rem;
+    border-bottom-left-radius:0.8rem;
+}
+.keyboard-pass .grid>li:last-child {
+    border:none;
+    border-top-right-radius:0.8rem;
+    border-bottom-right-radius:0.8rem;
+}
+.keyboard-pass .grid>li.done:after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #000000;
+}
+.keyboard-pass input[type=password] {
+    visibility: hidden;
+    position:absolute;
+}
+.pass-mask .passWrap {
+    position: absolute;
+    left: 50%;
+    top:6rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 26.8rem;
+    height: 24rem;
+    -webkit-animation: showExpand .6s;
+    animation: showExpand .6s;
+}
+.pass-mask .passWrap .warn {
+    position: absolute;
+    top:14.6rem;
+    width:100%;
+    text-align: center;
+    color:#E83E56;
+}
+#UI-keyboard {
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 18.8rem;
+    background-color: #fff;
+    z-index: 99999;
+    -webkit-animation: slideUp .6s;
+    animation: slideUp .6s;
+}
+
+#UI-keyboard ul {
+    width: 100%;
+    height: 100%;
+}
+
+#UI-keyboard ul li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    display: block;
+    float: left;
+    height: 25%;
+    text-align: center;
+    line-height: 4rem;
+    border: 1px #B9B9B9 solid;
+    font-size: 2rem;
+    border-bottom: none;
+}
+
+#UI-keyboard ul li:active {
+    background-color: #dcdcdc;
+}
+
+#UI-keyboard ul li.active {
+    background-color: #dcdcdc;
+}
+
+#UI-keyboard ul li.remove {
+    background: #dcdcdc url("../images/pass-grid-delete.png") no-repeat center;
+    -webkit-background-size: 2.8rem;
+    background-size: 2.8rem;
+}
+
+#UI-keyboard ul li.remove:active {
+    background: #fff url("../images/pass-grid-delete.png") no-repeat center;
+    -webkit-background-size: 2.8rem;
+    background-size: 2.8rem;
+}
+.pass-mask .passWrap h2 {
+    position: relative;
+    color: #333;
+    font-size: 1.4rem;
+    text-align: center;
+    height: 4.6rem;
+    line-height: 4.6rem;
+    border-bottom: 1px #dcdcdc solid;
+    font-weight: bolder;
+}
+
+.pass-mask .passWrap h2 i {
+    position: absolute;
+    right: 1.8rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.pass-mask .passWrap h2 i:after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.pass-mask .passWrap h2 i:before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.pass-mask .passWrap .title {
+    color: #666;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 2.7rem;
+    margin: 1.4rem 0 2.5rem;
+}
+
+.pass-mask .passWrap .title img {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+}
+
+.pass-mask .passWrap .money {
+    color: #bf0a12;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+.pass-mask .passWrap .forgetPass {
+    text-align: right;
+    position: absolute;
+    bottom:7rem;
+    right:2rem;
+}
+.pass-mask .passWrap .passInput {
+    visibility: hidden;
+}
+.pass-mask .passWrap .com-wraning {
+    position:absolute;
+    left:1rem;
+    bottom:7rem;
+}
+.UI-copy-pass-style {
+    position: relative;
+    margin-top: 4.3rem;
+}
+
+/*.UI-copy-pass-style:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100%;
+    left: 0rem;
+    top: -2.5rem;
+    background-color: #dcdcdc;
+}*/
+
+.UI-copy-pass-style {
+    display: block;
+    height: 3.5rem;
+    width: 21rem;
+    margin: 0 auto;
+    border: 1px #dcdcdc solid;
+}
+
+.UI-copy-pass-style li {
+    position: relative;
+    display: inline-block;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px #dcdcdc solid;
+}
+
+.UI-copy-pass-style li.active:after {
+    content: '●';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #666;
+    font-size: 2rem;
+}
+.UI-mask {
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    z-index: 999;
+    display: none;
+}
+.UI-mask.show {
+    display: block;
+}
+.gfb-per-reward-withd .pass-mask .passWrap h2 {
+    position: relative;
+    color: #333;
+    font-size: 1.4rem;
+    text-align: center;
+    height: 4.6rem;
+    line-height: 4.6rem;
+    border-bottom: 1px #dcdcdc solid;
+    font-weight: bolder;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap h2 i {
+    position: absolute;
+    right: 1.8rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap h2 i:after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap h2 i:before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap .title {
+    color: #666;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 2.7rem;
+    margin: 1.4rem 0 2rem;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap .title img {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap .money {
+    color: #fa9d35;
+    font-size: 3rem;
+}
+.gfb-per-reward-withd .pass-mask .passWrap .forgetPass {
+    height:1rem;
+    text-align: right;
+    padding: 0.6rem 2rem 0 0;
+}
+.gfb-per-reward-withd .pass-mask .passWrap .forgetPass a {
+    color:#ef0a2b;
+}
+.gfb-per-reward-withd .pass-mask .passWrap .passInput {
+    visibility: hidden;
+}
+
+.gfb-per-reward-withd .UI-copy-pass-style {
+    position: relative;
+    margin-top: 4.3rem;
+}
+
+.gfb-per-reward-withd .UI-copy-pass-style:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100%;
+    left: 0rem;
+    top: -1.3rem;
+    background-color: #dcdcdc;
+}
+
+/*交易密码输入框        end*/
+
+/*
+吐槽*/
+#per-supprot-question {}
+#per-supprot-question .wrap{
+    margin:0 1rem;
+    padding:1rem;
+}
+#per-supprot-question .wrap textarea {
+    width:100%;
+    height:100%;
+    font-size: 1.6rem;
+}
+
+#captchaDialog {}
+#captchaDialog .wrap{
+    width:24.5rem;
+    -webkit-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+#captchaDialog .wrap h3 {
+    font-size: 1.6rem;
+    color:#fff;
+    text-align: center;
+    height:4.4rem;
+    line-height: 4.4rem;
+    background-color: #b0191a;
+}
+#captchaDialog .wrap .ui-dialog-bd {
+    font-size: 1.4rem;
+    padding:0 1rem;
+    line-height: 2rem;
+    margin:1rem 0;
+    text-align: center;
+}
+#captchaDialog .wrap .ui-dialog-code {
+    position: relative;
+    height:4.4rem;
+    line-height: 4.4rem;
+    font-size: 1.2rem;
+    margin:0 2rem;
+}
+#captchaDialog .wrap .ui-dialog-code .ui-code{
+
+}
+#captchaDialog .wrap .ui-dialog-code .ajp-btn-sm {
+    right:0rem;
+    height:3rem;
+    width:6rem;
+    line-height: 3rem;
+}
+#captchaDialog .wrap .ajp-btn-wrap {
+    padding:1rem;
+}
+
+.ajp-about {
+    background: #EF9F6C url("../images/ajp-centerBG.jpg") no-repeat center top;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    padding:0 2rem 0;
+}
+.ajp-about .title {
+    font-size: 1.8rem;
+    color:#313131;
+    padding:2.5rem 0 1rem;
+    font-weight: bolder;
+}
+.ajp-about p {
+    font-size: 1.4rem;
+    color:#666;
+    text-align:justify;
+    line-height: 1.8rem;
+}
+.ajp-about .detail {}
+.ajp-about .detail span{
+    position: relative;
+    margin:0 0rem 0 1.4rem;
+    font-size: 1.2rem;
+}
+.ajp-about .detail span:before {
+    content: '';
+    position: absolute;
+    left:-1.4rem;
+    top:50%;
+    margin-top: -0.5rem;
+    display: block;
+    width:1rem;
+    height:1rem;
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+    background-color: #666;
+}
+/*芝麻*/
+.my-zhima {}
+.my-zhima .top{
+    padding:0 2rem;
+    background-color: #fff;
+    margin:2rem 0 1.4rem;
+    font-size: 1.6rem;
+    color:#666;
+}
+.my-zhima .top .list {
+    height:4.5rem;
+    line-height: 4.5rem;
+}
+.my-zhima .top .list span {
+    float: right;
+}
+.my-zhima .detail {
+    text-align: center;
+    margin:0 2rem;
+    padding-top: 1.2rem;
+}
+.my-zhima .detail img {
+    width:4.6rem;
+}
+.my-zhima .detail .count {
+    font-size: 5.9rem;
+    color:#313131;
+    margin:1.6rem 0;
+}
+.my-zhima .detail .up {
+    border-top: 1px #b6b6b6 solid;
+    height:4.6rem;
+    line-height: 4.6rem;
+    font-size: 1.6rem;
+}
+.my-zhima .detail .up i {
+    color:#b11620;
+}
+.zhimalg {}
+.zhimalg .logo{
+    width:8rem;
+    display: block;
+    margin:3rem auto 4rem;
+}
+/*活动*/
+.activity1 {
+    position: relative;
+    background: #4D86F7 url("../images/ajp-act1-bg.jpg") no-repeat center 4rem;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 34rem;
+    padding-bottom: 2rem;
+}
+.activity1 img{
+    display: block;
+    margin:0 auto;
+}
+.activity1 .imgbut {
+    width:29rem;
+
+}
+.activity1 .imgbut2 {
+    width:18rem;
+    margin-bottom: 2rem;
+}
+.activity1 .wei {
+    width:14rem;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+.new-wCT {
+    text-align: justify;
+    font-size: 1.4rem;
+    color:#333;
+    padding:1.6rem;
+    background-color: #fff;
+}
+.new-wCT h3{
+    font-size: 1.6rem;
+    color:#000;
+    text-align: center;
+    padding:2rem 0;
+}
+.new-wCT .fr {
+    float:right;
+}
+.new-wCT .tar {
+    text-align: right;
+}
+.new-wCT .cp {
+    line-height: 2.6rem;
+}
+.new-wCT .red {
+    color:red;
+}
+.new-wCT .ti2 {
+    text-indent: 2rem;
+}
+.new-wCT table {
+    width:100%;
+}
+.new-wCT table td {
+    padding:0.4rem 0;
+}
+.new-wCT .fork {
+    font-size: 1.5rem;
+    margin:0.4rem 0;
+}
+.new-wCT .sm {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+.new-wCT .showTable {
+
+}
+.new-wCT .showTable th {
+    text-align: center;
+    background-color: #ecd39c;
+    color:#313131;
+    border:1px #666 solid;
+    padding:4px 0;
+}
+.new-wCT .showTable td {
+    border:1px #666 solid;
+}
+.new-wCT .dashed {
+    width:100%;
+    height:1px;
+    border-bottom: 1px #333 dashed;
+}
+.new-wCT .point {
+    display: inline-block;
+    width: 0.6rem;
+    height:0.6rem;
+    background-color: #000000;
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+    vertical-align: middle;
+}
+.new-wCT .ul1 {
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+}
+.new-wCT .ul1 li {
+    margin-bottom: 1rem;
+    padding:0 0.4rem;
+}
+.new-wCT .signature {
+     width:15rem;
+    vertical-align: middle;
+ }
+.signature {
+    width: 15rem;
+    vertical-align: middle;
+}
+.wreturnPolicy {
+    padding:1.2rem 1.2rem 3rem;
+    font-size: 1.5rem;
+    color:#333;
+    background-color: #fff;
+    line-height: 2.7rem;
+    text-align:justify;
+    font-family: SimHei ;
+}
+.wreturnPolicy h3{
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.wreturnPolicy .text{}
+.wreturnPolicy .headline{
+    font-size: 1.7rem;
+    margin:2rem 0 0;
+}
+.tableShow {
+    width:100%;
+}
+.tableShow th{
+    text-align: center;
+    border:1px #666 solid;
+}
+.tableShow td{
+    border:1px #666 solid;
+}
+.wPageIdx {
+    width:37.5rem;
+    margin:0 auto;
+}
+.wPageIdx .main{
+    width:100%;
+}
+.handWritterCommonWait {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 28rem;
+    text-align: center;
+    background:#fff  url("../images/img_signWait.png") no-repeat center 8.6rem;
+    -webkit-background-size: 22.2rem auto;
+    background-size: 22.2rem auto;
+}
+.handWritterCommonWait .text{
+    font-size: 1.5rem;
+    text-align: center;
+    color:#303030;
+    line-height: 2.1rem;
+}
+.handWritterCommonWait .btn-gray{
+    width:19rem;
+    margin:8.5rem auto 0;
+}
+.Announcement {
+    padding: 2rem;
+    background-color: #fff;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+.selectbox {
+    width: 1rem;
+    height: 1rem;
+}
+.receivecoupon {
+    background: #f4f4f4;
+}
+
+.receivecoupon  .ticket_list {
+    padding: 0 1.2rem;
+    height: 10rem;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    margin-top: 1.25rem;
+    
+}
+.receivecoupon  .ticket_list .ticket_content {
+    width: 35.1rem;
+    display: flex;
+}
+.ticket_list .ticket_content .ticket-condition {
+    width: 11.7rem;
+    height: 10rem;
+    background: url("../images/ticket-bg.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ticket-condition .ticket-number {
+    color: #fff;
+    text-align: center;
+    width: 9rem;
+    margin: 3rem 0 1.65rem 0;
+}
+.ticket-condition .ticket-number span:first-child {
+    font-size: 1.9rem;
+    margin-right: 1.15rem;
+
+}
+.ticket-condition .ticket-number span:last-child {
+    font-size: 2.8rem;
+}
+.ticket-condition .ticket-limit {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.ticket_list .ticket_content .ticket-detail {
+    width: 23.4rem;
+    height: 10rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+.ticket_content .ticket-detail .detail-describle {
+    font-size: 1.2rem;
+    color: #303030;
+    line-height: 1.65rem;
+    width: 21.1rem;
+    margin-top: 1.25rem;
+}
+.ticket_content .ticket-detail .detail-contain {
+    width: 21.1rem;
+    margin-top: 3.2rem;
+    background: url("../images/blue-arrow.png") no-repeat;
+}
+.ticket_content .ticket-detail .detail-contain span:first-child {
+    font-size: 1.2rem;
+    color: #C5C5C5;
+    margin-right: 1.85rem;
+
+}
+.ticket_content .ticket-detail .detail-contain span:last-child {
+    font-size: 1.2rem;
+    color: #108EE9;
+
+}
+.pinganinsurance {
+    position: relative;
+}
+.pinganinsurance .banner {
+
+    // padding: 2rem;
+}
+.pinganinsurance .banner img {
+    width: 100%;
+}
+.insurance-submit {
+    width: 37.5rem;
+    height: 4.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 1.6rem;
+}
+.insurance-submit .submit-btn:disabled {
+    background: #ccc;
+    color: #fff;
+}
+.insurance-submit .submit-btn {
+    width: 32.4rem;
+    height: 4.5rem;
+    background: #E2262A;
+    text-align: center;
+    line-height: 4.5rem;
+    margin-left: 2.55rem;
+    border-radius: 0.2rem;
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+.pinganinsurance .Insurance-name {
+    height: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom:  0.05rem solid rgba(000, 000, 000, 0.08);
+}
+.pinganinsurance  .Insurance-name input {
+    height: 2.1rem;
+    line-height: 2.1rem;
+    font-size: 1.5rem;
+    color: #303030;
+    margin-left: 1.2rem;
+}
+.pinganinsurance input::-webkit-input-placeholder {
+    color: #C5C5C5;
+}
+.pinganinsurance .Insurance-phone {
+    height: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 0.05rem solid rgba(000, 000, 000, 0.08);
+}
+.pinganinsurance  .Insurance-phone input {
+    height: 2.1rem;
+    line-height: 2.1rem;
+    font-size: 1.5rem;
+    color: #303030;
+    margin-left: 1.2rem;
+}
+.pinganinsurance .Insurance-identityNo {
+     height: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom:  0.05rem solid rgba(000, 000, 000, 0.08);
+}
+.pinganinsurance  .Insurance-identityNo input {
+    height: 2.1rem;
+    line-height: 2.1rem;
+    font-size: 1.5rem;
+    color: #303030;
+    margin-left: 1.2rem;
+}
+.pinganinsurance  .see-insurance {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #108EE9;
+    // margin-right: 1.33rem;
+    // margin-top: 1.5rem;
+    margin:1.5rem 1.33rem 0 0;
+}
+.pinganinsurance  .see-insurance img {
+    width: 0.75rem;
+    margin-left: 1rem;
+}
+.insurance-mask {
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.48);
+    // background: #000000;
+    // opacity: 0.48;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+} 
+.insurance-mask .insurance-success {
+    width: 26rem;
+    height: 25.8rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.8rem;
+}
+.insurance-mask .insurance-success img {
+    width: 5rem;
+    margin-top: 3.55rem;
+}
+.insurance-mask .insurance-success  div:nth-child(2) {
+    color: #303030;
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    line-height: 2.4rem;
+}
+.insurance-mask .insurance-success  div:nth-child(3) {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    margin-top: 1.2rem;
+    color: #484848;
+}
+.insurance-mask .insurance-success  div:nth-child(4) {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    color: #484848;
+}
+.insurance-mask .insurance-success .go-back {
+    height: 4.83rem;
+    color: #108EE9;
+    font-size: 1.6rem;
+    border-top: 0.05rem solid rgba(000, 000, 000, 0.08);
+    width: 26rem;
+    display: absolute;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 2.3rem;
+}
+.receivecoupon .empty-bottom {
+    width: 100%;
+    height: 10rem;
+
+}
+.weixing-contract {
+    overflow: hidden;
+}
+.ajqh-helpCente {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height: 95rem;
+    background: url(../images/ajqh-helpCente.png) no-repeat center top;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.helpcenter-header {
+    width: 100%;
+    height: 4rem;
+}
+.bannerRoute {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height: 131.75rem;
+    background: url(../images/banner-route.jpg) no-repeat center top;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.ajqh-zfHelpCenter {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height: 90rem;
+    background: url(../images/ajqh-zfHelpCenter.jpg) no-repeat center top;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.ajp-zfaboutUs {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height: 90.25rem;
+    background: url(../images/ajp-zfaboutUs.png) no-repeat center top;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.ajqh-zufangUserRepay {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height: 100.15rem;
+    background: url(../images/zufangUserRepay.png) no-repeat center top;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.ajqh-zufangUserRepay .submit-btn {
+    position: absolute;
+    width: 21rem;
+    height: 8rem;
+    opacity: 0.5;
+    top: 79rem;
+    left: 8rem;
+}
+.IndexLoading .loading {
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right:0;
+    margin:auto;
+    width:6rem;
+    height:6rem;
+    -webkit-animation: rotate 1s linear infinite;
+    animation: rotate 1s linear infinite;
+}
+.ajp_relaName:disabled {
+    background: none;
+}
+/*
+绑定银行卡*/
+.eGet-withdrawal {
+    background-color: #fff;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*银行卡片*/
+.com-bankCard {
+    padding:1rem 2rem;
+    background-color: #eeeeee;
+}
+.com-bankCard .wrap {
+    height:12.8rem;
+    padding:0 0.5rem;
+    background-color: #fff;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    -webkit-box-shadow: 0 0 2rem #D4D4D4;
+    -moz-box-shadow:  0 0 2rem #D4D4D4;
+    box-shadow:  0 0 2rem #D4D4D4;
+    color:#313131;
+    font-size: 1.4rem;
+}
+.com-bankCard .wrap .top {
+    height:2.5rem;
+    padding:3.6rem 0 2rem 4.6rem;
+    margin:0 2rem;
+    position: relative;
+    border-bottom: 1px #b6b6b6 solid;
+}
+
+.com-bankCard .wrap .top:before {
+    content: '';
+    position: absolute;
+    top:2.1rem;
+    left:0rem;
+    display: block;
+    width:4.6rem;
+    height:4rem;
+}
+/*
+我的账单*/
+.ajp-order {
+    color: #333;
+    width:37.5rem;
+    margin:0 auto;
+}
+
+.ajp-order .info {
+    padding: 2rem 2.5rem 0;
+    margin-bottom: 1.2rem;
+}
+
+.ajp-order .info .wrap {
+    padding: 0rem 1.1rem 2rem;
+}
+
+.ajp-order .info .canvasWrap {
+    float: left;
+    width: 12.6rem;
+    height: 12.6rem;
+    position: relative;
+}
+
+.ajp-order .info .canvasWrap canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.ajp-order .info .canvasWrap p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.ajp-order .info .canvasWrap .limit {
+    top: 4rem;
+    font-size: 1.4rem;
+}
+
+.ajp-order .info .canvasWrap .count {
+    top: 6.3rem;
+    font-size: 1.8rem;
+}
+
+.ajp-order .info .canvasWrap .withdraw {
+    top: 9rem;
+}
+
+.ajp-order .info .canvasWrap .withdraw button {
+    font-size: 1.3rem;
+    color: #ef0a2b;
+    padding: 0.1rem 0.6rem;
+    border: 1px #ef0a2b solid;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.ajp-order .info .canvasWrap .withdraw button:disabled {
+    color: #a2a2a2;
+    border: 1px #d2d2d2 solid;
+}
+
+.ajp-order .info .record {
+    padding-top: 4.5rem;
+    float: right;
+    font-size: 1.1rem;
+}
+
+.ajp-order .info .record p {
+    position: relative;
+    width: 13rem;
+    margin-bottom: 1.5rem;
+}
+
+.ajp-order .info .record p:after {
+    position: absolute;
+    content: '';
+    left: -0.8rem;
+    top:0.2rem;
+    display: block;
+    width:0.6rem;
+    height:0.6rem;
+    background: url("../images/icon-point.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.ajp-order .info .record p span {
+    float: right;
+}
+
+.ajp-order .info .recent {
+    line-height: 3.5rem;
+    font-size: 1.2rem;
+    padding: 0 1.1rem;
+    position: relative;
+    text-indent: 1.6rem;
+    border-top: 1px #eee solid;
+}
+
+.ajp-order .info .recent:after {
+    position: absolute;
+    content: '';
+    left: 1.8rem;
+    top: 1.4rem;
+    display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: url("../images/icon-point.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.ajp-order .info .recent i {
+    color: #ee3410;
+}
+.ajp-order .noOrder {
+    background:#fff url("../images/ajp-noOrder.png") no-repeat center 6rem;
+    -webkit-background-size: 18rem auto;
+    background-size: 18rem auto;
+    text-align: center;
+    color: #666;
+    font-size: 1.6rem;
+    line-height: 54rem;
+}
+.ajp-order .swiperWrap {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+}
+ .ajp-order .swiperWrap.active {
+     -webkit-transform: translateX(-100%);
+     transform: translateX(-100%);
+ }
+
+ .ajp-order .wbillLIstWrap {
+     position: relative;
+     width:37.5rem;
+ }
+ .ajp-order .wOrderD {
+     position: absolute;
+     top:0;
+     left:100%;
+     width:37.5rem;
+
+ }
+.ajp-order .billLIst {
+    position: relative;
+    padding: 1.3rem 0 0 0;
+    background-color: #fff;
+    font-size: 1.2rem;
+    color: #999;
+    margin: 0 1.5rem 1.2rem;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+.ajp-order .billLIst>p {
+   padding: 0 1.2rem;
+}
+
+.ajp-order .billLIst>p.count {
+    font-size: 1.3rem;
+    padding: 2rem 1.9rem 1.8rem;
+}
+
+.ajp-order .billLIst>p.count b {
+    color: #333;
+    font-size: 1.4rem;
+    margin: 0 2rem 0 1rem;
+}
+.ajp-order .billLIst>p span {
+    float: right;
+}
+.ajp-order .billLIst>p span.bill-state> a {
+    text-decoration: underline;
+    color:#17a6e8;
+}
+.ajp-order .billLIst .checkBill {
+    position: relative;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    border-top: 1px #e7e7e7 solid;
+    padding: 0 1.9rem;
+}
+
+.ajp-order .billLIst .checkBill .detail {
+    float: right;
+    color: #17a6e8;
+    line-height: 1.6rem;
+    padding-top: 0.7rem;
+    border-bottom: 1px #17a6e8 solid;
+}
+.ajp-order .billLIst .checkBill>a {
+    float: right;
+    color: #17a6e8;
+    line-height: 1.6rem;
+    padding: 0.1rem 0.6rem;
+    margin:0.5rem 1rem 0 0;
+    border: 1px #17a6e8 solid;
+    -webkit-border-radius: 999px;
+    border-radius:999px;
+    background-clip: padding-box;
+}
+.ajp-order .billLIst .checkBill .com-wraning{
+    float:left;
+    margin: 0.5rem 0 0;
+}
+.ajp-order .billLIst .checkBill {}
+
+.ajp-order .billLIst.slideDown .checkBill:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.ajp-order .billLIst.slideDown .checkBill .detail {
+    display: none;
+}
+
+.ajp-order .billLIst .wran-info {
+    display: none;
+    margin-top: 0.7rem;
+    background: url("../images/ajp-wrning.png") no-repeat left 0.1rem;
+    -webkit-background-size: 1.4rem auto;
+    background-size: 1.4rem auto;
+    color: #fa9d35;
+    font-size: 1.2rem;
+    padding-left: 1.8rem;
+    line-height: 1.7rem;
+}
+
+.ajp-order .billLIst.slideDown .checkBill .wran-info {
+    display: block;
+}
+
+.ajp-order .billLIst .wran-info b {
+    line-height: 1rem;
+}
+
+.ajp-order .billLIst a.checkContract {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    bottom: 0rem;
+    right: 6rem;
+    color: #17a6e8;
+    text-decoration: underline;
+    padding: 0.6rem 1rem;
+}
+.ajp-order .billLIst.slideDown a.checkContract {
+    display: block;
+    pointer-events:auto;
+}
+.ajp-order .billLIst .payList {
+    display: block;
+    height:0rem;
+    position: relative;
+    padding: 0 1.9rem;
+    font-size: 1.1rem;
+    color: #333;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+
+.ajp-order .wOrderD table {
+    width: 100%;
+}
+/*.ajp-order .wOrderD .payList:after {*/
+    /*position: absolute;*/
+    /*top: 0rem;*/
+    /*left: 0rem;*/
+    /*content: '';*/
+    /*width: 100%;*/
+    /*height: 2.7rem;*/
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+/*}*/
+.ajp-order .wOrderD  .bgg {
+    background: #bbb;
+}
+.ajp-order .wOrderD  th {
+    color:#fff;
+}
+.ajp-order .wOrderD table tr {
+    height: 2.7rem;
+    border-bottom: 1px #c8c8c8 solid;
+    background-color: #fff;
+}
+
+.ajp-order .wOrderD table td, .ajp-order .wOrderD table th {
+    text-align: center;
+}
+
+.ajp-order .wOrderD table td.statE.overdue{
+    color:rgba(200, 22, 36, 1);
+}
+.ajp-order .wOrderD table td.statE.done{
+    color: #17a6e8;
+}
+.ajp-order .wOrderD table td.statE {
+    color: #FA9D35;
+    /*text-align: right;*/
+}
+
+/*.ajp-order .done .bill-state {*/
+    /*color: #17a6e8;*/
+/*}*/
+
+ .ajp-order .process table tr.state td:last-child {
+    color: #ff7d01;
+}
+
+ .ajp-order .overdue .state i, .ajp-order .overdue .state .statE {
+    color: #ee3410;
+}
+/*开通征信查询*/
+.eGet-creditReg {
+    position: relative;
+    padding-bottom: 6rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.eGet-creditReg {}
+.eGet-creditReg .div1 {
+    height:1.4rem;
+    background-color: #eee;
+}
+.eGet-creditReg .state {
+    width:18rem;
+    height:18rem;
+    display: block;
+    margin:8rem auto 0;
+}
+.eGet-creditReg .state-done {
+    width:10rem;
+    display: block;
+    margin:6rem auto 0;
+}
+.eGet-creditReg .title {
+    text-align: center;
+    font-size: 1.4rem;
+    color:#333;
+    margin-top: 6rem;
+}
+.eGet-credit-top {
+    height:9rem;
+    display: -webkit-box;
+    display:box;
+    color:#b6b6b6;
+    font-size: 1.4rem;
+}
+.eGet-credit-top >div{
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    text-align: center;
+    padding-top: 6.3rem;
+}
+.eGet-credit-top .one {
+    background: url("../images/credit-step1.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+    color:#313131;
+}
+.eGet-credit-top .two {
+    background: url("../images/credit-step2.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+}
+.eGet-credit-top .three {
+    background: url("../images/credit-step3.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+}
+.eGet-credit-top .two.on{
+    background: url("../images/credit-step2-on.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+    color:#313131;
+}
+.eGet-credit-top .three.on {
+    background: url("../images/credit-step3-on.png") no-repeat center 1.3rem;
+    -webkit-background-size: 4rem 4rem;
+    background-size: 4rem 4rem;
+    color:#313131;
+}
+
+/*
+服务密码找回*/
+.eGet-servePassFind {}
+.eGet-servePassFind .wrap{}
+.eGet-servePassFind .swiper-wrapper{
+    position: relative;
+    padding:1rem 0;
+}
+.eGet-servePassFind .wrap .swiper-slide{
+    position: relative;
+    height:12.5rem;
+    width:21rem;
+    -webkit-box-shadow: 0 0 1rem #CCCCCC;
+    box-shadow: 0 0 1rem #CCCCCC;
+}
+.eGet-servePassFind .wrap .swiper-slide.dianxin {
+    background: #fff url("../images/logo-dianxin.png") no-repeat center;
+    -webkit-background-size: 12rem auto;
+    background-size: 12rem auto;
+}
+.eGet-servePassFind .wrap .swiper-slide.yidong {
+    background:#fff url("../images/logo-yidong.png") no-repeat center;
+    -webkit-background-size: 8rem auto;
+    background-size: 8rem auto;
+}
+.eGet-servePassFind .wrap .swiper-slide.liantong {
+    background:#fff url("../images/logo-liantong.png") no-repeat center;
+    -webkit-background-size: 14rem auto;
+    background-size: 14rem auto;
+}
+.eGet-servePassFind .title-center {
+    color:#666;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 3rem;
+}
+.eGet-servePassFind .section .moth h3 {
+    color:#313131;
+    font-size: 1.8rem;
+
+}
+.eGet-servePassFind .section .moth i {
+    color:#bf0a12;
+}
+.eGet-servePassFind .section .moth p {
+    font-size: 1.2rem;
+    color:#666;
+}
+.eGet-result.eGet-creditLogin {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 16rem;
+}
+.eGet-result .stateResult {
+    display: block;
+    margin:4rem auto 0;
+    width:18rem;
+    height:18rem;
+}
+.eGet-result .ajp-btn.again {
+
+}
+.eGet-result .ajp-btn.again i{
+    font-size: 2.2rem;
+    color:#bf0a12;
+}
+.eGet-result .gfb-result-txt ,.eGet-credit .gfb-result-txt{
+    text-align: center;
+    font-size: 1.6rem;
+    color:#333;
+    margin-top: 2rem;
+    padding:0 2rem;
+}
+/*
+帮助中心*/
+.Ct-helpCente {
+    padding-bottom: 3rem;
+}
+.Ct-helpCente .help-top {
+    height:7.5rem;
+    margin-top: 1rem;
+    position: relative;
+}
+.Ct-helpCente .help-top:before {
+    content: '';
+    position: absolute;
+    top:2.1rem;
+    bottom:1.9rem;
+    left:0;
+    right:0;
+    display: block;
+    width:1px;
+    margin:auto;
+    background-color: #b6b6b6;
+}
+.Ct-helpCente .help-top li{
+    display: inline-block;
+    float:left;
+    width:50%;
+    height:7.5rem;
+}
+.Ct-helpCente .help-top li .title {
+    font-size: 1.6rem;
+    color:#313131;
+    padding-top: 2.1rem;
+    margin-bottom: 1rem;
+}
+.Ct-helpCente .help-top li  p {
+    font-size: 1.2rem;
+    color:#666;
+    text-indent: 5.4rem;
+}
+.Ct-helpCente .help-top li.tu {
+    background:url("../images/icon-help-msg.png") no-repeat 2.1rem center;
+    -webkit-background-size: 2.5rem;
+    background-size: 2.5rem;
+}
+.Ct-helpCente .help-top li.serve {
+    background:url("../images/icon-help-phone.png") no-repeat 2.1rem center;
+    -webkit-background-size: 2.5rem;
+    background-size: 2.5rem;
+}
+.Ct-helpCente .quesTitle {
+    font-size: 1.6rem;
+    color:#313131;
+    text-align: center;
+    line-height: 3.5rem;
+    padding-top: 1rem;
+}
+.Ct-helpCente .quesTitle .fire {
+    display: inline-block;
+    height:1.5rem;
+    width:1.5rem;
+    vertical-align: middle;
+    background: url("../images/icon-fire.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.Ct-helpCente .quesList {
+    padding:1.1rem 2rem 0;
+    font-size: 1.4rem;
+    background:#fff url("../images/icon-question.png") no-repeat 2rem 1.9rem;
+    -webkit-background-size: 1.5rem 1.5rem;
+    background-size: 1.5rem 1.5rem;
+    margin-bottom: 1rem;
+}
+.Ct-helpCente .quesList .title{
+    color: #313131;
+    line-height: 3.4rem;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    padding:0 2.4rem;
+    position: relative;
+}
+.Ct-helpCente .quesList .title.open {
+    white-space:normal;
+}
+.Ct-helpCente .quesList .title:after {
+    content: '';
+    position: absolute;
+    top:0rem;
+    right:0rem;
+    display: block;
+    width:1.5rem;
+    height:3.4rem;
+    background:url("../images/arrow-down.png") no-repeat center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.Ct-helpCente .quesList .title.open:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.Ct-helpCente .quesList .detail {
+    color:#666;
+    padding:1.7rem 0.5rem 1.7rem 2.5rem;
+    text-align:justify;
+    line-height: 1.8rem;
+    border-top: 1px #b6b6b6 solid;
+}
+.Ct-helpCente .tucaoImg {
+    padding:2rem;
+}
+.Ct-helpCente .tucaoImg img {
+    width:100%;
+    margin-bottom: 0.4rem;
+}
+/*
+消息中心*/
+.Ct-msgCenter {}
+.Ct-msgCenter .nav{
+    height:2.6rem;
+    margin:0 2rem 1rem;
+    border-bottom: 1px #666 solid;
+    padding-top: 1rem;
+}
+.Ct-msgCenter .nav li {
+    display: inline-block;
+    float:left;
+    width:10rem;
+    height:2.6rem;
+    text-align: center;
+    line-height: 2.6rem;
+    background-color: #b5b5b5;
+    color:#fff;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+    margin-right: 1px;
+}
+.Ct-msgCenter .nav li.active {
+    background-color: #b0191a;
+}
+.Ct-msgCenter.Ct-helpCente .quesList {
+    background:#fff url("../images/icon-msg-close.png") no-repeat 2rem 2rem;
+    -webkit-background-size: 1.8rem;
+    background-size: 1.8rem;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.Ct-msgCenter.Ct-helpCente .quesList.touched{
+    background:#fff url("../images/icon-msg-open.png") no-repeat 2rem 1.6rem;
+    -webkit-background-size: 1.6rem ;
+    background-size:  1.6rem;
+}
+
+/*
+一次还清 */
+.eGet-clearLoan {
+    position: relative;
+}
+.eGet-clearLoan .content .form-list{
+    padding:0 2rem;
+}
+.eGet-clearLoan .content .form-list .count {
+    float: right;
+    font-size: 1.2rem;
+    color: #333;
+    letter-spacing: 2px;
+}
+.eGet-clearLoan .content .form-list .count i {
+    font-size: 1.4rem;
+    color: #ff7d01;
+}
+
+/*
+奖励金额详情*/
+
+.withDetail {
+    font-size: 1.2rem;
+    color: #999;
+    padding-bottom: 6rem;
+}
+
+.withDetail .top {
+    padding: 1.4rem 2rem 0;
+    height: 5.1rem;
+    margin: 1.2rem 0;
+}
+
+.withDetail .top p {
+    margin-bottom: 1.1rem;
+}
+
+.withDetail .top p span {
+    font-size: 1.4rem;
+    color: #333;
+    margin-left: 4.4rem;
+}
+
+.withDetail-detail .top p b {
+    font-size: 1.6rem;
+    color: #ff8108;
+    margin-left: 4.4rem;
+}
+
+.withDetail table {
+    width: 100%;
+}
+
+.withDetail table td {
+    line-height: 3.5rem;
+    border: none;
+}
+
+.withDetail table td:last-child {
+    color: #ff8108;
+}
+
+.withDetail .detail {
+    color: #333;
+    line-height: 3.5rem;
+    min-height: 20rem;
+}
+
+.withDetail table th {
+    text-align: center;
+    background-color: #c8c8c8;
+}
+
+.withDetail .detail tr {
+    height: 3.5rem;
+    text-align: center;
+    border-bottom: 1px #c8c8c8 solid;
+}
+
+/*
+提现状态*/
+.withdrawState {
+    padding-bottom: 4rem;
+}
+.withdrawState .progress{
+    padding:1.7rem 2rem 0 4rem;
+}
+.withdrawState .progress p:first-child {
+    margin-bottom: 1.8rem;
+    color:#000;
+}
+.withdrawState .progress p span {
+    float:right;
+}
+.withdrawState .progress .state {
+    margin-bottom: 3.2rem;
+    line-height: 1.2rem;
+    position: relative;
+}
+.withdrawState .progress .state i {
+    display: inline-block;
+    height: 1.4rem;
+    width: 1.4rem;
+    background: #fff url("../images/icon-chenkoff.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    vertical-align: top;
+    margin-right: 0.9rem;
+    background-color: #fff;
+}
+
+.withdrawState .progress .state i.success {
+    background: #fff url("../images/icon-check.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.withdrawState .progress .state i.fail {
+    background: #fff url("../images/icon-fail.png") no-repeat center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    border: none;
+}
+
+.withdrawState .progress .stateLine i.box-size.success:after ,.withdrawState .progress .stateLine i.box-size.fail:after{
+    content: '';
+    position: absolute;
+    bottom: 2.2rem;
+    left: 0.6rem;
+    width: 0.3rem;
+    height: 1.5rem;
+    background: url("../images/icon-proceSuccess.png") no-repeat left top;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.withdrawState .progress .stateLine i.box-size:after {
+    content: '';
+    position: absolute;
+    bottom: 2.2rem;
+    left: 0.6rem;
+    width: 0.3rem;
+    height: 1.5rem;
+    background: url("../images/icon-proceFail.png") no-repeat left top;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.ajp-NewLoading {
+    position: relative;
+}
+.ajp-NewLoading>section {
+    opacity: 0;
+    -webkit-animation: show 1s ease 4s forwards;
+    animation: show 1s ease 4s forwards;
+    padding-top: 10.5rem;
+}
+.ajp-NewLoading>section>p {
+    color:#313131;
+    font-size: 1.8rem;
+    text-align: center;
+    margin:3.5rem 0 3rem;
+}
+.ajp-NewLoading .error {
+    width:18rem;
+    height:18rem;
+    display: block;
+    margin:0 auto;
+
+}
+.ajp-NewLoading .ajp-btn-white {
+    height:3rem;
+    width:10.3rem;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    color:#c81624;
+    margin:0 auto;
+    display: block;
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+}
+.ajp-NewLoading .ajp-btn-white:active {
+    color:#fff;
+}
+/*
+签名*/
+.handWritter {}
+.handWritter {}
+.handWritter .gfd-sign-tip{
+    padding: 15px 20px;
+    color: #009fe9;
+}
+
+.handWritter .rect{
+    width:3rem;
+    height: 3rem;
+    border-width: 4px;
+    border-style: solid;
+    position: absolute;
+}
+.handWritter .rect1{
+    top:0;
+    left: 0;
+   /*  border-color:#32b5cb transparent transparent #32b5cb; */
+}
+.handWritter .rect2{
+    top:0;
+    right: 0;
+    /* border-color:#32b5cb #32b5cb transparent transparent; */
+}
+.handWritter .rect3{
+    bottom:0;
+    right: 0;
+    /* border-color:transparent #32b5cb #32b5cb  transparent; */
+}
+.handWritter .rect4{
+    bottom:0;
+    left: 0;
+    /* border-color:transparent transparent #32b5cb #32b5cb  ; */
+}
+.handWritter .gfd-signaturePlace-warmTip {
+
+}
+
+/*交易密码*/
+.change-loginPass form {
+    padding-top: 2.75rem;
+}
+
+.change-loginPass .form-list {
+    height: 5.1rem;
+    line-height: 5.1rem;
+    position: relative;
+    font-size: 1.4rem;
+}
+.change-loginPass .form-list input {
+    position:absolute;
+    top:0;
+    left:8rem;
+    width:70%;
+    height:100%;
+    text-indent: 0.6rem;
+}
+.change-loginPass .form-list img {
+    width: 2.6rem;
+    height: 2.6rem;
+    vertical-align: -0.7rem;
+}
+
+.change-loginPass .form-list .forget {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #ee3410;
+    text-decoration: underline;
+}
+.change-loginPass .new-top {
+    margin:2rem 2rem 0 2rem;
+}
+.set-dealPass .content {
+    margin:2rem 2rem 0;
+}
+.set-dealPass .UI-btn {
+    margin-top: 3.5rem;
+}
+.set-dealPass .UI-right-hint a {
+    color:#00b7ee;
+}
+.keyboard-pass {
+}
+.keyboard-pass .grid{
+    width:33rem;
+    height:5.5rem;
+    border:2px #bf0a12 solid;
+    margin:0 auto;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    border-radius: 0.4rem;
+}
+.keyboard-pass .grid>li {
+    display: inline-block;
+    float:left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 2px #bfbfbf solid;
+    width:5.5rem;
+    height:5.5rem;
+    position: relative;
+    background-color: #fff;
+}
+.keyboard-pass .grid>li:first-child {
+    border-top-left-radius:0.8rem;
+    border-bottom-left-radius:0.8rem;
+}
+.keyboard-pass .grid>li:last-child {
+    border:none;
+    border-top-right-radius:0.8rem;
+    border-bottom-right-radius:0.8rem;
+}
+.keyboard-pass .grid>li.done:after {
+    content: '';
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #000000;
+}
+.keyboard-pass input[type=password] {
+    visibility: hidden;
+    position:absolute;
+}
+.pass-mask .passWrap {
+    position: absolute;
+    left: 50%;
+    top:6rem;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 26.8rem;
+    height: 24rem;
+    -webkit-animation: showExpand .6s;
+    animation: showExpand .6s;
+}
+.pass-mask .passWrap .warn {
+    position: absolute;
+    top:14.6rem;
+    width:100%;
+    text-align: center;
+    color:#E83E56;
+}
+#UI-keyboard {
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    width: 100%;
+   
+    background-color: #fff;
+    z-index: 99999;
+    -webkit-animation: slideUp .6s;
+    animation: slideUp .6s;
+}
+
+#UI-keyboard ul {
+    width: 100%;
+     height: 16rem;
+}
+
+#UI-keyboard ul li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    display: block;
+    float: left;
+    height: 25%;
+    text-align: center;
+    line-height: 4rem;
+    border: 1px #B9B9B9 solid;
+    font-size: 2rem;
+    border-bottom: none;
+}
+
+#UI-keyboard ul li:active {
+    background-color: #dcdcdc;
+}
+
+#UI-keyboard ul li.active {
+    background-color: #dcdcdc;
+}
+
+#UI-keyboard ul li.remove {
+    background: #dcdcdc url("../images/pass-grid-delete.png") no-repeat center;
+    -webkit-background-size: 2.8rem;
+    background-size: 2.8rem;
+}
+
+#UI-keyboard ul li.remove:active {
+    background: #fff url("../images/pass-grid-delete.png") no-repeat center;
+    -webkit-background-size: 2.8rem;
+    background-size: 2.8rem;
+}
+#UI-keyboard .done {
+    padding:0.6rem 1.2rem;
+    font-size: 1.6rem;
+    text-align: right;
+    color:#007cff;
+    background-color: #dcdcdc;
+}
+.pass-mask .passWrap h2 {
+    position: relative;
+    color: #333;
+    font-size: 1.4rem;
+    text-align: center;
+    height: 4.6rem;
+    line-height: 4.6rem;
+    border-bottom: 1px #dcdcdc solid;
+    font-weight: bolder;
+}
+
+.pass-mask .passWrap h2 i {
+    position: absolute;
+    right: 1.8rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.pass-mask .passWrap h2 i:after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.pass-mask .passWrap h2 i:before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.pass-mask .passWrap .title {
+    color: #666;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 2.7rem;
+    margin: 1.4rem 0 2.5rem;
+}
+
+.pass-mask .passWrap .title img {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+}
+
+.pass-mask .passWrap .money {
+    color: #bf0a12;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+.pass-mask .passWrap .forgetPass {
+    text-align: right;
+    position: absolute;
+    bottom:7rem;
+    right:2rem;
+}
+.pass-mask .passWrap .passInput {
+    visibility: hidden;
+}
+.pass-mask .passWrap .com-wraning {
+    position:absolute;
+    left:1rem;
+    bottom:7rem;
+}
+.UI-copy-pass-style {
+    position: relative;
+    margin-top: 4.3rem;
+}
+
+/*.UI-copy-pass-style:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100%;
+    left: 0rem;
+    top: -2.5rem;
+    background-color: #dcdcdc;
+}*/
+
+.UI-copy-pass-style {
+    display: block;
+    height: 3.5rem;
+    width: 21rem;
+    margin: 0 auto;
+    border: 1px #dcdcdc solid;
+}
+
+.UI-copy-pass-style li {
+    position: relative;
+    display: inline-block;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px #dcdcdc solid;
+}
+
+.UI-copy-pass-style li.active:after {
+    content: '●';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #666;
+    font-size: 2rem;
+}
+.UI-mask {
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    z-index: 999;
+    display: none;
+}
+.UI-mask.show {
+    display: block;
+}
+.gfb-per-reward-withd .pass-mask .passWrap h2 {
+    position: relative;
+    color: #333;
+    font-size: 1.4rem;
+    text-align: center;
+    height: 4.6rem;
+    line-height: 4.6rem;
+    border-bottom: 1px #dcdcdc solid;
+    font-weight: bolder;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap h2 i {
+    position: absolute;
+    right: 1.8rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap h2 i:after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap h2 i:before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0rem;
+    width: 0.2rem;
+    height: 2rem;
+    background-color: #000;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap .title {
+    color: #666;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 2.7rem;
+    margin: 1.4rem 0 2rem;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap .title img {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+}
+
+.gfb-per-reward-withd .pass-mask .passWrap .money {
+    color: #fa9d35;
+    font-size: 3rem;
+}
+.gfb-per-reward-withd .pass-mask .passWrap .forgetPass {
+    height:1rem;
+    text-align: right;
+    padding: 0.6rem 2rem 0 0;
+}
+.gfb-per-reward-withd .pass-mask .passWrap .forgetPass a {
+    color:#ef0a2b;
+}
+.gfb-per-reward-withd .pass-mask .passWrap .passInput {
+    visibility: hidden;
+}
+
+.gfb-per-reward-withd .UI-copy-pass-style {
+    position: relative;
+    margin-top: 4.3rem;
+}
+
+.gfb-per-reward-withd .UI-copy-pass-style:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 100%;
+    left: 0rem;
+    top: -1.3rem;
+    background-color: #dcdcdc;
+}
+
+/*交易密码输入框        end*/
+
+/*
+吐槽*/
+#per-supprot-question {}
+#per-supprot-question .wrap{
+    margin:0 1rem;
+    padding:1rem;
+}
+#per-supprot-question .wrap textarea {
+    width:100%;
+    height:100%;
+    font-size: 1.6rem;
+}
+
+#captchaDialog {}
+#captchaDialog .wrap{
+    width:24.5rem;
+    -webkit-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+#captchaDialog .wrap h3 {
+    font-size: 1.6rem;
+    color:#fff;
+    text-align: center;
+    height:4.4rem;
+    line-height: 4.4rem;
+    background-color: #b0191a;
+}
+#captchaDialog .wrap .ui-dialog-bd {
+    font-size: 1.4rem;
+    padding:0 1rem;
+    line-height: 2rem;
+    margin:1rem 0;
+    text-align: center;
+}
+#captchaDialog .wrap .ui-dialog-code {
+    position: relative;
+    height:4.4rem;
+    line-height: 4.4rem;
+    font-size: 1.2rem;
+    margin:0 2rem;
+}
+#captchaDialog .wrap .ui-dialog-code .ui-code{
+
+}
+#captchaDialog .wrap .ui-dialog-code .ajp-btn-sm {
+    right:0rem;
+    height:3rem;
+    width:6rem;
+    line-height: 3rem;
+}
+#captchaDialog .wrap .ajp-btn-wrap {
+    padding:1rem;
+}
+
+.ajp-about {
+    background: #EF9F6C url("../images/ajp-centerBG.jpg") no-repeat center top;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    padding:0 2rem 0;
+}
+.ajp-about .title {
+    font-size: 1.8rem;
+    color:#313131;
+    padding:2.5rem 0 1rem;
+    font-weight: bolder;
+}
+.ajp-about p {
+    font-size: 1.4rem;
+    color:#666;
+    text-align:justify;
+    line-height: 1.8rem;
+}
+.ajp-about .detail {}
+.ajp-about .detail span{
+    position: relative;
+    margin:0 0rem 0 1.4rem;
+    font-size: 1.2rem;
+}
+.ajp-about .detail span:before {
+    content: '';
+    position: absolute;
+    left:-1.4rem;
+    top:50%;
+    margin-top: -0.5rem;
+    display: block;
+    width:1rem;
+    height:1rem;
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+    background-color: #666;
+}
+/*芝麻*/
+.my-zhima {}
+.my-zhima .top{
+    padding:0 2rem;
+    background-color: #fff;
+    margin:2rem 0 1.4rem;
+    font-size: 1.6rem;
+    color:#666;
+}
+.my-zhima .top .list {
+    height:4.5rem;
+    line-height: 4.5rem;
+}
+.my-zhima .top .list span {
+    float: right;
+}
+.my-zhima .detail {
+    text-align: center;
+    margin:0 2rem;
+    padding-top: 1.2rem;
+}
+.my-zhima .detail img {
+    width:4.6rem;
+}
+.my-zhima .detail .count {
+    font-size: 5.9rem;
+    color:#313131;
+    margin:1.6rem 0;
+}
+.my-zhima .detail .up {
+    border-top: 1px #b6b6b6 solid;
+    height:4.6rem;
+    line-height: 4.6rem;
+    font-size: 1.6rem;
+}
+.my-zhima .detail .up i {
+    color:#b11620;
+}
+.zhimalg {}
+.zhimalg .logo{
+    width:8rem;
+    display: block;
+    margin:3rem auto 4rem;
+}
+/*活动*/
+.activity1 {
+    position: relative;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 34rem;
+    padding-bottom: 2rem;
+}
+.activity1 img{
+    display: block;
+    margin:0 auto;
+}
+.activity1 .imgbut {
+    width:29rem;
+
+}
+.activity1 .imgbut2 {
+    width:18rem;
+    margin-bottom: 2rem;
+}
+.activity1 .wei {
+    width:14rem;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+
+.wreturnPolicy {
+    padding:1.2rem 1.2rem 3rem;
+    font-size: 1.5rem;
+    color:#333;
+    background-color: #fff;
+    line-height: 2.7rem;
+    text-align:justify;
+    font-family: SimHei ;
+}
+.wreturnPolicy h3{
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.wreturnPolicy .text{}
+.wreturnPolicy .headline{
+    font-size: 1.7rem;
+    margin:2rem 0 0;
+}
+
+.wToRepay .info {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height:20rem;
+    background-color: #fff;
+    text-align: center;
+    padding:1.8rem 2rem 0;
+}
+.wToRepay .info.suc {
+    background: url(../img/icon_repan_sucN.png) no-repeat center 3rem;
+    -webkit-background-size: 4.2rem auto;
+    background-size: 8rem auto;
+    padding-top: 9rem;
+}
+.wToRepay .info.wait {
+    background: url("../img/icon_repan_waitN.png") no-repeat center 3rem;
+    -webkit-background-size: 4.2rem auto;
+    background-size: 4.2rem auto;
+    padding-top: 9rem;
+}
+.wToRepay .info.fail {
+    background: url("../img/logo_fail.png") no-repeat center 3rem;
+    -webkit-background-size: 4.2rem auto;
+    background-size: 4.2rem auto;
+    padding-top: 9rem;
+}
+.wToRepay .info .icon{
+    display: block;
+    margin:0 auto 2.6rem;
+    width:5rem;
+}
+.wToRepay .info .sum{
+    text-align: center;
+    font-size: 2.6rem;
+}
+.wToRepay .info .sub{
+    margin:1.6rem 0 1rem;
+}
+.wToRepay .info .ui-btn-blue {
+    font-size: 1.4rem;
+    width:7rem;
+    height:2.4rem;
+    line-height: 2.4rem;
+}
+.wToRepay .info  .ui-tip {
+    padding:0;
+}
+.wToRepay .ui-tip {
+    color:#fa9d35;
+    line-height: 1.6rem;
+    font-size: 1rem;
+    padding:1.4rem 0 0 2rem;
+}
+
+/*
+易宝支付 我的账单*/
+.ui-tip {
+    color:#fa9d35;
+    line-height: 1.6rem;
+    font-size: 1rem;
+    padding:0.4rem 0 0.6rem;
+}
+.wToRepay {
+    font-size: 1.4rem;
+    color:#313131;
+    padding: 1rem 1.2rem 4rem;
+    background-color: #fdfdfd;
+    overflow: auto;
+}
+.wToRepay .last{
+    height:4rem;
+    line-height: 4.6rem;
+    padding-left: 2rem;
+}
+.wToRepay .remind {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height:11.5rem;
+    background-color: #fff;
+    padding:2.2rem 2rem 0;
+    margin-bottom: 1rem;
+}
+.wToRepay .remind p {
+    font-size: 2.6rem;
+    color:#b5b5b5;
+    text-align: center;
+}
+.wToRepay .remind div{
+    font-size: 1rem;
+    color:#fa9d35;
+    margin-bottom: 0.4rem;
+}
+.wToRepay .info {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    text-align: center;
+    margin:1rem auto;
+    padding: 3rem 1.2rem 0;
+    height:21.5rem;
+    width:35.1rem;
+    -webkit-box-shadow: 3px 2px 19px 0 #C5C5C5;
+    box-shadow: 3px 2px 19px 0 #C5C5C5;
+    -webkit-border-radius: 0.4rem;
+    border-radius: 0.4rem;
+}
+.wToRepay.repay .info {
+    height:16.5rem;
+}
+.wToRepay .info.overdue:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width:6rem;
+    height:6rem;
+    background:url("../images/ajp_overdue.png") no-repeat left top;
+    -webkit-background-size: 4.6rem auto;
+    background-size: 4.6rem auto;
+}
+
+.wToRepay .info.overdue .ui-tip {
+    text-align: center;
+}
+.wToRepay .ui-tip {
+    font-size: 1.2rem;
+    color: #7E7E7E;
+    line-height: 2.1rem;
+}
+.wToRepay .ui-tip.to {
+    line-height: 1.6rem;
+    text-align: left;
+}
+.wToRepay .info .icon{
+    display: block;
+    margin:0 auto 2.6rem;
+    width:8.9rem;
+}
+.wToRepay .info .sum{
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #303030;
+    font-weight: bolder;
+}
+.wToRepay .info .current-balance {
+    margin-top: 2.7rem;
+    color: #7e7e7e;
+}
+.wToRepay .info .toPay {
+    color: #7e7e7e;
+}
+.wToRepay .info .deductions-bank {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4.5rem;
+    width: 35rem;
+    line-height: 4.5rem;
+    border-top: 0.1rem solid #ebebeb;
+}
+
+.wToRepay .bill_sum {
+    padding-top:2rem;
+}
+.wToRepay .noVbs .bill_sum {
+    padding-top: 2.2rem;
+}
+.wToRepay .bill_sum>img{
+    width:2rem;
+}
+.wToRepay .info .sub{
+    margin:1.6rem 0 1rem;
+}
+.wToRepay .info .ui-btn-blue {
+    font-size: 1.4rem;
+    width:7rem;
+    height:2.4rem;
+    line-height: 2.4rem;
+}
+
+.wToRepay> .ui-tip {
+    padding:1.4rem 0 0 2rem;
+}
+.wToRepay .toStage {
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    font-size: 1.5rem;
+    color: #E2262A;
+    height:4.5rem;
+    line-height: 4.5rem;
+    width:100%;
+    border-top: 1px solid #ddd;
+}
+.wToRepay .immediate-repayment {
+    width: 35.1rem;
+    height: 4.5rem;
+    position: fixed;
+    left: 0;
+    bottom: 2rem;
+}
+.wToRepay .immediate-repayment .repayment {
+    width: 32rem;
+    height: 4.5rem;
+    background: #b0191a;
+    text-align: center;
+    line-height:4.5rem;
+    margin-left: 2.7rem;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+.yibaoRepayPage {
+    display: none;
+}
+.wBindBank .info_list .text_inp.ajp-href{
+    background: url(../images/ajp-turnRright.png) no-repeat right center;
+ background-size: auto 1.5rem;
+ width: 100%;
+}
+.Announcement {
+    padding: 2rem;
+    background-color: #fff;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+.icon-close {
+    display: block;
+    right:0;
+    height:3rem;
+    width:3rem;
+    background: url("../images/icon-close.png") no-repeat right center;
+    -webkit-background-size: 1.5rem;
+    background-size: 1.5rem;
+}
+.icon-eye-close {
+    display: block;
+    right:0;
+    width:4rem;
+    height:4.5rem;
+    background:url("../images/icon-eye-close.png") no-repeat right center;
+    -webkit-background-size: auto 1rem;
+    background-size: auto 1rem;
+}
+.icon-eye-open{
+    display: block;
+    right:0;
+    width:4rem;
+    height:4.5rem;
+    background:url("../images/icon-eye-open.png") no-repeat right center;
+    -webkit-background-size: auto 1rem;
+    background-size: auto 1rem;
+}
+.login {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:12rem 2.4rem 0;
+    background: #fff url("../img/ajp-logo.png") no-repeat center 4rem;
+    -webkit-background-size: 6rem auto;
+    background-size: 6rem auto;
+}
+
+.login  .cell-list{
+    position: relative;
+    height:4rem;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+}
+.login  .cell-list>.input{
+    font-size: 1.5rem;
+}
+.login  .cell-list>.input{}
+.fyd-order {
+    position: relative;
+    width: 37.5rem;
+    background: #fff;
+}
+.fyd-order .bank-info {
+    width: 35.1rem;
+    height: 9.5rem;
+    background-color: #ccc;
+    margin: 1.2rem;
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0 0.35rem 0.65rem 0 #C5C5C5;
+    border-radius: 0.2rem;
+}
+.fyd-order .bank-info .icon {
+    position: absolute;
+    width: 4.5rem;
+    height: 4.5rem;
+    left: 1.2rem;
+    top: 2.5rem;
+}
+.fyd-order .bank-info .icon img {
+    width: 100%;
+}
+.fyd-order .bank-info .name {
+    position: absolute;
+    left: 6.9rem;
+    top: 2.5rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #303030;
+}
+.fyd-order .bank-info .money {
+    position: absolute;
+    left: 6.9rem;
+    top: 5.65rem;
+    font-size: 1.4rem;
+    color: #484848;
+    line-height: 1.4rem;
+}
+.fyd-order .bank-info .money span {
+    color: #E2262A;
+}
+.fyd-order .bank-info .icon-mask {
+    position: absolute;
+    width: 11.05rem;
+    height: 9.5rem;
+    right: 3.15rem;
+    top: 0rem;
+}
+.fyd-order .bank-info .icon-mask img {
+    width: 100%;
+}
+.fyd-order .billLIst {
+    position: relative;
+    padding: 2.7rem 0 0 0;
+    background-color: #fff;
+    font-size: 1.2rem;
+    color: #999;
+    margin: 0 1.5rem 1.2rem;
+    -webkit-border-radius: 1rem;
+    background: #FFFFFF;
+    box-shadow: 0 3px 13px 0 #C5C5C5;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+.fyd-order .billLIst>p.count {
+    font-size: 1.3rem;
+    padding: 1.45rem 1.2rem 1.8rem;
+}
+.fyd-order .billLIst .checkBill {
+    position: relative;
+    height: 4.5rem;
+    line-height: 2.8rem;
+    border-top: 1px #e7e7e7 solid;
+    padding: 0 1.9rem;
+    right: -2.9rem;
+}
+.fyd-order .billLIst .checkBill .detail {
+    float: right;
+    color: #108EE9;
+    line-height: 4.5rem;
+    padding-top: 0rem;
+    font-size: 1.5rem;
+    border-bottom: none;
+    padding: 0 1rem;
+}
+.fyd-order .dark {
+    font-size: 1.4rem;
+    color: #303030;
+}
+.fyd-order .billLIst .checkBill>a {
+    float: right;
+    width: 6.7rem;
+    height: 3.1rem;
+    border: 0.05rem solid #7E7E7E;
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    color: #303030;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.fyd-order .fyd-line {
+    width: 37.5rem;
+    height: 5rem;
+    line-height: 5rem;
+    border-bottom: 0.05rem solid #ccc;
+    overflow: hidden;
+}
+.fyd-order .fyd-line div:first-child{
+    float: left;
+    margin-left: 1.2rem;
+    font-size: 1.5rem;
+    color: #303030;
+}
+.fyd-order .fyd-line div:last-child{
+    float: right;
+    margin-right: 1.2rem;
+    font-size: 1.5rem;
+    color: #7E7E7E;
+}
+.fyd-order .noOrder {
+    background: #fff url(../images/fyd-noOrder.png) no-repeat center 6rem;
+    -webkit-background-size: 35rem auto;
+    background-size: 35rem auto;
+    text-align: center;
+    color: #666;
+    font-size: 1.6rem;
+    line-height: 54rem;
+}
+.fyd-order .wOrderD table tr {
+    height: 4rem;
+    border-bottom: 1px #c8c8c8 solid;
+    background-color: #fff;
+}
+.fyd-order .wOrderD table tr td {
+    font-size: 1.2rem;
+}
+.fyd-order .wOrderD .bgg {
+    background: #bbb;
+    background: #EDEDED;
+}
+.fyd-order .wOrderD th {
+    color: #303030;
+    font-size: 1.2rem;
+}
+.fydFeedback {
+    width: 37.5rem;
+}
+.fydFeedback .title {
+    width: 37.5rem;
+    height: 4rem;
+    color: #7E7E7E;
+    background: #F9F9F9;
+    font-size: 1.2rem;
+    padding: 1.6rem 0 0 1.2rem;
+    box-sizing: border-box;
+}
+.fydFeedback .contain {
+    width: 37.5rem;
+    height: 20rem;
+    position: relative;
+}
+.fydFeedback .contain textarea {
+    width: 37.5rem;
+    height: 20rem;
+    font-size: 1.4rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 1.2rem 0 0 1.2rem;
+    box-sizing: border-box;
+}
+.fydFeedback .contain textarea::-webkit-input-placeholder {
+    color: #C5C5C5;
+}
+.fydFeedback .contain div {
+    position: absolute;
+    right: 1.21rem;
+    bottom: 0;
+    font-size: 1.4rem;
+    color: #000000;
+}
+.fydFeedback .contain div span {
+   color: #7E7E7E;
+}
+.fydFeedback .addPicture {
+    width: 37.5rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+.fydFeedback .addPicture .wrap {
+    width: 9rem;
+    height: 9rem;
+ /*    background: red; */
+    margin-left: 1.2rem;
+    position: relative;
+}
+.fydFeedback .addPicture .wrap .delete {
+    width: 1.9rem;
+    height: 1.9rem;
+    position: absolute;
+    right: -0.95rem;
+    top: -0.95rem;
+    z-index: 200;
+}
+.fydFeedback .addPicture .wrap .uploadImg {
+    width: 9rem;
+    height: 9rem;
+    position: absolute;
+    left: 0;
+    top: 0;   
+}
+.fydFeedback .addPicture .wrap .upload {
+    width: 9rem;
+    height: 9rem;
+    background: #F9F9F9 url("../images/fyd-upload.png") no-repeat center 2.12rem;
+    -webkit-background-size: 2.88rem 2.88rem;
+    background-size: 2.88rem 2.88rem; 
+
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+    color: #C5C5C5;
+    text-align: center;
+    padding-top: 5.42rem;
+    box-sizing: border-box;
+}
+.fyd-btn-wrap {
+    padding: 1.6rem 2.55rem;
+}
+.fyd-pos-flex-bottom {
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    right: 0rem;
+}
+.fyd-btn {
+    display: block;
+    width: 100%;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+    background-color: #E2262A;
+    color: #fff;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    font-size: 1.8rem;
+    border-radius: 0.2rem;
+}
+.fyd-explain {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height:77.65rem;
+    background: url(../images/fyd-explain.jpg) no-repeat center top;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.fyd-isNetwork {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height: 60.5rem;
+}
+.fyd-isNetwork div {
+    width: 12rem;
+    height: 4.5rem;
+    position: absolute;
+    left: 13rem;
+    top: 36rem;
+}
+.right-arrow {
+    width: 0.715rem;
+    height: 2.25rem;
+    margin-left: 0.5rem;
+    background: url("../images/ajp-turnRright.png") no-repeat;
+    background-size: contain;    
+}
+.fydBtn-wrap {
+    width: 37.5rem;
+    height: 4.5rem;
+    position: fixed;
+    left: 0;
+    bottom: 1.6rem;
+}
+.fydBill-btn {
+    width: 32.4rem;
+    height: 4.5rem;
+    margin-left: 2.55rem;
+    background: #E2262A;
+    border-radius: 0.2rem;
+    font-family: PingFangSC-Regular;
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 4.5rem;
+}

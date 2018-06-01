@@ -1,0 +1,69 @@
+'use strict';
+var app = angular.module('gfbApp');
+
+/**
+ * 查看合同
+ */
+app.controller('ViewAllContractCtrl', function ($rootScope,$scope,$location,$timeout,CommonService,$routeParams,$window,ngUtils,OrderInfo,UserInfo,ContractInfo,ViewAllContractService,ContractCardsList,ContractCardList) {			
+	CommonService.appBack(function(){
+		$location.url('/order')
+
+	})
+    // ViewAllContractService.queryVbsContract(ContractInfo.sltAccountId, contractNameValue);	
+
+	$rootScope.setTitle('安家派合同');
+	//接收两个参数sltId和cardNum
+	var cardNum=$routeParams.cardNum;
+	//	var cardNum=1;
+	$scope.UserInfo = UserInfo;
+	$scope.ContractInfo = ContractInfo;
+	!ContractInfo.sltAccountId&&($scope.ContractInfo.sltAccountId = $routeParams.sltId);
+	//	UserInfo.mobile=15618371835;
+	// if(cardNum==2){
+	// 	ContractInfo.contractNameList = ContractCardsList;
+	// }else if(cardNum==1){
+	// 	ContractInfo.contractNameList =ContractCardList;
+	// }
+	ContractInfo.contractNameList =ContractCardsList;
+	//初始化页面和对象域
+	$scope.ContractInfo = ContractInfo;
+
+	// 回退到订单页面
+	$scope.gotoOrder = function() {
+		$location.url("/order");
+
+	}
+	//返回
+	$scope.goBackHome=function(){
+		var platform = window.Android || window;
+		platform.goBackHome();
+	}
+
+	// 清贷查询页面跳转
+	$scope.viewVbsContractDetail = function(contractName, contractNameValue) {
+	    if(window.navigator.onLine==false){
+		    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+		    return;
+	    }			
+		$rootScope.titleContractName = contractName;
+		ViewAllContractService
+			.queryVbsContract(ContractInfo.sltAccountId, contractNameValue);
+	}
+});
+'use strict';
+var app = angular.module('gfbApp');
+
+/**
+ * 查看合同 2
+ */
+app.controller('ViewAllContract2Ctrl', function ($rootScope,$scope,$location,CommonService,$timeout,ContractCardsList,ContractCardList,UserInfo,ContractInfo) {
+	CommonService.appBack(function(){
+		$location.url('/viewAllContract')
+
+	})
+	$rootScope.setTitle('安家派合同');
+	$scope.UserInfo = UserInfo;
+	$scope.ContractInfo = ContractInfo;
+	console.log(ContractInfo.vbsContractInfoList)
+
+});

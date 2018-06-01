@@ -1,0 +1,143 @@
+<div ng-if="!isNetworkOutage" class="ajp-order fyd-order bg-fff" holl-page="">
+	<div style="width: 37.5rem;height:100%;overflow-x: hidden;overflow-y: scroll;" class="fyd-activity">
+	    <div class="gfb-myBill " ng-class="{'ui-opacity0':isLoad}">
+				<div  ng-if="showOrderFlag1">
+					<div class="bank-info">
+						<div class="icon">
+							<img src="img/bankyibao/{{bankCode}}-BG.png" />
+						</div>
+						<div class="name">{{cardBank}}（{{cardNoStr}}）</div>
+						<div class="money">当前逾期金额： <span ng-if="dueAmount=='0.00'" style="color:#303030;font-size: 1.6rem;font-weight: 800;">{{dueAmount}}</span><span style="color:#E2262A;font-size: 1.6rem;font-weight: 800;" ng-if="dueAmount!='0.00'">{{dueAmount}}</span></div>
+						<div class="icon-mask">
+							<img src="img/bankyibao/{{bankCode}}-mask.png" />
+						</div>
+
+				    </div>
+					<div class="swiperWrap" ng-class="{'active':isSwiper}">
+						<div class="wbillLIstWrap">
+
+
+							<div class="billLIst box-size border-radius-8"
+							 ng-repeat="order in OrderInfo.sltDetailList"  ng-click="checkOrder(order)"
+							 ng-class="{'slideDown':$index==selectedIndex,'done':order.transStatus==4,'process':order.transStatus==1 && order.operateFlag!=2,'overdue':order.transStatus==3 && order.operateFlag!=2}">
+							<!--已结清done-->
+							<p class="date">
+								<span  style="float:none;" class="dark" ng-if="!(order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2|| order.transStatus==-2)">放款时间：{{order.loanDate | DateFilter}}</span>
+								<span  class="dark">期限：{{order.paymentType}}期</span>
+							</p>
+
+								<p class="count dark">
+									借款金额 ：<span  style="float:none;" class="dark">{{order.loanAmount | thousandsFilter}}</span>
+
+									<span class="bill-state" ng-if="order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2" style="font-size: 1.6rem;">审批中<span class="right-arrow"></span></span>
+								    <span class="bill-state" ng-if="order.transStatus==1 && order.operateFlag!=2" style="color:#FA9D35;font-size: 1.6rem;">还款中<span class="right-arrow"></span></span>
+									<span class="bill-state" ng-if="order.transStatus==3 && order.operateFlag!=2" style="color:#E2262A;font-size: 1.6rem;">已逾期<span class="right-arrow"></span></span>
+									<span class="bill-state" ng-if="order.operateFlag==2&&order.transStatus!=4" style="font-size: 1.6rem;">一次还清中<span class="right-arrow"></span></span>
+									<span class="bill-state" ng-if="order.transStatus==4" style="color:#22B362;font-size: 1.6rem;">已结清<span class="right-arrow"></span></span>
+									<span class="bill-state" ng-if="order.transStatus==-1" style="font-size: 1.6rem;">提现失败<span class="right-arrow"></span></span>
+								</p>
+
+							<div class="checkBill">
+								<p ng-if="order.paymentDueDate" class="com-wraning">免息截止日 {{order.paymentDueDate | DateSlashFilter}}</p>
+								<span ng-if="!(order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2)" class="detail" ng-click="viewContract(order.sltAccountId,OrderInfo.cardNum)">查看合同</span>
+								<p ng-if="order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2" class="tar">提现审批中 请耐心等待</p>
+								<a  ng-if="order.isCloan"
+									ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a>
+								<!-- <a  ng-if="order.transStatus==1 && order.operateFlag!=2 && order.isExemption==1"
+									ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a> -->
+									<!--<a ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">免息还款</a>-->
+			                    <!-- <a  ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a>				 -->		
+							</div>
+						</div>
+						</div>
+						<div class="wOrderD">
+							<div class="fyd-line"><div>放款时间</div><div>{{loanDate | DateFilter}}</div></div>
+							<div class="fyd-line"><div>期限</div><div>{{paymentType}}期</div></div>
+							<div class="fyd-line"><div>借款金额</div><div>{{loanAmount | thousandsFilter}}</div></div>
+							<div class="payList box-size">
+								<table>
+									<tr class="bgg">
+										<th  style="width:7.5rem;text-align: center;">结算期数</th>
+										<th  style="width:7.5rem;text-align: center;">最后还款日</th>
+										<th  style="width:7.5rem;text-align: center;">应还金额</th>
+										<th  style="width:7.5rem;text-align: center;">已还金额</th>
+										<th  style="width:7.5rem;text-align: center;">状态</th>
+									</tr>
+									<tr ng-repeat="install in installmentInfoList">
+
+										<td ng-if="install.advClearLoan==1">还款账单</td>
+										<td ng-if="install.advClearLoan!=1">{{install.loanPeriodNo}}期</td>
+
+										<td>{{install.monthDeductDate | DateSlashFilter}}</td>
+
+										<td >{{install.repayAmt | thousandsFilter}}元</td>
+
+										<td>{{install.hasRepayAmt | thousandsFilter}}元</td>
+										<td ng-if="install.advClearLoan!=1 && install.repayStatus==1" class="statE proifcess">待还款</td>
+										<td ng-if="install.advClearLoan!=1 && install.repayStatus==2" class="statE" style="color:#FA9D35;">还款中</td>
+										<td ng-if="install.advClearLoan!=1 && install.repayStatus==3" class="statE" style="color:#22B362;">已结清</td>
+										<td ng-if="install.advClearLoan!=1 && install.repayStatus==4" class="statE overdue" style="color:#E2262A;">已逾期</td>
+										<!-- <td ng-if="install.advClearLoan==1" class="statE overdue">清贷数据</td> -->
+										<td ng-if="install.advClearLoan==1  && transStatus==4" class="statE done">清贷完成</td>
+										<td ng-if="install.advClearLoan==1  && transStatus!=4" class="statE">清贷中</td>
+									</tr>
+								</table>
+								<div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行主动还款和提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服4001017700</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<div ng-if="showOrderFlag2">
+		            <div class="bank-info">
+						<div class="icon">
+							<img src="img/bankyibao/{{bankCode}}-BG.png" />
+						</div>
+						<div class="name">{{cardBank}}（{{cardNoStr}}）</div>
+						<div class="money">当前逾期金额： <span ng-if="dueAmount=='0.00'" style="color:#333333;">{{dueAmount}}</span><span ng-if="dueAmount!='0.00'">{{dueAmount}}</span></div>
+						<div class="icon-mask">
+							<img src="img/bankyibao/{{bankCode}}-mask.png" />
+						</div>
+
+				    </div>
+				    <!-- 暂无账单 -->
+					<div class="noOrder">
+
+				    </div>
+
+				</div>	
+
+		</div>
+	</div>
+	<!--断网的界面-->
+	<!-- <div>
+		<div>
+			<div>
+				<div class="ajp-btn-wrap ajp-pos-flex-bottom" ng-show="isSwiper&&(orderList.canActivePay == 'true')&&(FydAdvClearLoan!='1')">
+					<button class="ajp-btn" ng-click="toRepay(installmentInfoList[0].sltAccountId)">我要还款</button>
+				</div>
+				<div class="ajp-btn-wrap ajp-pos-flex-bottom" ng-show="isSwiper&&(orderList.isActivePaying == 'true')">
+					<button class="ajp-btn" ng-click="checkSchedule(orderList)">查看还款进度</button>
+				</div>
+			</div>
+
+		</div>
+	</div> -->
+</div>
+<!-- <div class="ajp-btn-wrap ajp-pos-flex-bottom" ng-show="isSwiper&&(orderList.canActivePay == 'true')&&(installmentInfoList[0].advClearLoan!=1)">
+     <button class="ajp-btn" ng-click="toRepay(installmentInfoList[0].sltAccountId)">我要还款</button>
+</div> -->
+<div class="fydBtn-wrap">
+	<div ng-show="isSwiper&&(orderList.canActivePay == 'true')&&(FydAdvClearLoan!='1')">
+		<button class="fydBill-btn" ng-click="toRepay(installmentInfoList[0].sltAccountId)">我要还款</button>
+	</div>
+	<div ng-show="isSwiper&&(orderList.isActivePaying == 'true')">
+		<button class="fydBill-btn" ng-click="checkSchedule(orderList)">查看还款进度</button>
+	</div>
+</div>
+<div class="bg-fff fyd-isNetwork" holl-page ng-if="isNetworkOutage" style="position: relative;">
+	<img style="width: 37.5rem;height: 60.5rem;" src="images/of-line.png" />
+	<div ng-click="refreshPage()"></div>
+</div>
+

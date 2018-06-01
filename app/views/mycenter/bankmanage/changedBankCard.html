@@ -1,0 +1,66 @@
+<div class="eGet-bindCard pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="#/bankManage"></a>
+
+        <div class="UI-title">银行卡更换</div>
+        <show-alert></show-alert>
+    </header>
+
+    <section class="info">
+        <div class="ajp-bb-dc">
+            	持卡人姓名
+            <span style="float: right;" ng-bind="UserInfo.realName"></span>
+        </div>
+        <div class="ajp-bb-dc">
+            	持卡人手机号
+            <span style="float: right;" ng-bind="UserInfo.mobile | MobileReplaceFilter"></span>
+        </div>
+        <div>
+            	持卡人身份证
+            <span style="float: right;" ng-bind="UserInfo.identityNo | CardReplaceFilter"></span>
+        </div>
+    </section>
+    <p class="com-wraning">请确认银行卡信息真实有效，该卡将用于平台交易。</p>
+
+    <div class="formWrap">
+        <form name="changeBankCardForm" novalidate>
+            <div class="list ajp-href ajp-bb-dc"  ng-click="selectBank()">
+                <span>选择银行</span>
+                <input type="text" ng-model="RepaceBindCardObject.cardBank" placeholder="请选择银行卡归属银行" name="bankName" required readonly/>
+            </div>
+            <div class="list list2">
+                <span>银行卡号</span>
+                <input type="text" ng-model="RepaceBindCardObject.cardNo" placeholder="请输入该银行卡卡号" name="bankCard" required ng-change="checkRepayNoIsNumber()"/>
+            </div>
+        </form>
+    </div>
+
+    <p class="com-info tar"><a href="#/cardlimit">支持的银行卡列表></a></p>
+    <div class="ajp-btn-wrap com-box-siz">
+        <div class="ajp-agreement" ng-click="goToContractForChangeCard()">
+            <input type="checkbox" name="checkbox" ng-checked='UserInfo.repaceSupplemental&&UserInfo.deductAuth' ng-readonly="true"/>
+            	同意并签署<a href="javascript:void(0)">相关合同文件</a>
+        </div>
+        <div class="pb-1">
+			<button class="ajp-btn" ng-click="submitRepaceBindBank()"  ng-disabled="RepaceBindCardObject.cardBank =='' ||  RepaceBindCardObject.cardNo == '' || RepaceBindCardObject.cardBank ==undefined || RepaceBindCardObject.cardNo ==undefined || UserInfo.deductAuth!=true || UserInfo.repaceSupplemental!=true">提交</button>
+        </div>
+    </div>
+
+
+    <!--修改成功弹窗-->
+    <div class="ajp-mask  changeState change-seccess" ng-show="">
+        <div class="wrap com-bdradius-1rem">
+            <img src="images/icon-success.gif" alt="" />
+            <p>修改成功！</p>
+        </div>
+    </div>
+    <!--修改成功弹窗-->
+    <!--修改失败弹窗-->
+    <div class="ajp-mask changeState change-fail" ng-show="">
+        <div class="wrap com-bdradius-1rem">
+            <img src="images/icon-fail.gif" alt="" />
+            <p>修改失败！</p>
+        </div>
+    </div>
+    <!--修改失败弹窗-->
+</div>

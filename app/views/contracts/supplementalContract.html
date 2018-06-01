@@ -1,0 +1,69 @@
+<div class="pt-header pb-10 bg-fff">
+	<div class="pact-service-agtee pact-wrap">
+		<h2>关于变更还款卡号的补充协议</h2>
+		<p>
+			<b>借款人：{{ContractInfo.realName}}</b><i class="float-right">以下称“甲方”</i>
+		</p>
+		<p>
+			<b>身份证号:{{ContractInfo.identityNo}}</b>
+		</p>
+		<br />
+		<p>
+			<b>贷款人：外贸信托</b>
+		</p>
+		<p>
+			<b>服务方：{{ContractInfo.serviceName}}</b>
+		</p>
+		<p>
+			<b>担保方：维仕担保有限公司</b>
+		</p>
+		<p>
+			<i class="float-right">以下统称“乙方</i>
+		</p>
+		<br />
+		<p class="text-justify">
+			甲乙双方于{{ContractInfo.sltAccountInfo0.yearStr}}年{{ContractInfo.sltAccountInfo0.monthStr}}月{{ContractInfo.sltAccountInfo0.dateStr}}日分别签署了编号为<span
+				class="short">{{ContractInfo.sltAccountInfo0.contractNO}}</span>的《贷款合同》、编号为<span
+				class="short">{{ContractInfo.sltAccountInfo0.contractNO|serviceContract}}</span>《个人贷款服务与咨询合同》、及编号为<span
+				class="short">{{ContractInfo.sltAccountInfo0.contractNO|guaranteeContract}}</span>的《个人贷款担保合同》（统称“原合同”）。
+		</p>
+		<p class="text-justify">根据原合同的约定（具体为：《贷款合同》第三条第1款，《个人贷款服务与咨询合同》第二条第3款，《个人贷款担保合同》第二条第2款），甲方应当及时将应付乙方的款项存入以下账户，并授权乙方或乙方各自的委托方从甲方该账户中扣取相应款项。</p>
+		<p class="text-justify">账户：开户行：{{ContractInfo.cardBank}}</p>
+		<p class="text-justify">户名：{{ContractInfo.authAccountName}}</p>
+		<p class="text-justify">账号：{{ContractInfo.cardNo}}</p>
+		<br />
+		<br />
+		<p class="text-justify">
+			<b>现因甲方主动申请且经乙方同意，甲乙双方一致认可：将上述甲方还款账户作如下变更：</b>
+		</p>
+		<p class="text-justify">账户：开户行：{{RepaceBindCardObject.cardBank}}</p>
+		<p class="text-justify">户名：{{ContractInfo.authAccountName}}</p>
+		<p class="text-justify">账号：{{RepaceBindCardObject.cardNo}}</p>
+		<br />
+		<br />
+		<p class="text-justify">其他未尽之事宜，以原合同及相关文件为准。</p>
+		<br />
+		<br />
+		<p class="text-justify"></p>
+		<p>
+			<b>甲方（借款人）：</b>维信荟智金融科技有限公司
+		</p>
+		<p>
+			<b>乙方（贷款人）：</b>{{ContractInfo.realName}}
+		</p>
+		<p>
+			<b>（服务方）：</b>杭州维信
+		</p>
+		<p>
+			<b>（担保方）：</b>杭州维信荟智金融科技有限公司
+		</p>
+		<div class="ajp-btn-wrap  ajp-pos-flex-bottom bg-fff ajp-btn-two">
+			<button class="ajp-btn disabled btn-two-left"
+				ng-click="cancel();" ng-show='UserInfo.changeCardFlag!=1'>取消</button>
+			<button class="ajp-btn btn-two-right" ng-click="agreeSupplementalContract();"
+				ng-show='UserInfo.changeCardFlag!=1'>同意</button>
+			<button class="ajp-btn btn-two-right" ng-click="goToNextContract();"
+				ng-show='UserInfo.changeCardFlag==1'>下个合同</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,178 @@
+<style>
+table {table-layout:fixed;width:100%;}
+td {
+word-wrap: break-word
+}
+</style>
+<div class="pb-12 pt-header bg-fff bg-fff">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackWithdraw()"></a>
+        <div class="UI-title">《贷款合同》</div>
+        <show-alert></show-alert>
+    </header>
+    <div class="pact-service-agtee pact-wrap">
+        <p style="text-align: left"><b>《贷款合同》（编号：）之还款分期表</b></p>
+        <p style="text-align: center;"><b>还款分期表（非固定数额还款）</b></p>
+        <table class="loan-con">
+            <tr>
+                <td>贷款详细用途</td>
+                <td colspan="5">仅限用于个人消费或生产经营，具体为</td>
+                <td>百万</td>
+                <td>十万</td>
+                <td>万</td>
+                <td>千</td>
+                <td>百</td>
+                <td>十</td>
+                <td>元</td>
+                <td>角</td>
+                <td>分</td>
+            </tr>
+            <tr>
+                <td>贷款本金数额</td>
+                <td colspan="5">人民币（大写）</td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatMillion}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatShiwan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatWan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatThousand}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatHundred}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatShi}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatYuan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatJiao}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatFen}}</b></td>
+            </tr>
+            <tr>
+                <td rowspan="2">甲方各期偿还本息数额</td>
+                <td colspan="5">
+                    <p>首期还款利息，自贷款起始日至首期还款日（含当日），按日利率<b style="color:red;" class="ng-binding">266</b>%计算；</p>
+                    <p>首期还款本金为 <b style="color:red;" class="ng-binding">266</b>元</p>
+                </td>
+                <td colspan="9"><b style="color:red;">{{ContractInfo.loanAmt|moneyformatMillion}}</b></td>
+            </tr>           
+            <tr>
+                <td colspan="5">
+                    <p>自第二期起每期还款金额为<b style="color:red;" class="ng-binding">266</b>元</p>
+                </td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatMillion}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatShiwan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatWan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatThousand}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatHundred}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatShi}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatYuan}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatJiao}}</b></td>
+                <td><b style="color:red;">{{ContractInfo.loanAmt|moneyformatFen}}</b></td>
+            </tr> 
+            <tr>
+                <td>贷款利率</td>
+                        <td colspan="6">
+                            <p>首期贷款利率为<b style="color:red;" class="ng-binding">266</b>%/日
+                            自第二期起每期贷款利率为：<b style="color:red;" class="ng-binding">266</b>/月
+                            </p>
+                        </td>
+                        <td colspan="2">还款方式</td>
+                        <td colspan="2">
+                           按期分别偿还贷款本金、利息
+                        </td>
+                        <td colspan="2">还款分期期数</td>
+                        <td colspan="2"><u>{{ContractInfo.loanPeriods}}</u>期</td>
+                    </tr>
+                    <tr>
+                        <td>还款日</td>
+                        <td colspan="14">
+                            <label for="check4-1">
+                                <input id="check4-1" class="art-checkbox" checked type="checkbox" checked="checked" disabled/>
+                                贷款发放后的每月<b style="color:red;">25</b>日
+                            </label><br/>
+                            <label for="check4-2">
+                                <input id="check4-2" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                                每月<b style="color:red;">25</b>日，首次还款日为：<b style="color:red;">25</b>年<b style="color:red;">25</b>月<b style="color:red;">25</b>日。
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            <p>甲方（签字）：<b style="color:red;">{{ContractInfo.realName}}</b></p>
+                            <p>日期：<b style="color:red;">{{ContractInfo.realName}}</b></p>
+                        </td>
+                        <td colspan="8">
+                            <p>乙方（贷款人）：中国对外经济贸易信托有限公司</p>
+                            <p>盖章：<b style="color:red;">{{ContractInfo.realName}}</b></p>
+                            <p>日期<b style="color:red;">{{ContractInfo.realName}}</b></p>                            
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                   
+                <!-- 转介绍居间协议 start -->
+              <!--   <div class="page-content" ng-if="WithdrawRecordObject.loanType=='0' && WithdrawRecordObject.channelByHelp=='1'">
+                    <article>
+                        <div class="content-block-inner">
+                            <section>
+                                <p class="ui-txt-justify">
+                                    <br/>
+                                    <h1 class="mt2">居间服务协议</h1>
+                                    <br/> 甲方：{{ContractInfo.realName}}
+                                    <br/>身份证号码：{{ContractInfo.identityNo}}
+                                    <br/>
+                                    <br/>乙方：上海维信荟智金融科技有限公司
+                                    <br/>住所：上海市虹口区乍浦路89号办公楼1幢2801室
+                                    <br/>
+                                    <br/>丙方：
+                                    <br/>身份证号码：
+                                    <br/>丙方为甲方申请安家派产品提供居间服务，乙方受托为丙方居间服务成功后代为从甲方处扣收居间服务费，并在扣收成功后，代为支付给丙方。现各方本着自愿、公平、诚实信用的原则，依据<span>《中华人民共和国合同法》</span>等法律法规，经各方确认，达成如下协议：
+                                    <br/>1.经丙方居间服务，甲方与贷款方签订了<span>《贷款合同》</span>（编号： 借款金额为 大写人民币 元）。
+                                    <br/>2.基于丙方的居间服务，甲方同意向丙方支付相应的居间服务费，居间服务费的收取方式为：在甲方成功获取借款后，收取XX元人民币。
+                                    <br/>3.丙方故意隐瞒贷款有关的重要事项或提供虚假资料，损害甲方及（或）乙方利益的，不得要求甲方支付居间服务费。
+                                    <br/>4.居间活动所发生的费用由丙方自行承担。
+                                    <br/>5.为便于甲方与丙方的居间服务费支付，甲、丙双方同意授权乙方或其受托人委托银行或第三方支付公司从甲方指定账户（户名： 开户行： 账号
+                                    ）代为扣收本协议第2条约定的居间服务费，并代为支付给丙方。丙方收取该居间服务费的账户以丙方在乙方处预留的为准。
+                                    <br/>6.在代扣代付中，乙方仅为甲方与丙方提供居间服务费用结算服务。乙方并不保证能够成功扣收到相应金额的款项，若乙方未成功从甲方扣收到相应金额的居间服务费，乙方不承担支付义务。甲方与丙方就居间服务费发生纠纷，由甲方与丙方自行解决，在任何情形下与乙方无关。
+                                    <br/>7.乙方特别说明：丙方仅为居间服务方，丙方向甲方的承诺内容与乙方无关。贷款产品的具体内容请以甲方与乙方或相关贷款权利方签订的合同为准。如甲方签订的贷款合同与丙方介绍的具体信息不一致的，请以合同条款为准。
+                                    <br/>8.本协议自各方签字或盖章及/或点击确认之日起成立生效，签字或盖章时间及/或点击确认不一致的，以最后一方签字或盖章及/或点击确认之日起成立并生效。
+                                    <br/>9.若因本协议发生争议，各方可协商解决。协商不成时，任何一方有权向上海市浦东新区人民法院提起诉讼解决。
+                                    <br/>10. 本协议采用电子文本形式制成，并在安家派平台上保留存档，各方均认可本协议的法律效力。
+                                    <br/><br/>
+                                    甲方：乙方： 丙方：
+                                    <br/><br/>
+                                    日期： 日期： 日期：
+                                    <br/><br/>
+                                </p>
+                                <p class="text-bold">
+                                    授权人已阅读上述全部内容并同意的，请点击“同意”按钮，本授权立即生效，若授权人不同意授权，请立即停止操作，退出本申请页面。
+                                </p>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+                <table style="width:100%;">
+                    <tr>
+                        <td>甲方/借款人（签字）:（请用正楷书写）<b style="color:red;">{{ContractInfo.realName}}</b></td>
+                        <td>乙方/贷款人：<b style="color:red;">中国对外经济贸易信托有限公司</b></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>盖章：</td>
+                    </tr>
+                    <tr>
+                        <td>签约日期:<a href=""><b style="color:red;">{{ContractInfo.nowyear}}</b></a>/
+                        <a href=""><b style="color:red;">{{ContractInfo.nowMonth}}</b></a>/
+                        <a href=""><b style="color:red;">{{ContractInfo.nowDay}}</b></a>
+                    </td>
+                    <td>签约日期:<a href=""><b style="color:red;">{{ContractInfo.nowyear}}</b></a>/
+                    <a href=""><b style="color:red;">{{ContractInfo.nowMonth}}</b></a>/
+                    <a href=""><b style="color:red;">{{ContractInfo.nowDay}}</b></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">签署处：<b style="color:red;">{{ContractInfo.realName}}</b></td>
+            </tr>
+        </table> -->
+        <div class="ajp-pos-flex-bottom ajp-btn-wrap-con bg-fff ajp-button-flex">
+            <button class="ajp-btn" ng-click="singature()">下个合同</button>
+        </div>
+    </div>
+</div>

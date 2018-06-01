@@ -1,0 +1,39 @@
+<div class="eGat-creditBankCard eGet-creditQuestion pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+        <div class="UI-title">验证身份信息</div>
+    </header>
+    <div class="top-logo"></div>
+    <div class="Countdown" ng-init="getLostTime(10)" ng-show="!deadLineFlag">距离答题结束时间：<span>{{content}}</span></div>
+    <div class="Countdown" ng-show="deadLineFlag">您已超时：请<a href="#/creditLogin">重新登录</a></div>
+    <ul class="quesWrap">
+        <li ng-repeat="question in ZhengxinInfo.questionList">
+            <p>{{question.question}}</p>
+            <ul class="listWrap" ng-repeat="answer in question.options">
+                <li>
+                    <label>
+                        <input name="{{question.questionNo}}" value="{{answer.optionValue}}" type="radio" class="com-check"/>{{answer.optionText}}
+                    </label>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="ajp-pos-flex-bottom ajp-btn-wrap bg-fff">
+        <button class="ajp-btn" ng-click="submitAnswers()">提交</button>
+        <button class="ajp-btn-white mt-1" ng-click="redirectUnionPay()">问题太难了，试试银行卡验证</button>
+    </div>
+</div>
+
+<!-- 弹出框 -->
+<div class="ui-dialog" id="ui-dialog">
+  <div class="ui-dialog-cnt">
+      <div class="ui-dialog-bd">
+          <h4 class="yellow-text font-weight font16">温馨提示</h4>
+          <div>您的安全等级为高，请您重新登录个人征信账户并选择银联验证方式！</div>
+      </div>
+      <div class="ui-dialog-ft">
+          <button class="ui-btn" type="button" ng-click="closeDialog()">确定</button>
+      </div>
+  </div>
+</div>
+<!-- 弹出框  结束-->

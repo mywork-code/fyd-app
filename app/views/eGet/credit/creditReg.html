@@ -1,0 +1,52 @@
+<div class="eGet-creditReg eGet-credit pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+        <div class="UI-title">开通征信查询</div>
+    </header>
+    <div class="bg-fff">
+        <p class="eGet-PBOC"></p>
+        <section class="eGet-credit-top">
+            <div class="one">填写信息</div>
+            <div class="two ">补充信息</div>
+            <div class="three ">完成注册</div>
+        </section>
+    </div>
+    <p class="com-wraning">本页面信息仅作为征信账号开通，安家派将严格保密。</p>
+
+    <div name="cerditRegForm"   ng-init="getRegisterVerifyCode('init')">
+        <div class="form-wrap ajp-formWrap ">
+            <div class="list ajp-bb-b6">
+                姓名
+                <input class="fill-input com-box-siz" name="name" type="text" placeholder="请输入真实姓名" ng-model="UserInfo.realName" required  ng-disabled='true' />
+            </div>
+            <div class="list ajp-bb-b6">
+                身份证
+                <input class="fill-input com-box-siz" name="IDcard" type="text" placeholder="请输入本人真实有效的身份证号码" ng-model="ZhengxinInfo.certNo" required ng-disabled='true' focus-show/>
+            </div>
+            <div class="list">
+                验证码
+                <input class="fill-input com-box-siz" name="code" type="text" placeholder="请输入验证码" ng-model="ZhengxinInfo.vercode" required/>
+                <!-- <img class="ajp-pos-midd yan" src="images/ajp-lll.jpg" alt="验证码"/> -->
+                <!--<img class="loading ajp-pos-midd yan" class="ajp-pos-midd yan" src="images/loading.gif" alt="loading"/>-->
+                <div class="gfb-img-yzm">
+				<img style="width: 30%; height: 100%;"  class="ajp-pos-midd yan"
+					src="{{ZhengxinInfo.RegisterrandomCodeUrl}}" ng-show='flags!=1' ng-click="getRegisterVerifyCode('hand')"> 
+				<img  class="loading ajp-pos-midd yan"   style="width: auto; height: 80%;vertical-align: middle;" src="images/loading.gif"
+					ng-show='flags==1' >
+			</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ajp-btn-wrap"  style="margin-top: 3rem;">
+        <button  class="ajp-btn" ng-click="checkCertInfo()" ng-disabled="UserInfo.realName==''||ZhengxinInfo.certNo==''||ZhengxinInfo.vercode==''">提交验证</button>
+    </div>
+    <p class="infoTitle mt-1">温馨提示：</p>
+    <p class="hintInfo">• 如果您没有办理过贷款或者没有使用信用卡，请您登录到中国人民银行征信中心，选择［数字证书验证方式］验证身份注册。</p>
+    <p class="hintInfo">• 征信中心地址：https://ipcrs.pbccrc.org.cn</p>
+    <div class="bottom-hint">
+        <p>数据来源 <span class="PBOC eGet-PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+</div>

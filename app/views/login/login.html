@@ -1,0 +1,25 @@
+<div class="login" holl-page>
+    <form novalidate name="loginForm">
+        <div class="cell-list ajp-bb-b6">
+            <input type="tel" class="input" placeholder="请输入手机号" ng-model="RegisterInfo.account"
+                   maxlength="13" required phone-num-dist ng-pattern="/([\d]{3})\s+([\d]{4})\s+([\d]{4})/" />
+            <i class="icon-close ajp-pos-midd" ng-show="!!RegisterInfo.account" ng-click="RegisterInfo.account = ''" c></i>
+        </div>
+        <div class="cell-list ajp-bb-b6" >
+            <input type="password" class="input" placeholder="请输入密码" ng-model="RegisterInfo.password"
+                   ng-if="isPassShow"  ng-maxlength="12" maxlength="11" required/>
+            <i class="icon-eye-close ajp-pos-midd"  ng-show="isPassShow" ng-click="isPassShow = !isPassShow"></i>
+            <input type="text" class="input" placeholder="请输入密码" ng-model="RegisterInfo.password"
+                   ng-if="!isPassShow"  ng-maxlength="12" maxlength="11" required/>
+            <i class="icon-eye-open ajp-pos-midd"  ng-show="!isPassShow" ng-click="isPassShow = !isPassShow"></i>
+
+        </div>
+        <br/>
+        <br/>
+
+
+    </form>
+    <div>
+        <button class="ajp-btn" ng-disabled="loginForm.$invalid || RegisterInfo.password.length < 6" ng-click="login()">登录</button>
+    </div>
+</div>

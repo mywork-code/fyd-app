@@ -1,0 +1,29 @@
+<div class="eGet-creditLogin eGet-code eGet-result pt-header" holl-page style="padding-bottom: 12rem;">
+
+	<!--  头部 -->
+	<header id="ajp-header" class="BG-red">
+		<a class="UI-back" ng-click="goBackHome()"></a>
+		<div class="UI-title">申请额度</div>
+		<show-alert></show-alert>
+	</header>
+	<!--  头部  结束 -->
+	<section class="eGet-plan-top">
+		<div class="one">信息认证</div>
+		<div class="two on">手机认证</div>
+		<div class="three on">征信认证</div>
+	</section>
+	<p class="PBOC"></p>
+	<img class="stateResult" src="images/ajp-coupons-Fail.png" alt=""/>
+	<dl class="gfb-result-txt">
+		<dt>手机实名认证未通过。</dt>
+	</dl>
+	
+	<div class="bottom-hint" style="bottom:2rem;">
+		<p class="infoTitle">温馨提示：</p>
+		<p class="hintInfo">由于手机运营商提供的数据不完整，导致系统鉴定您为非实名用户。请联系客服，并提供运营商实名认证截图或查询详单。</p>		
+	</div>
+	<div class="ajp-btn-wrap">
+		<button class="ajp-btn" ng-click='repeatApplyAmt()'>重新获取额度</button>
+	</div>
+	
+</div>

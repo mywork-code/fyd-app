@@ -1,0 +1,163 @@
+<div class="eGet-withdrawal pt-header" holl-page>
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackHome()"></a>
+        <div class="UI-title">提现</div>
+        <show-alert></show-alert>
+    </header>
+
+    <section class="com-bankCard">
+        <div class="wrap com-box-siz {{bindCard.bankCode}}" ng-show="withdraw.cardFlag!='0' && withdraw.cardFlag!='3'"> <!--ICBC为不同银行控制class-->
+             <div class="top">
+				<p class="bank-name">
+					<span ng-bind="bindCard.cardBank"></span>
+				</p>
+	            <span class="card">✲✲✲✲&nbsp;✲✲✲✲&nbsp;✲✲✲✲&nbsp;<span ng-bind="bindCard.cardNoStr"></span></span>	                	               
+            </div>
+            <p class="count">
+            	可提现金额 
+	            <span>
+	            	<i><span ng-bind="withdraw.availableAmount|currency:'':2"></span></i>
+	            </span>
+            </p>
+        </div>
+
+        <div class="wrap com-box-siz AJP" ng-show="withdraw.cardFlag=='0' || withdraw.cardFlag=='3'"> <!--ICBC为不同银行控制class-->
+             <div class="top" >
+                 	您暂未绑定银行卡
+                <a class="goBind" ng-click="goToBindCard()">立即绑定></a>
+             </div>
+            <p class="count">可提现金额 
+	            <span>
+	            	<i><span ng-bind="withdraw.availableAmount|currency:'':2"></span></i>
+	            </span>
+            </p>
+        </div>        
+    </section>
+
+    <div class="withdrawal-detail">
+        <p class="title">借款金额<i>(1000起,以100的整数倍增减)</i></p>
+
+        <form class="ajp-form" name="withForm" novalidate>
+            <div class="form-list">
+                <section class="amount com-box-siz">
+                    <button class="reduce" ng-click="reduceAmount()">-</button>
+                    <input class="num" name="withAmount" type="tel" ng-disabled="withdraw.cardFlag=='0' || withdraw.cardFlag=='3'"
+                    	ng-model="withdraw.withdrawMoney" ng-keyup="checkIsMoney()" 
+                    	ng-click="strToInteger()" ng-blur="showMoney()" required/>
+                    <button class="add" ng-click="addAmount()">+</button>
+                </section>
+                <button class="ajp-btn-sm" ng-click="showAllMoney()">全部取出</button>
+            </div>
+            <div class="form-list ajp-bb-b6 ajp-href" ng-click="showDataMask()">
+                	借款期限
+                <input class="ajp-pos-midd" name="withData" type="text" ng-model="withdraw.paymentType" ng-show="showLoanLife"
+                       readonly required placeholder="请选择借款期限"  />
+                <span class="poundage" ng-show="!showLoanLife"  ng-click="loan24()"><i>{{borrowData}}</i>个月</span>
+            </div>
+            <div class="form-list ajp-bb-b6">
+                	放款手续费
+                <span class="poundage"><i>{{withdraw.feeAmount}}</i>元</span>
+            </div>
+            <section class="borrow-detail ">
+                <div class="wrap com-bdradius-8px" ng-show="withdraw.showDeatil">
+                    <div class="form-list ajp-bb-b6">
+                        	免息期限
+                        <span class="poundage"><i>7</i>天</span>
+                    </div>
+                    <div class="form-list ajp-bb-b6">
+                        	还款日期
+                        <span class="poundage"><i>每月放款日的前一天</i></span>
+                    </div>
+                    <div class="form-list">
+                        	每月应还
+                        <span class="poundage"><i>{{withdraw.scheduleAmount}}</i>元</span>
+                    </div>
+                    <p class="count">{{withdraw.paymentType}}期共计{{withdraw.totalRepayAmount}}元</p>
+                </div>
+            </section>
+        </form>
+    </div>
+    <div class="fix-bot com-box-siz">
+        <div class="ajp-agreement" >
+            <input type="checkbox" checked='checked' disabled="disabled"/>
+            	同意并签署<a ng-click="goToContractForDraw()">相关合同文件</a>
+        </div>
+        <div class="ajp-btn-wrap">
+            <button class="ajp-btn showkeyboardMask" ng-disabled="withdraw.withdrawMoney==''||withdraw.withdrawMoney==undefined||withdraw.paymentType==''||withdraw.paymentType==undefined||withdraw.cardFlag==undefined|| withdraw.cardFlag=='0' || withdraw.cardFlag=='3'">提现</button>
+        </div>
+    </div>
+    <!--选择借款期限弹窗-->
+    <div class="ajp-mask ajp-select" ng-show="showData" ng-click="hideDataMack()">
+        <div class="wrap com-bdradius-1rem">
+            <p class="title">请选择借款期限</p>
+            <div class="list">
+                <label>
+                    3个月
+                    <input type="radio" name="borrow-limit" value="3" ng-model="withdraw.paymentType" ng-change="selectedPaymentType()"/>
+                </label>
+            </div>
+            <div class="list">
+                <label>
+                    6个月
+                    <input type="radio" name="borrow-limit" value="6" ng-model="withdraw.paymentType" ng-change="selectedPaymentType()"/>
+                </label>
+            </div>
+            <div class="list">
+                <label>
+                    9个月
+                    <input type="radio" name="borrow-limit" value="9" ng-model="withdraw.paymentType" ng-change="selectedPaymentType()"/>
+                </label>
+            </div>
+            <div class="list">
+                <label>
+                    12个月
+                    <input type="radio" name="borrow-limit" value="12" ng-model="withdraw.paymentType" ng-change="selectedPaymentType()"/>
+                </label>
+            </div>
+            <div class="list" ng-if="loanRepaymentFlag24">
+                <label>
+                    24个月
+                    <input type="radio" name="borrow-limit" value="24" ng-model="withdraw.paymentType" ng-change="selectedPaymentType()"/>
+                </label>
+            </div>
+        </div>
+    </div>
+    
+     <!--输入密码弹窗及键盘-->
+    <div id="reward-wd-mask" class="UI-mask pass-mask ">
+        <div id="reward-wd-dealPass" class="passWrap com-bdradius-8rem bg-fff maskCtrl">
+            <h2 ng-show="passWordFlag">请输入交易密码 <i class="UI-btn-close" ng-click="closeMask()" ></i></h2>
+            <h2 ng-show="!passWordFlag">请设置交易密码 <i class="UI-btn-close" ng-click="closeMask()" ></i></h2>
+            <p class="title"><img src="images/icon-money.png" alt=""/> 额度提现</p>
+            <p class="money">¥<i>{{withdraw.withdrawMoney}}</i></p>
+            <ul class="UI-copy-pass-style">
+                <li class=" "></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <p class="forgetPass"><a ng-click="transactionPasswordBack()" ng-show="passWordFlag">忘记交易密码？</a></p>
+            <p class="com-wraning " id="setPass-wraning" ng-show="!passWordFlag">为了您的资金安全，请设置交易密码。</p>
+            <input class="passInput" type="text"/>
+        </div>
+        <div id="UI-keyboard" class="maskCtrl ">
+            <ul>
+                <li class="num">1</li>
+                <li class="num">2</li>
+                <li class="num">3</li>
+                <li class="num">4</li>
+                <li class="num">5</li>
+                <li class="num">6</li>
+                <li class="num">7</li>
+                <li class="num">8</li>
+                <li class="num">9</li>
+                <li class="active"></li>
+                <li class="num">0</li>
+                <li class="active remove"></li>
+            </ul>
+        </div>
+    </div>
+            
+</div>

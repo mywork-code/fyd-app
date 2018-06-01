@@ -1,0 +1,41 @@
+<div class="eGet-creditLogin pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackHome()"></a>
+        <div class="UI-title">征信认证</div>
+    </header>
+    <section class="eGet-plan-top">
+        <div class="one">信息认证</div>
+        <div class="two on">手机认证</div>
+        <div class="three on">征信认证</div>
+    </section>
+    <p class="PBOC"></p>
+
+    <div class="form-wrap" ng-init="getLoginVerifyCode('init')">
+        <div class="list ajp-bb-b6">
+            用户名
+            <input class="fill-input com-box-siz" type="text" placeholder="请输入用户名" ng-model="ZhengxinInfo.username" />
+            <!-- <a class="ajp-pos-midd" href="#">忘记用户名</a> -->
+        </div>
+        <div class="list ajp-bb-b6">
+            密码
+            <input class="fill-input com-box-siz" type="password" placeholder="请输入征信密码" ng-model="ZhengxinInfo.password" />
+            <!-- <a class="ajp-pos-midd" href="#">忘记密码</a> -->
+        </div>
+        <div class="list">
+            验证码
+            <input class="fill-input com-box-siz" type="text" placeholder="点击右侧可刷新" ng-model="ZhengxinInfo.vercode" focus-show/>
+            <img class="ajp-pos-midd yan" src="{{ZhengxinInfo.LoginrandomCodeUrl}}" alt="验证码" ng-show='flag!=1' ng-click="getLoginVerifyCode('hand')"/>
+            <img class="loading ajp-pos-midd yan"  src="images/loading.gif" alt="loading" ng-show='flag==1' />
+        </div>
+    </div>
+    <p class="com-info">首次查询，请先<a  ng-click="toCreditReg()">注册央行征信账号</a></p>
+	<p class="com-info" style="line-height: 2rem;font-size: 1.2rem;color: #B7B7B7;">若忘记用户名或密码，请登录"中国人民银行征信中心"找回,如有问题请联系客服人员。</a></p>
+    <div class="ajp-btn-wrap">
+        <button class="ajp-btn" ng-click="confrimLogin()" ng-disabled="ZhengxinInfo.username==''||ZhengxinInfo.password==''||ZhengxinInfo.vercode==''">登录征信</button>
+    </div>
+
+    <div class="bottom-hint">
+        <p>数据来源 <span class="PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+</div>

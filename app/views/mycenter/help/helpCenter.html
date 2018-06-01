@@ -1,0 +1,32 @@
+<div class="Ct-helpCente pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackHome()"></a>
+
+        <div class="UI-title">帮助中心</div>
+    </header>
+
+    <ul class="help-top bg-fff">
+        <li class="tu" ng-click="toCustomerComments()">
+            <p class="title">在线反馈</p>
+            <p>反馈及建议</p>
+        </li>
+        <li class="serve">
+            <a href=" tel:4001017700 ">
+            <p class="title">联系客服</p>
+            <p>工作时间：8:30-20:00</p>
+            </a>
+        </li>
+    </ul>
+    <div class="quesTitle">
+        <i class="fire"></i>
+        热门问题
+        <i class="fire"></i>
+    </div>
+
+    <accordion>
+        <expander class='expander' ng-repeat='expander in expanders' expander-title='expander.title'>
+            {{expander.text}}
+        </expander>
+    </accordion>
+    <!--直接在controller里获取问题就好了-->
+</div>

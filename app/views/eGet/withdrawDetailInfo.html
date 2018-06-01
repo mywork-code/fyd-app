@@ -1,0 +1,90 @@
+<div class="withdrawState pt-header bg-fff com-box-siz" holl-page>
+	<!--  头部 -->
+	<header id="ajp-header" class="BG-red">
+	    <a class="UI-back" ng-click="goBackHome()"></a>
+	    <div class="UI-title">提现状态</div>
+	    <show-alert></show-alert>
+	</header>
+    <div class="bg-eee">
+        <section class="com-bankCard">
+            <div class="wrap com-box-siz {{withdraw.bankCode}}" ng-show="1">
+                <!--ICBC为不同银行控制class-->
+                <div class="top" ng-show="withdraw.cardBank != ''">
+                    	{{withdraw.cardBank}}
+                    <span class="card">
+                    	✲✲✲✲&nbsp;✲✲✲✲&nbsp;{{withdraw.cardNoStr}}
+                    </span>
+                </div>
+                <p class="count" ng-show="withdraw.loanAmount>0">提现金额 <span>{{withdraw.loanAmount|currency:'':2}}</span></p>
+            </div>
+        </section>
+    </div>	
+	    <!-- 放款失败  解约、财务退回、管理平台拒绝-->
+	    <div class="progress  com-box-siz" ng-if="withdraw.flag=='0' || withdraw.flag=='4'">
+	        <p>处理进度 <span>处理时间</span></p>
+	        <p class="state"><i class="success box-size"></i>申请已提交<span>{{withdraw.applyDate | date : 'yyyy-MM-dd HH:mm'}}</span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>放款处理中<span>&nbsp;</span></p>
+	        <p class="state stateLine"><i class=" fail box-size"></i>放款失败<span>{{withdraw.surrenderDate | date :'yyyy-MM-dd'}}</span></p>
+	    </div>
+	    
+	    <!-- 放款审核中-->
+	    <div class="progress  com-box-siz" ng-if="withdraw.flag=='1'">
+	        <p>处理进度 <span>处理时间</span></p>
+	        <p class="state"><i class="success box-size"></i>申请已提交<span>{{withdraw.applyDate | date : 'yyyy-MM-dd HH:mm'}}</span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>放款处理中<span>请注意接听：021-51***审核电话</span></p>
+	        <p class="state stateLine"><i class="box-size"></i>放款成功<span></span></p>
+	    </div>
+	    
+	    <!-- 放款成功未结清 -->
+	    <div class="progress  com-box-siz" ng-if="withdraw.flag=='2'">
+	        <p>处理进度 <span>处理时间</span></p>
+	        <p class="state"><i class="success box-size"></i>申请已提交<span>{{withdraw.applyDate | date : 'yyyy-MM-dd HH:mm'}}</span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>放款处理中<span>&nbsp;</span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>放款成功<span>{{withdraw.loanDate | date : 'yyyy-MM-dd'}}</span></p>
+	    </div>
+	    
+	    <!-- 已结清 -->
+	    <div class="progress  com-box-siz" ng-if="withdraw.flag=='3'">
+	        <p>处理进度 <span>处理时间</span></p>
+	        <p class="state"><i class="success box-size"></i>申请已提交<span>{{withdraw.applyDate | date : 'yyyy-MM-dd HH:mm'}}</span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>放款处理中<span></span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>放款成功<span>{{withdraw.loanDate | date : 'yyyy-MM-dd'}}</span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>借款已结清<span>{{withdraw.orderClosedDate | date :'yyyy-MM-dd'}}</span></p>
+	    </div>
+	    
+	    <!-- 退回重新签名 -->
+	    <div class="progress  com-box-siz" ng-if="withdraw.flag=='-4'">
+	        <p>处理进度 <span>处理时间</span></p>
+	        <p class="state"><i class="success box-size"></i>申请已提交<span>{{withdraw.applyDate | date : 'yyyy-MM-dd HH:mm'}}</span></p>
+	        <p class="state stateLine"><i class=" success box-size"></i>放款处理中<span>请注意接听：021-51***审核电话</span></p>
+	        <p class="state stateLine"><i class=" box-size"></i>放款成功<span></span></p>
+	 		<div class="ajp-btn-wrap ajp-pos-flex-bottom">
+				<button class="ajp-btn" ng-click='signatureAgain()'>请重新签署合同</button>
+			</div>
+	    </div>
+	    
+	    <!-- 锁单天数 -->
+		<div ng-if="withdraw.unlockDays>0 && withdraw.flag=='4'" style="padding:0 2rem;text-align:center;font-size:1.6rem;">
+			<p class=" ">
+				抱歉,您的提现申请失败,请<a style="color:#bf0a12;font-size:2.2rem;">{{withdraw.unlockDays}}</a>天后重试
+			</p>
+		</div>
+		
+		<div class="ajp-btn-wrap ajp-pos-flex-bottom" ng-if="withdraw.flag=='4'">
+			<button class="ajp-btn" ng-if="UserInfo.creditExpire==true && withdraw.unlockDays<=0" ng-click='repeatApplyAmt()'>重新获取额度</button>
+			<button class="ajp-btn" ng-if="UserInfo.creditExpire!=true && withdraw.unlockDays<=0" ng-click='withdrawOnce()'>再次提现</button>	
+		</div>
+	
+	    <br/>
+	    <p class="com-wraning">如有疑问可致电客服。</p>
+	
+		<!-- 提现成功 -->
+		<div class="ajp-btn-wrap ajp-pos-flex-bottom" ng-show="withdraw.flag=='0'||withdraw.flag=='2'||withdraw.flag=='3'">
+		    <a ng-click="gotoOrder()" class="ajp-btn">查看账单</a>
+		</div>
+	
+		<!-- 已结清再贷 -->
+		<div class="ajp-btn-wrap ajp-pos-flex-bottom" ng-if="withdraw.flag=='3'&&(UserInfo.loanType=='0' || UserInfo.loanType=='2') && withdraw.repeatFlag!=true">
+			<button class="ajp-btn" ng-click="goToHomePage()">再次申请</button>
+		</div>
+</div>

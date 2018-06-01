@@ -1,0 +1,89 @@
+<div class="eGet-credit pt-header">
+	<header id="ajp-header" class="BG-red">
+		<a class="UI-back" ng-click="goBackHome()"></a>
+
+		<div class="UI-title">手机认证</div>
+	</header>
+	<section class="eGet-plan-top">
+		<div class="one">信息认证</div>
+		<div class="two on">手机认证</div>
+		<div class="three">征信认证</div>
+	</section>
+	<p class="com-wraning just">为了成功申请额度，我们需要查询您的手机详单完成基本信息认证服务，谢谢您的配合。安家派将对您对信息严格保密。</p>
+
+	<div name="phoneValiForm">
+		<div class="ajp-formWrap-logo bg-fff">
+			<div class="form-list ajp-bb-b6">
+				<i class="icon phone"></i>手机号码 <span class="fill-input com-box-siz"
+					style="line-height: 1.7rem; color: #AFAFAF;">{{UserInfo.mobile
+					| MobileReplaceFilter}}</span>
+				<!-- <input type="text" class="fill-input com-box-siz" placeholder="请输入常用手机号码" ng-model="UserInfo.mobile" required ng-minlength="11" ng-disabled="true" /> -->
+			</div>
+			<div class="form-list">
+				<i class="icon pass"></i>服务密码 <input
+					ng-model="MobileVerifyInfo.mobilePsw" type="password"
+					class="fill-input com-box-siz" placeholder="请输入手机服务密码"
+					ng-show="showPass" /> <input ng-model="MobileVerifyInfo.mobilePsw"
+					type="text" class="fill-input com-box-siz" placeholder="请输入手机服务密码"
+					ng-show="!showPass" /> <i class="passwd ajp-pos-midd"
+					ng-click="togglePass()" ng-class="{'open':!showPass}"></i>
+			</div>
+		</div>
+	</div>
+
+	<p class="com-info tar" ng-click="toResetPsw()">
+		<a>忘记服务密码？</a>
+	</p>
+
+	<p class="infoTitle mt-1">温馨提示：</p>
+
+	<p class="hintInfo">•
+		服务密码是指客户用以登录运营商(中国移动、中国联通、中国电信等)网上营业厅等身份识别密码，由6位阿拉伯数字组成</p>
+
+	<div class="ajp-btn-wrap">
+		<button id="next-btn" class="ajp-btn"
+			ng-click="initJuXinLi('collect')"
+			ng-disabled="UserInfo.mobile==''||MobileVerifyInfo.mobilePsw==''">提交</button>
+	</div>
+</div>
+<!-- 吉林电信手机详单验证码输入弹窗 开始 -->
+<!-- <div class="ui-dialog gfb-dialog-code" id="captchaDialog">
+	<div class="ui-dialog-cnt">
+		<div class="ui-dialog-bd" id="msgText"></div>
+		<div class="ui-dialog-bd">
+           此处查询码是运营商的要求，请谅解
+        </div>
+		<div class="ui-dialog-code">
+			<input type="text" placeholder="请输入验证码" class="ui-code"
+				ng-model="MobileVerifyInfo.captcha" />
+			<a class="ui-verifycode" id="sendCode" ng-disabled="CountdownObj.disFlag" ng-click="initJuXinLi('collect')" >{{CountdownObj.content}}</a>
+		</div>
+
+		<div class="ui-dialog-ft">
+			<button class="ui-btn dialogbd" type="button"
+				ng-click="closeCodeDialog()">取消</button>
+			<button class="ui-btn dialogbd ui-btn-bg" type="button"
+				ng-click="collectRequest('collect','hand')">确定</button>
+		</div>
+	</div>
+</div> -->
+
+<div class="ajp-mask" id="captchaDialog" ng-show="captcha" ng-click = "closeCodePage()">
+	<div class="wrap ajp-pos-center bg-fff" ng-click = "showCodeP()">
+		<h3>手机实名</h3>
+		<div class="ui-dialog-bd" id="msgText">
+			为确保本人操作<br />请输入发送至您{{UserInfo.mobile
+					| MobileReplaceFilter}}的手机动态码(此处查询码是运营商的要求，请谅解)
+		</div>
+		<div class="ui-dialog-code ajp-bb-b6">
+			<input type="text" placeholder="请输入验证码" class="ui-code"
+				ng-model="MobileVerifyInfo.captcha" /> <a
+				class="ajp-btn-sm ajp-pos-midd" id="sendCode"
+				ng-disabled="CountdownObj.disFlag" ng-click="initJuXinLi('collect')">{{CountdownObj.content}}</a>
+		</div>
+		<div class="ajp-btn-wrap">
+			<button class="ajp-btn-white " type="button"
+				ng-click="collectRequest('collect','hand')">确定</button>
+		</div>
+	</div>
+</div>

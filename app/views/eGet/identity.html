@@ -1,0 +1,199 @@
+<div class="eGet-identity pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackHome()"></a>
+
+        <div class="UI-title">信息认证</div>
+         <show-alert></show-alert>
+    </header>
+    <section class="eGet-plan-top">
+        <div class="one">信息认证</div>
+        <div class="two">手机认证</div>
+        <div class="three">获取征信</div>
+    </section>
+    <p class="com-wraning">请填写真实信息，有利于额度申请审批成功。</p>
+
+    <div class="infoWrap bg-fff pd-rl2">
+        <div class="ajp-bb-b6 clear ajp_relaName">
+            真实姓名
+            <input type="text" placeholder="请输入真实姓名" ng-model="UserInfo.realName"  ng-change="reSign()" ng-disabled="UserInfo.personalInfoAuthor"/>
+        </div>
+        <div class="ajp-bb-b6 clear ajp-select " ng-click="openMask(1)">
+            最高学历
+            <input type="text" placeholder="请选择学历" readonly ng-model="UserInfo.degreeText"/>
+        </div>
+        <div class="clear ajp-select" ng-click="openMask(2)">
+            婚姻状况
+            <input type="text" placeholder="请选择婚姻状况" readonly ng-model="UserInfo.marText"/>
+        </div>
+    </div>
+    <div class="photographWrap">
+        <div class="photograph" id="identity-photograph" ng-class="{'HIDE':UserInfo.realName && UserInfo.degreeText && UserInfo.marText}"><!-- ng-show="realName && education && maritalStatus " -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide photo-list com-bdradius-8rem">
+                    <img class="photos" ng-show="UserInfo.personFlag==''||UserInfo.personFlag==undefined||UserInfo.personFlag==0" src="img/ajp-photograph-hand.png" alt="手持身份证" ng-click="openMask(5)"/>
+                    <img class="photos" ng-show="UserInfo.personFlag==1" src="{{UserInfo.personImg}}" alt="手持身份证" ng-click="openMask(5)"/>
+                    <img class="openCamera" src="img/ajp-photograph-start.png" alt="拍照" ng-click="openMask(5)" ng-show="UserInfo.personFlag==''||UserInfo.personFlag==undefined||UserInfo.personFlag==0"/>
+                    <img class="openCamera" src="img/ajp-photograph-again.png" alt="再次拍照"/ ng-show="UserInfo.personFlag==1">
+                    <p class="title" ng-show="UserInfo.personFlag==''||UserInfo.personFlag==undefined||UserInfo.personFlag==0">请拍摄手持身份证照</p>
+                    <p class="title" ng-model="UserInfo.personFlag" ng-show="UserInfo.personFlag==1">已上传</p>
+                    <p class="hint">温馨提示:安家派将对您给的信息严格保密</p>
+                </div>
+                <div class=" swiper-slide photo-list com-bdradius-8rem">
+                    <img class="photo"  ng-show="UserInfo.identityNo==''|| UserInfo.identityNo ==undefined" src="img/ajp-photograph-front.png" alt="身份证正面" ng-click="openMask(3)"/>
+                    <img class="photo"  ng-show="UserInfo.identityNo" src="{{UserInfo.frontImg}}" alt="身份证正面" ng-click="openMask(3)" />
+                    <img class="openCamera" src="img/ajp-photograph-start.png" alt="拍照" ng-click="openMask(3)" ng-show="UserInfo.identityNo==''|| UserInfo.identityNo ==undefined" />
+                    <img class="openCamera" src="img/ajp-photograph-again.png" alt="再次拍照"/ ng-show="UserInfo.identityNo">
+                    <p class="title" ng-show="UserInfo.identityNo==''|| UserInfo.identityNo ==undefined">请拍摄身份证正面</p>
+                    <p class="title" ng-model="UserInfo.identityNo" ng-show="UserInfo.identityNo">{{UserInfo.identityNo}}</p>
+                    <p class="hint">温馨提示:安家派将对您给的信息严格保密</p>
+                </div>
+                <div class="swiper-slide photo-list com-bdradius-8rem">
+                    <img class="photo" ng-show="UserInfo.identityExpires=='' || UserInfo.identityExpires ==undefined" src="img/ajp-photograph-back.png" alt="身份证背面" ng-click="openMask(4)"/>
+                    <img class="photo" ng-show="UserInfo.identityExpires" src="{{UserInfo.backImg}}" alt="身份证背面" ng-click="openMask(4)"/>
+                    <img class="openCamera" src="img/ajp-photograph-start.png" alt="拍照"  ng-click="openMask(4)" ng-show="UserInfo.identityExpires=='' || UserInfo.identityExpires ==undefined" />
+                    <img class="openCamera" src="img/ajp-photograph-again.png" alt="再次拍照" ng-show="UserInfo.identityExpires"  />
+                     <p class="title" ng-show="UserInfo.identityExpires=='' || UserInfo.identityExpires ==undefined">请拍摄身份证背面</p>
+                    <p class="title"  ng-model="UserInfo.identityExpires"  ng-show="UserInfo.identityNo">{{UserInfo.identityExpires}}</p>
+                    <p class="hint">温馨提示:安家派将对您给的信息严格保密</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+	<div class="ajp-agreement" ng-click="goToContractForPersonal()" style="margin-left:2rem;"  ng-show="UserInfo.personFlag==1&&UserInfo.identityNo&&UserInfo.identityExpires&&UserInfo.realName&&UserInfo.degreeText&&UserInfo.marText">
+		<input type="checkbox"  ng-disabled='true'
+			ng-checked='UserInfo.personalInfoAuthor' /> 同意并签署<a
+			href="javascript:void(0)">《个人信息授权书》</a>
+	</div>
+
+	<div class="btnWrap">
+        <button class="ajp-btn" ng-disabled="UserInfo.realName==''||UserInfo.degreeText==''||UserInfo.degreeText==undefined||UserInfo.marText==''||UserInfo.marText==undefined||UserInfo.personalInfoAuthor==''"  ng-click="saveUserInfo()">提交</button>
+    </div>
+
+    <!--选择学历-->
+    <div class="ajp-mask ajp-select" ng-show="showMask.index == 1" ng-click="hideMask()">
+        <div class="wrap com-bdradius-1rem" ng-click="openMask(1)">
+            <p class="title">请选择学历</p>
+            <div class="list" ng-repeat="degree in DegreeList">
+                <label>
+                    {{degree.text}}
+                    <input type="radio" name="Education" value="{{degree.value}}" ng-model="UserInfo.degree" ng-change="choseEducation('{{degree.value}}','{{degree.text}}')"/>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--选择婚姻状况-->
+    <div class="ajp-mask ajp-select" ng-show="showMask.index == 2" ng-click="hideMask()">
+        <div class="wrap com-bdradius-1rem" ng-click="openMask(2)">
+            <p class="title">请选择婚姻状况</p>
+            <div class="list" ng-repeat="marry in MarStatusList">
+                <label>
+                    {{marry.text}}
+                    <input type="radio" name="maritalStatus" value="{{marry.value}}" ng-model="UserInfo.marState" ng-change="choseMarital('{{marry.value}}','{{marry.text}}')"/>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- 拍摄身份证证正面 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 3" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow" ng-click="openMask(3)">
+            <h4 class="title">温馨提示</h4>
+            <p class="hint">尊敬的用户，请将您的身份证摆正满屏拍摄，确保您所拍身份证照片清晰完整，以免给您造成不便！</p>
+            <img  src="images/ajp-frontPagePhoto.png" width="100%">
+            <div class="MaskbtnWrap ajp-bt-dc">
+                <button class="ajp-btn-prem" ng-click='chooseImage("front")'>确认</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 拍摄身份证证背面 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 4" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow" ng-click="openMask(4)">
+            <h4 class="title">温馨提示</h4>
+            <p class="hint">请按以下示例拍摄身份证照片</p>
+            <img  src="images/ajp-backPagePhoto.png" width="100%">
+            <div class="MaskbtnWrap ajp-bt-dc">
+                <button class="ajp-btn-prem" ng-click='chooseImage("back")'>确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 请拍摄手持身份证照 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 5" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow" ng-click="openMask(5)">
+            <h4 class="title">温馨提示</h4>
+            <p class="hint">请按以下示例拍摄身份证照片</p>
+            <p class="hint">保持身份证号与本人清晰可见</p>
+            <p class="hint-small">（若本人操作请使用前置摄像头)</p>
+            <img class="mt-1"  src="images/ajp-handPagePhoto.png" style="width:13.5rem;">
+            <div class="MaskbtnWrap ajp-bt-dc">
+                <button class="ajp-btn-prem" ng-click='chooseImage("person")'>确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 拍摄身份证证正面 - 确认 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 6" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow"  ng-click="openMask(6)">
+            <h4 class="title">点击确认，开始解析。</h4>
+            <div class="MaskbtnWrap ajp-bt-dc">
+                <button class="ajp-btn-prem" >确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 拍摄身份证证背面 - 确认 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 7" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow"  ng-click="openMask(7)">
+            <h4 class="title">点击确认，开始解析。</h4>
+            <div class="MaskbtnWrap ajp-bt-dc">
+                <button class="ajp-btn-prem" >确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 请拍摄手持身份证照 - 确认 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 8" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow"  ng-click="openMask(8)">
+            <h4 class="title">点击确认，开始解析。</h4>
+            <div class="MaskbtnWrap ajp-bt-dc">
+                <button class="ajp-btn-prem" >确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 确认身份证号 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 9" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow"  ng-click="openMask(9)">
+            <h4 class="title">请确认身份证号</h4>
+            <p class="hint">{{UserInfo.identityNo}}</p>
+
+            <div class="ajp-button-flex MaskbtnWrap ajp-bt-dc"> <!--样式有问题，再解决-->
+                <button class="ajp-btn-prem" ng-click="takePhotoOnce('front')">重新拍摄</button>
+                <button class="ajp-btn-prem" ng-click="takePhotoComplete('front')">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 确认身份证有效期 - 浮层弹窗 -->
+    <div class="ajp-mask ajp-hint" ng-show="showMask.index == 10" ng-click="hideMask()">
+        <div class="centerWrap ajp-pos-center bg-fff com-bdradius-8rem com-box-shadow"  ng-click="openMask(10)">
+            <h4 class="title">请确认身份证有限期</h4>
+            <p>{{UserInfo.identityExpires}}</p>
+
+            <div class="ajp-button-flex MaskbtnWrap ajp-bt-dc"> <!--样式有问题，再解决-->
+                <button class="ajp-btn-prem" ng-click="takePhotoOnce('back')">重新拍摄</button>
+                <button class="ajp-btn-prem" ng-click="takePhotoComplete('back')">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 调用OCR --> 
+<div id="confirmAnalyze" ng-click="invorkeOCR()" style="display:none;">
+	<input type="text" ng-model="UserInfo.img64" id ="img64">
+</div>

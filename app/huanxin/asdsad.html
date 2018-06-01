@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<script>
+
+    var aopai = {
+        url:'https://a1-vip5.easemob.com/'+'1494171219068041/'+'kefuchannelapp50838',
+        token:'',
+        username:'ajqh1564812',
+        password:'',
+    }
+    getToken();
+    function getToken(){
+        ajax({
+            method: 'POST',
+            url:aopai.url+ '/token',
+            data: {
+                "grant_type":"client_credentials",
+                "client_id":"YXA6AbCnsORfEeeXcFPodFG2GQ",
+                "client_secret":"YXA68PoYw35wCsrixHuWG29jCqNygLs",
+            },
+            success: function (response) {
+                aopai.token = JSON.parse(response).access_token;
+                checkRegister()
+            }
+        })
+        function checkRegister(token){
+            ajax({
+                method: 'GET',
+                url: aopai.url+ '/users/' +aopai.username,
+                Authorization:aopai.token,
+                success: function (response) {
+                    aopai.password = aopai.username+'ajqh';
+                    console.log(response)
+                    login()
+                },
+                fail:function(response){
+                    if(response.readyState == 4 && response.status == 404){//未注册
+                        register()
+                    }
+                }
+            })
+        }
+        function register(){
+            ajax({
+                method: 'POST',
+                url: aopai.url+ '/users',
+                Authorization:aopai.token,
+                data: {
+                    "username": aopai.username,
+                    "password": aopai.username+'ajqh',
+                },
+                success: function (response) {
+                    console.log(response)
+                    login()
+                }
+            })
+        }
+
+
+
+        function ajax(opt) {
+            opt = opt || {};
+            opt.method = opt.method.toUpperCase() || 'POST';
+            opt.url = opt.url || '';
+            opt.async = opt.async || true;
+            opt.data = opt.data || null;
+            opt.Authorization = opt.Authorization || null;
+            opt.success = opt.success || function () {
+                    };
+            opt.fail = opt.fail || function () {
+                    };
+            var xmlHttp = null;
+            if (XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            }
+            else {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            var params = [];
+            for (var key in opt.data) {
+                params.push(key + '=' + opt.data[key]);
+            }
+            var postData = params.join('&');
+            if (opt.method.toUpperCase() === 'POST') {
+                xmlHttp.open(opt.method, opt.url, opt.async);
+                xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+                opt.Authorization&&xmlHttp.setRequestHeader("Authorization", "Bearer " + opt.Authorization);
+                xmlHttp.send(JSON.stringify(opt.data));
+            }
+            else if (opt.method.toUpperCase() === 'GET') {
+                xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+                console.log(opt.Authorization)
+                opt.Authorization&&xmlHttp.setRequestHeader("Authorization", "Bearer " + opt.Authorization);
+                xmlHttp.send(null);
+            }
+            xmlHttp.onreadystatechange = function () {
+                if(xmlHttp.readyState == 4){
+                    if (xmlHttp.status == 200) {
+                        opt.success(xmlHttp.responseText);
+                    }else {
+                        opt.fail(xmlHttp);
+                    }
+                }
+
+            };
+        }
+    }
+    function login(){
+        console.log('登录')
+        console.log(aopai)
+    }
+
+</script>
+
+</body>
+</html>

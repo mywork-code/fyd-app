@@ -1,0 +1,101 @@
+<div class=" pt-header pb-10 bg-fff">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+        <div class="UI-title">特别提示函</div>
+    </header>
+    <b>
+
+    </b>
+
+    <div class="pact-service-agtee pact-wrap">
+        <p class="number">合同编号:{{ContractInfo.contractNO}}</p>
+
+
+        <p>尊敬的<span class="short">{{ContractInfo.realName}}</span>客户：</p>
+
+        <p>为完善网络平台<span>{{Constant.ContractNeedPath}}</span>（以下简称平台）的服务质量，维护您的合法权益，请您仔细阅读并确认以下事项：</p>
+
+        <p><b>一、贷款详情</b></p>
+
+        <p>1.您的本次贷款由<b>中国对外经济贸易信托有限公司</b>发放。</p>
+
+        <p>2.<b>金额与期限：</b>您的贷款金额￥<span class="short">{{ContractInfo.loanAmt}}</span>元，还款期数
+            <span class="short">{{ContractInfo.loanPeriods}}</span>期。</p>
+
+        <p>3.☑固定金额还款方式：费率：贷款利率 <span class="short">{{ContractInfo.monthInterest|number:2}}</span>%/月；
+            每月应付服务费<span class="short">{{ContractInfo.everyMonthServiceAmtForFT|number:2}}</span>元；
+            每月应付担保费<span class="short">{{ContractInfo.monthGuananteeAmt|number:2}}</span>元。
+        </p>
+
+        <p>□非固定金额还款方式：您首期还款金额自贷款起始日至首期还款日按日计算，其中贷款利率为<span class="short">/</span>%/日，
+            首期每日服务费金额为<span class="short">/</span>元；首期每日担保费金额为<span class="short">/</span>元；
+            自第二期起，每期贷款利率为：<!--  <span class="short"></span>  -->/月，每期应付服务费为 <span class="short">/</span>元，
+            每期应付担保费为 <span class="short">/</span>元。</p>
+
+        <p><b>4.手续费：</b>您应在放款日当日或放款日之前向贷款服务方<b>支付手续费</b><span class="short">{{ContractInfo.handFee|number:2}}</span>元，
+            由您委托银行或者第三方支付系统从指定账户扣划。</p>
+
+        <p>5.履约保证金：您应在放款日当日或放款日之前向贷款担保方<b>支付履约保证金</b><span class="short">/</span>元，
+            由您委托银行或者第三方支付系统从指定账户扣划。在贷款期限届满之日，如您完全依约清偿各项应付款项的，该履约保证金将在30日内予以退还。</p>
+
+        <p><b>6.☑固定金额还款方式：每月还款：每月还款金额共计为{{ContractInfo.everyMonthMoneyForFT |number:2}}<b>元，从贷款发放的下月起，
+            请在每月还款日将还款存入合同约定账户。<!-- <span class="short"></span> --></b>还款日为每月与放款日对应的日期的前一日；
+            若放款日晚于当月25日，则还款日为每月24日。</b>若因为您未及时全额还款导致扣款失败，权利人/受托人将每日检索您的账户发起扣款，直至扣款成功。
+            请您务必做好资金安排。
+        </p>
+
+        <p><b>□非固定金额还款方式：首期应还利息及费用的计收方式为<span class="short">/</span>元/天，首期应还本金为<span class="short">/</span>元；自第二期起，
+            每期应还金额共计为<span class="short">/</span>元。您的还款日按照以下第<span class="short">/</span>项执行：</b></p>
+
+        <p>（1）贷款发放后的每月 <span class="short">/</span>日；</p>
+
+        <p>（2）每月<span class="short">/</span>日，首次还款日为：<span class="short">/</span>年<span class="short">/</span>月<span
+                class="short">/</span>日。</p>
+        <br/>
+
+        <p><b>二、提前还款</b></p>
+
+        <p class="text-indent">若您需提前还款，请通过平台进行申请操作，当您通过平台确认还款金额后，权利人/受托人将从您的还款账户进行扣款，扣款成功后，
+            提前还款成功。</p>
+
+        <p><b>三、付费及贷后</b></p>
+
+        <p><b>1.谨慎付费：<b>请不要</b>向我司员工<b>支付</b>除合同资料（包括不限于申请表、合同、借据）<b>约定费用之外的任何费用</b>，如：中介费、
+            介绍费、好处费等。
+        </p>
+
+        <p><b>2.谨慎还款：</b>请<b>不要直接</b>向我司员工<b>给付用于偿还合同约定的应还款项</b>，请按照约定或我司工作人员提示，将还款存入合同约定账户
+            或我司特别指定的收款账户。
+        </p>
+
+        <p><b><b>3.妥善保管放款银行卡与账户密码</b>：请<b>不要</b>在放贷后向我司销售人员提供<b>您的放款银行卡或放款账户密码</b>。</p>
+
+        <p><b>四、管辖法院</b></p>
+
+        <p>若因履行合同引起的任何争议，由 <span class="short">上海市浦东新区</span>人民法院管辖。</p>
+
+        <p><b>五、人行征信事宜：</b></p>
+
+        <p>我司项下的贷款业务已接入人行征信数据库，相关权利人将依据授权，查询并上报您的基本信息和贷后信用记录，请您珍视您的信用记录，保持良好的还款习惯。</p>
+        <br/>
+
+        <p>若您需提前还款，或有任何疑问或投诉，请致电我司客户服务中心：4000-523-528，我司会竭诚为您提供优质服务。</p>
+
+        <p style="text-align:right"><span class="under">上海维信荟智金融科技有限公司</span></p>
+
+        <p style="border-bottom:4px #333 dashed"></p>
+
+        <p class="text-indent" style="font-size:1rem;line-height: 1.6rem;">请您充分阅读、知悉、理解以上提示的全部内容，若您已阅读上述内容
+            并同意，请您点击本页面的“同意”按钮或签署您的名字表示您接受全部内容，若您不同意上述内容，请您立即停止操作，退出操作页面。</p>
+
+        <p style="text-align:right"> 签名：{{ContractInfo.realName}}</p>
+
+        <p style="text-align:right"> 日期：{{ContractInfo.nowyear}}/{{ContractInfo.nowMonth}}/{{ContractInfo.nowDay}}</p>
+
+        <div class="ajp-btn-wrap-con ajp-button-flex ajp-pos-flex-bottom bg-fff"
+             ng-show="UserInfo.withDrawSignature!=1 || PageControllerObject.contractPage==1">
+            <!-- <button class="ui-btn-primary ui-yellow" ng-click="cancel();" ng-show="PageControllerObject.contractPage!='1'">取消</button> -->
+            <button class="ajp-btn" ng-click="singature()">返回</button>
+        </div>
+    </div>
+</div>

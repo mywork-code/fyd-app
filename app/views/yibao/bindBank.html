@@ -1,0 +1,218 @@
+<style>
+    .smsRegwrap{
+        margin: 0 auto;
+        padding-top: 1.2rem;
+        overflow: hidden;
+    }
+    .inputBoxContainer{
+        width:32.4rem;
+        height: 4.4rem;
+        margin: 0 auto;
+        position: relative;
+
+    }
+    .inputBoxContainer .bogusInput{
+        width: 100%;
+        height: 100%;
+        border-radius: 7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+   /*      overflow: hidden; */
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+        background-color: #fff;
+        
+    }
+    .inputBoxContainer .bogusInput span{
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+            float: left;
+        display:inline-block;
+        width: 4.4rem;
+        height: 4.4rem;
+        line-height:4.4rem;
+        background: #ffffff;
+        text-align: center;
+        font-size: 2rem;
+        border: 1px solid #C5C5C5;;
+        color: #303030;
+        margin: 0 0.5rem;
+    }
+</style>
+<style>
+    .wBindBank {}
+    .wBindBank .info_list{
+        position: relative;
+        height:4.4rem;
+        line-height: 4.4rem;
+        padding: 0 1.2rem;
+        border-bottom: 1px solid #ddd;
+    }
+    .wBindBank .info_list .text_inp{
+        font-size: 1.5rem;
+        color: #303030;
+        background: none;
+    }
+    .wBindBank .info_list .text_inp::-webkit-input-placeholder {
+        color: #C5C5C5;
+    }
+    .wBindBank .info_list  .getReg{
+        right:1.2rem;
+        font-size: 1.5rem;
+       /*  color: #ffffff; */
+        width: 8rem;
+        height: 3rem;
+    }
+    .wBindBank .info_list  .getReg:disabled {
+        color: #C5C5C5;
+    }
+    .wBindBank .info_list .text_inp{}
+    .wBindBank .tip{
+        font-size: 1.2rem;
+        text-align: center;
+        color: #7E7E7E;
+        margin-top: 2rem;
+    }
+
+    .bindResult {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width:26rem;
+        height:16.7rem;
+        -webkit-border-radius: 0.8rem;
+        border-radius: 0.8rem;
+        padding-top: 3.6rem;
+
+    }
+    .bindResult>img{
+        width:5rem;
+        height:5rem;
+        display: block;
+        margin:0 auto;
+    }
+    .bindResult>p{
+        font-size: 1.7rem;
+        color: #303030;
+        text-align: center;
+    }
+    .bindResult>p.text{
+        font-size: 1.4rem;
+        margin:2rem auto 1rem;
+    }
+    .yibao-submit {
+        width: 35.1rem;
+        height: 4.5rem;
+        z-index: 10000;
+        padding-bottom: 2rem;
+    }
+    .yibao-submit .submit-btn {
+        width: 32rem;
+        height: 4.5rem;
+        background: #b0191a;
+        text-align: center;
+        line-height: 4.5rem;
+        margin-left: 2.7rem;
+        border-radius: 0.4rem;
+        color: #ffffff;
+        font-size: 1.5rem;
+    }
+    .yibao-submit .submit-btn:disabled {
+         background: #ccc;
+         color: #fff;
+    }
+    #getSmsReg:disabled {
+        color: #ccc;
+    }
+    #getSmsReg {
+         color: #108EE9;
+    }
+    .yibao-bindcardno {
+        width: 20rem;
+    }
+    .right-arrow {
+        float: right;
+    }
+
+</style>
+<div class="wBindBank bg-fff" holl-page style="display: flex;flex-direction: column;justify-content: space-between;">
+    <div>
+        <div class="info_list">
+            <span class="text_inp ">{{UserInfo.realName|NameReplaceFilter}}</span>
+        </div>
+        <div class="info_list">
+            <span class="text_inp">{{UserInfo.identityNo|CardReplaceFilter}}</span>
+        </div>
+        <div class="info_list" ng-click="chooseBank()">
+            <input type="text" class="text_inp yibao-bank ajp-href" placeholder="请选择银行卡归属银行" readonly value="{{YibaoPay.BankCardName}}" ng-model="YibaoPay.BankCardName" />
+        </div>
+        <div class="info_list">
+            <input type="tel" class="text_inp yibao-bindcardno"   placeholder="请输入银行卡卡号" maxlength="24" value="{{YibaoPay.cardCode}}" ng-model="YibaoPay.cardCode" code-dist />
+        </div>
+        <div class="info_list">
+            <input type="tel" class="text_inp yibao-bindphoneno"   maxlength="13" placeholder="请输入银行预留手机" value="{{YibaoPay.phone}}" ng-model="YibaoPay.phone" phone-num-dist style="width:25rem;"/>
+            <!-- <button class="getReg ajp-pos-midd" id="getSmsReg" ng-click="sendMsg()">获取验证码</button> -->
+          <!--   <p>YibaoPay.requestNo={{YibaoPay.requestNo}}</p> -->
+             <button class="UI-verify getReg ajp-pos-midd" id="getSmsReg" ng-disabled="YibaoPay.phone==''||YibaoPay.BankCardName==''||YibaoPay.cardCode==''" ng-if="!CountdownObj.disFlag" ng-click="sendMsg()">{{CountdownObj.content}}</button>
+             <button class="UI-verify getReg ajp-pos-midd" id="getSmsReg" ng-disabled="CountdownObj.disFlag" ng-if="CountdownObj.disFlag" ng-click="sendMsg()" style="width:auto;">{{CountdownObj.content}}秒</button>
+        </div>
+        <div class="smsRegwrap" ng-click="showKeyBoard()">
+            <input type="hidden" ng-model="YibaoPay.MsgCode"/>
+            <div class="inputBoxContainer" id="inputBoxContainer">
+                <div class="bogusInput yibao-bogusInput">
+                	<span></span>
+                	<span></span>
+                	<span></span>
+                	<span></span>
+                	<span></span>
+                	<span></span>
+                </div>
+            </div>
+        </div>
+        <div class="tip">*请输入短信验证码，验证码30分钟内有效，每日仅可获取3次。</div>
+    </div>
+    <div class="yibao-submit">
+<!--     <p>YibaoPay.phone={{YibaoPay.phone}},YibaoPay.BankCardName={{YibaoPay.BankCardName}}</p>
+    <p>YibaoPay.cardCode={{YibaoPay.cardCode}},YibaoPay.MsgCode={{YibaoPay.MsgCode}}</p>
+    <p>{{YibaoPay.phone==''||YibaoPay.BankCardName==''||YibaoPay.cardCode==''||YibaoPay.MsgCode==''}}</p> -->
+        <button class="submit-btn" ng-click="yibaoSubmit()" ng-disabled="YibaoPay.phone==''||YibaoPay.BankCardName==''||YibaoPay.cardCode==''||YibaoPay.MsgCode.length!='6'||YibaoPay.requestNo==''">提交</button>
+    </div>
+</div>
+<div class="com-mask hide">
+    <div class="com-obc bgf bindResult bindResult_fail">
+        <img src="../../img/icon_bind_suc.png" alt=""/>
+        <p class="text">1234 1234 1234 1234 123</p>
+        <p>绑卡失败</p>
+    </div>
+</div>
+<div class="com-mask hide" >
+    <div class="com-obc bgf bindResult bindResult_suc">
+        <img src="../../img/icon_bind_fail.png" alt=""/>
+        <p class="text">1234 1234 1234 1234 123</p>
+        <p>绑卡失败</p>
+    </div>
+</div>
+
+
+<!-- <div class="UI-btn-wrap">
+    <button class="UI-btn" ng-disabled="registerInfoVerifyCodeFlag||registerInfoNewPasswordFlag" ng-click="yibaoSubmit()">提交</button>
+</div> -->
+<div class="ajp-mask-white" ng-show="isShowKeyboard"  slip-stop ng-click="isShowKeyboard = false">
+    <div id="UI-keyboard" class="maskCtrl" click-stop>
+        <p class="done" ><span ng-click="isShowKeyboard = false">完成</span></p>
+        <ul>
+            <li class="num" ng-click="addKeyBd(1)">1</li>
+            <li class="num" ng-click="addKeyBd(2)">2</li>
+            <li class="num" ng-click="addKeyBd(3)">3</li>
+            <li class="num" ng-click="addKeyBd(4)">4</li>
+            <li class="num" ng-click="addKeyBd(5)">5</li>
+            <li class="num" ng-click="addKeyBd(6)">6</li>
+            <li class="num" ng-click="addKeyBd(7)">7</li>
+            <li class="num" ng-click="addKeyBd(8)">8</li>
+            <li class="num" ng-click="addKeyBd(9)">9</li>
+            <li class="active"></li>
+            <li class="num" ng-click="addKeyBd(0)">0</li>
+            <li class="active remove" ng-click="removKeyBD()"></li>
+        </ul>
+    </div>
+</div>

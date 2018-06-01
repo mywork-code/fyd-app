@@ -1,0 +1,22 @@
+<div class="eGet-creditLogin eGet-code eGet-result pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="goBackHome()"></a>
+        <div class="UI-title">获取征信</div>
+    </header>
+    <section class="eGet-plan-top">
+        <div class="one">信息认证</div>
+        <div class="two on">手机认证</div>
+        <div class="three on">征信认证</div>
+    </section>
+    <p class="PBOC"></p>
+    <p class="com-wraning center">根据您的信用情况，安家派暂时无法提供服务， <br/>如有疑问请联系客服。感谢您的使用，谢谢！</p>
+    <img class="stateResult" src="images/ajp-coupons-Fail.png" alt=""/>
+    <div class="bottom-hint">
+        <div class="ajp-btn-wrap ">
+            <button class="ajp-btn again" ng-show="UserInfo.remainDate>0" disabled>可在<i>{{UserInfo.remainDate}}</i>天后进行再次申请</button>
+            <button class="ajp-btn" ng-click="reGet()" ng-show="UserInfo.remainDate<=0">再次申请</button>
+        </div>
+        <p>数据来源 <span class="PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+</div>

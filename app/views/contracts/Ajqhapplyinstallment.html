@@ -1,0 +1,1180 @@
+<!--1.《贷款合同》-->
+<div class="pb-12 pt-header bg-fff bg-fff">
+   <!--  <header id="ajp-header" class="BG-red">
+        <a class="UI-back" ng-click="history.go(-1)"></a>
+        <div class="UI-title">《贷款合同》</div>
+    </header> -->
+    <h2 style="text-align: center;font-size: 1.6rem;">贷款合同</h2>
+    <div class="pact-service-agtee pact-wrap">
+        <p class="number">合同编号: </p>
+        <p> 本贷款合同于<b style="color:#000000;">{{ContractInfo.nowyear}}年{{ContractInfo.nowMonth}}月{{ContractInfo.nowDay}} 日</b>于中华人民共和国
+        上海省 上海市签署并履行：</p>
+        <p>甲方：</p>
+        <p>借款人：<b style="color:#000000;">{{ContractInfo.realName}}</b> </p>
+        <p>身份证号码：<b style="color:#000000;">{{ContractInfo.identityNo}}</b> </p>
+        <p>移动电话：<b style="color:#000000;">{{ContractInfo.mobile}}</b></p>
+        <p>固定电话： <b style="color:#000000;">/</b></p>
+        <p>电子邮箱：<b style="color:#000000;">/</b></p>
+        <p>地址：<b style="color:#000000;">{{ContractInfo.liveAddress}}</b></p><br/>
+        <p>乙方（贷款人）：中国对外经济贸易信托有限公司 </p>
+        <p>公司地址：<b style="color:#000000;">中国北京市复兴门大街28号凯晨世贸中心中座F6层</b></p>
+        <p style="color:#000000;"><b>第一条 贷款具体信息</b></p>
+        <table class="loan-con">
+            <tr>
+                <td>贷款详细用途</td>
+                <td colspan="5">仅限用于个人消费或生产经营，具体为支付居间费</td>
+                <td>百万</td>
+                <td>十万</td>
+                <td>万</td>
+                <td>千</td>
+                <td>百</td>
+                <td>十</td>
+                <td>元</td>
+                <td>角</td>
+                <td>分</td>
+            </tr>
+            <tr>
+                <td>贷款本金数额</td>
+                <td colspan="5">人民币 {{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatMillion}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatShiwan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatWan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatThousand}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatHundred}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatShi}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatYuan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatJiao}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatFen}}</b></td>
+            </tr>
+            <tr>
+                <td>甲方每期偿还本息数额</td>
+                <td colspan="5">
+                    <input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>
+                    固定数额：人民币（大写）
+                   <!--  <u><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|number:2|moneyformatChinese}}</b></u> -->
+                </td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+                <td><b style="color:#000000;"></b></td>
+            </tr>
+            <tr>
+                <td>本息数额</td>
+                <td colspan="14">
+                    <input id="check1-2" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                    非固定数额：<b style="color:#000000;">详见还款分期表</b>
+                </td>
+            </tr>
+            <tr>
+                <td>贷款利率（非固定数额还款的详见还款分期表）</td>
+                <td colspan="2">
+                    <label for="check2-1">
+                        <input id="check2-1" class="art-checkbox" type="checkbox"  disabled/>
+                        <u>  &nbsp; / 月</u>
+                        </lable><br/>
+                        <label for="check2-1">
+                            <input id="check2-2" class="art-checkbox" type="checkbox" disabled/>
+                            <u>&nbsp;&nbsp;/年</u>
+                            </lable>
+                        </td>
+                        <td colspan="2">还款方式（非固定数额还款的详见还款分期表）</td>
+                        <td colspan="6">
+                            <p><label for="check3-1"><input id="check3-1" class="art-checkbox" type="checkbox" 
+                            disabled/>等额本息</label></p>
+                            <p>
+                                <label for="check3-2">
+                                    <input id="check3-2" class="art-checkbox" type="checkbox" disabled/>
+                                    按月等额偿还贷款本金、利息，每月应还本息为：贷款总本金×月利率＋贷款总本金/贷款期限
+                                </label>
+                            </p>
+                        </td>
+                        <td colspan="2">还款分期期数</td>
+                        <td colspan="2"><u>{{ContractInfo.loanPeriods}}</u>期</td>
+                    </tr>
+                    <tr>
+                        <td>还款日</td>
+                        <td colspan="14">
+                            <label for="check4-1">
+                                <input id="check4-1" class="art-checkbox"  type="checkbox"  disabled/>
+                                固定还款日：每月与放款日对应之日期的前一日；若放款日晚于当月<b style="color:#000000;">25</b>日，则为每月<b style="color:#000000;">24</b>日
+                            </label><br/>
+                            <label for="check4-2">
+                                <input id="check4-2" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                                <i style="color:#000000;">详见还款分期表</i>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">甲方专用银行账户1</td>
+                        <td colspan="2">户名</td>
+                        <td colspan="2"><b style="color:#000000;">{{ContractInfo.realName}}</b></td>
+                        <td colspan="2">账号</td>
+                        <td colspan="8"><b style="color:#000000;">{{ContractInfo.cardNo}}</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">开户行</td>
+                        <td colspan="10"><b style="color:#000000;">{{ContractInfo.cardBank}}</b></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">甲方专用银行账户2</td>
+                        <td colspan="2">户名</td>
+                        <td colspan="2"></td>
+                        <td colspan="2">账号</td>
+                        <td colspan="8"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">开户行</td>
+                        <td colspan="10"></td>
+                    </tr>
+                </table>
+                <br/>
+                <p><b>第二条 贷款发放</b></p>
+                <!-- <p class="text-indent">本合同项下贷款期限为<span class="short"><b style="color:#000000;">{{ContractInfo.loanPeriods}}</b></span>
+                ，贷款起始日以贷款本金划离乙方账户之日为准。乙方委托第三方支付机构/银行以资金代付的方式将本合同项下的贷款本金数额从乙方账户按以下方案划付至甲方专用账户中:将人民币（大写）
+                <span class="short"><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatChinese}}</b></span>（小写）￥<span class="short"><b style="color:#000000;">{{ContractInfo.withdrawMoney}}</b></span>
+                元划入甲方专用账户1；将人民币（大写）<span class="short"> </span>（小写）￥
+                <span class="short"> </span>元划入甲方专用账户2。</p> -->
+                <p class="text-indent">本合同项下贷款期限为{{ContractInfo.loanPeriods}}，贷款起始日以贷款本金划离乙方账户之日为准。</p>
+                <p class="text-indent">本合同项下的贷款本金采用下列第2项方式发放：</p>
+                <p class="text-indent">1、乙方委托第三方支付机构/银行以资金代付的方式将本合同项下的贷款本金数额从乙方账户按以下方案划付至甲方专用账户中: </p>
+                <p class="text-indent">将人民币（大写）/（小写）￥ / 元划入甲方专用账户1； </p>
+                <p class="text-indent">将人民币（大写） /（小写）￥  / 元划入甲方专用账户2。</p>
+                <p class="text-indent">2、采用受托支付的方式发放，即：乙方通过其合作的第三方支付机构/银行将本合同项下的贷款本金数额人民币（大写）{{ContractInfo.withdrawMoney|moneyformatChinese}}（小写）￥{{ContractInfo.withdrawMoney}}元划付至甲方指定的上海中原物业顾问有限公司用以支付居间费。甲方确认：委托指令一经发出不得撤销，且不得因与上海中原物业顾问有限公司的纠纷拒绝履行还款义务。</p>
+
+                
+
+                <p><b>第三条 还款</b></p>
+                <ul class="decimal">
+                    <li>甲方应按照本合同第一条确定的还款方式及还款期限按期偿还贷款本金及利息。甲方必须在每期还款日或之前将当期应偿还本息数额存入甲方专用账户<span class="short"><b style="color:#000000;">1</b></span>中,甲方同意乙方委托合作的第三方支付机构/银行从甲方的专用银行账户
+                    <span class="short"><b style="color:#000000;">1</b></span>中，将当期甲方应当偿还的贷款本息、逾期违约金（如有）直接扣除并划付至乙方的账户中。
+                </li>
+                <li>
+                    乙方将以成功扣划还款账户的还款金额时间为准记录甲方的还款时间。如果还款日遇到法定节假日或公休日，还款日期不进行顺延,还款方式是固定数额的，还款日的确定原则：还款日为每月与放款日（放款日即：贷款本金划离乙方账户之日）对应之日期的前一日；若放款日晚于当月<b style="color:#000000;">25</b>日，则还款日为每月<b style="color:#000000;">24</b>日。还款方式是非固定数额的，还款日请见
+                <i style="color:#000000;">详见还款分期表。</i></li>
+                <li>贷款存续期间，甲方要求提前还款的，除须向乙方支付当前未还的本金、利息、逾期违约金以及剩余未还本金外，还须遵照借款借据的相关约定。</li>
+                <li>无论由于任何原因导致发生错误还款(即将不应支付乙方账户内的款项支付至乙方账户),甲方均认可由乙方委托的第三方公司代为处理还款错误金额的退款相关事宜。</li>
+            </ul>
+            <br/>
+            <p><b>第四条 双方的权利和义务</b></p>
+            <p><b>（一） 甲方的权利和义务</b></p>
+            <ul class="decimal">
+                <li>甲方按本合同约定的用途使用贷款，未经乙方书面同意，甲方不得擅自改变贷款用途。甲方申请的贷款不得用于认购和买卖股票或其它权益性投资；贷款用途不得违反法律、行政法规、规章、司法解释的禁止性规定;</li>
+                <li>甲方应按本合同的约定按期、足额偿还贷款本息；</li>
+                <li>未经乙方书面同意，甲方不得将本合同项下的任何权利、义务转让给他人；</li>
+                <li>甲方在向乙方申请贷款的过程中，应当按照乙方及其委托的第三方要求提供相关的个人信息和材料，并保证该等材料的真实、完整、准确和有效，不得隐瞒或夸大；</li>
+                <li>甲方有义务接受乙方及其委托的第三方对甲方个人信用资料及贷款使用情况的监督检查，甲方应当全力配合并按照要求提供相关的个人信息、材料；</li>
+                <li>贷款期限内，甲方不得随意变更第一条所列甲方专用账户。若确需变更的，应当及时通知乙方及乙方委托的第三方。因未及时通知造成的全部损失，均由甲方负责进行赔偿。</li>
+                <li>甲方应当根据《中华人民共和国银行法》、《中华人民共和国反洗钱法》、《金融机构反洗钱规定》等相关法律法规的规定，配合乙方履行反洗钱义务，提供反洗钱监控所需的必要信息等。</li>
+            </ul>
+            <p><b>（二） 乙方的权利和义务</b></p>
+            <ul class="decimal">
+                <li>乙方有权了解甲方对贷款的使用情况，甲方应当无条件配合；</li>
+                <li>甲方未按照本合同规定还款的，乙方及其委托的第三方有权在法律法规约定的范围内采取相应措施进行催收和追讨；</li>
+                <li>甲方未按照乙方的要求提供各项与本贷款合同相关的信息、材料或者提供的信息、材料存在虚假、不准确、隐瞒有关事实等情况的，或者甲方逾期还款的，乙方及其委托的第三方有权公开甲方的违约失信情形。</li>
+                <li>
+                    乙方或其委托第三方有权要求甲方提供贷款审查所需的全部资料，乙方除可将该资料用于评估甲方贷款资格外，并可将该资料及征信信息用于市场推广或提供给征信机构。乙方或其委托第三方有权主动收集甲方资料，对甲方进行信用调查，包括但不限于向征信机构、身份信息系统等合法机构查询甲方的信用信息；
+                </li>
+            </ul>
+            <p><b>第五条 违约责任</b></p>
+            <ul class="decimal">
+                <li>发生如下情形时，视为甲方违约：
+                    <p>（1）未能按期、足额偿还贷款本息；</p>
+                    <p>（2）甲方提供的信息、材料虚假、不准确或故意隐瞒身份、联系方式、资产状况等重要事实；</p>
+                    <p>（3）甲方拒绝或不配合乙方及其委托第三方对甲方个人信用资料、贷款使用情况进行监督检查；</p>
+                    <p>（4）甲方违反约定的贷款用途的；</p>
+                    <p>（5）甲方存在可能无法正常还款的情况（包括但不限于甲方财务状况恶化、无法联系、注销还款账户、账户被冻结、拒绝承认欠款等情形）；</p>
+                    <p>（6）甲方违反本合同其他约定</p>
+                </li>
+                <li>违约救济措施：
+                    <p>（1）甲方出现本条第1款（1）项规定的违约情形的，乙方有权按照下列条款的约定行使权利：甲方未能按时、足额偿还贷款本息的，应按向乙方支付逾期违约金，逾期违约金 =当期应还未还金额×
+                        <span class="short"><b style="color:#000000;">0.2</b></span>%×逾期天数，各期应还款项逾期违约金分别计算，直至清偿本息为止。</p>
+                        <p>
+                        （2）甲方逾期偿还贷款本息达30日（含）以上的，乙方有权宣布贷款提前到期，甲方应当在乙方发出贷款提前到期通知后3日内一次性偿还本合同项下贷款的全部本息、逾期违约金及因此给乙方造成的全部损失，包括但不限于因实现债权而产生的各项费用，如律师费、诉讼费、仲裁费、交通费、差旅费等费用。</p>
+                        <p>（3）甲方连续逾期偿还贷款本息达到90日的，本合同项下的贷款将被认定为坏账，乙方将启动相应的坏账处置程序。</p>
+                        <p>
+                        （4）甲方发生本条第1款除（1）项外其他违约情形的，乙方有权宣布贷款提前到期，甲方应当在乙方向甲方发出贷款提前到期的通知后3日内一次性偿还本合同项下贷款的全部本息、逾期违约金及因此给乙方造成的全部损失，包括但不限于因收回债权而产生的律师费、诉讼费、仲裁费、交通费、差旅费等费用。</p>
+                        <p>（5）在乙方宣布贷款提前到期后，甲方怠于履行其还款义务的，若贷款存在担保人，则乙方有权要求担保人承担担保责任，担保人承担担保责任后，有权向甲方进行担保追偿</p>
+                    </li>
+                    <li>甲方偿还金额不足时，偿还的先后顺序为：本金、应还利息、逾期违约金、为因收回债权而产生的费用。</li>
+                </ul>
+                <p><b>第六条 通知</b></p>
+                <ul class="decimal">
+                    <li>甲方变更通知 <br/>本合同签订之日起至本合同项下贷款本息全部得到清偿之日止，甲方下列信息发生变更后的3日内，
+                        应当以书面方式向乙方或其委托的第三方提交《借款人客户信息变更申请书》：甲方本人、其家庭联系人及其紧急联系人
+                        的工作单位、居住地址、住址电话、手机号码、传真号码、电子邮箱等发生变更。因甲方未能及时向乙方变更上述信息而产生的相关费用及损失均由甲方负责承担。
+                    </li>
+                    <li>乙方通知 <br/>乙方需将本合同项下有关贷款确认、提前还款等内容通知甲方的，由其委托的第三方代为执行，有效通知方式包括但不限于电话、
+                        短信、传真、信件、电子邮件、微信、QQ、APP通知等。<br/>乙方的通知由专人送达的，以签收之日视为送达，以快递形式发送的，以快递发
+                        出单据上所示时间后4个自然日视为送达；通过挂号信邮递的，以国内挂号函件收据所示日后7个自然日视为送达；以传真、电子邮件、短信、微
+                        信消息、QQ消息、APP消息等方式通知的，以发送之日视为送达日；一经送达乙方即完成通知义务，甲方不得以未收到通知为不履行合同义务的抗辩理由。
+                        <br/>法院、仲裁机关、行政机关处理案件需要需通知甲方的，适用上述通知条款。
+                    </li>
+                </ul>
+                <p><b>第七条 债权转让</b></p>
+                <ul class="decimal">
+                    <li>乙方可以根据自己的意愿进行本协议下其对甲方债权的转让，甲方同意债权转让，乙方有权委托第三方代为通知甲方债权转让事宜。在乙方的债权转让后，甲方需对债权受让人继续履行本协议下的还款义务。</li>
+                    <li>借款期间或是借款期限届满后乙方将相应债权转让时，甲方不可撤销的同意授权新的债权受让人及其委托第三方对其相应的还款账户进行划扣。</li>
+                </ul>
+                <p><b>第八条 其他</b></p>
+                <ul class="decimal">
+                    <li>甲乙双方签署本合同后，本合同于文首所载日期成立，自乙方将本合同第一条所规定的贷款金额划离乙方专用账户之日起生效。本协议成立至生效期间，
+                        如果甲方提供资料在真实性、准确性或完整性方面存在瑕疵，经通知仍不能依照要求提供的，或乙方在放款前审查时发现甲方不符合放款条件，导致乙
+                        方付款迟延或拒绝付款的，乙方依据本协议不承担任何经济及相关法律责任。
+                    </li>
+                    <li>双方签署合同的方式包括：当面签署和远程签署。远程签署是指在甲乙双方身处异地时，甲方应在远程拍摄或录音设备下提供身份证明等必要资料，并
+                        在合同上签字，经乙方确认无误后合同成立,或者<b>甲乙双方在
+                        <i style="color:#000000;">[<span class="short" style="color:#000000;">安家趣花</span>]</i>
+                        网络平台（平台运营方：<span class="short" style="color:#000000;">上海奥派数据科技有限公司</span>，
+                        甲方之平台账户名：<span class="short">{{ContractInfo.mobile}}</span>，
+                        平台展现形式包括不限于微信、APP、网页等）以线上点击确认的方式进行签署后合同成立(甲方应妥善保管自己在
+                        <i style="color:#000000;">[<span class="short" style="color:#000000;">安家趣花</span>]</i>
+                        网络平台的注册用户名和密码，自行承担因注册用户名和密码丢失、泄露或允许他人使用所产生的后果。通过甲方用户名和密码登陆的任何操作均视为
+                        该方本人的真实意思表示)</b>。远程签署的合同效力与当面签署的合同效力一致。
+                    </li>
+                    <li>甲方在此特别声明：甲方知道、了解电子印章的概念、定义和作用效力，甲方同意本贷款合同可以采用电子印章的方式进行签署，并对于采用电子印章
+                        签署的本合同效力不存在任何质疑，不对本合同电子印章的效力提出任何异议。
+                    </li>
+                    <li>
+                        甲乙双方一致确认：在经乙方事先认可的前提下，除本合同及补充合同、附件等明确约定的事项外，本合同所涉及的其他具体业务的操作可由甲乙双方，或
+                        甲方与乙方的委托方通过电话联系予以完成，甲乙双方对此业务办理的效力均予以确认。
+                    </li>
+                    <li>本合同及其附件的任何修改、补充均须以书面形式作出。本合同的补充合同及附件与本合同具有同等的法律效力。本合同的传真件、复印件、扫描件等
+                        有效副本的效力与本合同原件效力一致。
+                    </li>
+                    <li>
+                        甲乙双方承诺，为达成及/或履行本合同，其及其关联方的董事、管理人员、雇员、代理人或顾问不曾也不会违反任何相关的法律法规，向任何政府官员、本
+                        协议对方、任何相关第三方及其关联方的董事、管理人员、雇员、代理人或者顾问在内的任何有关人员直接或间接地提供资金、礼品或其他任何有价物品、服
+                        务，或者从事任何其他贿赂行为。甲乙双方确认，任何一方违反前述规定的行为都将给对方造成损害，并应当向对方支付违约金作为补偿，违约金金额为违反
+                        前述规定的一方履行本合同可获得的全部收益。
+                    </li>
+                    <li>如果甲乙双方在本合同履行过程中发生任何争议，应友好协商解决；如协商不成，不论争议金额大小，均选择向合同签订地所在的
+                        <span class="short"><b style="color:#000000;">上海市浦东新区</b></span>人民法院提起诉讼，本合同签订地为<span class="short"><b style="color:#000000;">上海市浦东新区</b></span></li>
+                    <li>本合同一式叁份，甲方保留壹份，乙方保留贰份。</li>
+                    <li>
+                        特别条款[无]<br/>
+                        本合同附件：<br/>
+                        附件1、《还款代扣授权书》<br/>
+                        附件2、《还款事项提醒函》<br/>
+                        附件3、《<i style="color:#000000;">还款分期表</i>》（仅在非固定数额还款时适用）<br/>
+                        （以下无正文,为贷款合同签署处）<br/><br/>
+                    </li>
+                    </ul>
+                    <!-- 新增 不完善的内容 -->
+                   
+                <!-- 转介绍居间协议 start -->
+                <div class="page-content" ng-if="WithdrawRecordObject.loanType=='0' && WithdrawRecordObject.channelByHelp=='1'">
+                    <article>
+                        <div class="content-block-inner">
+                            <section>
+                                <p class="ui-txt-justify">
+                                    <br/>
+                                    <h1 class="mt2">居间服务协议</h1>
+                                    <br/> 甲方：{{ContractInfo.realName}}
+                                    <br/>身份证号码：{{ContractInfo.identityNo}}
+                                    <br/>
+                                    <br/>乙方：上海维信荟智金融科技有限公司
+                                    <br/>住所：上海市虹口区乍浦路89号办公楼1幢2801室
+                                    <br/>
+                                    <br/>丙方：
+                                    <br/>身份证号码：
+                                    <br/>丙方为甲方申请安家派产品提供居间服务，乙方受托为丙方居间服务成功后代为从甲方处扣收居间服务费，并在扣收成功后，代为支付给丙方。现各方本着自愿、公平、诚实信用的原则，依据<span>《中华人民共和国合同法》</span>等法律法规，经各方确认，达成如下协议：
+                                    <br/>1.经丙方居间服务，甲方与贷款方签订了<span>《贷款合同》</span>（编号： 借款金额为 大写人民币 元）。
+                                    <br/>2.基于丙方的居间服务，甲方同意向丙方支付相应的居间服务费，居间服务费的收取方式为：在甲方成功获取借款后，收取XX元人民币。
+                                    <br/>3.丙方故意隐瞒贷款有关的重要事项或提供虚假资料，损害甲方及（或）乙方利益的，不得要求甲方支付居间服务费。
+                                    <br/>4.居间活动所发生的费用由丙方自行承担。
+                                    <br/>5.为便于甲方与丙方的居间服务费支付，甲、丙双方同意授权乙方或其受托人委托银行或第三方支付公司从甲方指定账户（户名： 开户行： 账号
+                                    ）代为扣收本协议第2条约定的居间服务费，并代为支付给丙方。丙方收取该居间服务费的账户以丙方在乙方处预留的为准。
+                                    <br/>6.在代扣代付中，乙方仅为甲方与丙方提供居间服务费用结算服务。乙方并不保证能够成功扣收到相应金额的款项，若乙方未成功从甲方扣收到相应金额的居间服务费，乙方不承担支付义务。甲方与丙方就居间服务费发生纠纷，由甲方与丙方自行解决，在任何情形下与乙方无关。
+                                    <br/>7.乙方特别说明：丙方仅为居间服务方，丙方向甲方的承诺内容与乙方无关。贷款产品的具体内容请以甲方与乙方或相关贷款权利方签订的合同为准。如甲方签订的贷款合同与丙方介绍的具体信息不一致的，请以合同条款为准。
+                                    <br/>8.本协议自各方签字或盖章及/或点击确认之日起成立生效，签字或盖章时间及/或点击确认不一致的，以最后一方签字或盖章及/或点击确认之日起成立并生效。
+                                    <br/>9.若因本协议发生争议，各方可协商解决。协商不成时，任何一方有权向上海市浦东新区人民法院提起诉讼解决。
+                                    <br/>10. 本协议采用电子文本形式制成，并在安家派平台上保留存档，各方均认可本协议的法律效力。
+                                    <br/><br/>
+                                    甲方：乙方： 丙方：
+                                    <br/><br/>
+                                    日期： 日期： 日期：
+                                    <br/><br/>
+                                </p>
+                                <p class="text-bold">
+                                    授权人已阅读上述全部内容并同意的，请点击“同意”按钮，本授权立即生效，若授权人不同意授权，请立即停止操作，退出本申请页面。
+                                </p>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+                
+                <p>甲方/借款人（签字）:<b style="color:#000000;">{{ContractInfo.realName}}</b></p>
+                <p>签约日期:<span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</p>
+                <p><td>乙方/贷款人：<b style="color:#000000;">中国对外经济贸易信托有限公司</b></td></p>
+                <p>盖章：</p>
+                <p>签约日期:<span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</p>
+               <!--  <table style="width:100%;">
+                    <tr>
+                        <td>甲方/借款人（签字）:<b style="color:#000000;">{{ContractInfo.realName}}</b></td>
+                        <td>乙方/贷款人：<b style="color:#000000;">中国对外经济贸易信托有限公司</b></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>盖章：</td>
+                    </tr>
+                    <tr>
+                        <td>签约日期:<span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日
+                    </td>
+                    <td>签约日期:<span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日
+                </td>
+               </tr> -->
+    </div>
+</div>
+
+<!--2.《附件一：还款代扣授权书》-->
+<div class="pt-header pb-10 bg-fff">
+    <div class="pact-service-agtee pact-wrap">
+        <h2>还款代扣授权书</h2>
+        <!-- <p>本还款代扣授权书由委托人与受托人
+        于<b style="color:#000000;" class="ng-binding">{{ContractInfo.nowyear}}年{{ContractInfo.nowMonth}}月{{ContractInfo.nowDay}} 日</b>签署：</p> -->
+        <p><b>委托人：</b></p>
+        <p><span class="under">{{ContractInfo.realName}}</span></p>
+        <p><b>身份证号码：</b><span class="under">{{ContractInfo.identityNo}}</span></p><br/>
+        <p><b>委托人：</b></p>
+        <p><span class="under">中国对外经济贸易信托有限公司</span></p>
+       <!--  <p><b>地址：</b></p>
+        <p><span style="border-bottom: 1px solid #000;">中国北京市复兴门大街28号凯晨世贸中心中座F6层</span></p> -->
+        <p>委托人与受托人于<span class="short">{{ContractInfo.nowyear}}</span> 年<span class="short">{{ContractInfo.nowMonth}}</span>月
+        <span class="short">{{ContractInfo.nowDay}}</span>日签订了《贷款合同》(编号为：<span class="under"> </span>                          ）。根据《贷款合同》的约定，委托人应当向受托人按月偿还贷款本息，如逾期还款的，还须按《贷款合同》的约定支付逾期违约金。
+    </p>
+    
+    <p>委托人在此特别授权受托人并不可撤销地同意受托人每月通过其委托的第三方支付机构/银行从委托人的专用账户中，将委托人当月应当偿还的逾期违约金（或有）、应还利息、应还本金直接扣除并划付至受托人的信托财产专户中。</p>
+    <p>委托人的专用账户信息如下：</p>
+    
+    <p><b>开户名：<span class="long">{{ContractInfo.realName}}</span></b></p>
+    <p><b>开户行：<span class="long">{{ContractInfo.cardNo}}</span></b></p>
+    <p><b>账号：<span class="long">{{ContractInfo.cardBank}}</span></b></p>
+    <p>委托人确保上述专用账户在委托扣款日账户状态正常（即非冻结、销户、挂失等）且账户内余额充足，受托人或其委托的第三方支付机构/银行可实现成功扣款。因还款日委托人专用账户状态不正常或者账户内余额不足导致扣款不成功的，由此产生的逾期违约金均由委托人承担。
+    </p>
+
+
+    <p>本授权书项下的委托期限自《贷款合同》生效之日起至委托人在《贷款合同》项下约定的各项贷款本息及其他款项（如有）全部偿还完毕之日止。委托人在此特别声明：委托人对于受托人及其委托的第三方支付机构/银行在本授权书项下对委托人银行账户中款项的划扣，不提出任何异议。<b>委托人通过电话、短信、微信、电子邮件、书面函件等形式变更本授权书下的银行账户，受托人及其委托的第三方支付机构/银行有权从变更后的银行账户直接进行划扣，无需委托人另行出具纸质授权书。</b>受托人在《贷款合同》存续期间或《贷款合同》期满将《贷款合同》项下债权转让给新的受让人，或因委托人违反《贷款合同》导致担保人向受托人进行担保赔付的，委托人不可撤销的同意授权新的债权受让人、担保人及其委托的第三方支付机构/银行委托扣划的权利。</p>
+    <p>本授权书自《贷款合同》文首所载之日起成立，授权书一式叁份，委托人、受托人及受托人委托的第三方支付机构/银行各执壹份，每份具有相同的法律效力。</p>
+
+
+    <p><b>委托人签字：{{ContractInfo.realName}}</b></p>
+    <p><b>日期：</b><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日
+</p>
+<p></p>
+</div>
+</div>
+<!--3.《附件二：还款事项提醒函》-->
+<div class="pt-header pb-10 bg-fff">
+    <div class="pact-service-agtee pact-wrap">
+        <h2>还款事项提示函</h2>
+
+        <p><span class="short">{{ContractInfo.realName}}</span>先生/女士您好：</p>
+        
+        <p>为了您更加方便、快捷的进行编号为<span class="short"> </span>的贷款合同项下的还款，同时积累良好的信用记录，在此，请您特别注意如下事项：</p>
+        
+        <p>1.<b>还款账户：</b>在贷款合同里列示的银行帐户是您每次用于还款的账户，请您妥善保管好该银行卡/存折。如发生此银行卡/存折丢失、损坏的情况，请您第一时间联系我们，我们将根据具体情况，协助您安排按时还款事宜，以避免不必要的逾期违约金的产生。如您需要变更还款账户，请向我们提出申请，我们相关的工作人员将协助您，进行变更还款账户事项的办理。</p>
+        
+        <p>2.  <b>还款账户最低余额为15元：</b>为了保证您的还款成功划扣，请确保您的还款账户余额在划扣当月还款额以后，还有至少15元的余额存在您的还款账户里，此金额有可能用于支付开户银行的“年费”和其他相关费用。关于此“年费”和其他费用收费标准，请致电您的开户银行咨询。</p>
+        
+        <p>3.  <b>还款金额：</b>您的每月还款本息为人民币<span class="short">{{ContractInfo.monthlyPrincipalInterestAmt|number:2}}</span>元，<b>请您务必牢记此数字</b>。</p>
+
+        <p>4.  <b>还款时间：</b>请您在每月还款日之前，将每月还款额<b>足额</b>存到您的借记卡里，逾期将产生不必要的逾期违约金，并会影响您的个人信用记录。<b>请您务必牢记此还款日，</b>此还款日期不因节假日顺延。还款日为：<input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>为每月与放款日（放款日即：贷款本金划离乙方账户之日）对应之日期的前一日；若放款日晚于当月25日，则还款日为每月24日。<input id="check1-1" class="art-checkbox" type="checkbox" checked  disabled/>还款日为每月{{ContractInfo.repaymentDay}}日。若您采用跨行转账方式汇入还款账户，请提前一周进行划转。我们将以成功划扣还款账户的还款金额时间为准，记录还款时间。</p>
+        
+        <p>5.   如果您因特殊原因暂时无法按时足额还款时，请在第一时间与我们的委托第三方联系。特别需要您值得注意的是：若您的违约时长超过30天，根据《贷款合同》，我们将有权终止贷款合同，同时您将须支付全部借款金额、利息、逾期违约金。</p>
+
+        <p>6.   如果您出现不能按时还款的情形，逾期违约金的具体数额<b>依据《贷款合同》第五条的规定计算。</b></p>
+
+        <p>7.   <b>联系方式变更：</b>为了方便我们更好的服务于您，如果您需要变更还款账号，或者您（或是您共同借款人）的联系方式、工作单位、居住或工作地址发生变化，请在第一时间填写《借款人客户信息变更书》并提交我们的委托第三方。注<b>：还款日当天不予变更还款账号。</b></p>
+
+        <p>8.   如果您卡片丢失，未能及时补办新卡请及时联系我们的委托第三方。
+            <b>提前一次性还款：</b>为了方便我们更好的服务于您，如果您决定提前一次性将全部款项结清，请您务必提前与我们的委托第三方进行沟通，我们的委托第三方将帮助您安排预约一次性还款的相关事宜。
+        </p>
+        
+        <p>9.   就您本次贷款，我们的委托第三方为：<span class="short">上海维信荟智金融科技有限公司</span>， 联系电话<span class="short">4001017700</span>。还款过程中，当您遇到问题时可联系我们的委托第三方（包括不限于客户信息变更联系、无法按时还款咨询、提前一次性还款等事宜）。
+        </p>        
+        
+        <p>借款人承诺：本人已知悉合同相关内容，对此没有异议。</p>
+
+        <p class="text-justify" >借款人签字：<span class="ng-binding">{{ContractInfo.realName}}</span></p>
+
+        <p class="text-justify" style="text-align: right;">日期：<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span></p>
+
+    </div>
+</div>
+
+
+<!--4.《附件三：还款分期表》-->
+<div class="pb-12 pt-header bg-fff bg-fff">
+    <div class="pact-service-agtee pact-wrap">
+        <p style="text-align: left"><b>《贷款合同》（编号： ）之还款分期表</b></p>
+        <p style="text-align: center;"><b>还款分期表（非固定数额还款）</b></p>
+        <table class="loan-con" style="width:100%;">
+            <tr>
+                <td>贷款详细用途</td>
+                <td colspan="5">仅限用于个人消费或生产经营，具体为支付居间费</td>
+                <td>百万</td>
+                <td>十万</td>
+                <td>万</td>
+                <td>千</td>
+                <td>百</td>
+                <td>十</td>
+                <td>元</td>
+                <td>角</td>
+                <td>分</td>
+            </tr>
+            <tr>
+                <td>贷款本金数额</td>
+                <td colspan="5">人民币（大写）</td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatMillion}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatShiwan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatWan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatThousand}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatHundred}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatShi}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatYuan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatJiao}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.withdrawMoney|moneyformatFen}}</b></td>
+            </tr>
+            <tr>
+                <td rowspan="2">甲方各期偿还本息数额</td>
+                <td colspan="5">
+                    <p>首期还款利息，自贷款起始日至首期还款日（含当日），按日利率<b style="color:#000000;" class="ng-binding">{{ContractInfo.dayInterest}}</b>%计算；</p>
+                    <p>首期还款本金为 <b style="color:#000000;" class="ng-binding">{{ContractInfo.eachBenjinAmt}}</b>元</p>
+                </td>
+                <td colspan="9"><b style="color:#000000;">{{ContractInfo.loanAmt|moneyformatMillion}}</b></td>
+            </tr>           
+            <tr>
+                <td colspan="5">
+                    <p>自第二期起每期还款金额为<b style="color:#000000;" class="ng-binding">{{ContractInfo.monthlyPrincipalInterestAmt}}</b>元</p>
+                </td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatMillion}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatShiwan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatWan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatThousand}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatHundred}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatShi}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatYuan}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatJiao}}</b></td>
+                <td><b style="color:#000000;">{{ContractInfo.monthlyPrincipalInterestAmt|moneyformatFen}}</b></td>
+            </tr> 
+            <tr>
+                <td>贷款利率</td>
+                        <td colspan="6">
+                            <p>首期贷款利率为<b style="color:#000000;" class="ng-binding">{{ContractInfo.dayInterest | number}}</b>%/日
+                            自第二期起每期贷款利率为：<b style="color:#000000;" class="ng-binding">{{ContractInfo.monthInterestPercent | number}}</b>%/月
+                            </p>
+                        </td>
+                        <td colspan="2">还款方式</td>
+                        <td colspan="2">
+                           按期分别偿还贷款本金、利息
+                        </td>
+                        <td colspan="2">还款分期期数</td>
+                        <td colspan="2"><u>{{ContractInfo.loanPeriods}}</u>期</td>
+                    </tr>
+                    <tr>
+                        <td>还款日</td>
+                        <td colspan="14">
+                            <label for="check4-1">
+                                <input id="check4-1" class="art-checkbox"  type="checkbox"  disabled/>
+                                贷款发放后的每月  日
+                            </label><br/>
+                            <label for="check4-2">
+                                <input id="check4-2" class="art-checkbox" type="checkbox" disabled/>
+                                每月   日，首次还款日为：  年<b style="color:#000000;">  </b>月<b style="color:#000000;">  </b>日。
+                            </label>
+                            <br/>
+                            <label for="check4-2">
+                                <input id="check4-2" class="art-checkbox" type="checkbox" checked="checked" disabled/>
+                               贷款发放后的每月<b style="color:#000000;"> {{ContractInfo.repaymentDay}} </b>日 ,首次还款日详见 平台短信。
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            <p>甲方（签字）：{{ContractInfo.realName}}</p>
+                            <p>日期：{{ContractInfo.nowyear}}年{{ContractInfo.nowMonth}}月{{ContractInfo.nowDay}}日</p>
+                        </td>
+                        <td colspan="8">
+                            <p>乙方（贷款人）：中国对外经济贸易信托有限公司</p>
+                            <p>盖章：</p>
+                            <p>日期  {{ContractInfo.nowyear}}年{{ContractInfo.nowMonth}}月{{ContractInfo.nowDay}}日</p>                            
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                   
+                <!-- 转介绍居间协议 start -->
+              <!--   <div class="page-content" ng-if="WithdrawRecordObject.loanType=='0' && WithdrawRecordObject.channelByHelp=='1'">
+                    <article>
+                        <div class="content-block-inner">
+                            <section>
+                                <p class="ui-txt-justify">
+                                    <br/>
+                                    <h1 class="mt2">居间服务协议</h1>
+                                    <br/> 甲方：{{ContractInfo.realName}}
+                                    <br/>身份证号码：{{ContractInfo.identityNo}}
+                                    <br/>
+                                    <br/>乙方：上海维信荟智金融科技有限公司
+                                    <br/>住所：上海市虹口区乍浦路89号办公楼1幢2801室
+                                    <br/>
+                                    <br/>丙方：
+                                    <br/>身份证号码：
+                                    <br/>丙方为甲方申请安家派产品提供居间服务，乙方受托为丙方居间服务成功后代为从甲方处扣收居间服务费，并在扣收成功后，代为支付给丙方。现各方本着自愿、公平、诚实信用的原则，依据<span>《中华人民共和国合同法》</span>等法律法规，经各方确认，达成如下协议：
+                                    <br/>1.经丙方居间服务，甲方与贷款方签订了<span>《贷款合同》</span>（编号： 借款金额为 大写人民币 元）。
+                                    <br/>2.基于丙方的居间服务，甲方同意向丙方支付相应的居间服务费，居间服务费的收取方式为：在甲方成功获取借款后，收取XX元人民币。
+                                    <br/>3.丙方故意隐瞒贷款有关的重要事项或提供虚假资料，损害甲方及（或）乙方利益的，不得要求甲方支付居间服务费。
+                                    <br/>4.居间活动所发生的费用由丙方自行承担。
+                                    <br/>5.为便于甲方与丙方的居间服务费支付，甲、丙双方同意授权乙方或其受托人委托银行或第三方支付公司从甲方指定账户（户名： 开户行： 账号
+                                    ）代为扣收本协议第2条约定的居间服务费，并代为支付给丙方。丙方收取该居间服务费的账户以丙方在乙方处预留的为准。
+                                    <br/>6.在代扣代付中，乙方仅为甲方与丙方提供居间服务费用结算服务。乙方并不保证能够成功扣收到相应金额的款项，若乙方未成功从甲方扣收到相应金额的居间服务费，乙方不承担支付义务。甲方与丙方就居间服务费发生纠纷，由甲方与丙方自行解决，在任何情形下与乙方无关。
+                                    <br/>7.乙方特别说明：丙方仅为居间服务方，丙方向甲方的承诺内容与乙方无关。贷款产品的具体内容请以甲方与乙方或相关贷款权利方签订的合同为准。如甲方签订的贷款合同与丙方介绍的具体信息不一致的，请以合同条款为准。
+                                    <br/>8.本协议自各方签字或盖章及/或点击确认之日起成立生效，签字或盖章时间及/或点击确认不一致的，以最后一方签字或盖章及/或点击确认之日起成立并生效。
+                                    <br/>9.若因本协议发生争议，各方可协商解决。协商不成时，任何一方有权向上海市浦东新区人民法院提起诉讼解决。
+                                    <br/>10. 本协议采用电子文本形式制成，并在安家派平台上保留存档，各方均认可本协议的法律效力。
+                                    <br/><br/>
+                                    甲方：乙方： 丙方：
+                                    <br/><br/>
+                                    日期： 日期： 日期：
+                                    <br/><br/>
+                                </p>
+                                <p class="text-bold">
+                                    授权人已阅读上述全部内容并同意的，请点击“同意”按钮，本授权立即生效，若授权人不同意授权，请立即停止操作，退出本申请页面。
+                                </p>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+                <table style="width:100%;">
+                    <tr>
+                        <td>甲方/借款人（签字）:（请用正楷书写）<b style="color:#000000;">{{ContractInfo.realName}}</b></td>
+                        <td>乙方/贷款人：<b style="color:#000000;">中国对外经济贸易信托有限公司</b></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>盖章：</td>
+                    </tr>
+                    <tr>
+                        <td>签约日期:<a href=""><b style="color:#000000;">{{ContractInfo.nowyear}}</b></a>/
+                        <a href=""><b style="color:#000000;">{{ContractInfo.nowMonth}}</b></a>/
+                        <a href=""><b style="color:#000000;">{{ContractInfo.nowDay}}</b></a>
+                    </td>
+                    <td>签约日期:<a href=""><b style="color:#000000;">{{ContractInfo.nowyear}}</b></a>/
+                    <a href=""><b style="color:#000000;">{{ContractInfo.nowMonth}}</b></a>/
+                    <a href=""><b style="color:#000000;">{{ContractInfo.nowDay}}</b></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">签署处：<b style="color:#000000;">{{ContractInfo.realName}}</b></td>
+            </tr>
+        </table> -->
+<!--         <div class="ajp-pos-flex-bottom ajp-btn-wrap-con bg-fff ajp-button-flex">
+            <button class="ajp-btn" ng-click="singature()">下个合同</button>
+        </div> -->
+    </div>
+</div>
+
+
+
+<!--5.《个人贷款服务与咨询合同》-->
+<div class="pt-header pb-10 bg-fff">
+    <div class="pact-service-agtee pact-wrap">
+        <h2>个人贷款服务与咨询合同</h2>
+        <p>借款人（甲方）：<b style="color:#000000;">{{ContractInfo.realName}}</b> </p>
+        <p>身份证号码：<b style="color:#000000;">{{ContractInfo.identityNo}}</b> </p>
+        <p>居住地址：<b style="color:#000000;">{{ContractInfo.liveAddress}}</b></p>
+        <p>移动电话： <b style="color:#000000;">{{ContractInfo.mobile}}</b></p>
+        <p>固定电话：<b style="color:#000000;"></b></p>
+        <p>电子邮件地址：<b style="color:#000000;"></b></p><br/>
+        <p>服务方(乙方)：<b style="color:#000000;">上海维信荟智金融科技有限公司</b> </p>
+        <p>住所：<b style="color:#000000;">上海市虹口区欧阳路196号1号楼1层26室</b> </p>        
+        <p class="text-justify">甲方有借款需求，已在<span class="short"><b>安家趣花</b></span>平台完成注册，委托平台提供借款相关的平台服务。同时甲方委托乙方进行授信额度预估、在线借款咨询、协助寻找借款来源、协助提交提现申请、协助办理提前清贷以及提供贷后相关服务。本合同所指的“安家趣花”或“平台”，是指：上海奥派数据科技有限公司           运营的在线服务平台，其展现形式包括不限于微信公众号、APP、网页；本合同的“平台账号”，即指甲方在上述平台上的open ID、用户名、账户名等信息</p>
+        <p class="text-justify">甲、乙双方同意采用电子合同形式确认双方法律关系，并对电子合同的形式表示认可，合同效力受中华人民共和国法律保护。</p>
+        <p><b>第一条 双方权利义务</b></p>
+        <p>1、   甲方应积极协助乙方进行贷款申请所需资料的收集和联络等工作，若甲方不协助乙方办理申请贷款工作，则本合同终止，甲方应承担乙方在前期服务工作中所产生的一切费用。</p>
+        <p>2、   甲方应及时向乙方提交贷款申请所需要的所有证件和相关材料，并保证所提供的资料及信息的真实、合法和完整。如提供的资料涉及任何变更，包括但不限于甲方姓名、住所、职业和联系电话发生变动，甲方应立即书面通知乙方。</p>
+        <p>3、   甲方应按本合同及相关附件之约定如期支付服务费等费用。</p>
+        <p>4、   乙方为甲方提供专业的贷款咨询、指导服务，并进行相关协调工作。乙方可能寻找的贷款人包括但不限于银行、信托公司、P2P平台或小额贷款公司等贷款主体（贷款渠道的确定以最终贷款成功为准）。乙方有权指定或授权其下属分公司行使其权利及履行其义务。</p>
+        <p>5、   乙方应按照贷款人的要求及甲方的委托，积极为甲方办理贷款申请事宜。若贷款成功发放，乙方继续为甲方提供贷后服务。乙方的工作包括不限于：对甲方贷款申请资料的归集、贷款资格的认定、资金使用的监管和对甲方进行贷款后的日常管理。</p>                  <p>6、 乙方同意为甲方提供贷款申请服务，但并不保证申请贷款必然成功，甲方的贷款申请是否审批通过，取决于贷款人。</p>
+        <p>7、   乙方有权向甲方收取手续费、服务费等相关费用，并有权委托第三方代收。若甲方逾期支付款项，则乙方有权自行催收或委托合法设立的催告机构进行催收。乙方亦有权接受贷款人、担保人（如有）的委托，收取甲方应付贷款人、担保人（如有）的款项，有权接受乙方下属分公司的委托，收取甲方应付乙方下属分公司的款项。上述事项乙方可转委托。</p>                   
+        <p>8、   为查询甲方信用状况，审核甲方履约能力，确认甲方享有本合同项下产品的资格，进行贷款后的相关管理与服务，同时为向甲方提供更为全面和广泛的融资、金融等服务，甲方同意并授权乙方在不违反《征信业管理条例》等法律法规及国家关于个人金融信息保护方面相关规定的前提下，向人民银行及其他依法设立的征信机构、资信评估机构、数据分析处理机构或有关法律、监管机构许可的类似机构（统称“信用机构”）、合法设立的身份信息系统、以及为本合同项下产品和服务提供必要技术和服务的合作机构（简称“合作机构”）查询、使用甲方的基本信息、信用信息和信用报告（统称“个人信息”）。且为建立信用体系，甲方同意并授权乙方将其在申请和使用本合同项下产品和服务过程中提供及形成的甲方的个人信息以及乙方查询、收集的个人信息向信用机构、身份信息系统、合作机构、政府机关、监管机构及其他依法有权机构提供。</p>     
+        <p>9、   为了向甲方提供更优质的服务和产品，甲方确认授权乙方有权将甲方申请和使用本次产品过程中提供及形成的甲方个人信息以及乙方查询、收集到的个人信息，用于乙方以及乙方出于为甲方提供产品和服务的必要而委托的合作机构为甲方提供服务、推荐产品、开展市场调查与信息数据分析。</p>
+        <p><b>第二条 应付款项</b></p>
+        <p class="text-justify">经乙方推荐并提供服务，本次<b>甲方与贷款人</b><span class="short"><b>中国对外经济贸易信托有限公司</b></span><b>公司签署编号为：YJ181000017019000032 </b>   
+        <b>的《贷款合同》（贷款本金数额  {{ContractInfo.withdrawMoney}}  元，还款期数  {{ContractInfo.loanPeriods}}  期）</b>，故现将相关费用明细约定如下：
+        </p>
+        <table class="loan-con">
+            <tbody><tr style="text-align: center;">
+                <td colspan="15">费用明细</td>
+            </tr>
+            <tr>
+                <td  colspan="4">手续费金额</td>
+                <td colspan="11">0</td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="4"><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>固定月服务费金额</td>
+                <td colspan="7">每月应付服务费金额</td>
+                <td colspan="4">  </td>
+            </tr>
+            <tr>
+                <td colspan="7">每月固定支付日</td>
+                <td colspan="4">见下述</td>
+            </tr>
+            <tr>
+                <td rowspan="10" colspan="4"><input id="check1-1" class="art-checkbox" checked type="checkbox"  disabled/>非固定服务费金额</td>
+                <td colspan="7">首期每日服务费金额</td>
+                <td colspan="4">{{ContractInfo.dayInterestAmount}}</td>
+            </tr>            
+            <tr>
+                <td colspan="7">自第二期起每期服务费金额</td>
+                <td colspan="4">{{ContractInfo.monthlyServiceAmt}}</td>
+            </tr>
+            <tr>
+                <td colspan="7">服务费支付日</td>
+                <td colspan="4">
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>贷款发放后的每月     日；</p>
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>每      月      日，首次支付日为：       年         月         日。</p>
+                    <p> <input id="check1-1" class="art-checkbox" type="checkbox" checked  disabled/>贷款发放后的每月  {{ContractInfo.repaymentDay}}  日,首次还款日详见  平台短信    </p>
+                </td>
+            </tr>            
+
+                </tbody></table>
+        <p>1、   <b>手续费:</b>甲方应在放款日当日或放款日之前一次性支付手续费，由甲方委托银行或者第三方支付系统从甲方指定账户扣划。</p>
+        <p><b>2、    服务费：</b><br/>若甲方服务费支付方式是每期固定金额的，甲方应在贷款发放的次月起开始按月等额支付服务费，支付日期为每月归还本息之日，即：每月与贷款人放款日对应日期的前一日；若放款日晚于当月25日，则支付日期为每月24日。节假日不顺延。甲方应付的全部服务费按还款期数平均成每月等额向乙方支付，直至贷款期限届满。乙方给予甲方免收服务费优惠的，本合同的其他条款仍然有效。费用支付期数与还款期数相同。<br/>若甲方服务费支付方式是非固定金额的，甲方应在每个还款日支付服务费，首期服务费为：首期每日服务费金额x自贷款放款日至首期支付日的天数（含当日）。乙方给予甲方免收服务费优惠的，本合同的其他条款仍然有效。费用支付期数与还款期数相同。</p>
+        <p>3、   甲方同意乙方/乙方的代收方委托银行或有资质的第三方支付系统从甲方以下指定账户<b>中扣划手续费、服务费</b>等相关款项；甲方实际支付费用的时间为乙方/乙方的代收方委托银行或有资质的第三方支付系统从甲方指定账户中扣划到相关款项的时间。<br/>开户行：<span class="short"><b>{{ContractInfo.cardNo}}</b></span> 户名：<span class="short"><b>{{ContractInfo.realName}}</b></span>卡号： <span class="short"><b>{{ContractInfo.cardBank}}</b></span>        
+        若甲方向乙方支付手续费、服务费的账户与甲方向贷款人还款、以及向担保人（如有）支付担保费的账户为同一账户，甲乙双方同意：在甲方账户余额不足以支付全部应付款时，相关款项的扣划顺序为：手续费、贷款人应收款项、服务费及担保费，但相关权利人（包括不限于有权收款人及其授权收款人）可随时调整扣划顺序，并有权决定在前一扣款项目扣划失败后，是否发起后一项目的扣划。
+        </p>
+        <p>4、   如因包括但不限于甲方账户余额不足、甲方办理该账户挂失、销户、银行止付等原因导致应付款项扣划失败，则甲方应就失败的次数分别支付扣款失败费用如下：贷款人应收款项扣划失败，则向乙方支付每笔每次<b>人民币</b><span class="short"><b>{{ContractInfo.benXiKoushi}}</b></span> 元；服务费及担保费总额扣划失败，则向乙方支付每笔每次<b>人民币</b> <span class="short"><b>{{ContractInfo.benXiKoushi}}</b></span>元。</p>
+        <p>5、   若甲方向贷款人提前还款的，甲方应按照相关约定支付服务费、提前清贷服务费等款项，上述款项的具体计算方式以相关《借款借据》为准。</p>
+        <p>6、   若甲方逾期支付款项，则乙方有权自行或者委托第三方进行催收。甲方同意：相关权利人有权在受托或亲自进行催收和追索债务等工作时，将甲方的身份信息、联络信息及甲方拖欠本合同项下债务的相关信息提供给第三方（包括不限于律师事务所和催收机构）。</p>
+        <p>7、   甲方已知晓并同意：乙方有权自行收取或者委托第三方代收服务费等款项；乙方亦有权接受他方的委托，代收甲方在本次贷款项下应付他方之款项，且乙方有权转委托。甲方对此均无异议。</p>
+        <p><b>第三条 违约责任</b></p>
+        <p>1、   甲方违反本合同项下的任何一期付款义务，则乙方有权宣布本合同提前到期或解除合同，自乙方宣布本合同提前到期或解除合同之日起三个工作日内，甲方应立即付清全部未付（包括到期与未到期）的服务费等费用。</p>
+        <p>2、   乙方宣布解除本合同的，甲方除应立即付清全部未付（包括到期与未到期）的服务费等费用外，还应向乙方支付相当于服务费总金额30%的违约金。</p>
+        <p><b>第四条 合同的生效和解除</b></p>
+        <p>1、   本合同采用电子文本形式制成，并在  安家趣花  平台上保留存档，各方均认可本合同的法律效力，本合同自贷款方实际放款成功之日起生效，至甲方结清本次贷款所涉的所有款项（包括不限于贷款本息、担保费、服务费等，详细款项以甲方签署的相关协议约定为准）后终止。甲乙双方亦可通过签署补充协议或另行签署新的《个人贷款服务与咨询合同》的方式终止本合同的履行。</p>
+        <p>2、   如甲方提供虚假资料，或隐瞒实际的资产状况，或信用状况发生改变，或涉及刑事案件，或违反本合同的任何约定，乙方有权立即解除本合同。</p>
+        <p>3、   若甲方的贷款合同被宣布提前到期或被提前解除，则乙方有权宣布本合同同步提前到期或同步解除，甲方应按本合同第三条约定承担费用支付责任及违约责任。</p>
+        <p><b>第五条 争议的解决</b></p>
+        <p class="text-justify">因履行本合同引起的任何争议，由各方协商解决；协商不成的，由<b>本合同签约地所属</b><span class="short"><b>上海市浦东新区</b></span> <b>人民法院管辖。</b>本合同签约地： <span class="short"><b>上海市浦东新区</b></span>。</p>
+        <p><b>第六条 合同附件</b></p>
+        <p class="text-justify">相关《借款借据》及甲方应乙方要求提供的所有材料和签署的所有文本均为本合同附件，是本合同的组成部分。甲乙双方一致确认：在经乙方事先认可的前提下，除本合同及补充合同、附件等明确约定的事项外，本合同所涉及的其他具体业务的操作可由甲乙双方,或甲方与乙方的委托方通过电话联系予以完成，甲乙双方对此业务办理的效力均予以确认。</p>
+        <p><b>第七条 送达</b></p>
+        <p>1、   甲方确认并保证：合同首部记载的居住地址、电子邮件地址均为甲方的送达地址，甲方提供的电话号码随时保持有效接通状态。本合同履行过程中，甲方若需变更上述信息的，请在第一时间以EMS方式向乙方进行书面告知。在双方关于本合同的权利义务终止前，乙方因履行义务、实现权利之需要，或法院、仲裁机关、行政机关处理案件需要，可采取包括但不限于以下的方式进行送达/通知：<br/>向甲方居住地址邮寄纸质文件，该等文件在投邮后的第三日（自邮寄当日起算）视为已送达；
+        向甲方电子邮件地址发送电子文件，该等文件在发送当日视为已送达；
+        向甲方提供的电话号码拨打电话或发送短信，在拨打/发送当日视为已通知/已送达；
+        向甲方平台账号发送消息或文件，在发送当日视为已送达。
+        </p>
+        <p>2、   甲方发送给乙方的任何书面通知或文件于乙方实际收到时视为送达。</p>
+        <p><b>郑重提示甲方：请每月在约定的支付日期存入贷款相关的所有应付款项并保留直至扣款成功，若因为您未及时全额付款，则将产生扣 款失败手续费。权利人/受托人将每日对您的账户发起扣款，直至扣款成功。
+        </b></p>
+        <p><b>甲方承诺：本人已知悉合同及附件全部内容，对此没有异议。</b></p>
+        <p><b>甲方已阅读上述全部内容并同意的，请点击“同意”按钮或勾选或签名，若甲方不同意的，请立即停止操作，退出本申请页面。</b></p>
+
+
+
+
+
+
+
+       <p>甲方）签字:<b style="color:#000000;" class="ng-binding">{{ContractInfo.realName}}</b></p>
+       <p>签约日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span></p>
+       <p>乙方（盖章）：<b style="color:#000000;"></b></p>
+       <p>签约日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span></p>
+  <!--      <table style="width:100%;">
+                    <tbody><tr>
+                        <td>（甲方）签字:<b style="color:#000000;" class="ng-binding">{{ContractInfo.realName}}</b></td>
+                        <td style="text-align: right">乙方（盖章）：<b style="color:#000000;"></b></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>签约日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span>
+                    </td>
+                    <td style="text-align: right">签约日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></b></td>
+            </tr>
+        </tbody></table>    -->  
+
+
+    </div>
+</div>
+<!--6.《个人贷款委托担保合同》-->
+<div class="pt-header pb-10 bg-fff">
+    <div class="pact-service-agtee pact-wrap">
+        <h2>个人贷款委托担保合同</h2>
+        <p>借款人（甲方）：<b style="color:#000000;">{{ContractInfo.realName}}</b> </p>
+        <p>身份证号码：<b style="color:#000000;">{{ContractInfo.identityNo}}</b> </p>
+        <p>居住地址：<b style="color:#000000;">{{ContractInfo.liveAddress}}</b></p>
+        <p>移动电话： <b style="color:#000000;">{{ContractInfo.mobile}}</b></p>
+        <p>固定电话：<b style="color:#000000;"></b></p>
+        <p>电子邮件地址：<b style="color:#000000;"></b></p><br/>
+        <p>担保人（乙方）：<b style="color:#000000;">维仕担保有限公司</b> </p>
+        <p>住所：<b style="color:#000000;">浙江省杭州市滨江区江南大道3850号创新大厦1801室</b> </p>        
+        <p class="text-justify">甲方向贷款人<b>中国对外经济贸易信托有限公司</b>申请人民币贷款，贷款人同意向甲方发放贷款并与甲方签署了编号为：<span class="short"><b>  </b></span>的《贷款合同》（简称“主合同”，贷款本金数额<span class="short"><b>{{ContractInfo.withdrawMoney}}</b></span>元，还款期数<span class="short"><b>{{ContractInfo.loanPeriods}}</b></span>期）。为保证主合同的履行，甲方特委托乙方为本次贷款提供担保，乙方亦同意提供担保。为明确双方权利义务，根据《合同法》、《担保法》和有关法律法规规定，甲乙双方经平等协商，签订本合同，以为共同遵守。</p>
+        <p class="text-justify">甲、乙双方同意采用电子合同形式确认双方法律关系，并对电子合同的形式表示认可，合同效力受中华人民共和国法律保护。</p>
+        <p><b>第一条 双方权利义务</b></p>
+        <p>1、   甲方委托乙方为其对贷款人的债务提供连带责任担保，担保期间为：本合同生效起，至主合同项下债务履行期限届满之日后两年止。担保范围为贷款人有权向甲方收取的本金、利息、罚息（或逾期违约金）、扣款失败的费用（如有）、违约金（如有）、实现债权的费用等款项。</p>
+        <p>2、   甲方应积极向乙方提交担保审查所需要的所有证件和相关材料，并保证所提供的资料及信息的真实、合法和完整。如提供的资料涉及任何变更，包括但不限于甲方姓名、住所、职业和联系电话发生变动，甲方应立即书面通知乙方。</p>
+        <p>3、   甲方应保证按约履行主合同项下的所有义务，因甲方原因致使贷款人宣布贷款提前到期或者行使提前解除《贷款合同》权利，并由乙方承担担保责任的，<b>甲方应向乙方支付相当于贷款本金数额之30%的违约金。</b></p>
+        <p>4、   乙方承担担保责任的履行程序：在贷款人宣布贷款提前到期或行使提前解除《贷款合同》权利时，或在贷款人要求时，乙方应立即按照贷款人的要求履行担保义务，向贷款人足额缴纳甲方应支付的全部款项。。</p>
+        <p>5、   若乙方为甲方承担了连带保证责任，则有权足额向甲方追偿，<b>追偿范围包括：乙方已担保代偿款项、违约金以及乙方为追偿、催收上述款项所产生的一切其它费用</b>（包括但不限于评估鉴定费、差旅费、诉讼费、执行费、律师费等）。乙方有权委托银行或者有资质的第三方支付机构从甲方账户中随时扣划所有有权追偿款项。</p>     
+        <p>6、  为查询甲方信用状况，审核甲方履约能力，确认甲方享有本合同项下产品的资格，进行担保后的相关管理与服务，同时为向甲方提供更为全面和广泛的融资、金融等服务，甲方同意并授权乙方在不违反《征信业管理条例》等法律法规及国家关于个人金融信息保护方面相关规定的前提下，向人民银行及其他依法设立的征信机构、资信评估机构、数据分析处理机构或有关法律、监管机构许可的类似机构（统称“信用机构”）、合法设立的身份信息系统、以及为本合同项下产品和服务提供必要技术和服务的合作机构（简称“合作机构”）查询、使用甲方的基本信息、信用信息和信用报告（统称“个人信息”）。且为建立信用体系，甲方同意并授权乙方将其在申请和使用本合同项下产品和服务过程中提供及形成的甲方的个人信息以及乙方查询、收集的个人信息向信用机构、身份信息系统、合作机构、政府机关、监管机构及其他依法有权机构提供。</p>
+        <p>7、   为了向甲方提供更优质的服务和产品，甲方确认授权乙方有权将甲方申请和使用本次产品过程中提供及形成的甲方个人信息以及乙方查询、收集到的个人信息，用于乙方以及乙方出于为甲方提供产品和服务的必要而委托的合作机构为甲方提供服务、推荐产品、开展市场调查与信息数据分析。</p>                   
+        <p>8、   本合同所指的“ 安家趣花 ”或“平台”，是指：上海奥派数据科技有限公司       运营的在线服务平台，其展现形式包括不限于微信公众号、APP、网页；本合同的“平台账号”，即指甲方在上述平台上的open ID、用户名、账户名等信息。</p>     
+        <p><b>第二条 费用</b></p>
+        <table class="loan-con">
+            <tbody><tr style="text-align: center;">
+                <td colspan="15">担保费明细</td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="4"><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>固定月担保费金额</td>
+                <td colspan="7">每月应付担保费</td>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+                <td colspan="7">每月支付日</td>
+                <td colspan="4">见下述</td>
+            </tr>
+            <tr>
+                <td rowspan="10" colspan="4"><input id="check1-1" class="art-checkbox" type="checkbox" checked  disabled/>非固定月担保费金额</td>
+                <td colspan="7">首期每日担保费金额</td>
+                <td colspan="4">{{ContractInfo.dayGuananteeAmt}}</td>
+            </tr>            
+            <tr>
+                <td colspan="7">自第二期起每期担保费金额</td>
+                <td colspan="4">{{ContractInfo.monthGuananteeAmt}}</td>
+            </tr>
+            <tr>
+                <td colspan="7">担保费支付日</td>
+                <td colspan="4">
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>贷款发放后的每     月     日；</p>
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>每月   日,首次支付日为  年  月     日  ；</p>
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox"  checked disabled/>贷款发放后的每月{{ContractInfo.repaymentDay}}日,首次还款日详见 平台短信</p>
+                </td>
+            </tr>            
+
+
+
+                </tbody></table>
+        <p>1、   甲方采用每期固定金额的方式支付担保费的，甲方应在贷款发放的次月起开始按月等额支付担保费，支付日期为每月归还本息之日，即：每月与贷款人放款日对应日期的前一日；若放款日晚于当月25日，则支付日期为每月24日。节假日不顺延。甲方应付的全部担保费按还款期数平均成每月等额向乙方支付，直至贷款期限届满。费用支付期数与还款期数相同。<br/>甲方担保费支付方式是非固定金额的，甲方首期担保费金额为：首期每日担保费金额x自贷款放款日至首期支付日（含当日）的天数。费用支付期数与还款期数相同。</p>
+        <p>2、   甲方同意乙方/乙方的代收方委托银行或有资质的第三方支付系统从甲方以下指定账户中扣划担保费等相关款项；甲方实际支付费用的时间为乙方/乙方的代收方委托银行或有资质的第三方支付系统从甲方指定账户中扣划到相关款项的时间。<br/>开户行：<span class="short"><b>{{ContractInfo.cardNo}}</b></span>户名：<span class="short"><b>{{ContractInfo.realName}}</b></span>卡号：<span class="short"><b>{{ContractInfo.cardBank}}</b></span>若甲方向乙方支付担保费的账户与甲方向贷款人还款的账户、以及支付其他贷款相关款项的账户为同一账户，甲乙双方同意：在甲方账户余额不足以支付全部应付款时，相关款项的扣划顺序为：贷款人应收款项、担保费及其他贷款相关款项。
+        </p>
+        <p>3、   若甲方向贷款人提前还款的，甲方应按照相关约定支付担保费等款项，上述款项的具体计算方式以相关《借款借据》为准。相关《借款借据》及甲方应乙方要求提供的所有材料和签署的所有文本均为本合同附件，是本合同的组成部分。
+        </p>
+        <p>4、   若甲方逾期支付款项，则乙方有权自行或者委托第三方进行催收。甲方同意：相关权利人有权在受托或亲自进行催收和追索债务等工作时，将甲方的身份信息、联络信息及甲方拖欠本合同项下债务的相关信息提供给第三方（包括不限于律师事务所和催收机构）。</p>
+        <p>5、   甲方已知晓并同意：乙方有权自行收取或者委托第三方代收担保费等款项；乙方亦有权接受他方的委托，代收甲方在本次贷款项下应付他方之款项，且乙方有权转委托。甲方对此均无异议。</p>
+        <p><b>第三条 争议解决 </b></p>
+        <p>因履行本合同引起的任何争议，由双方协商解决；协商不成的，由本合同签约地所属的<span class="short"><b>上海市浦东新区</b></span>人民法院管辖。本合同签约地：<span class="short"><b>上海市浦东新区</b></span> 。
+        </p>
+        <p><b>第四条 送达</b></p>
+        <p>1、   甲方确认并保证：合同首部记载的居住地址、电子邮件地址均为甲方的送达地址，甲方提供的电话号码随时保持有效接通状态。本合同履行过程中，甲方若需变更上述信息的，应当以EMS方式向乙方进行书面告知。。在双方关于本合同的权利义务终止前，乙方因履行义务、实现权利之需要，或法院、仲裁机关、行政机关处理案件需要，可采取包括但不限于以下的方式进行送达/通知：<br/>向甲方居住地址邮寄纸质文件，该等文件在投邮后的第三日（自邮寄当日起算）视为已送达；<br/>向甲方电子邮件地址发送电子文件，该等文件在发送当日视为已送达；<br/>向甲方提供的电话号码拨打电话或发送短信，在拨打/发送当日视为已通知/已送达；<br/>向甲方平台账号发送消息或文件，在发送当日视为已送达。</p>
+        <p>2、   甲方发送给乙方的任何书面通知或文件于乙方实际收到时视为送达。</p>
+        <p><b>第五条 合同效力</b></p>
+        <p class="text-justify">本合同采用电子文本形式制成，并在安家趣花平台上保留存档。各方均认可本合同的法律效力，本合同自贷款方实际放款成功之日起生效。甲乙双方一致确认：在经乙方事先认可的前提下，除本合同及补充合同、附件等明确约定的事项外，本合同所涉及的其他具体业务的操作可由甲乙双方,或甲方与乙方的委托方通过电话联系予以完成，甲乙双方对此业务办理的效力均予以确认。</p>
+        <p><b>甲方承诺：本人已知悉合同及附件全部内容，对此没有异议。
+        </b></p>
+        <p><b>甲方已阅读上述全部内容并同意的，请点击“同意”按钮或勾选或签名，若甲方不同意的，请立即停止操作，退出本申请页面。</b></p>
+        <p>（甲方）签字:<b style="color:#000000;" class="ng-binding">{{ContractInfo.realName}}</b></p>
+        <p>签约日期:<a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowyear}}</b></a>/
+                        <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowMonth}}</b></a>/
+                        <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowDay}}</b></a></p>
+        <p>乙方（盖章）：<b style="color:#000000;"></b></p>
+        <p>签约日期:<a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowyear}}</b></a>/
+                    <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowMonth}}</b></a>/
+                    <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowDay}}</b></a></p>
+  <!--      <table style="width:100%;">
+                    <tbody><tr>
+                        <td>（甲方）签字:<b style="color:#000000;" class="ng-binding">{{ContractInfo.realName}}</b></td>
+                        <td style="text-align: right">乙方（盖章）：<b style="color:#000000;"></b></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>签约日期:<a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowyear}}</b></a>/
+                        <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowMonth}}</b></a>/
+                        <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowDay}}</b></a>
+                    </td>
+                    <td style="text-align: right">签约日期:<a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowyear}}</b></a>/
+                    <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowMonth}}</b></a>/
+                    <a href=""><b style="color:#000000;" class="ng-binding">{{ContractInfo.nowDay}}</b></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></b></td>
+            </tr>
+        </tbody></table>   -->   
+
+        <br/><br/><br/>
+        <p style="text-align: center;"><b>担保函</b></p>
+        <p>致中国对外经济贸易信托有限公司：</p>
+        <p class="text-justify">根据借款人<span class="short"><b>{{ContractInfo.realName}}</b></span>（身份证号码：<span class="short"><b>{{ContractInfo.identityNo}}</b></span>）与贵司签订的编号为：<span class="short"><b> </b></span>的《贷款合同》，借款人与我司签订的编号为：  <span class="short"><b> </b></span> 的《个人贷款委托担保合同》之约定，我司承诺：如该借款人发生欠款，我司将向贵司承担保证责任，支付该借款人拖欠的本金、利息、罚息（或逾期违约金）、扣款失败费用（如有）、违约金（如有）等所有应付款项。</p>
+        <p class="text-justify">特此证明！</p>  
+        <p style="text-align: right;">维仕担保有限公司</p>
+        <p style="text-align: right;">{{ContractInfo.nowyear}}年  {{ContractInfo.nowMonth}}  月  {{ContractInfo.nowDay}}   日</p> 
+    </div>
+</div>
+
+
+<!--7.《安家趣花平台服务合同》-->
+<div class="pt-header pb-10 bg-fff">
+    <div class="pact-service-agtee pact-wrap">
+        <h2>安家趣花平台服务合同</h2>
+        <p style="text-align: right;">合同编号： </p>
+        <p><b>甲方（借款人）：</b><b style="color:#000000;">{{ContractInfo.realName}}</b> </p>
+        <p>身份证号：<b style="color:#000000;">{{ContractInfo.identityNo}}</b> </p>
+        <p>银行卡号：<b style="color:#000000;">{{ContractInfo.cardNo}}</b></p>
+        <p>手机号： <b style="color:#000000;">{{ContractInfo.mobile}}</b></p>
+        <p><b>乙方（平台方或平台服务方）：</b><b>上海奥派数据科技有限公司</b> </p>
+        <p>住所：<b style="color:#000000;">上海市虹口区欧阳路196号10号楼一层13室</b> </p>        
+        <p class="text-justify"><b>请仔细阅读本合同的全部条款，一经点击“同意”/勾选/签名，则视为您已经阅读、理解本合同内容并接受本合同的约束，同意遵守合同的全部内容和条款。如果您不同意本合同的任何内容或相关条款及规则，则请勿继续操作并请立即退出登录。</b></p>
+        <p class="text-justify">鉴于：</p>
+        <p class="text-justify">1.  甲方有借款需求并已同意“安家趣花注册服务协议”并完成注册，委托乙方提供借款相关的在线平台服务。</p>
+        <p class="text-justify">2.  乙方是在上海市合法成立并有效存续的有限责任公司，拥有并负责运营“安家趣花”。本合同中乙方指上海奥派数据科技有限公司及“安家趣花”。</p>
+        <p class="text-justify">3.  甲、乙双方同意采用电子合同形式确认双方法律关系，并对电子合同的形式表示认可，合同效力受中华人民共和国法律保护。</p>
+        <p class="text-justify">甲、乙双方依据相关法律法规规定，通过友好、平等、自愿原则，就有关乙方提供的平台服务事项，在甲方已确认的《安家趣花注册服务协议》基础上，达成如下条款，以兹共守：</p>
+        <p class="text-justify"><b>第一条 服务内容</b></p>
+        <p class="text-justify">(一) 甲方有借款需求时，乙方向甲方提供包括不限于下列服务：</p>
+        <p class="text-justify">1.  经甲方授权收集甲方个人信息，并辅助甲方进行个人信息验证；</p>
+        <p class="text-justify">2.  评价并展示甲方信用评分，并为甲方提供信用诊断服务；：</p>
+        <p class="text-justify">3.  为甲方评估借款可行性；</p>
+        <p class="text-justify">4.  为甲方预估可授信额度，并协助甲方分析提升可授信额度条件；</p>
+        <p class="text-justify">5.  推荐符合甲方条件的贷款人及担保人并协助提交借款及担保申请。</p>
+        <p class="text-justify">(二) 甲方还款期间，乙方向甲方提供包括不限于下列服务： </p> 
+        <p class="text-justify">1.  借款相关协议的展示与存档； </p>   
+        <p class="text-justify">2.  还款账单查询与展示，还款事宜提醒，提供主动还款通道； </p>   
+        <p class="text-justify">3.  受理提前清贷需求； </p>   
+        <p class="text-justify">4.  受理贷后事项咨询。 </p>
+
+        <p class="text-justify"><b>第二条 费用条款</b></p>
+       <!--  <p class="text-justify">基于第一条所述服务，甲方同意向乙方支付如下因平台服务发生的相关费用：</p> -->
+        <table class="loan-con">
+            <tbody><tr style="text-align: center;">
+                <td colspan="15">费用明细</td>
+            </tr>
+            <tr>
+                <td colspan="11">平台推荐费</td>
+                <td colspan="4" >
+                    {{ContractInfo.ptShouxuFee}}
+                </td>
+            </tr>            
+            <tr>
+                <td rowspan="2" colspan="4"><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>固定平台服务费金额</td>
+                <td colspan="7">每月应付平台服务费</td>
+                <td colspan="4"><b></b></td>
+            </tr>
+            <tr>
+                <td colspan="7">每月支付日</td>
+                <td colspan="4">见下述</td>
+            </tr>
+            <tr>
+                <td rowspan="10" colspan="4"><input id="check1-1" class="art-checkbox" type="checkbox" checked  disabled/>非固定平台服务费金额</td>
+                <td colspan="7">首期每日平台服务费金额</td>
+                <td colspan="4"><b>{{ContractInfo.dayFuwuFee}}</b></td>
+            </tr>            
+            <tr>
+                <td colspan="7">自第二期起每日平台服务费金额</td>
+                <td colspan="4"><b>{{ContractInfo.monthFuwuFee}}</b></td>
+            </tr>
+            <tr>
+                <td colspan="7">平台服务费支付日</td>
+                <td colspan="4">
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>贷款发放后的每月   日；</p>
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox"  disabled/>每月     日，首次支付日为：      年      月     日。</p>
+                    <p><input id="check1-1" class="art-checkbox" type="checkbox" checked  disabled/>贷款发放后的每月{{ContractInfo.repaymentDay}}  日,首次还款日详见   平台短信  </p>
+                </td>
+            </tr>            
+
+
+
+                </tbody></table>
+
+        <p class="text-justify">基于第一条乙方提供的上述服务，甲方已通过贷款人的审批，并与贷款人等权利方签署《贷款合同》（合同编号 ，借款金额 {{ContractInfo.withdrawMoney}}  ，借款期限 {{ContractInfo.loanPeriods}}）等法律文件。</p>
+        <p class="text-justify">甲方同意向乙方支付如下因平台服务发生的相关费用：</p>
+
+         <p class="text-justify"><b>（一）平台推荐费：</b></p>
+         <p class="text-justify"><b>基于乙方在甲方获取借款资金前为客户提供了本合同第一条第（一）款的一系列服务，甲方同意一次性向乙方支付平台推荐费。</b></p>
+         <p class="text-justify">甲方应在放款日当日或之前支付平台推荐费。乙方有权委托贷款方在放款时扣除该费用或者委托银行或者第三方支付系统从本条第4款的账户中扣划。</p>
+         <p class="text-justify">（二）平台服务费：</p>
+         <p class="text-justify"><b>基于乙方在甲方借款期间内持续为甲方提供本合同第一条第（二）款约定的服务，甲方同意每月向乙方支付平台服务费，直至借款期限届满。</b></p>
+         <p class="text-justify"><b>平台服务费，支付日期为每月归还本息之日。若乙方给予甲方免收平台服务费优惠的，本合同的其他条款仍然有效。</b></p>
+         <p class="text-justify">（三）<b>平台清贷费：</p>
+         <p class="text-justify">甲方若申请提前清贷的，应通过乙方平台进行提前清贷操作，甲方应向乙方支付平台清贷费（如有），平台清贷费具体计算规则详见《借款借据》。在提前清贷时，对于截止至清贷日的应付未付之平台服务费，甲方仍应向乙方支付。</p>
+
+         <p class="text-justify">（四）甲方同意乙方/乙方的代收方委托银行或有资质的第三方支付系统从甲方以下指定账户中扣划平台手续费、平台服务费、平台清贷费等相关款项；甲方实际支付费用的时间为乙方/乙方的代收方委托银行或有资质的第三方支付系统从甲方指定账户中扣划到相关款项的时间。</p>
+         <p class="text-justify"><b>开户行：<span class="short"><b>{{ContractInfo.cardBank}}</b></span>户名：<span class="short"><b>{{ContractInfo.realName}}</b></span> 卡号： {{ContractInfo.cardNo}}</b></p>
+         <p class="text-justify"><b>因甲方向乙方支付费用的账户与甲方向贷款人还款的账户为同一账户，</b>甲乙双方同意：在甲方账户余额不足以支付全部应付款时，贷款人应收款项应优先于乙方应收费用的扣划。</p>
+                 
+
+
+
+
+        <p class="text-justify"><b>第三条  违约责任 </b></p>
+        <p class="text-justify">1.   甲方违反本合同项下的任何一期付款义务，则乙方提前解除本合同，自乙方宣布本合同提前解除之日起三个工作日内，甲方应立即付清全部未付（包括到期与未到期）的平台手续费及平台服务费。
+        </p>
+        <p class="text-justify">2.  乙方宣布解除本合同的，甲方除应立即付清全部未付（包括到期与未到期）的平台手续费及平台服务费外，还应向乙方支付相当于平台服务费总金额30%的违约金。
+        </p>        
+        <p class="text-justify"><b>第四条   适用法律及争议解决</b></p>
+        <p class="text-justify">本合同的签订、履行、终止、解释均适用中华人民共和国法律，因本合同产生之争议<b>，提交上海市浦东新区人民法院管辖。</b></p>
+        <p class="text-justify"><b>第五条   通知</b></p>
+        <p class="text-justify">1.  任何一方因履行本合同作出的通知和/或文件均应为书面形式，并通过短信、电子邮件及在线消息等方式传送。</p>
+        <p class="text-justify">2.  甲方确认：一旦乙方或乙方授权的第三方向甲方电子邮件地址、平台账号发出信息、通知或其他任何函件，均视为有效送达。</p>
+        <p class="text-justify">3.  甲方同意乙方通过“安家趣花”向其发送消息通知。</p>
+        <p class="text-justify"><b>第六条  其他</b></p>
+        <p class="text-justify">1.  本合同采用电子文本形式制成，并在安家趣花平台上保留存档，各方均认可本合同的法律效力。</p>
+        <p class="text-justify">2.  变更本合同内容需另行签署补充协议，甲方承诺将配合签署。</p>
+        <p class="text-justify">3.  如果本合同中的任何一条或多条违反适用的法律法规，则该条将被视为无效，但该无效条款并不影响其他有效条款的效力。</p>
+        <p class="text-justify">4.  本合同的“安家趣花”或“平台”，是指上海奥派数据科技有限公司运营的在线服务平台，其展现形式包括不限于微信公众号、APP、网页；本合同的“平台账号”，即指甲方在上述平台上的open ID、用户名、账户名等信息。</p>
+        <p>甲方:<b class="ng-binding">{{ContractInfo.realName}}</b></p>
+        <p>日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span></p>
+        <p>乙方：<b>上海奥派数据科技有限公司</b></p>
+        <p>日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span></p>  
+   <!--      <table style="width:100%;">
+                <tbody><tr>
+                    <td>甲方:<b class="ng-binding">{{ContractInfo.realName}}</b></td>
+                    <td style="text-align: right">乙方：<b>上海奥派数据科技有限公司</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span>
+                </td>
+                <td style="text-align: right">日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></b></td>
+        </tr>
+    </tbody></table>    -->  
+
+    </div>
+</div>
+<!--8.《个人客户扣款授权书》-->
+<div class="pt-header pb-10 bg-fff">
+    <div class="pact-service-agtee pact-wrap">
+        <h2>个人客户扣款授权书</h2>
+        <p style="text-align: right;">编号：<span class="short"><b> </b></span></p>
+        <p><b>授权人姓名：</b><span class="short"><b>{{ContractInfo.realName}}</b></span> </p>
+        <p><b>身份证号码：</b><span class="short"><b>{{ContractInfo.identityNo}}</b></span> </p>
+        <p><b>联系方式：</b><span class="short"><b>{{ContractInfo.mobile}}</b></span></p>  
+        <p>授权人于<span class="short"><b>{{ContractInfo.nowyear}}</b></span>年<span class="short"><b>{{ContractInfo.nowMonth}}</b></span>月<span class="short"><b>{{ContractInfo.nowDay}}</b></span>日在网络平台安家趣花与中国对外经济贸易信托有限公司、上海维信荟智金融科技有限公司、维仕担保有限公司以及上海奥派数据科技有限公司分别签订了《贷款合同》（编号：<span class="short"><b> </b></span> ）、《个人贷款服务与咨询合同》（编号：<span class="short"><b> </b></span>）《个人贷款委托担保合同》（编号：<span class="short"><b> </b></span>）、《安家派平台服务合同》（编号：<span class="short"><b> </b></span>）等合同套件(上述公司及其授权代收主体统称“收款人”，上述合同统称“合同”)并承担合同项下的付款义务。为保障收款人的权益，本人不可撤销地授权：收款人指定的第三方支付公司及/或银行可从以下账户中扣划本人在上述合同项下的所有应付款项：</p>
+        <p><b>户名（必须同本人姓名）：</b><span class="short"><b>{{ContractInfo.realName}}</b></span> </p>
+        <p><b>卡号：</b><span class="short"><b>{{ContractInfo.cardNo}}</b></span> </p>
+        <p><b>账户性质：</b><span class="short"><b>个人银行结算帐户 </b></span></p>          
+        <p><b>开户银行：</b><span class="short"><b>{{ContractInfo.cardBank}}</b></span></p>  
+        <p>本人同意：收款人授权指定的第三方支付公司及/或银行从上述指定账户中主动扣收本人应付款项，届时无须获得本人的同意也无须事先通知本人。本人同意收款人可指定任何有资质的第三方支付公司、银行从本人上述指定账户中进行扣划，<b>包括不限于：翼支付、富友支付、财付通、银联、快钱、网银在线、中国建设银行股份有限公司及其分行等。</b>收款人亦有权增加、变更其指定的第三方支付公司及/或银行，并无需另行通知本人，本人均予以认可，无任何异议。</p>
+        <p>本人亦知悉并同意：本授权书中的收款人中的任意一方或者多方，均有权授权他方代收其应收款项，授权代收人为：本授权书约定的收款人中的其他主体或收款人以外的任何主体。在该等授权情形下，则由授权代收人向第三方支付公司及/或银行发送扣收指令，本人对此无异议。</p><br/>
+        <p>本人承诺：本人将承担因指定账户余额不足或被查封冻结导致无法按时足额扣款而导致的任何法律责任。若因本人变更上述指定扣款账户并经收款人认可，本授权书对本人变更后的账户继续有效。
+        </p><br/>
+        <p>未经收款人书面同意，本授权书不得变更、撤销、解除或终止。本授权书自签署之日起生效，直至本人清偿所有款项或收款人书面通知本授权书失效之日方告失效。</p>
+        <p><b>授权人已阅读上述全部内容并同意的，请点击“同意”按钮或勾选或签名，本授权立即生效，若授权人不同意授权，请立即停止操作，退出本申请页面。</b></p>
+        <p><b>本人签名：{{ContractInfo.realName}}</b></p>
+        <p><b>日期:<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span></b></p>
+
+    </div>
+</div>
+<!--9.《个人消费信托贷款借款借据》（外贸-安家趣花-借款借据）-->
+<div class="new-wCT"> <span></span><b></b>
+    <h3>个人消费信托贷款借款借据</h3>
+
+    <table class="showTable">
+        <tr>
+            <td><b>借款人姓名</b></td>
+            <td colspan="2">{{ContractInfo.realName}}</td>
+            <td colspan="2">身份证号</td>
+            <td colspan="8">{{ContractInfo.identityNo}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">借款合同编号</td>
+            <td colspan="3"> </td>
+            <td colspan="3">期限</td>
+            <td colspan="3">自实际放款之日起共 {{ContractInfo.loanPeriods}} 期</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><b>借款人指定放款账户</b></td>
+            <td>账号1</td>
+            <td>开户行</td>
+            <td  colspan="2"> / </td>
+            <td>账号</td>
+            <td colspan="4"> / </td>
+            <td>金额</td>
+            <td colspan="4"> / </td>
+        </tr>
+        <tr>
+            <td>账号2</td>
+            <td>开户行</td>
+            <td colspan="2">{{ContractInfo.creditCardBank}}</td>
+            <td>户名</td>
+            <td>中原账户</td>
+            <td>账号</td>
+            <td colspan="2">{{ContractInfo.creditCardNo}}</td>
+            <td>金额</td>
+            <td colspan="2">{{ContractInfo.withdrawMoney}}</td>
+        </tr>
+      <!--   <tr>
+            <td> 账号3</td>
+            <td>开户行</td>
+            <td  colspan="2"></td>
+            <td>账号</td>
+            <td colspan="4"></td>
+            <td colspan="3"></td>
+        </tr> -->
+        <tr>
+            <td><b>借款人指定还款账户</b></td>
+            <td colspan="2">□   开户行</td>
+            <td colspan="2"></td>
+            <td>账号</td>
+            <td colspan="7"></td>
+        </tr>
+        <tr>
+            <td colspan="12">  ☑ 同放款账号  1 。</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><b>借款金额人民币（大写）</b></td>
+            <td colspan="2"  rowspan="2">{{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</td>
+            <td colspan="2"  rowspan="2">人民币（小写）</td>
+            <td>十</td>
+            <td>万</td>
+            <td>千</td>
+            <td>百</td>
+            <td>十</td>
+            <td>元</td>
+            <td>角</td>
+            <td>分</td>
+        </tr>
+        <tr>
+            <td>{{ContractInfo.withdrawMoney|moneyformatShiwan}}</td>
+            <td>{{ContractInfo.withdrawMoney|moneyformatWan}}</td>
+            <td>{{ContractInfo.withdrawMoney|moneyformatThousand}}</td>
+            <td>{{ContractInfo.withdrawMoney|moneyformatHundred}}</td>
+            <td>{{ContractInfo.withdrawMoney|moneyformatShi}}</td>
+            <td>{{ContractInfo.withdrawMoney|moneyformatYuan}}</td>
+            <td>{{ContractInfo.withdrawMoney|moneyformatJiao}}</td>
+            <td>{{ContractInfo.withdrawMoney|moneyformatFen}}</td>
+        </tr>
+        <tr>
+            <td><b>说明</b></td>
+            <td colspan="12">
+                <ul class="ul1">
+                    <li>
+                        <i class="point"></i>本借款借据在信托公司/信托公司委托的代付方将贷款发放往借款人的账户时生效。（注：借款人委托银行或有资质的第三方支付系统从借款人指定账户中扣收应付<b>平台服务方的平台手续费￥{{ContractInfo.ptShouxuFee}}</b>元人民币）
+                    </li>
+                    <li><i class="point"></i>借款人在借款合同期限内若欲提前还清借款的,借款人提前清贷金额为实时计算，当甲方点击提前清贷按钮时，系统自动算出此刻借款人提前清贷总额，借款人确认后，信托公司或信托公司的受托方可委托银行或者第三方支付公司甲方约定的还款账户中扣除提前清贷全部款项，扣款成功后，提前清贷成功。</li>
+                    <li><i class="point"></i>提前清贷总额=逾期总额（若有）+当期未计利息+剩余本金+贷款服务方的提前清贷服务费+平台服务方的平台清贷费+应付服务费/担保费/平台服务费等费用（如有）。当期未计利息=借款本金×未计利息天数×日利率；贷款服务方的提前清贷服务费=剩余本金* 1 * 2%，且提前清贷服务费无论何时不低于100元；平台服务方的平台清贷费=剩余本金* 1 * 1 %，且平台清贷费无论何时不低于50元。<b>（相关权利人有权豁免部分借款人相应费用，具体金额以系统实际计算金额为准）</b></li>
+                    <li><i class="point"></i>  借款人已同意信托公司（贷款人）上海奥派数据科技有限公司（平台服务方）、     上海维信荟智金融科技有限公司（贷款服务方）、维仕担保有限公司（贷款担保方）等权利人使用借记业务自行收取或委托他方收取借款本息、手续费、平台推荐费、服务费、担保费、平台服务费、提前清贷费用和发生违约及实现债权的费用，并授权银行或有资质的第三方支付系统在收到权利人或其受托人的收费通知后，即可通过上述银行账号主动予以支付，无须事先通知借款人，由此产生的一切后果和法律责任由借款人承担。</li>
+                    <li><i class="point"></i>本借款借据为《贷款合同》（编号：  ）、《个人贷款服务与咨询合同》（编号：  ）、《个人贷款委托担保合同》（编号：  ）、《安家趣花平台服务合同》（编号：  ）的附件。</li>
+                    <li><b>借款人承诺：本人已知悉本借款借据及相应合同的全部内容，对此没有异议。</b></li>
+                    <li><b>借款人已阅读上述全部内容并同意的，请点击“同意”按钮或勾选或签名，若借款人不同意的，请立即停止操作，退出本申请页面。</b></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+
+
+            </td>
+        </tr>
+
+    </table>
+
+    <br/>
+
+
+
+
+
+    </div>
+<!--10.《特别提示函》（外贸-安家派平台拆分）-->
+<div class="new-wCT"> <u></u>   <b>   </b>
+    <p class="tar sm">合同编号： </p>
+    <h3>特别提示函</h3>
+
+    <p class="cp">尊敬的  {{ContractInfo.realName}} 客户：</p>
+    <p class="cp ti2">为完善我司在线服务平台<b>“安家趣花”</b>的服务质量，维护您的合法权益，请您仔细阅读并确认以下事项：</p>
+    <p class="cp"><b>一、贷款详情</b></p>
+    <p class="cp">1.    您的本次贷款由<b>中国对外经济贸易信托有限公司</b>发放，贷款合同自贷款发放之日起生效。</p>
+    <p class="cp"> <b>2.    金额与期限：</b>您的贷款金额<b>￥ {{ContractInfo.withdrawMoney}}元</b>，还款期数<b>{{ContractInfo.loanPeriods}}期。</b></p>
+    <p class="cp"><b>3. □固定金额还款方式：费率：</b>贷款<b>利率   % &nbsp;/月，</b>每月应付<b>服务费    元，每月应付担保费     元，每月应付平台服务费        元。</b></p>
+    <p class="cp ti2"><b>☑非固定金额还款方式：您首期还款金额自贷款起始日至首期还款日按日计算，其中贷款利率为   {{ContractInfo.dayInterest }} %/日</b>，首期每日<b>服务费金额为 {{ContractInfo.dayInterestAmount }} 元，首期每日担保费金额为 {{ContractInfo.dayGuananteeAmt   }}元，</b>首期每日平台<b>服务费金额为{{ContractInfo.dayFuwuFee  }}元；自第二期起每期贷款利率为：  {{ContractInfo.monthInterestPercent |number :3 }} %/月，每期应付服务费为{{ContractInfo.monthlyServiceAmt}}元，每期应付担保费为   {{ContractInfo.monthGuananteeAmt }}元，每期应付平台服务费为{{ContractInfo.monthFuwuFee }}元。</b></p>
+    <p class="cp"><b>4. 费用：</b>您应在放款日当日或放款日之前<b>向贷款服务方支付手续费 0元</b>，向平台支付平台推荐费{{ContractInfo.ptShouxuFee  |number }}元，由您委托银行或者第三方支付系统从指定账户扣划。</p>
+    <p class="cp">5.    履约保证金(如有)：您应在放款日当日或放款日之前向贷款担保方<b>支付履约保证金   / </b>元，由您委托银行或者第三方支付系统从指定账户扣划。在贷款期限届满之日，如您完全依约清偿各项应付款项的，该履约保证金将在30日内予以退还。</p>
+    <p class="cp"><b>6. □固定金额还款方式：每月还款：每月还款金额为￥         元</b>，从贷款发放的下月起，请在每月还款日将还款存入合同约定账户。 <b>还款日为每月与放款日对应的日期的前一日；若放款日晚于当月 25 日，则还款日为每月24日</b>。若因为您未及时全额还款导致扣款失败，权利人/受托人将每日检索您的账户发起扣款，直至扣款成功。请您务必做好资金安排。</p>
+    <p class="cp ti2"><b>☑非固定金额还款方式：首期应还利息及费用的计收方式为  {{ContractInfo.firstPeroidAmt}}  元/天，首期应还本金为{{ContractInfo.eachBenjinAmt}}元；自第二期起，每期应还金额共计为  {{ContractInfo.eachPeriodTotalAmount}}元。您的还款日按照以下第3  项执行：</b></p>
+    <p class="cp ti2">（1）贷款发放后的每月     日；</p>
+    <p class="cp ti2">（2）每月  日，首次还款日为：  年        月       日。</p>
+        <p class="cp ti2">（三）贷款发放后的每月{{ContractInfo.repaymentDay}}  日,首次还款日详见 平台短信 </p>
+    <p class="cp"><b>二、提前还款</b></p>
+    <p class="cp">若您需提前还款，请通过平台进行申请操作，当您通过平台确认还款金额后，权利人/受托人将从您的还款账户进行扣款，扣款成功后，提前还款成功。</p>
+    <p class="cp"><b>三、付费及贷后</b></p>
+    <p class="cp"><b>1. 谨慎付费：</b>请<b>不要</b>向我司员工<b>支付</b>除合同资料（包括不限于申请表、合同、借据）<b>约定费用之外的任何费用，</b>如：中介费、介绍费、好处费等。</p>
+    <p class="cp"><b>2. 谨慎还款：</b>请<b>不要直接</b>向我司员工<b>给付用于偿还合同约定的应还款项</b>，请按照约定或我司工作人员提示，将还款存入合同约定账户或我司特别指定的公司收款账户，<b>请勿存入任何个人收款账户。</b></p>
+    <p class="cp"><b>3. 妥善保管放款银行卡与账户密码：</b>请<b>不要</b>在放贷后向我司销售人员提供<b>您的放款银行卡或放款账户密码。</b></p>
+    <p class="cp">四、管辖法院</p>
+    <p class="cp">若因履行合同引起的任何争议，由  上海市浦东新区 人民法院管辖。</p>
+    <p class="cp"><b>五、 人行征信事宜：</b></p>
+    <p class="cp">我司项下的贷款业务已接入人行征信数据库，相关权利人将依据授权，查询并上报您的基本信息和贷后信用记录，请您珍视您的信用记录，保持良好的还款习惯。</p>
+    <p class="cp">若您需提前还款，或有任何疑问或投诉，请致电我司客户服务中心：4001017700，我司会竭诚为您提供优质服务。</p>
+    <br/>
+    <p class="cp tar"><b>上海维信荟智金融科技有限公司</b></p>
+    <p class="dashed"></p>
+    <p class="cp ti2"><b>请您充分阅读、知悉、理解以上提示的全部内容，若您已阅读上述内容并同意，请您点击本页面的“同意”按钮或勾选或签名，则表示您接受全部内容，若您不同意上述内容，请您立即停止操作，退出操作页面。</b></p>
+    <p class="cp tar">签名：{{ContractInfo.realName}}</p>
+    <p class="cp tar"> <b>日期:<a href=""><b class="ng-binding">{{ContractInfo.nowyear}}</b></a>年
+                    <a href=""><b class="ng-binding">{{ContractInfo.nowMonth}}</b></a>月
+                    <a href=""><b class="ng-binding">{{ContractInfo.nowDay}}</b></a>日</b></p>
+    </div>
+<!--11.《贷款用途声明》）-->
+<div class="new-wCT"> <span></span><u></u>
+    <p class="tar">合同编号：  </p>
+    <h3>贷款用途声明</h3>
+    <p class="cp">中国对外经济贸易信托有限公司:</p>
+    <p class="cp ti2">本人向贵公司申请贷款￥    {{ContractInfo.withdrawMoney}}   元，用于 支付居间费 。</p>
+    <p class="cp ti2">本人声明，该笔贷款不会用于下列目的和用途：</p>
+    <p class="cp">1.    以任何形式进入证券市场，或用于股本权益性投资；</p>
+    <p class="cp">2.    用于国家明令禁止或限制的经营活动及违法活动；</p>
+    <p class="cp">3.    用于房地产项目开发。</p>
+    <p class="cp ti2">若本人使用贷款用途违反上述承诺，则按《贷款合同》的违约条款，承担法律责任</p>
+    <p class="cp ti2">本人将妥善保管与合同约定贷款用途一致的相关消费凭证， 贵司或贵司委托的服务方有权随时要求本人提供消费凭证原件。</p>
+        <br/>
+        <br/>
+    <p class="cp">特此声明！</p>
+        <br/>
+        <br/>
+    <p class="cp">声明人：{{ContractInfo.realName}}</p>
+        <br/>
+        <br/>
+    <p class="cp">日期：<span class="ng-binding"><span>{{ContractInfo.nowyear}}</span>年<span>{{ContractInfo.nowMonth}}</span>月<span>{{ContractInfo.nowDay}}</span>日</span></p>
+
+</div>

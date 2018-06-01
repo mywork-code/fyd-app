@@ -1,0 +1,53 @@
+<div class="eGet-creditReg eGet-credit pt-header">
+    <header id="ajp-header" class="BG-red">
+        <a class="UI-back" href="javascript:history.back(-1);"></a>
+        <div class="UI-title">开通征信查询</div>
+    </header>
+    <div class="bg-fff">
+        <p class="eGet-PBOC"></p>
+        <section class="eGet-credit-top">
+            <div class="one">填写信息</div>
+            <div class="two on">补充信息</div>
+            <div class="three ">完成注册</div>
+        </section>
+    </div>
+    <p class="com-wraning">本页面信息仅作为征信账号开通，安家派将严格保密。</p>
+
+    <div name="cerditRegUserForm" >
+        <div class="form-wrap ajp-formWrap ">
+            <div class="list ajp-bb-b6">
+                用户名
+                <input class="fill-input com-box-siz" type="text" placeholder="请设置登录名" ng-model="ZhengxinInfo.username" />
+            </div>
+            <div class="list ajp-bb-b6">
+                登录密码
+                <input class="fill-input com-box-siz"  type="password" placeholder="请设置登录密码" ng-model="ZhengxinInfo.password" />
+            </div>
+            <div class="list ajp-bb-b6">
+                确认密码
+                <input class="fill-input com-box-siz"  type="password" placeholder="请再次输入登录密码" ng-model="ZhengxinInfo.confirmpassword" />
+            </div>
+            <div class="list ajp-bb-b6">
+                手机号码
+                <input class="fill-input com-box-siz"  type="text" placeholder="请输入手机号码" ng-model="ZhengxinInfo.mobile"  />
+                <i class="phoneClose" ng-show="!creditRegForm.regUierPhone.$error.required" ng-click="clearPhoneNum()"></i>
+            </div>
+            <div class="list">
+                短信验证码
+                <input class="fill-input com-box-siz"  type="text" placeholder="请输入短信验证码" ng-model="ZhengxinInfo.smscode" />
+                <button  style="margin-left: 20rem;" class="ajp-btn ajp-pos-midd getcode" id="gfb-countdown" ng-click="sendMsgToMobile()" ng-show="!CountdownObj.disFlag" >{{CountdownObj.content}}</button>
+			    <button class="ajp-btn ajp-pos-midd getcode" id="gfb-countdown"  ng-show="CountdownObj.disFlag" ng-disabled="CountdownObj.disFlag">{{CountdownObj.content}}</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ajp-btn-wrap">
+        <button class="ajp-btn" ng-click="submitRegister()" ng-disabled="ZhengxinInfo.username==''||ZhengxinInfo.password==''||ZhengxinInfo.confirmpassword==''||ZhengxinInfo.mobile==''||ZhengxinInfo.smscode==''">提交验证</button>
+    </div>
+
+    <div class="bottom-hint">
+        <p>数据来源 <span class="PBOC eGet-PBOC"></span></p>
+        <p>为保护您的隐私，安家派不保存您的征信账密信息。</p>
+    </div>
+</div>

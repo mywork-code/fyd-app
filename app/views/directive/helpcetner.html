@@ -1,0 +1,5 @@
+<div class="quesList" ng-class="{'touched':checked}">
+    <p class="title" ng-click="toggle()" ng-class="{'open':showMe}">{{title}}</p>
+
+    <p class="detail" ng-show="showMe" ng-transclude></p>
+</div>
