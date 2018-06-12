@@ -34,8 +34,12 @@ app.controller('ajqhLoanInfoProtocalCtrl',function($rootScope,$routeParams,$wind
 		$location.url('/noticeInfoProtocal');
 	}
 	$scope.cancel=function(){
-		UserInfo.loanInfoContract=false;
-		$scope.goBackWithdraw();
+		if(window.__wxjs_environment === 'miniprogram') {
+			wx.miniProgram.navigateBack();
+		} else {
+	        var platform = window.Android || window;
+		    platform.finishSelf();			
+		}
 	}
 	//返回
 	$scope.goBackWithdraw=function(){

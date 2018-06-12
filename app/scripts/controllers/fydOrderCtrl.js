@@ -7,28 +7,16 @@ var app = angular.module('gfbApp');
 app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootScope, $scope,
 		$location, OrderInfo, ClearInfo, fydorderService, UserInfo, ngUtils,
 		ContractInfo, ContractCardsList, ContractCardList, $timeout,CommonService,YibaoPay) {
-
-    if(window.navigator.onLine==false){
-    	$scope.isNetworkOutage = true;
-    	return;
-	    // ngUtils.alert("网络连接失败，请检查您的网络后再试");
-	    //$scope.goBackWithdraw();
-	}			
-
-
-	try{
+	document.title = "账单";
+    try{
 		appModel.handlerBack();//调用此方法，通知App返回按键由H5控制
 	}catch (e){
 
-	}
-    $scope.showOrderFlag1 = false;
-    $scope.showOrderFlag2 = false;
-    $scope.isNetworkOutage = false;//是否断网显示
-	$scope.UserInfo = UserInfo;
-	$(document).on("back",function(){
+	}	
+    $(document).on("back",function(){
 		$timeout(function(){
 			console.log($scope.isSwiper)
-			if($scope.isSwiper){
+			if($scope.isSwiper==true){
 				$scope.isSwiper = false
 
 			}else {
@@ -43,8 +31,69 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 				window.location.href =abssUrl;
 			}
 		},2);
-	});
-	document.title = "账单";
+	});	
+    //断网页面刷新
+	$scope.refreshPage = function(sltAccountId){
+		$scope.isNetworkOutage = false;
+		try {
+			if(appModel.isConnected()=='0') {
+		        $scope.isNetworkOutage = true;
+                ngUtils.alert("网络连接失败，请检查您的网络后再试");
+		    	return;			
+			} else if(appModel.isConnected()=='1') {
+	         	$scope.isNetworkOutage = false;
+				window.location.reload();					
+			}
+		} catch(e) {
+	      						
+		}
+        if(window.__wxjs_environment === 'miniprogram') {
+	        if(window.navigator.onLine==false){
+	        	$scope.isNetworkOutage = true;
+                ngUtils.alert("网络连接失败，请检查您的网络后再试");
+		    	return;	
+		    } else {
+               	$scope.isNetworkOutage = false;
+				window.location.reload();				    	
+		    }	        	
+	    }		
+
+	    // $location.url('/fydOrder?mobile='+UserInfo.mobile+"&token="+UserInfo.xAuthToken);
+	}	
+	// try {
+	// 	if(appModel.isConnected()=='0') {
+	//         $scope.isNetworkOutage = true;
+	//     	return;			
+	// 	}
+	// } catch(e) {
+	//     if(window.navigator.onLine==false){
+	// 	    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+	// 	    return;
+	//     }		
+	// }
+    if(window.__wxjs_environment === 'miniprogram') {
+        if(window.navigator.onLine==false){
+		    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+		    return;
+	    }			
+	    
+	} else {
+		try {
+			if(appModel.isConnected()=='0') {
+		        $scope.isNetworkOutage = true;
+		    	return;			
+			}
+		} catch(e) {
+		    if(window.navigator.onLine==false){
+			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    return;
+		    }		
+		}
+	}
+    $scope.showOrderFlag1 = false;
+    $scope.showOrderFlag2 = false;
+    $scope.isNetworkOutage = false;//是否断网显示
+	$scope.UserInfo = UserInfo;
 	$routeParams.ajqhUserId&&(UserInfo.ajqhUserId=$routeParams.ajqhUserId);
 	//初始化页面和对象域
 	$scope.OrderInfo = OrderInfo;
@@ -110,12 +159,60 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 	})
 
 
-	$scope.checkOrder = function (list) {
-		if(window.navigator.onLine==false){
-			ngUtils.alert("网络连接失败，请检查您的网络后再试");
-			return;
-		    //$scope.goBackWithdraw();
-		}		
+	$scope.checkOrder = function (list) {	
+		if(window.__wxjs_environment === 'miniprogram') {
+            if(window.navigator.onLine==false){
+			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    return;
+		    }
+		 //    wx.getNetworkType({
+			//   success: function(res) {
+			   
+			//   },
+			//   fail: function(res) {
+			//   	 alert("小程序断网");
+			//   	 // ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			//   	 return;
+			//   }
+
+			// })	
+
+		} else {
+			try {
+				if(appModel.isConnected()=='0') {
+			        ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    	return;			
+				}
+			} catch(e) {
+	           				
+			}		
+		}
+	   
+
+
+	    try{
+			appModel.handlerBack();//调用此方法，通知App返回按键由H5控制
+		}catch (e){
+
+		}
+		$(document).on("back",function(){
+		    $('.wbillLIstWrap').show();
+			$timeout(function(){
+				console.log($scope.isSwiper)
+				if($scope.isSwiper==true){
+					$scope.isSwiper = false
+
+				}else {
+					if($routeParams.ajqhUserId) {
+	                    window.history.go(-1);
+					} else {
+	 	                var platform = window.Android || window;
+					    platform.finishSelf();
+					}
+				}
+			},2);
+		});				
+		$('.wbillLIstWrap').hide();
 		$scope.FydAdvClearLoan = '0';
 		if(list.transStatus==0 || list.transStatus==-4 || list.transStatus==-3 || list.transStatus==-2){
 			$scope.orderList = [];
@@ -159,6 +256,22 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 
 	//我要还款
 	$scope.toRepay = function(sltAccountId){  //sltAcctId
+        if(window.__wxjs_environment === 'miniprogram') {
+            if(window.navigator.onLine==false){
+			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    return;
+		    }			
+		    
+		} else {
+			try {
+				if(appModel.isConnected()=='0') {
+			        ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    	return;			
+				}
+			} catch(e) {
+	           				
+			}		
+		}
 		console.log(sltAccountId)
 		ClearInfo.sltAccountId = sltAccountId;
 		$location.url("/repayment");
@@ -179,22 +292,32 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 
 		// })
 	}
-	//
-	$scope.refreshPage = function(sltAccountId){
-		// $scope.isNetworkOutage = false;
-		window.location.reload();
-	    // $location.url('/fydOrder?mobile='+UserInfo.mobile+"&token="+UserInfo.xAuthToken);
-	}
+	
 	//查看还款进度
     $scope.checkSchedule = function(orderList){
     	console.log("orderList===",orderList);
-    	// UserInfo.mobile = orderList.
     	YibaoPay.vbsBid = orderList.vbsBid;
     	YibaoPay.sltAcctId = orderList.sltAccountId;
         $location.url('/repayResult');
     }
 	//清贷查询页面跳转
 	$scope.toCleanLoan=function(sltAccountId, cleanLoanFlag){
+		if(window.__wxjs_environment === 'miniprogram') {
+            if(window.navigator.onLine==false){
+			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    return;
+		    }			
+		    
+		} else {
+			try {
+				if(appModel.isConnected()=='0') {
+			        ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    	return;			
+				}
+			} catch(e) {
+	           				
+			}		
+		}
 		ClearInfo.sltAccountId = sltAccountId;
 		ClearInfo.isExemption = cleanLoanFlag;
 		$location.url("/sureSettle?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken);
@@ -205,11 +328,22 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 	
 	//清贷查询页面跳转
 	$scope.viewContract=function(sltAccountId,cardNum){
-	    if(window.navigator.onLine==false){
-		    ngUtils.alert("网络连接失败，请检查您的网络后再试");
-		    //$scope.goBackWithdraw();
-		    return;
-		}			
+	    if(window.__wxjs_environment === 'miniprogram') {
+            if(window.navigator.onLine==false){
+			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    return;
+		    }			
+		    
+		} else {
+			try {
+				if(appModel.isConnected()=='0') {
+			        ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    	return;			
+				}
+			} catch(e) {
+	           				
+			}		
+		}
 		//还款银行和按揭银行不是同一张卡
 		if(cardNum==2){
 			ContractInfo.contractNameList = ContractCardsList;

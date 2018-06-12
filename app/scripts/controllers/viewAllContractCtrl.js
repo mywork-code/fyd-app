@@ -9,9 +9,8 @@ app.controller('ViewAllContractCtrl', function ($rootScope,$scope,$location,$tim
 		$location.url('/order')
 
 	})
-    // ViewAllContractService.queryVbsContract(ContractInfo.sltAccountId, contractNameValue);	
-
-	$rootScope.setTitle('安家派合同');
+    // ViewAllContractService.queryVbsContract(ContractInfo.sltAccountId, contractNameValue);
+	document.title='房易贷合同';
 	//接收两个参数sltId和cardNum
 	var cardNum=$routeParams.cardNum;
 	//	var cardNum=1;
@@ -41,10 +40,17 @@ app.controller('ViewAllContractCtrl', function ($rootScope,$scope,$location,$tim
 
 	// 清贷查询页面跳转
 	$scope.viewVbsContractDetail = function(contractName, contractNameValue) {
-	    if(window.navigator.onLine==false){
-		    ngUtils.alert("网络连接失败，请检查您的网络后再试");
-		    return;
-	    }			
+	    try {
+			if(appModel.isConnected()=='0') {
+		        ngUtils.alert("网络连接失败，请检查您的网络后再试");
+		    	return;			
+			}
+		} catch(e) {
+	        if(window.navigator.onLine==false){
+			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			    return;
+		    }				
+		}
 		$rootScope.titleContractName = contractName;
 		ViewAllContractService
 			.queryVbsContract(ContractInfo.sltAccountId, contractNameValue);
@@ -61,7 +67,7 @@ app.controller('ViewAllContract2Ctrl', function ($rootScope,$scope,$location,Com
 		$location.url('/viewAllContract')
 
 	})
-	$rootScope.setTitle('安家派合同');
+	document.title='房易贷合同';
 	$scope.UserInfo = UserInfo;
 	$scope.ContractInfo = ContractInfo;
 	console.log(ContractInfo.vbsContractInfoList)

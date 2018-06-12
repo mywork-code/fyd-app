@@ -905,6 +905,7 @@ app.factory("YibaoPay",function(){
 		reCardNo:'',
 		reBankCode:'',
 		reActivePayType:'',
-		Reamount:''
+		Reamount:'',
+		totalAmt: '' //逾期总金额
  	};
 });

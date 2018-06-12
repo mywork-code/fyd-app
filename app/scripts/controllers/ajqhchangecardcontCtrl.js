@@ -121,18 +121,29 @@ app.controller('ajqhchangecardcontCtrl',function($routeParams,$scope,$window,$lo
 	// 不同意
 	$scope.cancel=function(){
 		//换卡页面取消签署变更借记卡卡号协议
-		try {
+	   if(window.__wxjs_environment === 'miniprogram') {
 			wx.miniProgram.navigateBack();
-		} catch(e) {
+		} else {
 			// statements
 			//换卡页面取消签署变更借记卡卡号协议
 			UserInfo.repaceSupplemental=false;
 			RepaceBindCardObject.agreeContractFlag=false;
 			UserInfo.deductAuth=false;
-			//第一个合同取消时返回到app
-			var platform = window.Android || window;
-			platform.gotoChangeBankCard("","","","");
-		}
+	        var platform = window.Android || window;
+		    platform.finishSelf();			
+		}		
+		// try {
+		// 	wx.miniProgram.navigateBack();
+		// } catch(e) {
+		// 	// statements
+		// 	//换卡页面取消签署变更借记卡卡号协议
+		// 	UserInfo.repaceSupplemental=false;
+		// 	RepaceBindCardObject.agreeContractFlag=false;
+		// 	UserInfo.deductAuth=false;
+		// 	//第一个合同取消时返回到app
+		// 	var platform = window.Android || window;
+		// 	platform.gotoChangeBankCard("","","","");
+		// }
 		
 	}
 	

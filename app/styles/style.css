@@ -4801,12 +4801,30 @@
     margin: 0 auto;
     height: 60.5rem;
 }
-.fyd-isNetwork div {
-    width: 12rem;
-    height: 4.5rem;
+.fyd-isNetwork .icon {
+    width: 37.5rem;
+    height: 15.75rem;
     position: absolute;
-    left: 13rem;
-    top: 36rem;
+    left: 0;
+    top: 13.15rem; 
+/*     background: #fff url("../images/of-line-icon.png") no-repeat;
+    background-size: contain;  */ 
+}
+.fyd-isNetwork .icon img{
+    width: 100%;
+}
+.fyd-isNetwork .refresh {
+    width: 11.25rem;
+    height: 3.875rem;
+    border: 1px solid #7e7e7e;
+    position: absolute;
+    left: 13.125rem;
+    top: 36.55rem;
+    border-radius: 10rem;
+    color: #7e7e7e;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 3.875rem;
 }
 .right-arrow {
     width: 0.715rem;
@@ -4833,4 +4851,8 @@
     color: #FFFFFF;
     text-align: center;
     line-height: 4.5rem;
+}
+.fydBill-btn:disabled {
+    background: #ccc;
+    color: #fff;
 }

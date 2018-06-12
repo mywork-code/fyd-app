@@ -1,3 +1,11 @@
+<div class="bg-fff fyd-isNetwork" holl-page ng-if="isNetworkOutage" style="position: relative;">
+<!-- 	<img style="width: 37.5rem;height: 60.5rem;" src="images/of-line.png" /> -->
+	<div class="icon">
+		<img src="images/of-line-icon.png" />
+	</div>
+	<!-- <div>断网提示*********</div> -->
+	<div class="refresh" ng-click="refreshPage()">刷新</div>
+</div>
 <div ng-if="!isNetworkOutage" class="ajp-order fyd-order bg-fff" holl-page="">
 	<div style="width: 37.5rem;height:100%;overflow-x: hidden;overflow-y: scroll;" class="fyd-activity">
 	    <div class="gfb-myBill " ng-class="{'ui-opacity0':isLoad}">
@@ -15,8 +23,6 @@
 				    </div>
 					<div class="swiperWrap" ng-class="{'active':isSwiper}">
 						<div class="wbillLIstWrap">
-
-
 							<div class="billLIst box-size border-radius-8"
 							 ng-repeat="order in OrderInfo.sltDetailList"  ng-click="checkOrder(order)"
 							 ng-class="{'slideDown':$index==selectedIndex,'done':order.transStatus==4,'process':order.transStatus==1 && order.operateFlag!=2,'overdue':order.transStatus==3 && order.operateFlag!=2}">
@@ -82,7 +88,8 @@
 										<td ng-if="install.advClearLoan==1  && transStatus!=4" class="statE">清贷中</td>
 									</tr>
 								</table>
-								<div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行主动还款和提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服4001017700</div>
+								<!-- <div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div> -->
+								<div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行主动还款和提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div>
 							</div>
 						</div>
 					</div>
@@ -135,9 +142,5 @@
 	<div ng-show="isSwiper&&(orderList.isActivePaying == 'true')">
 		<button class="fydBill-btn" ng-click="checkSchedule(orderList)">查看还款进度</button>
 	</div>
-</div>
-<div class="bg-fff fyd-isNetwork" holl-page ng-if="isNetworkOutage" style="position: relative;">
-	<img style="width: 37.5rem;height: 60.5rem;" src="images/of-line.png" />
-	<div ng-click="refreshPage()"></div>
 </div>
 

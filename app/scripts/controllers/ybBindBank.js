@@ -189,7 +189,7 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
     }    
 
     // UserInfo.xAuthToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqd3Rfd2l0aG91dF9zcHJpbmdfc2VjdXJpdHkiLCJhdXRoIjoidGVzdCIsImV4cCI6MTUyNDEzNjMzMX0.wnolDM5Em51UbMKJi9VMQThHrKkt2P9XE7ptG_IFbnI4kTGOvh3M1EihpjgZJtEiUiOaA1TLRHjaMU8Uwta5Tg";
-
+    UserInfo.xAuthToken = $routeParams.token;
     UserInfo.mobile=$routeParams.mobile;
     YibaoPay.sltAcctId=$routeParams.sltAcctId;
     yibaoService.repay();
@@ -290,7 +290,7 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
             $scope.amount = YibaoPay.nextBillAmt;
         } else if(YibaoPay.dueAmt>0&&YibaoPay.selectSrc=='img/ajp-botton-on.png'){
             $scope.activePayType = '2';
-            $scope.amount = Number(YibaoPay.nextBillAmt)+Number(YibaoPay.dueAmt);
+            $scope.amount = YibaoPay.totalAmt;
         }  else {
             $scope.activePayType = '1';
             $scope.amount = YibaoPay.dueAmt;
@@ -318,13 +318,16 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
                     CountdownObj.content='重新获取(' + CountdownObj.content  +')';
                     CommonService.beginInterval(120);                    
                 }
-                
+
             } else {
-                 ngUtils.alert(res.msg);
+                ngUtils.alert(res.msg);
+                if(res.msg=='还款数据失效，请刷新页面再试') {
+                    $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
+                }                    
                 $scope.CloseYibaoMask();
-                 
             }
         })
+
       
     }
     
@@ -392,7 +395,7 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
             $(function(){
                 window.slideUtil = (function($) {
 
-                    var listItem = $('.bank_content'),
+                    var listItem = $('.bank_content1'),
                         listOpts = $('.bank_right');
 
                     var onthel = false, // 是否处于最左端
@@ -522,7 +525,7 @@ app.controller('yibaoChooseBankCtrl', function ($scope, $rootScope,$routeParams,
         $location.url('/bindBank').replace();
 
     })
-     document.title = "选择银行";
+    document.title = "选择银行";
     $scope.YibaoPay = YibaoPay;
     yibaoService.InitBankList();
     $scope.bankCard = function(list) {

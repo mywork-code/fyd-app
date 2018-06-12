@@ -394,7 +394,7 @@ app.factory("WithdrawService",function($rootScope,$http,$window,PageControllerOb
                     ContractInfo.monthlyPrincipalInterestAmt=_data.monthlyPrincipalInterestAmt;   //自第二期月本息、
                     ContractInfo.monthlyInterestBenjinAmt =_data.monthlyInterestBenjinAmt; //月利息
 
-                    ContractInfo.fitstGuananteeAmt = (ContractInfo.withdrawMoney)*0.02;
+                    ContractInfo.fitstGuananteeAmt = (ContractInfo.withdrawMoney)*0.02;   //首次担保费
                     ContractInfo.monthGuananteeAmt=_data.monthlyGuaranteeCost;                      //每月担保费
                     ContractInfo.dayGuananteeAmt=(ContractInfo.monthGuananteeAmt/30).toFixed(2);                //日担保费
                     
@@ -434,13 +434,23 @@ app.factory("WithdrawService",function($rootScope,$http,$window,PageControllerOb
                     }
                     
                     if (ContractInfo.withdrawMoney!=null && ContractInfo.withdrawMoney!=undefined && ContractInfo.withdrawMoney >5000) {
+                        ContractInfo.benXiKoushi=(ContractInfo.withdrawMoney)*0.0025;
+                        ContractInfo.fuWuDanbaoKoushi=(ContractInfo.withdrawMoney)*0.0025;
+                        if(ContractInfo.benXiKoushi<50) {
+                            ContractInfo.benXiKoushi=50;
+                        } else if(ContractInfo.benXiKoushi>100) {
+                            ContractInfo.benXiKoushi=100;
+                        }
+                        if(ContractInfo.fuWuDanbaoKoush<50) {
+                            ContractInfo.fuWuDanbaoKoush=50;
+                        } else if(ContractInfo.fuWuDanbaoKoush>100) {
+                            ContractInfo.fuWuDanbaoKoush=100;
+                        }                        
+                    }else{
                         ContractInfo.benXiKoushi=50;
                         ContractInfo.fuWuDanbaoKoushi=50;
-                    }else{
-                        ContractInfo.benXiKoushi=25;
-                        ContractInfo.fuWuDanbaoKoushi=25;
                     }
-                    ContractInfo.benXiKoushi =  _data.principalInterestPunish; //本息扣失
+                    // ContractInfo.benXiKoushi =  _data.principalInterestPunish; //本息扣失
                     ContractInfo.fuWuDanbaoKoushi =  _data.guarantPunish; //担保费扣失扣失
                     ContractInfo.dailyInterestTotalAmount =          _data.dailyInterestTotalAmount //每日总利息
 

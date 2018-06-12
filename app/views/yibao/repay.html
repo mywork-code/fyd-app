@@ -16,14 +16,13 @@
         position: relative;
         transform: translateZ(0);
         -webkit-transform: translateZ(0);
-        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
     }
    .bank_content {
        height: 9.5rem;
-       overflow: hidden;
+     /*   overflow: hidden; */
        position: relative;
        z-index: 10;
-
    }
    .bank_content .wrap {
        position: relative;
@@ -64,38 +63,41 @@
    }
     .bank_content.no_bank .ui-href {
         position: absolute;
-        right:1.2rem;
-        top:50%;
+        right: 0rem;
+        top: 50%;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         padding-right: 1.2rem;
         text-align: right;
-        font-size:1.2rem;
+        font-size: 1.2rem;
         color: #349FED;
+        height: 2.25rem;
+        line-height: 2.25rem;
     }
     .bank_content.no_bank .ui-href span {
         width: 0.715rem;
         height: 2.25rem;
-        margin-left: 0.5rem;
-        background: url("images/ajp-turnRright.png") no-repeat;
+        background: url(images/ajp-turnRright.png) no-repeat;
         background-size: contain;
-        float: right;   
+        float: right;
+        margin: 0.4rem 0 0 0.81rem;
     }
     .bank_right {
         height: 9.5rem;
-        width:7rem;
+        width: 7rem;
         display: -webkit-box;
         -webkit-box-pack: center;
         -webkit-box-align: center;
         position: absolute;
         top: 0;
-        right: 1.2rem;
+        right: 1.3rem;
         z-index: 0;
         background-color: #E2262A;
-        color:#fff;
+        color: #fff;
         font-size: 1.4rem;
         border-top-right-radius: 0.2rem;
         border-bottom-right-radius: 0.2rem;
+        overflow: hidden;
     }
     .repayNew {
         position: fixed;
@@ -119,7 +121,7 @@
         display: none;
     }    
     .repayNew .tip {
-        margin-top: 4rem;
+        margin-top: 1.25rem;
         font-size: 1.2rem;
         color: #7E7E7E;
         text-align: center;
@@ -242,10 +244,11 @@
         margin: 0 0.5rem;
     }        
     .repay-bank {
-       font-size: 1.5rem;
-       height: 2rem;
-       text-align: center;
-       line-height: 2rem;
+        font-size: 1.5rem;
+        height: 5rem;
+        text-align: center;
+        line-height: 5rem;
+        color: #303030;
     }
     .sendMsgBack {
         width: 3.5rem;
@@ -358,12 +361,12 @@
     <button class="fydBill-btn" ng-click="repayment()">立即还款</button>
 </div>
 <!--原绑卡页面-->
-<div class="repayNew com-box-siz" style="display: none;height: 40.3rem;background: #fff;">
-    <div class="newTip12">主动还款后，需到该账单还款日之后才能进行一次还清</div>
+<div class="repayNew com-box-siz" style="display: none;height: 39.7rem;background: #fff;">
+       <!--  <div class="newTip12" ng-show="YibaoPay.bankCardNumber == 3">主动还款后，需到该账单还款日之后才能进行一次还清</div> -->
         <div class="repay-bank" ng-show="YibaoPay.bankCardNumber == 0">请添加还款银行卡</div>
         <div class="repay-bank" ng-show="YibaoPay.bankCardNumber > 0">请选择还款银行卡</div>
         <div class="bank_list"  ng-repeat="list in YibaoPay.userBankCardInfoList">
-            <div class="bank_content" ng-click="showSmsReg(list)">
+            <div class="bank_content bank_content1" ng-click="showSmsReg(list)">
                 <div class="wrap">
                     <img src="img/bankyibao/{{list.bankCode}}-BG.png" class="icon_bank" alt=""/>
                     <span>{{list.bankName}}（<span class="yibao-cardNo">{{list.cardNo | lastFour}}</span>）</span>

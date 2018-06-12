@@ -44,6 +44,7 @@ app.factory("yibaoService", function($location, $rootScope,$resource, $q,UserInf
 		           		YibaoPay.bankCardNumber=bankCardNumber;
 		           		YibaoPay.userBankCardInfoList=userBankCardInfoList;
 		           		YibaoPay.dueAmt = dueAmt;
+		           		YibaoPay.totalAmt = Number(response.data.totalAmt).toFixed(2);//逾期总金额
 		           		YibaoPay.nextBillAmt = Number(nextBillAmt).toFixed(2);
 		           		console.log('aaaaaaaa',YibaoPay.bankCardNumber);
 		           		// dueAmt=-1;
@@ -230,20 +231,16 @@ app.factory("yibaoService", function($location, $rootScope,$resource, $q,UserInf
 			           			$scope.YibaoPay.isPayResult = '0';
 			           			document.title = "还款成功";
 			           			$scope.result = 'suc';//fail  wait  suc
-			           			$rootScope.setTitle('还款成功');
 			           		}else if(response.data.payStatus == '-1'){
 			           			$scope.YibaoPay.isPayResult = '0';
 			           			document.title = "还款失败";
 			           			$scope.result = 'fail';//fail  wait  suc
-			           			$rootScope.setTitle('还款失败');
 			           		}else{
 			           			$scope.YibaoPay.isPayResult = '1';
 			           			document.title = "还款中";
 			           			$scope.result = 'wait';//fail  wait  suc
-			           			$rootScope.setTitle('等待还款');
 			           		}
-
-
+			           		
 			            } else {
 			            	ngUtils.alert(response.msg);
 			            }

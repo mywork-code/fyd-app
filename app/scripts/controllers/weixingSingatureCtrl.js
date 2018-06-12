@@ -38,7 +38,7 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
 	var ch = document.documentElement.clientHeight;
 	var signaturePage = document.createElement("div");
 	signaturePage.id = "signaturePage"; 
-	signaturePage.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;-webkit-transform:translate3d(0,"+ch+"px,0); overflow:hidden;";
+	signaturePage.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;-webkit-transform:translate3d(0,"+ch+"px,0); overflow:hidden;";
 	var $sigdiv = $('#gfd-signaturePlace');
 	$sigdiv.jSignature({
 		height: "22rem",
@@ -55,7 +55,6 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
 	
 	//确定-保存签名
 	$scope.confirm = function(obj){
-
 		//检验是否网络中断    如果中断弹出提示
 		if(window.navigator.onLine==false){
 			ngUtils.alert("网络连接错误，请检查网络连接");
@@ -74,6 +73,10 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
 
 	//保存按钮
 	$(".gfb-btn-save").on("click",function(){
+	    if(window.navigator.onLine==false){
+			ngUtils.alert("网络连接错误，请检查网络连接");
+			return;
+		}
 		//控制页面返回按钮的操作事件
 		$("#UI-back-normal").hide();
 		$("#UI-back-unnormal").show();
@@ -293,7 +296,7 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
 				imgBox.appendChild(rect2);
 				imgBox.appendChild(rect3);
 				imgBox.appendChild(rect4); 
-				signaturePage.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;-webkit-transform:translate3d(0,0,0); overflow:hidden;";
+				signaturePage.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;-webkit-transform:translate3d(0,0,0); overflow:hidden;";
 				
 				// btnWrap.appendChild(cancelBtn);
 				btnWrap.appendChild(sureBtn);
@@ -330,44 +333,38 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
 			    sureBtn.addEventListener("click",function(){
 			    	console.log('WithdrawRecordObject.sltAccountId==',WithdrawRecordObject.sltAccountId);
 			    	if(WithdrawRecordObject.sltAccountId == '' || WithdrawRecordObject.sltAccountId == undefined) {
-                        try {
-	                     	var params = {
+                        if(window.__wxjs_environment === 'miniprogram') {
+                             wx.miniProgram.postMessage({ data: {success: true,code:1,date:$scope.SignDate,id:$scope.SignId} });
+		                     wx.miniProgram.navigateBack();   
+                        } else {
+	                        var params = {
 	                     		isSign: true,
 	                     		date:$scope.SignDate,
 	                     		id:$scope.SignId
 	                     	};
 	                     	window.appModel.setPageResult(JSON.stringify(params));
-	                     	appModel.signatureSuc('1');
 	                     	var platform = window.Android || window;
 	                        platform.finishSelf();
-
-	                     	// statements
-	                    } catch(e) {
-		                     wx.miniProgram.postMessage({ data: {success: true,code:1,date:$scope.SignDate,id:$scope.SignId} });
-		                     wx.miniProgram.navigateBack();                     	
-	                     	// statements
-	                    }	
+                        }
 			    	} else {
                           fydorderService.pendingInformation($scope).then(function(res){
 								console.log("res==",res);
 								if(res.status=='1') {
-				                      try {
-				                     	var params = {
-				                     		isSign: true,
-				                     		date:$scope.SignDate,
-				                     		id:$scope.SignId
-				                     	};
-				                     	window.appModel.setPageResult(JSON.stringify(params));
-				                     	// appModel.signatureSuc('1');
-				                     	var platform = window.Android || window;
-				                        platform.finishSelf();
+								        if(window.__wxjs_environment === 'miniprogram') {
+											 wx.miniProgram.postMessage({ data: {success: true,code:1,date:$scope.SignDate,id:$scope.SignId} });
+					                         wx.miniProgram.navigateBack();  
+										} else {
+									        var params = {
+					                     		isSign: true,
+					                     		date:$scope.SignDate,
+					                     		id:$scope.SignId
+					                     	};
+					                     	window.appModel.setPageResult(JSON.stringify(params));
+					                     	// appModel.signatureSuc('1');
+					                     	var platform = window.Android || window;
+					                        platform.finishSelf();			
+										}									
 
-				                     	// statements
-				                     } catch(e) {
-					                     wx.miniProgram.postMessage({ data: {success: true,code:1,date:$scope.SignDate,id:$scope.SignId} });
-					                     wx.miniProgram.navigateBack();                     	
-				                     	// statements
-				                     }					  		
 								} else {
 						           				
 								}
@@ -502,7 +499,7 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
         
         signaturePage = document.createElement("div");
     	signaturePage.id = "signaturePage"; 
-    	signaturePage.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;-webkit-transform:translate3d(0,"+ch+"px,0); overflow:hidden;";    
+    	signaturePage.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10;-webkit-transform:translate3d(0,"+ch+"px,0); overflow:hidden;";    
 	}
 });
 
