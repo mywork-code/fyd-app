@@ -5,19 +5,11 @@ var app = angular.module('gfbApp');
  * 清贷确认 controller
  */
 app.controller('ClearLoanCtrl', function ($routeParams,$scope,$rootScope,CommonService,ClearInfo,ClearLoanService,$timeout,$location,UserInfo) {
-	try {
-		if(appModel.isConnected()=='0') {
-	        $scope.isNetworkOutage = true;
-	    	return;			
-		}
-	} catch(e) {
-        if(window.navigator.onLine==false){
-		    ngUtils.alert("网络连接失败，请检查您的网络后再试");
-		    return;
-	    }					
-	}
 	UserInfo.xAuthToken = $routeParams.token;
 	UserInfo.mobile = $routeParams.mobile;
+	CommonService.appBack(function(){
+	       $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
+	})
     document.title='还款确认';
     $scope.isCleanSuc = false; //是否显示查看详情框
 	//页面初始化的时候先清空就的数据，放置影响页面的显示效果

@@ -18,7 +18,7 @@
         <p><b>第一条  贷款要素</b></p>
         <p class="indent">1.    本合同项下贷款<b>仅限用于甲方个人消费或生产经营，具体为：<input id="check1-1" class="art-checkbox" type="checkbox" checked="" disabled="">个人消费/<input id="check1-1" class="art-checkbox" type="checkbox" disabled="">生产经营；</b></p>
         <p class="indent"><b>2. 未经乙方书面同意，甲方不得擅自改变贷款用途，贷款不得用于购房支出、不得用于认购和买卖股票或其它权益性投资、不得发放P2P平台贷款或受让P2P平台贷款债权；贷款用途不得违反法律、行政法规、规章、规范性文件及司法解释等法律文件的禁止性或限制性规定；</b></p>
-        <p class="indent">3.    贷款金额为￥<span class="underline">{{ContractInfo.withdrawMoney}}</span>元（人民币大写<span class="underline">{{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</span>元）；</p>
+        <p class="indent">3.    贷款金额为&yen;<span class="underline">{{ContractInfo.withdrawMoney}}</span>元（人民币大写<span class="underline">{{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</span>元）；</p>
         <p class="indent">4.    贷款利率为： 6%/年 ；</p>
         <p class="indent">5.    贷款期限：自放款之日起，{{ContractInfo.loanPeriods}}个月；</p>
         <p class="indent">6.    还款方式为<strong>【根据实际情况选择或填写】</strong>：</p>
@@ -44,9 +44,9 @@
         <p class="indent">贷款起始日以贷款本金划离本合同约定的乙方账户之日为准。贷款本金划出即视为乙方的贷款义务履行完毕，划出日即为该笔贷款的实际放款日并开始计算该笔贷款的利息，因款项划付产生的费用由甲方承担。除因乙方过错外，错划、无法划入甲方专用账户的法律后果均由甲方承担，且不影响甲方履行本合同项下的所有义务。</p>
         <p class="indent">2.  本合同项下的贷款本金采用下列第<span class="under" style="min-width:0.1rem;">1</span>项方式发放：</p>
         <p class="indent"><strong class="under">（1）</strong>乙方自主发放或委托第三方支付机构/银行以资金代付的方式将本合同项下的贷款本金数额从乙方账户按以下方案划付至甲方专用账户中: </p>
-        <p>将人民币（大写）<span class="under" style="min-width:0.1rem;">{{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</span>（小写）￥ <span class="under" style="min-width:0.1rem;">{{ContractInfo.withdrawMoney}}</span>元划入甲方专用账户1；</p>
-        <p>将人民币（大写）<span class="under" style="min-width:0.1rem;">/</span>（小写）<span class="under" style="min-width:0.1rem;">/</span>￥ 元划入甲方专用账户2；</p> 
-        <p>（2）采用受托支付的方式发放，即：乙方通过其合作的第三方支付机构/银行将本合同项下的贷款本金数额人民币（大写）<span class="under" style="min-width:0.1rem;">/</span>（小写）￥<span class="under" style="min-width:0.1rem;">/</span>元划付至甲方指定的<span class="under" style="min-width:0.1rem;">/</span>用以<span class="under" style="min-width:0.1rem;">/</span>。甲方确认：本合同的签署即视为发出委托指令，委托指令一经发出不得撤销，且不得因与<span class="under" style="min-width:0.1rem;">/</span>的纠纷拒绝履行还款义务。</p>
+        <p>将人民币（大写）<span class="under" style="min-width:0.1rem;">{{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</span>（小写）&yen; <span class="under" style="min-width:0.1rem;">{{ContractInfo.withdrawMoney}}</span>元划入甲方专用账户1；</p>
+        <p>将人民币（大写）<span class="under" style="min-width:0.1rem;">/</span>（小写）<span class="under" style="min-width:0.1rem;">/</span>&yen; 元划入甲方专用账户2；</p> 
+        <p>（2）采用受托支付的方式发放，即：乙方通过其合作的第三方支付机构/银行将本合同项下的贷款本金数额人民币（大写）<span class="under" style="min-width:0.1rem;">/</span>（小写）&yen;<span class="under" style="min-width:0.1rem;">/</span>元划付至甲方指定的<span class="under" style="min-width:0.1rem;">/</span>用以<span class="under" style="min-width:0.1rem;">/</span>。甲方确认：本合同的签署即视为发出委托指令，委托指令一经发出不得撤销，且不得因与<span class="under" style="min-width:0.1rem;">/</span>的纠纷拒绝履行还款义务。</p>
         <p>甲方指定账户信息：</p>
         <p>户  名：/</p>
         <p>开户行：/</p>
@@ -55,8 +55,8 @@
 
       <!--   <p class="indent">1.    本合同项下贷款期限为 <span class="underline">{{ContractInfo.loanPeriods}}（月），</span>贷款起始日以贷款本金划离本合同约定的乙方账户之日为准。贷款本金划出即视为乙方的贷款义务履行完毕，划出日即为该笔贷款的实际放款日并开始计算该笔贷款的利息，因款项划付产生的费用由甲方承担。除因乙方过错外，错划、无法划入甲方专用账户的法律后果均由甲方承担，且不影响甲方履行本合同项下的所有义务。</p>
         <p class="indent">2.   乙方自主发放或委托第三方支付机构/银行以资金代付的方式将本合同项下的贷款本金数额从乙方账户按以下方案划付至甲方专用账户中: </p>
-        <p>将人民币（大写）<span class="underline">{{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</span>（小写）￥ <span class="underline">{{ContractInfo.withdrawMoney}}</span>元划入甲方专用账户1；</p>
-        <p>将人民币（大写）<span class="underline">零元整</span>（小写）<span class="underline">0.00</span>￥ 元划入甲方专用账户2；</p> -->
+        <p>将人民币（大写）<span class="underline">{{ContractInfo.withdrawMoney|number:2|moneyformatChinese}}</span>（小写）&yen; <span class="underline">{{ContractInfo.withdrawMoney}}</span>元划入甲方专用账户1；</p>
+        <p>将人民币（大写）<span class="underline">零元整</span>（小写）<span class="underline">0.00</span>&yen; 元划入甲方专用账户2；</p> -->
 
 
 
@@ -787,11 +787,11 @@
     <p class="cp ti2">为完善我司在线服务平台 <span class="under" style="min-width:0.1rem;">“房易贷”</span>的服务质量，维护您的合法权益，请您仔细阅读并确认以下事项：</p>
     <p class="cp"><b>一、贷款详情</b></p>
     <p class="cp">1.    您的本次贷款由<b>中国对外经济贸易信托有限公司</b>发放，贷款合同自贷款发放之日起生效。</p>
-    <p class="cp"> <b>2.    金额与期限：</b>您的贷款金额<b>￥ <span class="under" style="min-width:0.1rem;">{{ContractInfo.withdrawMoney}}</span>元</b>，还款期数<b><span class="under" style="min-width:0.1rem;">{{ContractInfo.loanPeriods}}</span>期。</b></p>
+    <p class="cp"> <b>2.    金额与期限：</b>您的贷款金额<b>&yen; <span class="under" style="min-width:0.1rem;">{{ContractInfo.withdrawMoney}}</span>元</b>，还款期数<b><span class="under" style="min-width:0.1rem;">{{ContractInfo.loanPeriods}}</span>期。</b></p>
     <p class="cp"><b>3.☑ 固定金额还款方式：费率：</b>贷款<b>利率<span class="under" style="min-width:0.1rem;">0.50</span>% &nbsp;/月，每月应付担保费<span class="under" style="min-width:0.1rem;">{{ContractInfo.monthGuananteeAmt}}</span>元。</b></p>
     <p class="cp ti2"><b>□非固定金额还款方式：您首期还款金额自贷款起始日至首期还款日按日计算，其中贷款利率为<span class="under" style="min-width:0.1rem;">/</span>%/日，首期每日担保费金额为<span class="under" >/</span>元；自第二期起每期贷款利率为：<span class="under" style="min-width:0.1rem;">/</span>    月，每期应付期付担保费为<span class="under" style="min-width:0.1rem;">/</span>元</b></p>
      <p class="cp"><b>4.   首次担保费：</b>您应在放款日当日或放款日之前向担保方<b>支付首次担保费<span class="under" style="min-width:0.1rem;">{{  ContractInfo.fitstGuananteeAmt}}</span>元</b>，由您委托银行或者第三方支付系统从指定账户扣划。</p>
-    <p class="cp"><b>5. ☑固定金额还款方式：每月还款：每月还款金额为￥<span class="under" style="min-width:0.1rem;">{{ContractInfo.eachPeriodTotalAmount}}</span>元，</b>从贷款发放的下月起，请在每月还款日将还款存入合同约定账户。<b>还款日为每月与放款日对应的日期的前一日；若放款日晚于当月25日，则还款日为每月24日。</b>若因为您未及时全额还款导致扣款失败，权利人/受托人将每日检索您的账户发起扣款，直至扣款成功。请您务必做好资金安排。</p>
+    <p class="cp"><b>5. ☑固定金额还款方式：每月还款：每月还款金额为&yen;<span class="under" style="min-width:0.1rem;">{{ContractInfo.eachPeriodTotalAmount}}</span>元，</b>从贷款发放的下月起，请在每月还款日将还款存入合同约定账户。<b>还款日为每月与放款日对应的日期的前一日；若放款日晚于当月25日，则还款日为每月24日。</b>若因为您未及时全额还款导致扣款失败，权利人/受托人将每日检索您的账户发起扣款，直至扣款成功。请您务必做好资金安排。</p>
     <p class="cp ti2"><b>□非固定金额还款方式：首期应还利息及费用的计收方式为 <span class="under" style="min-width:0.1rem;">/ </span>元/天，首期应还本金为 <span class="under" style="min-width:0.1rem;">/ </span>元；自第二期起，每期应还金额共计为 <span class="under" style="min-width:0.1rem;">/ </span>元。您的还款日按照以下第 <span class="under" style="min-width:0.1rem;">/ </span>项执行：</b></p>
     <p class="cp ti2">（1）贷款发放后的每月 <span class="under" style="min-width:0.1rem;">/ </span>日；</p>
     <p class="cp ti2">（2）每月 <span class="under" style="min-width:0.1rem;">/ </span>日，首次还款日为：<span class="under" style="min-width:0.1rem;"> /</span> 年<span class="under" style="min-width:0.1rem;"> / </span>月 <span class="under" style="min-width:0.1rem;">/ </span>日。</p>

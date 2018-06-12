@@ -18,7 +18,7 @@ app.controller('ajqhpersonalInfoProtocalCtrl', function ($routeParams,$rootScope
 		console.log(e);
 	}
 	
-	$rootScope.setTitle('个人信息授权书');
+	$rootScope.setTitle('相关合同');
 	$scope.isSign = $routeParams.isSign;
 	
 	PageControllerObject.contractPage=$routeParams.contractPage;//合同是否重签标记位（1为重签，0为正常签名）
@@ -109,24 +109,12 @@ app.controller('ajqhpersonalInfoProtocalCtrl', function ($routeParams,$rootScope
 	}
 	
 	$scope.cancel=function(){
-		try {
+		if(window.__wxjs_environment === 'miniprogram') {
 			wx.miniProgram.navigateBack();
-		} catch(e) {
-			// statements
-			UserInfo.personalInfoAuthor=false;
-			if(PageControllerObject.contractPage==1){
-				//$location.url('/showWithdrawInfo');
-				//取消合同返回到入口页面
-				var platform = window.Android || window;
-				platform.gotoEtakeForIdentity("");
-			}else{
-				//$location.url("/IdentityValidate");
-				//返回app身份认证页
-				var platform = window.Android || window;
-				platform.gotoEtakeForIdentity("");
-			}
+		} else {
+	        var platform = window.Android || window;
+		    platform.finishSelf();			
 		}
-		
 	}
 	
 	$scope.gotoEtakeForIdentity=function(){

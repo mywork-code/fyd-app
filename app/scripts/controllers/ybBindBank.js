@@ -170,7 +170,7 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
     $scope.UserInfo = UserInfo;
     document.title = "我要还款";
     CommonService.appBack(function(){
-        $location.url("/order");//返回到我的账单
+       $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
 
     })
       // CommonService.beginInterval(120);   
@@ -504,7 +504,7 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
 app.controller('repayResultCtrl', function ($scope, UserInfo,$rootScope,$routeParams,$timeout,YibaoPay,yibaoService,$location,CommonService) {
     $scope.UserInfo = UserInfo;
     CommonService.appBack(function(){
-        $location.url("/order").replace();//返回到我的账单
+        $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
     })
     $scope.YibaoPay = YibaoPay;
 	$scope.UserInfo = UserInfo;

@@ -42,18 +42,19 @@
 									<span class="bill-state" ng-if="order.transStatus==4" style="color:#22B362;font-size: 1.6rem;">已结清<span class="right-arrow"></span></span>
 									<span class="bill-state" ng-if="order.transStatus==-1" style="font-size: 1.6rem;">提现失败<span class="right-arrow"></span></span>
 								</p>
-
-							<div class="checkBill">
-								<p ng-if="order.paymentDueDate" class="com-wraning">免息截止日 {{order.paymentDueDate | DateSlashFilter}}</p>
-								<span ng-if="!(order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2)" class="detail" ng-click="viewContract(order.sltAccountId,OrderInfo.cardNum)">查看合同</span>
-								<p ng-if="order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2" class="tar">提现审批中 请耐心等待</p>
-								<a  ng-if="order.isCloan"
-									ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a>
-								<!-- <a  ng-if="order.transStatus==1 && order.operateFlag!=2 && order.isExemption==1"
-									ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a> -->
-									<!--<a ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">免息还款</a>-->
-			                    <!-- <a  ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a>				 -->		
-							</div>
+							<div style="padding: 0 1.2rem;">
+								<div class="checkBill">
+									<p ng-if="order.paymentDueDate" class="com-wraning">免息截止日 {{order.paymentDueDate | DateSlashFilter}}</p>
+									<span ng-if="!(order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2)" class="detail" ng-click="viewContract(order.sltAccountId,OrderInfo.cardNum)">查看合同</span>
+									<p ng-if="order.transStatus==0 || order.transStatus==-4 || order.transStatus==-3 || order.transStatus==-2" class="tar">提现审批中 请耐心等待</p>
+									<a  ng-if="order.isCloan"
+										ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a>
+									<!-- <a  ng-if="order.transStatus==1 && order.operateFlag!=2 && order.isExemption==1"
+										ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a> -->
+										<!--<a ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">免息还款</a>-->
+				                    <!-- <a  ng-click="toCleanLoan(order.sltAccountId,order.isExemption)">一次还清</a>				 -->		
+								</div>
+						    </div>
 						</div>
 						</div>
 						<div class="wOrderD">
@@ -88,8 +89,7 @@
 										<td ng-if="install.advClearLoan==1  && transStatus!=4" class="statE">清贷中</td>
 									</tr>
 								</table>
-								<!-- <div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div> -->
-								<div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行主动还款和提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div>
+								<div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div>
 							</div>
 						</div>
 					</div>

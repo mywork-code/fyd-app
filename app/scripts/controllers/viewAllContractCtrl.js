@@ -6,8 +6,7 @@ var app = angular.module('gfbApp');
  */
 app.controller('ViewAllContractCtrl', function ($rootScope,$scope,$location,$timeout,CommonService,$routeParams,$window,ngUtils,OrderInfo,UserInfo,ContractInfo,ViewAllContractService,ContractCardsList,ContractCardList) {			
 	CommonService.appBack(function(){
-		$location.url('/order')
-
+	       $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
 	})
     // ViewAllContractService.queryVbsContract(ContractInfo.sltAccountId, contractNameValue);
 	document.title='房易贷合同';

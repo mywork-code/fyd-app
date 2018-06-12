@@ -7,93 +7,52 @@ var app = angular.module('gfbApp');
 app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootScope, $scope,
 		$location, OrderInfo, ClearInfo, fydorderService, UserInfo, ngUtils,
 		ContractInfo, ContractCardsList, ContractCardList, $timeout,CommonService,YibaoPay) {
-	document.title = "账单";
-    try{
+
+    if(window.navigator.onLine==false){
+    	$scope.isNetworkOutage = true;
+    	return;
+	    // ngUtils.alert("网络连接失败，请检查您的网络后再试");
+	    //$scope.goBackWithdraw();
+	}			
+
+
+	try{
 		appModel.handlerBack();//调用此方法，通知App返回按键由H5控制
 	}catch (e){
 
-	}	
-    $(document).on("back",function(){
-		$timeout(function(){
-			console.log($scope.isSwiper)
-			if($scope.isSwiper==true){
-				$scope.isSwiper = false
-
-			}else {
-				var curOrigin = window.location.origin,abssUrl = '';
-				if($routeParams.test == 'uat'){//uat环境 安家派账单没有uat环境，当bss是uat时，返回到bss sit
-					abssUrl = 'http://bss.uat.apass.cn/bss/system/bill?userId='+UserInfo.ajqhUserId
-				}else {
-					abssUrl = curOrigin+'/bss/system/bill?userId='+UserInfo.ajqhUserId
-					//abssUrl = 'http://192.168.191.1:9090/bss/system/bill?userId=8008986'
-				}
-
-				window.location.href =abssUrl;
-			}
-		},2);
-	});	
-    //断网页面刷新
-	$scope.refreshPage = function(sltAccountId){
-		$scope.isNetworkOutage = false;
-		try {
-			if(appModel.isConnected()=='0') {
-		        $scope.isNetworkOutage = true;
-                ngUtils.alert("网络连接失败，请检查您的网络后再试");
-		    	return;			
-			} else if(appModel.isConnected()=='1') {
-	         	$scope.isNetworkOutage = false;
-				window.location.reload();					
-			}
-		} catch(e) {
-	      						
-		}
-        if(window.__wxjs_environment === 'miniprogram') {
-	        if(window.navigator.onLine==false){
-	        	$scope.isNetworkOutage = true;
-                ngUtils.alert("网络连接失败，请检查您的网络后再试");
-		    	return;	
-		    } else {
-               	$scope.isNetworkOutage = false;
-				window.location.reload();				    	
-		    }	        	
-	    }		
-
-	    // $location.url('/fydOrder?mobile='+UserInfo.mobile+"&token="+UserInfo.xAuthToken);
-	}	
-	// try {
-	// 	if(appModel.isConnected()=='0') {
-	//         $scope.isNetworkOutage = true;
-	//     	return;			
-	// 	}
-	// } catch(e) {
-	//     if(window.navigator.onLine==false){
-	// 	    ngUtils.alert("网络连接失败，请检查您的网络后再试");
-	// 	    return;
-	//     }		
-	// }
-    if(window.__wxjs_environment === 'miniprogram') {
-        if(window.navigator.onLine==false){
-		    ngUtils.alert("网络连接失败，请检查您的网络后再试");
-		    return;
-	    }			
-	    
-	} else {
-		try {
-			if(appModel.isConnected()=='0') {
-		        $scope.isNetworkOutage = true;
-		    	return;			
-			}
-		} catch(e) {
-		    if(window.navigator.onLine==false){
-			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
-			    return;
-		    }		
-		}
 	}
     $scope.showOrderFlag1 = false;
     $scope.showOrderFlag2 = false;
     $scope.isNetworkOutage = false;//是否断网显示
 	$scope.UserInfo = UserInfo;
+	$(document).on("back",function(){
+	    $('.wbillLIstWrap').show();
+		$timeout(function(){
+			console.log($scope.isSwiper)
+			if($scope.isSwiper){
+				$scope.isSwiper = false
+
+			}else {
+				if($routeParams.ajqhUserId) {
+                    window.history.go(-1);
+				} else {
+ 	                var platform = window.Android || window;
+				    platform.finishSelf();
+				}
+				
+				// var curOrigin = window.location.origin,abssUrl = '';
+				// if($routeParams.test == 'uat'){//uat环境 安家派账单没有uat环境，当bss是uat时，返回到bss sit
+				// 	abssUrl = 'http://bss.uat.apass.cn/bss/system/bill?userId='+UserInfo.ajqhUserId
+				// }else {
+				// 	abssUrl = curOrigin+'/bss/system/bill?userId='+UserInfo.ajqhUserId
+				// 	//abssUrl = 'http://192.168.191.1:9090/bss/system/bill?userId=8008986'
+				// }
+
+				// window.location.href =abssUrl;
+			}
+		},2);
+	});
+	document.title = "账单";
 	$routeParams.ajqhUserId&&(UserInfo.ajqhUserId=$routeParams.ajqhUserId);
 	//初始化页面和对象域
 	$scope.OrderInfo = OrderInfo;
@@ -108,10 +67,8 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 	}else {
 
 	}
- //    UserInfo.mobile = $routeParams.mobile;
-	// UserInfo.xAuthToken = $routeParams.token;	
+		
 	try{
-		ngUtils.alert(appModel.getUserInfo())
 		var userInfo = JSON.parse(appModel.getUserInfo());
 		if(userInfo["mobile"] === undefined || userInfo["mobile"] == 'undefined'){
 			UserInfo.mobile = userInfo["mobile,"];
@@ -159,59 +116,17 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 	})
 
 
-	$scope.checkOrder = function (list) {	
-		if(window.__wxjs_environment === 'miniprogram') {
-            if(window.navigator.onLine==false){
-			    ngUtils.alert("网络连接失败，请检查您的网络后再试");
-			    return;
-		    }
-		 //    wx.getNetworkType({
-			//   success: function(res) {
-			   
-			//   },
-			//   fail: function(res) {
-			//   	 alert("小程序断网");
-			//   	 // ngUtils.alert("网络连接失败，请检查您的网络后再试");
-			//   	 return;
-			//   }
-
-			// })	
-
-		} else {
-			try {
-				if(appModel.isConnected()=='0') {
-			        ngUtils.alert("网络连接失败，请检查您的网络后再试");
-			    	return;			
-				}
-			} catch(e) {
-	           				
-			}		
-		}
-	   
-
-
+	$scope.checkOrder = function (list) {
 	    try{
 			appModel.handlerBack();//调用此方法，通知App返回按键由H5控制
 		}catch (e){
 
+		}		
+		if(window.navigator.onLine==false){
+			ngUtils.alert("网络连接失败，请检查您的网络后再试");
+			return;
+		    //$scope.goBackWithdraw();
 		}
-		$(document).on("back",function(){
-		    $('.wbillLIstWrap').show();
-			$timeout(function(){
-				console.log($scope.isSwiper)
-				if($scope.isSwiper==true){
-					$scope.isSwiper = false
-
-				}else {
-					if($routeParams.ajqhUserId) {
-	                    window.history.go(-1);
-					} else {
-	 	                var platform = window.Android || window;
-					    platform.finishSelf();
-					}
-				}
-			},2);
-		});				
 		$('.wbillLIstWrap').hide();
 		$scope.FydAdvClearLoan = '0';
 		if(list.transStatus==0 || list.transStatus==-4 || list.transStatus==-3 || list.transStatus==-2){
