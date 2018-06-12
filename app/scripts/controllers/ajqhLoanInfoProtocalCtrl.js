@@ -8,15 +8,15 @@ app.controller('ajqhLoanInfoProtocalCtrl',function($rootScope,$routeParams,$wind
 		//$scope.goBackWithdraw();
 		return;
 	}
-	
-	
+
+
+
 	$scope.bindCard=BindCardObject;			//还款银行
 	$scope.ContractInfo = ContractInfo;		
 	$scope.WithdrawRecordObject=WithdrawRecordObject;
 	$scope.Constant=Constant;
 	$scope.UserInfo = UserInfo;
 	$scope.RepaceBindCardObject = RepaceBindCardObject;
-	
 	
 	UserInfo.mobile=$routeParams.mobile;
 	ContractInfo.withdrawMoney=$routeParams.withdrawMoney;	    //提现金额

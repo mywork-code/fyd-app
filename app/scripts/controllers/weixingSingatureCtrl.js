@@ -4,7 +4,7 @@ var app = angular.module('gfbApp');
 /**
  * 手写签名公共控制器
  */
-app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootScope,$scope,$location,UserInfo,$timeout,WithdrawRecordObject,ngUtils,WithdrawService,$cacheFactory,$routeParams) {
+app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootScope,$scope,$location,UserInfo,$timeout,WithdrawRecordObject,ngUtils,WithdrawService,$cacheFactory,$routeParams) {	
 	var contractType=$routeParams.type;
 	$scope.headerShowFlag=true;
     $scope.index = 0;
@@ -235,6 +235,16 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
     }
 	//最终签字弹出预览按钮
 	$scope.signSuc= function() {
+		try{
+			appModel.handlerBack();//调用此方法，通知App返回按键由H5控制
+		}catch (e){
+
+		}
+        $(document).on("back",function(){
+	        var platform = window.Android || window;
+		    platform.finishSelf();				  	
+
+		});			
         //控制页面返回按钮的操作事件
 		$("#UI-back-normal").hide();
 		$("#UI-back-unnormal").show();
