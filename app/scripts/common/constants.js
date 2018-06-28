@@ -767,8 +767,9 @@ app.factory("ContractCardList",function(){
 					{ text: '个人贷款服务与咨询合同', value: 'DOCUMENTKIND/FYDAOPAI/GRDKFWZXHT' },
 					{ text: '个人贷款委托担保合同', value: 'DOCUMENTKIND/FYDAOPAI/GRDKWTDBHT' },
 					{ text: '个人客户扣款授权书', value: 'DOCUMENTKIND/FYDAOPAI/GRKHKKSQS' },
-					{ text: '特别提示函', value: 'DOCUMENTKIND/FYDAOPAI/TBTSH' }
-
+					{ text: '特别提示函', value: 'DOCUMENTKIND/FYDAOPAI/TBTSH' },
+					{ text: '关于变更还款卡号的补充协议', value: 'DOCUMENTKIND/FYDAOPAI/BGHKKHBCXY' }
+					
 				];
 	return list;			
 });

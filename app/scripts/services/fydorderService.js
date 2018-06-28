@@ -71,6 +71,7 @@ app.factory("fydorderService", function($rootScope, $resource, $location, Consta
 					// ngUtils.alert(response.msg);
 					$scope.showOrderFlag1 = false;
                     $scope.showOrderFlag2 = true;
+                    $scope.showOrderFlag3 = false;
 				}
 				deferred.resolve(response);
 			}, function(error) {

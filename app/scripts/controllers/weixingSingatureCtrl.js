@@ -17,10 +17,18 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
     $scope.SignDate = '';
     $scope.SignId = '';
     $scope.isReqing= false;//签字按钮是否可点击,false可点击
+    $scope.sltAccountId ="";
     //读取app的信息 
 	UserInfo.mobile = $routeParams.mobile;
 	$scope.name = $routeParams.name;
-	$scope.sltAccountId = $routeParams.sltAccountId;
+	if(WithdrawRecordObject.sltAccountId == '' || WithdrawRecordObject.sltAccountId == undefined) {
+		if($routeParams.sltAccountId) {
+			$scope.sltAccountId = $routeParams.sltAccountId;
+		}
+	} else {
+		$scope.sltAccountId =  WithdrawRecordObject.sltAccountId;
+	}
+	
     // $scope.token= $routeParams.token;
     var token=$routeParams.token;
 	$window.localStorage.setItem("x-auth-token",token);

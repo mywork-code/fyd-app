@@ -20,7 +20,7 @@ app.controller('ybBindBankCtrl', function ($rootScope,$scope, $routeParams,yibao
         UserInfo.realName = $routeParams.realName;
         UserInfo.identityNo = $routeParams.identityNo;
     }
-    document.title = "绑定银行卡";
+    $rootScope.setTitle('绑定银行卡');
 	$scope.CountdownObj = CountdownObj;
     $scope.YibaoPay = YibaoPay;
     CountdownObj.content='获取验证码';
@@ -168,7 +168,7 @@ app.controller('ybBindBankCtrl', function ($rootScope,$scope, $routeParams,yibao
 /*我要还款*/
 app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope, $timeout,$routeParams,yibaoService,YibaoPay,$window,UserInfo,CountdownObj,CommonService) {
     $scope.UserInfo = UserInfo;
-    document.title = "我要还款";
+    $rootScope.setTitle('我要还款');
     CommonService.appBack(function(){
        $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
 
@@ -507,8 +507,8 @@ app.controller('repayResultCtrl', function ($scope, UserInfo,$rootScope,$routePa
         $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
     })
     $scope.YibaoPay = YibaoPay;
-	$scope.UserInfo = UserInfo;
-	$scope.result = '';//fail  wait  suc
+    $scope.UserInfo = UserInfo;
+    $scope.result = '';//fail  wait  suc
      yibaoService.yibaoRepayResult($scope);
      
      $scope.checkBill = function(){//查看账单
@@ -516,7 +516,7 @@ app.controller('repayResultCtrl', function ($scope, UserInfo,$rootScope,$routePa
      }
      $scope.refresh = function(){//刷新
          // window.location.reload();
-    	 yibaoService.yibaoRepayResult($scope);
+         yibaoService.yibaoRepayResult($scope);
      }
 });
 /*初始化银行列表*/
@@ -525,7 +525,7 @@ app.controller('yibaoChooseBankCtrl', function ($scope, $rootScope,$routeParams,
         $location.url('/bindBank').replace();
 
     })
-    document.title = "选择银行";
+    $rootScope.setTitle('选择银行');
     $scope.YibaoPay = YibaoPay;
     yibaoService.InitBankList();
     $scope.bankCard = function(list) {

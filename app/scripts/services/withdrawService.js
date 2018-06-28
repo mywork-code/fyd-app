@@ -99,13 +99,12 @@ app.factory("WithdrawService",function($rootScope,$http,$window,PageControllerOb
                     status: $scope.status,//0:还有别的字等待验证,1:签字验证最后一个
                     signature64:UserInfo.signature64,// 图片base64(建议你传值得时候验证下能不能转换为图片)
                     signatureNative:UserInfo.signatureNative,//signatureNative
-                    sltAccountId:WithdrawRecordObject.sltAccountId,//   清算层id
                     code:"",//协议编号
                     desc:"",//协议描述
                     num:$scope.name ,//姓名全称
-                    sltAccountId:$scope.sltAccountId
+                    sltAccountId:$scope.sltAccountId,
+                    no:($scope.index).toString()
 
-                    
             };
             // console.log('param1==',UserInfo.signature64);
             // console.log('param2==',UserInfo.signatureNative);

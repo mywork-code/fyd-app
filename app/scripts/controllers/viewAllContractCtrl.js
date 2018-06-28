@@ -9,7 +9,7 @@ app.controller('ViewAllContractCtrl', function ($rootScope,$scope,$location,$tim
 	       $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
 	})
     // ViewAllContractService.queryVbsContract(ContractInfo.sltAccountId, contractNameValue);
-	document.title='房易贷合同';
+	$rootScope.setTitle('房易贷合同');
 	//接收两个参数sltId和cardNum
 	var cardNum=$routeParams.cardNum;
 	//	var cardNum=1;
@@ -22,7 +22,7 @@ app.controller('ViewAllContractCtrl', function ($rootScope,$scope,$location,$tim
 	// }else if(cardNum==1){
 	// 	ContractInfo.contractNameList =ContractCardList;
 	// }
-	ContractInfo.contractNameList =ContractCardsList;
+	ContractInfo.contractNameList =ContractCardsList
 	//初始化页面和对象域
 	$scope.ContractInfo = ContractInfo;
 
@@ -66,7 +66,7 @@ app.controller('ViewAllContract2Ctrl', function ($rootScope,$scope,$location,Com
 		$location.url('/viewAllContract')
 
 	})
-	document.title='房易贷合同';
+	$rootScope.setTitle('房易贷合同');
 	$scope.UserInfo = UserInfo;
 	$scope.ContractInfo = ContractInfo;
 	console.log(ContractInfo.vbsContractInfoList)

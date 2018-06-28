@@ -229,15 +229,15 @@ app.factory("yibaoService", function($location, $rootScope,$resource, $q,UserInf
 			            	$scope.result = '';
 			           		if(response.data.payStatus == '1'){
 			           			$scope.YibaoPay.isPayResult = '0';
-			           			document.title = "还款成功";
+			           			$rootScope.setTitle('还款成功');
 			           			$scope.result = 'suc';//fail  wait  suc
 			           		}else if(response.data.payStatus == '-1'){
 			           			$scope.YibaoPay.isPayResult = '0';
-			           			document.title = "还款失败";
+			           			$rootScope.setTitle('还款失败');
 			           			$scope.result = 'fail';//fail  wait  suc
 			           		}else{
 			           			$scope.YibaoPay.isPayResult = '1';
-			           			document.title = "还款中";
+			           			$rootScope.setTitle('还款中');
 			           			$scope.result = 'wait';//fail  wait  suc
 			           		}
 			           		

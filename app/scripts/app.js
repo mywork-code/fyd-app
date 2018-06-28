@@ -175,8 +175,9 @@ angular.module('gfbApp', [ 'ngResource', 'ngRoute' ])
 	
 	$rootScope.setTitle = function(title){
 		try{
-			var platform = window.Android || window;
-			platform.setTitle(title);
+			// var platform = window.Android || window;
+			// platform.setTitle(title);
+			appModel.title(title);
 		}catch (e){
 
 		}

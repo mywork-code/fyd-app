@@ -2824,7 +2824,7 @@
 我的账单*/
 .ajp-order {
     color: #333;
-    width:37.5rem;
+    width: 100%;
     margin:0 auto;
 }
 
@@ -2959,14 +2959,12 @@
 
  .ajp-order .wbillLIstWrap {
      position: relative;
-     width:37.5rem;
  }
  .ajp-order .wOrderD {
+     width: 100%;
      position: absolute;
      top:0;
      left:100%;
-     width:37.5rem;
-
  }
 .ajp-order .billLIst {
     position: relative;
@@ -3106,7 +3104,7 @@
 }
 .ajp-order .wOrderD table tr {
     height: 2.7rem;
-    border-bottom: 1px #c8c8c8 solid;
+    border-bottom: 1px #DFDFDF solid;
     background-color: #fff;
 }
 
@@ -4351,7 +4349,7 @@
     margin:1rem auto;
     padding: 3rem 1.2rem 0;
     height:21.5rem;
-    width:35.1rem;
+    width:100%;
     -webkit-box-shadow: 3px 2px 19px 0 #C5C5C5;
     box-shadow: 3px 2px 19px 0 #C5C5C5;
     -webkit-border-radius: 0.4rem;
@@ -4408,7 +4406,7 @@
     left: 0;
     bottom: 0;
     height: 4.5rem;
-    width: 35rem;
+    width: 100%;
     line-height: 4.5rem;
     border-top: 0.1rem solid #ebebeb;
 }
@@ -4528,11 +4526,10 @@
 .login  .cell-list>.input{}
 .fyd-order {
     position: relative;
-    width: 37.5rem;
+    width: 100%;
     background: #fff;
 }
 .fyd-order .bank-info {
-    width: 35.1rem;
     height: 9.5rem;
     background-color: #ccc;
     margin: 1.2rem;
@@ -4540,6 +4537,7 @@
     background: #FFFFFF;
     box-shadow: 0 0.35rem 0.65rem 0 #C5C5C5;
     border-radius: 0.2rem;
+    padding: 0 1.2rem;
 }
 .fyd-order .bank-info .icon {
     position: absolute;
@@ -4629,10 +4627,9 @@
     align-items: center;
 }
 .fyd-order .fyd-line {
-    width: 37.5rem;
     height: 5rem;
     line-height: 5rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
     overflow: hidden;
 }
 .fyd-order .fyd-line div:first-child{
@@ -4658,7 +4655,7 @@
 }
 .fyd-order .wOrderD table tr {
     height: 4rem;
-    border-bottom: 1px #c8c8c8 solid;
+    border-bottom: 1px #DFDFDF solid;
     background-color: #fff;
 }
 .fyd-order .wOrderD table tr td {
@@ -4782,7 +4779,7 @@
 }
 .fyd-explain {
     position: relative;
-    width: 37.5rem;
+    width: 100%;
     margin: 0 auto;
     height:77.65rem;
     background: url(../images/fyd-explain.jpg) no-repeat center top;
@@ -4828,16 +4825,17 @@
     background-size: contain;    
 }
 .fydBtn-wrap {
-    width: 37.5rem;
+    width: 100%;
     height: 4.5rem;
     position: fixed;
     left: 0;
     bottom: 1.6rem;
+    padding: 0 2.55rem;
+    box-sizing: border-box;
 }
 .fydBill-btn {
-    width: 32.4rem;
+    width: 100%;
     height: 4.5rem;
-    margin-left: 2.55rem;
     background: #E2262A;
     border-radius: 0.2rem;
     font-family: PingFangSC-Regular;
@@ -4849,4 +4847,35 @@
 .fydBill-btn:disabled {
     background: #ccc;
     color: #fff;
+}
+.app-isNetwork {
+    position: relative;
+    width: 37.5rem;
+    margin: 0 auto;
+    height: 60.5rem;
+}
+.app-isNetwork .icon {
+    width: 37.5rem;
+    height: 16.24rem;
+    position: absolute;
+    left: 0;
+    top: 17.4rem; 
+/*     background: #fff url("../images/of-line-icon.png") no-repeat;
+    background-size: contain;  */ 
+}
+.app-isNetwork .icon img{
+    width: 100%;
+}
+.app-isNetwork .refresh {
+    width: 13.65rem;
+    height: 3.65rem;
+    border: 1px solid #a5a5a5;
+    position: absolute;
+    left: 11.925rem;
+    top: 35.2rem;
+    border-radius: 6px;
+    color: #a5a5a5;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 3.65rem;
 }

@@ -10,7 +10,7 @@ app.controller('ClearLoanCtrl', function ($routeParams,$scope,$rootScope,CommonS
 	CommonService.appBack(function(){
 	       $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
 	})
-    document.title='还款确认';
+    $rootScope.setTitle('还款确认');    
     $scope.isCleanSuc = false; //是否显示查看详情框
 	//页面初始化的时候先清空就的数据，放置影响页面的显示效果
 	ClearInfo.bankCode = "";

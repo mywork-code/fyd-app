@@ -1,13 +1,25 @@
-<div class="bg-fff fyd-isNetwork" holl-page ng-if="isNetworkOutage" style="position: relative;">
-<!-- 	<img style="width: 37.5rem;height: 60.5rem;" src="images/of-line.png" /> -->
+<!--小程序断网显示-->
+<!-- <div class="bg-fff fyd-isNetwork" holl-page ng-if="isNetworkOutage" style="position: relative;">
 	<div class="icon">
 		<img src="images/of-line-icon.png" />
 	</div>
-	<!-- <div>断网提示*********</div> -->
 	<div class="refresh" ng-click="refreshPage()">刷新</div>
+</div> -->
+<!--app断网显示-->
+<div class="bg-fff app-isNetwork" holl-page ng-if="isNetworkOutage" style="position: relative;">
+<!-- 	<img style="width: 37.5rem;height: 60.5rem;" src="images/of-line.png" /> -->
+	<div class="icon">
+		<img src="images/of-line-app.png" />
+	</div>
+	<!-- <div>断网提示*********</div> -->
+	<div class="refresh" ng-click="refreshPage()">点击刷新</div>
 </div>
+
+
+
+
 <div ng-if="!isNetworkOutage" class="ajp-order fyd-order bg-fff" holl-page="">
-	<div style="width: 37.5rem;height:100%;overflow-x: hidden;overflow-y: scroll;" class="fyd-activity">
+	<div style="width: 100%;height:100%;overflow-x: hidden;overflow-y: scroll;" class="fyd-activity">
 	    <div class="gfb-myBill " ng-class="{'ui-opacity0':isLoad}">
 				<div  ng-if="showOrderFlag1">
 					<div class="bank-info">
@@ -60,10 +72,10 @@
 						<div class="wOrderD">
 							<div class="fyd-line"><div>放款时间</div><div>{{loanDate | DateFilter}}</div></div>
 							<div class="fyd-line"><div>期限</div><div>{{paymentType}}期</div></div>
-							<div class="fyd-line"><div>借款金额</div><div>{{loanAmount | thousandsFilter}}</div></div>
+							<div class="fyd-line" style="border:none;"><div>借款金额</div><div>{{loanAmount | thousandsFilter}}</div></div>
 							<div class="payList box-size">
 								<table>
-									<tr class="bgg">
+									<tr class="bgg" style="border:none;">
 										<th  style="width:7.5rem;text-align: center;">结算期数</th>
 										<th  style="width:7.5rem;text-align: center;">最后还款日</th>
 										<th  style="width:7.5rem;text-align: center;">应还金额</th>
@@ -97,7 +109,7 @@
 
 				</div>
 				<div ng-if="showOrderFlag2">
-		            <div class="bank-info">
+		            <div class="bank-info" ng-if="showOrderFlag3">
 						<div class="icon">
 							<img src="img/bankyibao/{{bankCode}}-BG.png" />
 						</div>
@@ -108,6 +120,7 @@
 						</div>
 
 				    </div>
+
 				    <!-- 暂无账单 -->
 					<div class="noOrder">
 
@@ -132,6 +145,7 @@
 		</div>
 	</div> -->
 </div>
+
 <!-- <div class="ajp-btn-wrap ajp-pos-flex-bottom" ng-show="isSwiper&&(orderList.canActivePay == 'true')&&(installmentInfoList[0].advClearLoan!=1)">
      <button class="ajp-btn" ng-click="toRepay(installmentInfoList[0].sltAccountId)">我要还款</button>
 </div> -->
@@ -143,4 +157,3 @@
 		<button class="fydBill-btn" ng-click="checkSchedule(orderList)">查看还款进度</button>
 	</div>
 </div>
-

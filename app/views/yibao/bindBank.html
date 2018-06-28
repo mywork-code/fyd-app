@@ -147,10 +147,10 @@
             <input type="text" class="text_inp yibao-bank ajp-href" placeholder="请选择银行卡归属银行" readonly value="{{YibaoPay.BankCardName}}" ng-model="YibaoPay.BankCardName" />
         </div>
         <div class="info_list">
-            <input type="tel" class="text_inp yibao-bindcardno"   placeholder="请输入银行卡卡号" maxlength="24" value="{{YibaoPay.cardCode}}" ng-model="YibaoPay.cardCode" code-dist />
+            <input type="tel" class="text_inp yibao-bindcardno"   placeholder="请输入银行卡卡号" maxlength="24" value="{{YibaoPay.cardCode}}" ng-model="YibaoPay.cardCode" code-dist style="width:36.3rem;"/>
         </div>
         <div class="info_list">
-            <input type="tel" class="text_inp yibao-bindphoneno"   maxlength="13" placeholder="请输入银行预留手机" value="{{YibaoPay.phone}}" ng-model="YibaoPay.phone" phone-num-dist style="width:25rem;"/>
+            <input type="tel" class="text_inp yibao-bindphoneno"   maxlength="13" placeholder="请输入银行预留手机" value="{{YibaoPay.phone}}" ng-model="YibaoPay.phone" phone-num-dist style="width:27rem;"/>
             <!-- <button class="getReg ajp-pos-midd" id="getSmsReg" ng-click="sendMsg()">获取验证码</button> -->
           <!--   <p>YibaoPay.requestNo={{YibaoPay.requestNo}}</p> -->
              <button class="UI-verify getReg ajp-pos-midd" id="getSmsReg" ng-disabled="YibaoPay.phone==''||YibaoPay.BankCardName==''||YibaoPay.cardCode==''" ng-if="!CountdownObj.disFlag" ng-click="sendMsg()">{{CountdownObj.content}}</button>
@@ -171,7 +171,7 @@
         </div>
         <div class="tip">*请输入短信验证码，验证码30分钟内有效，每日仅可获取3次。</div>
     </div>
-    <div class="fydBtn-wrap">
+    <div style="width: 100%;height: 4.5rem;margin-bottom: 1.6rem;padding: 0 2.55rem;box-sizing: border-box;">
 <!--     <p>YibaoPay.phone={{YibaoPay.phone}},YibaoPay.BankCardName={{YibaoPay.BankCardName}}</p>
     <p>YibaoPay.cardCode={{YibaoPay.cardCode}},YibaoPay.MsgCode={{YibaoPay.MsgCode}}</p>
     <p>{{YibaoPay.phone==''||YibaoPay.BankCardName==''||YibaoPay.cardCode==''||YibaoPay.MsgCode==''}}</p> -->

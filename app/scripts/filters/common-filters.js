@@ -32,7 +32,7 @@ app.filter('NameReplaceFilter', function() {
 			}
 			return value.substring(0, 1) + str + value.substring(len-1, len);
 		}else{
-			return value.substring(0, 1)+"*";
+			return "*"+value.substring(1, 2);
 		}
 	}
 });
