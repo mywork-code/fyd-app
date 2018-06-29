@@ -15,9 +15,7 @@ app.controller('ajqhchangecardcontCtrl',function($routeParams,$scope,$window,$lo
 //	UserInfo.sltAccountId=$routeParams.sltAccountId;
 	RepaceBindCardObject.cardBank=$routeParams.cardBank;
 	RepaceBindCardObject.cardNo=$routeParams.cardNo;
-	
-	
-	
+	$('#signaturePage').hide();
 	
 	if($routeParams.customerId==null||$routeParams.customerId==undefined){//ios
 		try {

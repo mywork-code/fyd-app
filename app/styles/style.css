@@ -3084,7 +3084,7 @@
 }
 
 
-.ajp-order .wOrderD table {
+.ajp-order .wOrderD .table {
     width: 100%;
 }
 /*.ajp-order .wOrderD .payList:after {*/
@@ -3099,26 +3099,24 @@
 .ajp-order .wOrderD  .bgg {
     background: #bbb;
 }
-.ajp-order .wOrderD  th {
+.ajp-order .wOrderD  .th {
     color:#fff;
 }
-.ajp-order .wOrderD table tr {
+.ajp-order .wOrderD .table .tr {
     height: 2.7rem;
-    border-bottom: 1px #DFDFDF solid;
-    background-color: #fff;
 }
 
-.ajp-order .wOrderD table td, .ajp-order .wOrderD table th {
+.ajp-order .wOrderD .table .td, .ajp-order .wOrderD .table .th {
     text-align: center;
 }
 
-.ajp-order .wOrderD table td.statE.overdue{
+.ajp-order .wOrderD .table .td.statE.overdue{
     color:rgba(200, 22, 36, 1);
 }
-.ajp-order .wOrderD table td.statE.done{
+.ajp-order .wOrderD .table .td.statE.done{
     color: #17a6e8;
 }
-.ajp-order .wOrderD table td.statE {
+.ajp-order .wOrderD .table .td.statE {
     color: #FA9D35;
     /*text-align: right;*/
 }
@@ -4627,11 +4625,27 @@
     align-items: center;
 }
 .fyd-order .fyd-line {
+    position: relative;
     height: 5rem;
     line-height: 5rem;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+/*     border-bottom: 1px solid rgba(0,0,0,0.08); */
     overflow: hidden;
 }
+.fyd-order .fyd-border:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    pointer-events: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
 .fyd-order .fyd-line div:first-child{
     float: left;
     margin-left: 1.2rem;
@@ -4653,21 +4667,49 @@
     font-size: 1.6rem;
     line-height: 54rem;
 }
-.fyd-order .wOrderD table tr {
+.fyd-order .wOrderD .table .tr {
+    position: relative;
     height: 4rem;
-    border-bottom: 1px #DFDFDF solid;
-    background-color: #fff;
+    display: flex;
+    flex-direction: row;
 }
-.fyd-order .wOrderD table tr td {
+.fyd-order .wOrderD .table .tr:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    pointer-events: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);  
+}
+.fyd-order .wOrderD .table .tr .td {
     font-size: 1.2rem;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #484848;
 }
 .fyd-order .wOrderD .bgg {
-    background: #bbb;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
     background: #EDEDED;
 }
-.fyd-order .wOrderD th {
+.fyd-order .wOrderD .th {
     color: #303030;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
 }
 .fydFeedback {
     width: 37.5rem;

@@ -19,7 +19,7 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 	    $('.wbillLIstWrap').show();
 		$timeout(function(){
 			console.log($scope.isSwiper)
-			if($scope.isSwiper){
+			if($scope.isSwiper==true){
 				$scope.isSwiper = false
 
 			}else {
@@ -242,12 +242,24 @@ app.controller('fydOrderCtrl', function($routeParams, $window, $resource, $rootS
 			appModel.handlerBack();//调用此方法，通知App返回按键由H5控制
 		}catch (e){
 
-		}		
-		if(window.navigator.onLine==false){
-			ngUtils.alert("网络连接失败，请检查您的网络后再试");
-			return;
-		    //$scope.goBackWithdraw();
 		}
+		$(document).on("back",function(){
+		    $('.wbillLIstWrap').show();
+			$timeout(function(){
+				console.log($scope.isSwiper)
+				if($scope.isSwiper==true){
+					$scope.isSwiper = false
+
+				}else {
+					if($routeParams.ajqhUserId) {
+	                    window.history.go(-1);
+					} else {
+	 	                var platform = window.Android || window;
+					    platform.finishSelf();
+					}
+				}
+			},2);
+		});				
 		$('.wbillLIstWrap').hide();
 		$scope.FydAdvClearLoan = '0';
 		if(list.transStatus==0 || list.transStatus==-4 || list.transStatus==-3 || list.transStatus==-2){

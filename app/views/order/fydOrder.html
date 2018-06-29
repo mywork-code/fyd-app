@@ -70,38 +70,39 @@
 						</div>
 						</div>
 						<div class="wOrderD">
-							<div class="fyd-line"><div>放款时间</div><div>{{loanDate | DateFilter}}</div></div>
-							<div class="fyd-line"><div>期限</div><div>{{paymentType}}期</div></div>
-							<div class="fyd-line" style="border:none;"><div>借款金额</div><div>{{loanAmount | thousandsFilter}}</div></div>
+							<div class="fyd-line fyd-border"><div>放款时间</div><div>{{loanDate | DateFilter}}</div></div>
+							<div class="fyd-line fyd-border"><div>期限</div><div>{{paymentType}}期</div></div>
+							<div class="fyd-line"><div>借款金额</div><div>{{loanAmount | thousandsFilter}}</div></div>
 							<div class="payList box-size">
-								<table>
-									<tr class="bgg" style="border:none;">
-										<th  style="width:7.5rem;text-align: center;">结算期数</th>
-										<th  style="width:7.5rem;text-align: center;">最后还款日</th>
-										<th  style="width:7.5rem;text-align: center;">应还金额</th>
-										<th  style="width:7.5rem;text-align: center;">已还金额</th>
-										<th  style="width:7.5rem;text-align: center;">状态</th>
-									</tr>
-									<tr ng-repeat="install in installmentInfoList">
+								<div class="table">
+									<div class="bgg" style="border:none;">
+										<div class="th" style="width:7.5rem;text-align: center;">结算期数</div>
+										<div class="th" style="width:7.5rem;text-align: center;">最后还款日</div>
+										<div class="th" style="width:7.5rem;text-align: center;">应还金额</div>
+										<div class="th" style="width:7.5rem;text-align: center;">已还金额</div>
+										<div class="th" style="width:7.5rem;text-align: center;">状态</div>
+									</div>
+									<div class="tr" ng-repeat="install in installmentInfoList">
 
-										<td ng-if="install.advClearLoan==1">还款账单</td>
-										<td ng-if="install.advClearLoan!=1">{{install.loanPeriodNo}}期</td>
+										<div class="td" ng-if="install.advClearLoan==1">还款账单</div>
+										<div class="td" ng-if="install.advClearLoan!=1">{{install.loanPeriodNo}}期</div>
 
-										<td>{{install.monthDeductDate | DateSlashFilter}}</td>
+										<div class="td">{{install.monthDeductDate | DateSlashFilter}}</div>
 
-										<td >{{install.repayAmt | thousandsFilter}}元</td>
+										<div class="td">{{install.repayAmt | thousandsFilter}}元</div>
 
-										<td>{{install.hasRepayAmt | thousandsFilter}}元</td>
-										<td ng-if="install.advClearLoan!=1 && install.repayStatus==1" class="statE proifcess">待还款</td>
-										<td ng-if="install.advClearLoan!=1 && install.repayStatus==2" class="statE" style="color:#FA9D35;">还款中</td>
-										<td ng-if="install.advClearLoan!=1 && install.repayStatus==3" class="statE" style="color:#22B362;">已结清</td>
-										<td ng-if="install.advClearLoan!=1 && install.repayStatus==4" class="statE overdue" style="color:#E2262A;">已逾期</td>
+										<div class="td">{{install.hasRepayAmt | thousandsFilter}}元</div>
+										<div class="td" ng-if="install.advClearLoan!=1 && install.repayStatus==1" class="statE proifcess" style="color:#FA9D35;">待还款</div>
+										<div class="td" ng-if="install.advClearLoan!=1 && install.repayStatus==2" class="statE" style="color:#FA9D35;">还款中</div>
+										<div class="td" ng-if="install.advClearLoan!=1 && install.repayStatus==3" class="statE" style="color:#22B362;">已结清</div>
+										<div class="td" ng-if="install.advClearLoan!=1 && install.repayStatus==4" class="statE overdue" style="color:#E2262A;">已逾期</div>
 										<!-- <td ng-if="install.advClearLoan==1" class="statE overdue">清贷数据</td> -->
-										<td ng-if="install.advClearLoan==1  && transStatus==4" class="statE done">清贷完成</td>
-										<td ng-if="install.advClearLoan==1  && transStatus!=4" class="statE">清贷中</td>
-									</tr>
-								</table>
-								<div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div>
+										<div class="td" ng-if="install.advClearLoan==1  && transStatus==4" class="statE done">清贷完成</div>
+										<div class="td" ng-if="install.advClearLoan==1  && transStatus!=4" class="statE">清贷中</td>
+									</div>
+								</div>
+								<!-- <div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div> -->
+								<div style="margin-bottom: 0;height: 2.5rem;line-height: 1.6rem;color: #7E7E7E;font-size: 1.2rem;padding: 1rem;margin-top: -0.2rem;font-family: PingFangSC-Regular;">温馨提示：您可以在下个账单日后进行主动还款和提前清贷服务，若给您造成不便我们深表歉意，如有疑问请联系客服<a href="tel:4001017700">4001017700</a></div>
 							</div>
 						</div>
 					</div>
