@@ -4643,7 +4643,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     pointer-events: none;
-    border-bottom: 2px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .fyd-order .fyd-line div:first-child{
