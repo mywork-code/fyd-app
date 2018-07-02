@@ -5,14 +5,6 @@ var app = angular.module('gfbApp');
  * 易宝 绑卡
  */
 app.controller('ybBindBankCtrl', function ($rootScope,$scope, $routeParams,yibaoService,ngUtils,$timeout,UserInfo,$location,YibaoPay,CountdownObj,CommonService) {
-    var width = window.screen.width
-var dpr = window.devicePixelRatio
-var scale = 1/dpr
-var fontSize = width/10*dpr + 'px'
-document.getElementsByTagName('html')[0].style.fontSize = fontSize
-var metaEle = document.getElementById("metaEle")   //这个是meta元素
-metaEle.setAttribute("content",'user-scalable=no, initial-scale='+scale+', maximum-scale='+scale+', minimum-scale='+scale)
-//
 	$scope.isShowKeyboard = false;//键盘
 	$scope.isShowKeyFlag = false;//是否可以显示键盘 第一次获取短信成功后才可以
     CommonService.appBack(function(){
