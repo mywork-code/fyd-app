@@ -62,9 +62,11 @@ app.factory("fydorderService", function($rootScope, $resource, $location, Consta
 					if(OrderInfo.sltDetailList && OrderInfo.sltDetailList.length>0){
 						 $scope.showOrderFlag1 = true;
                          $scope.showOrderFlag2 = false;
+                         $scope.showOrderFlag3 = false;
 					}else{
 						 $scope.showOrderFlag1 = false;
                          $scope.showOrderFlag2 = true;
+                         $scope.showOrderFlag3 = true;
 					}
 				}  else {
 					//操作失败
