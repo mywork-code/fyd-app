@@ -4823,10 +4823,13 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
-    height:77.65rem;
-    background: url(../images/fyd-explain.jpg) no-repeat center top;
+  /*   height:77.65rem; */
+  /*   background: url(../images/fyd-explain.jpg) no-repeat center top;
     -webkit-background-size: 100% auto;
-    background-size: 100% auto;
+    background-size: 100% auto; */
+}
+.fyd-explain img {
+    width: 100%;
 }
 .fyd-isNetwork {
     position: relative;

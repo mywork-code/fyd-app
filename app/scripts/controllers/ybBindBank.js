@@ -255,7 +255,6 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
                 $("#inputBoxContainer span").eq(i).html(e)
             })
         }
-        
     }
     $scope.CloseYibaoMask = function() {
             $scope.isShowKeyboard = false;
