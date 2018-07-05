@@ -234,7 +234,7 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
     }; 
     $scope.YibaoPay = YibaoPay;
     $scope.UserInfo = UserInfo;
-    $scope.isShowSmsReg = true;
+    $scope.isShowSmsReg = false;
     $scope.keyMsg = '';
     $scope.isCanSub = false;//是否可以提交--短信发送成功后
     $scope.isSubOne = true;//判断一次提交，防抖 
@@ -303,29 +303,29 @@ app.controller('ybRepaymentCtrl', function ($rootScope,ngUtils,$location,$scope,
         // $('.repayNew').hide();
         // $('.getSmsReg').show()
         // $scope.isShowSmsReg=true;           
-        // yibaoService.yibaoShowSmsReg($scope).then(function(res){
-        //     console.log(res)
-        //     if(res.status == '1'){
-        //         $scope.isCanSub = true;
-        //         YibaoPay.requestNo= res.data.requestNo;
-        //         $('.repayNew').hide();
-        //         $('.getSmsReg').show()
-        //         $scope.isShowSmsReg=true;                                        
-        //         if(res.data.beenSentFlag == '1'){//重发
+        yibaoService.yibaoShowSmsReg($scope).then(function(res){
+            console.log(res)
+            if(res.status == '1'){
+                $scope.isCanSub = true;
+                YibaoPay.requestNo= res.data.requestNo;
+                $('.repayNew').hide();
+                $('.getSmsReg').show()
+                $scope.isShowSmsReg=true;                                        
+                if(res.data.beenSentFlag == '1'){//重发
                    
-        //         }else {
-        //             CountdownObj.content='重新获取(' + CountdownObj.content  +')';
-        //             CommonService.beginInterval(120);                    
-        //         }
+                }else {
+                    CountdownObj.content='重新获取(' + CountdownObj.content  +')';
+                    CommonService.beginInterval(120);                    
+                }
 
-        //     } else {
-        //         ngUtils.alert(res.msg);
-        //         if(res.msg=='还款数据失效，请刷新页面再试') {
-        //             $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
-        //         }                    
-        //         $scope.CloseYibaoMask();
-        //     }
-        // })
+            } else {
+                ngUtils.alert(res.msg);
+                if(res.msg=='还款数据失效，请刷新页面再试') {
+                    $location.url("/fydOrder?mobile="+UserInfo.mobile+"&token="+UserInfo.xAuthToken).replace();//返回到我的账单
+                }                    
+                $scope.CloseYibaoMask();
+            }
+        })
 
       
     }
