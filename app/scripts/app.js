@@ -89,7 +89,11 @@ angular.module('gfbApp', [ 'ngResource', 'ngRoute' ])
 		templateUrl : 'views/contracts/viewTutorial.html',
 		controller : ''
 	})	
-
+    //小程序-下载趣花app
+	.when('/downloadAjqhApp', {
+		templateUrl : 'views/contracts/downloadAjqhApp.html',
+		controller : 'downloadAppCtrl'
+	})	
 
 
 

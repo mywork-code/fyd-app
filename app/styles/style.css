@@ -4924,3 +4924,19 @@
     text-align: center;
     line-height: 3.65rem;
 }
+.downloadAjqhApp {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    /* height: 77.65rem; */
+}
+.downloadAjqhApp img {
+    width: 100%;
+}
+.downloadAjqhApp .download {
+    width: 18.5rem;
+    height: 4.7rem;
+    position: absolute;
+    left: 9.6rem;
+    top: 45.7rem;
+}
