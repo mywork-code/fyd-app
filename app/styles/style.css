@@ -4940,3 +4940,11 @@
     left: 9.6rem;
     top: 45.7rem;
 }
+.downloadAjqhApp .copyBtn {
+    width: 11rem;
+    height: 5rem;
+    position: absolute;
+    left: 13.2rem;
+    top: 52.5rem;
+    z-index: 1000;
+}
