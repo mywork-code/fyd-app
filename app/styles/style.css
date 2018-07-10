@@ -4948,3 +4948,49 @@
     top: 52.5rem;
     z-index: 1000;
 }
+.operationAnalysis {
+    width: 100%;
+    padding: 0 1.2rem;
+    box-sizing: border-box;
+}
+.operationAnalysis .fyd-bill {
+    width: 100%;
+    height: 9.5rem;
+    margin: 0 0 3.2rem 0;
+    background: #FFFFFF;
+    box-shadow: 0 0 13px 0 #C5C5C5;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.operationAnalysis .fyd-bill img {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 1.2rem;
+}
+.operationAnalysis .fyd-bill div {
+    font-family: PingFangSC-Regular;
+    font-size: 1.5rem;
+    color: #303030;
+}
+.operationAnalysis .ajqh-bill {
+    width: 100%;
+    height: 9.5rem;
+    background: #FFFFFF;
+    box-shadow: 0 0 13px 0 #C5C5C5;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.operationAnalysis .ajqh-bill img {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 1.2rem;
+}
+.operationAnalysis .ajqh-bill div {
+    font-family: PingFangSC-Regular;
+    font-size: 1.5rem;
+    color: #303030;
+}

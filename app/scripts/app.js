@@ -93,7 +93,13 @@ angular.module('gfbApp', [ 'ngResource', 'ngRoute' ])
 	.when('/downloadAjqhApp', {
 		templateUrl : 'views/contracts/downloadAjqhApp.html',
 		controller : 'downloadAppCtrl'
-	})	
+	})
+    //报表-运营分析首页
+	.when('/operationAnalysis', {
+		templateUrl : 'views/contracts/operationAnalysis.html',
+		controller : 'operationAnalysisCtrl'
+	})
+
 
 
 
