@@ -4941,12 +4941,14 @@
     top: 45.7rem;
 }
 .downloadAjqhApp .copyBtn {
-    width: 11rem;
-    height: 5rem;
+    width: 17.8rem;
+    height: 4.35rem;
     position: absolute;
-    left: 13.2rem;
-    top: 52.5rem;
+    left: 9.85rem;
+    top: 47.5rem;
     z-index: 1000;
+    background: url(../images/copy-link.png) no-repeat;
+    background-size: contain;
 }
 .operationAnalysis {
     width: 100%;
