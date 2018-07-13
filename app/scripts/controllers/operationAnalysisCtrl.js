@@ -8,11 +8,11 @@ app.controller('operationAnalysisCtrl', function($scope) {
 
     //跳转到房易贷报表
     $scope.routeaFydBill = function(){
-        window.location.href ="";  
+        window.appModel.showNewWebPage("https://report-uat.apass.cn/#/fyd-home","房易贷");  
     } 
     //跳转到安家趣花报表
     $scope.routeaAjqhBill = function(){
-        window.location.href ="";  
+        window.appModel.showNewWebPage(" https://report-uat.apass.cn/#/ajqh-home","安家趣花");  
     }     
 
     
