@@ -9,8 +9,7 @@ app.controller('ajqhLoanInfoProtocalCtrl',function($rootScope,$routeParams,$wind
 		return;
 	}
 
-
-
+    $scope.isSign = $routeParams.isSign;
 	$scope.bindCard=BindCardObject;			//还款银行
 	$scope.ContractInfo = ContractInfo;		
 	$scope.WithdrawRecordObject=WithdrawRecordObject;
@@ -41,6 +40,30 @@ app.controller('ajqhLoanInfoProtocalCtrl',function($rootScope,$routeParams,$wind
 		    platform.finishSelf();			
 		}
 	}
+    // 同意
+	$scope.agree=function(){
+		//检验是否网络中断    如果中断弹出提示
+		if(window.navigator.onLine==false){
+			ngUtils.alert("网络连接错误，请检查网络连接");
+			 return;
+		}
+	    $location.url("/weixingSingature?mobile="+$routeParams.mobile+"&name="+$routeParams.name+"&token="+$routeParams.token);
+
+		// UserInfo.repaceSupplemental=true;
+		// RepaceBindCardObject.agreeContractFlag=true;
+		// UserInfo.deductAuth=true;
+		// var callSina = {
+		// 	'realName':UserInfo.realName,
+		// 	'desc':'changeCard',
+		// 	'customerId':UserInfo.customerId,
+		// 	'sltAccountId':UserInfo.sltAccountId,
+		// 	'signatureType':'3'
+		// };
+		// callSina = JSON.stringify(callSina);
+		// var platform = window.Android || window;
+		// platform.startSignature(callSina);
+	}
+
 	//返回
 	$scope.goBackWithdraw=function(){
 		var platform = window.Android || window;
