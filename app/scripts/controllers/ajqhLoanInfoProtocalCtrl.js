@@ -47,7 +47,7 @@ app.controller('ajqhLoanInfoProtocalCtrl',function($rootScope,$routeParams,$wind
 			ngUtils.alert("网络连接错误，请检查网络连接");
 			 return;
 		}
-	    $location.url("/weixingSingature?mobile="+$routeParams.mobile+"&name="+$routeParams.name+"&token="+$routeParams.token);
+	    $location.url("/weixingSingature?mobile="+$routeParams.mobile+"&name="+ContractInfo.realName+"&token="+$routeParams.token);
 
 		// UserInfo.repaceSupplemental=true;
 		// RepaceBindCardObject.agreeContractFlag=true;
