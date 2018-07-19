@@ -12,6 +12,6 @@ app.controller('operationAnalysisCtrl', function($scope,$routeParams) {
     //跳转到安家趣花报表
     $scope.routeaAjqhBill = function(){
     	// window.appModel.showNewWebPage("https://report-uat.apass.cn/#/ajqh-home?token="+$routeParams.token,"安家趣花",true);  
-        window.appModel.showNewWebPage("https://report-uat.apass.cn/#/ajqh-home?token="+$routeParams.token,"安家趣花");  
+        window.appModel.showNewWebPage("https://report-uat.apass.cn/#/ajqh-home?token="+$routeParams.token,"安家趣花",true);  
     }     
 });
