@@ -79,6 +79,11 @@ angular.module('gfbApp', [ 'ngResource', 'ngRoute' ])
 		templateUrl : 'views/contracts/weixingSingature.html',
 		controller : 'weixingSingatureCtrl'
 	})
+    // 身份认证页-签名页
+	.when('/identitySingature', {
+		templateUrl : 'views/contracts/identitySingature.html',
+		controller : 'identitySingatureCtrl'
+	})	
     // 一键解读房易贷
 	.when('/ajqExplain', {
 		templateUrl : 'views/contracts/ajqExplain.html',

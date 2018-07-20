@@ -187,7 +187,59 @@ app.factory("WithdrawService",function($rootScope,$http,$window,PageControllerOb
                 ngUtils.alert("网络错误，请稍后重试或联系客服。");
                 
             });
-        },        
+        },
+        //身份认证页保存签名
+        saveIdentitySingature: function($scope){
+            var $me = this;
+            var path = Constant.APIRoot + "/agreement/saveContractST";
+            var service = $resource(path, {}, {
+                saveInfo : {
+                    method : 'POST'
+                }
+            });
+            var param = {
+                    mobile: UserInfo.mobile,
+                    realName: $routeParams.name,//当前验证的字(如:谭世林,当前验证:世)
+                    code:"",//协议编号
+                    desc:""//协议描述
+
+            };
+            console.log('param==',param);
+            service.saveInfo(param,
+            function(response){
+                if(response && response.status == "1"){
+                    ngUtils.alert("识别成功");
+                    if(($scope.index)==($scope.nameLen-1)) {
+                        $scope.totalSign = response.data.base64;
+                        $scope.SignDate =  response.data.date;
+                        $scope.SignId = response.data.id;
+                        $scope.signSuc();
+                        // return;
+                    }      
+                    // $scope.signSuc();
+                    $scope.resetSignSuc();
+                    UserInfo.realName=$scope.nameTotal[$scope.index];
+                    $scope.index = Number($scope.index)+1;
+                    $scope.nameSign = $scope.nameTotal[$scope.index];
+                    if(String($scope.index)==(Number($scope.nameLen)-1)) {
+                        $scope.status='1';
+                    }
+                }else{
+                    $scope.resetSignSuc();
+                    ngUtils.alert(response.msg);
+                }
+                $scope.isReqing = false;
+            },
+            function(error){
+                $scope.isReqing = false;
+                // if(operator != "check"){
+                //     ngUtils.loadingAlertClose();
+                // }
+                $scope.resetSignSuc();
+                ngUtils.alert("网络错误，请稍后重试或联系客服。");
+                
+            });
+        },                        
         // 获取微信小程序参数
         getConfig:function($scope){
             var path = Constant.APIRoot + "/wechat/config/query";
