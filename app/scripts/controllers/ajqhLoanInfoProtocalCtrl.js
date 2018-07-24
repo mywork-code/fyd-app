@@ -31,7 +31,7 @@ app.controller('ajqhLoanInfoProtocalCtrl',function($rootScope,$routeParams,$wind
 	ContractInfo.productType=$routeParams.productType;			//产品类型
 	
 	
-	WithdrawService.initWithdrawContractInfo();
+	WithdrawService.initWithdrawContractInfo($scope);
 	
 	$scope.loanAmtBig =ngUtils.convertToChinese(ContractInfo.loanAmt);
 	
