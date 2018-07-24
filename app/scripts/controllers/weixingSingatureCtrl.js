@@ -22,14 +22,14 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
     //读取app的信息 
 	UserInfo.mobile = $routeParams.mobile;
 	$scope.name = $routeParams.name;
-	if(WithdrawRecordObject.sltAccountId == '' || WithdrawRecordObject.sltAccountId == undefined) {
-		if($routeParams.sltAccountId) {
+	if(WithdrawRecordObject.sltAccountId == '' || WithdrawRecordObject.sltAccountId == "undefined") {
+		if($routeParams.sltAccountId != "undefined") {
 			$scope.sltAccountId = $routeParams.sltAccountId;
 		}
 	} else {
 		$scope.sltAccountId =  WithdrawRecordObject.sltAccountId;
 	}
-	
+
     // $scope.token= $routeParams.token;
     var token=$routeParams.token;
 	$window.localStorage.setItem("x-auth-token",token);
