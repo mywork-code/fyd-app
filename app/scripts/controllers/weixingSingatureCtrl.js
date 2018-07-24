@@ -25,6 +25,7 @@ app.controller('weixingSingatureCtrl', function ($window,fydorderService,$rootSc
 	if(WithdrawRecordObject.sltAccountId == '' || WithdrawRecordObject.sltAccountId == "undefined") {
 		if($routeParams.sltAccountId != "undefined") {
 			$scope.sltAccountId = $routeParams.sltAccountId;
+			WithdrawRecordObject.sltAccountId=$routeParams.sltAccountId;
 		}
 	} else {
 		$scope.sltAccountId =  WithdrawRecordObject.sltAccountId;
