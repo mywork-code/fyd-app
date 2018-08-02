@@ -10,16 +10,10 @@ app.controller('downloadAppCtrl', function($scope,ngUtils) {
         console.log(e);
         ngUtils.alert('复制成功');
     }).on('error', function(e) {});
-
     //跳转到安家趣花安卓下载页面
     // $scope.routeajppAndroid = function(){
     //     window.location.href ="http://a.app.qq.com/o/simple.jsp?pkgname=com.vcredit.ajqh";  
     // } 
-
-
-
-
-    
 });
 /**
  * 有奖-主页面 controller
@@ -35,7 +29,15 @@ app.controller('downloadRegAppCtrl', function($scope,ngUtils) {
     //跳转到安家趣花安卓下载页面
     $scope.routeajppAndroid = function(){
         TDAPP.onEvent("立即下载");
-
-        // window.location.href ="http://a.app.qq.com/o/simple.jsp?pkgname=com.vcredit.ajqh";  
+        window.location.href ="http://a.app.qq.com/o/simple.jsp?pkgname=com.vcredit.ajqh";  
+    } 
+});
+/**
+ * 扫码领优惠券
+ */
+app.controller('scanReceiveCouponCtrl', function($scope,ngUtils) {
+    //跳转到安家趣花安卓下载页面
+    $scope.routeajppAndroid = function(){
+        window.location.href ="http://a.app.qq.com/o/simple.jsp?pkgname=com.vcredit.ajqh";  
     } 
 });

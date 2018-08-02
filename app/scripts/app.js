@@ -104,6 +104,11 @@ angular.module('gfbApp', [ 'ngResource', 'ngRoute' ])
 		templateUrl : 'views/contracts/downloadRegApp.html',
 		controller : 'downloadRegAppCtrl'
 	})
+    //扫码领优惠券
+	.when('/scanReceiveCoupon', {
+		templateUrl : 'views/contracts/scanReceiveCoupon.html',
+		controller : 'scanReceiveCouponCtrl'
+	})
 
 
 
