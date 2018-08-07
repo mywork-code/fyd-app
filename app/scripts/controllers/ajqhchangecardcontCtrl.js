@@ -99,7 +99,7 @@ app.controller('ajqhchangecardcontCtrl',function($routeParams,$scope,$window,$lo
 			ngUtils.alert("网络连接错误，请检查网络连接");
 			 return;
 		}
-	    $location.url("/weixingSingature?mobile="+$routeParams.mobile+"&name="+$routeParams.name+"&token="+$routeParams.token);
+	    $location.url("/weixingSingature?mobile="+$routeParams.mobile+"&name="+$routeParams.name+"&token="+$routeParams.token+"&contractName=关于变更还款卡号的补充协议");
 
 		// UserInfo.repaceSupplemental=true;
 		// RepaceBindCardObject.agreeContractFlag=true;

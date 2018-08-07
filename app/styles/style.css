@@ -4996,3 +4996,19 @@
     font-size: 1.5rem;
     color: #303030;
 }
+.downloadRegApp {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    /* height: 77.65rem; */
+}
+.downloadRegApp img {
+    width: 100%;
+}
+.downloadRegApp .download {
+    width: 20rem;
+    height: 5.5rem;
+    position: absolute;
+    left: 8.75rem;
+    top: 54rem;
+}

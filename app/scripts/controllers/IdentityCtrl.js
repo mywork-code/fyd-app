@@ -103,7 +103,7 @@ app.controller('ajqhpersonalInfoProtocalCtrl', function ($routeParams,$rootScope
 			// callSina = JSON.stringify(callSina);
 			// var platform = window.Android || window;
 			// platform.startSignature(callSina);
-			$location.url("/weixingSingature?mobile="+$routeParams.mobile+"&name="+$routeParams.name+"&token="+$routeParams.token+"&sltAccountId="+$scope.sltAccountId);
+			$location.url("/weixingSingature?mobile="+$routeParams.mobile+"&name="+$routeParams.name+"&token="+$routeParams.token+"&sltAccountId="+$scope.sltAccountId+"&contractName=个人信息授权书");
 		
 		
 	}

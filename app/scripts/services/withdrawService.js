@@ -187,7 +187,7 @@ app.factory("WithdrawService",function($rootScope,$http,$window,PageControllerOb
                 ngUtils.alert("网络错误，请稍后重试或联系客服。");
                 
             });
-        },        
+        },                    
         // 获取微信小程序参数
         getConfig:function($scope){
             var path = Constant.APIRoot + "/wechat/config/query";
@@ -344,7 +344,7 @@ app.factory("WithdrawService",function($rootScope,$http,$window,PageControllerOb
     		});
     	},
         //初始化提现合同信息-房易贷
-        initWithdrawContractInfo: function(){
+        initWithdrawContractInfo: function($scope){
             var path = Constant.APIRoot + "/contract/queryCashStagesContract";
             // var path='http://gfbapp.vcash.cn/appweb/data/ws/rest/contract/queryCashStagesContract';
             var service = $resource(path, {}, {
@@ -379,8 +379,11 @@ app.factory("WithdrawService",function($rootScope,$http,$window,PageControllerOb
                     ContractInfo.identityNo=_data.identityNo;
                     ContractInfo.mobile=_data.mobile;
                     ContractInfo.liveAddress=_data.identityRecognizeAddress;
-                    ContractInfo.signaturePicture=_data.signaturePicture;
-
+                    if($scope.isSign=='1') {
+                        ContractInfo.signaturePicture = '';
+                    } else {
+                        ContractInfo.signaturePicture=_data.signaturePicture;
+                    }
                     var eachPeroidEntity = _data.length>1?_data.cidList[1]:[];
                     var secondPeroidEntity = _data.length>2?_data.cidList[2]:[];
 

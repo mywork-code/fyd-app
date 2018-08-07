@@ -99,6 +99,16 @@ angular.module('gfbApp', [ 'ngResource', 'ngRoute' ])
 		templateUrl : 'views/contracts/operationAnalysis.html',
 		controller : 'operationAnalysisCtrl'
 	})
+	//短信注册页
+	.when('/downloadRegApp', {
+		templateUrl : 'views/contracts/downloadRegApp.html',
+		controller : 'downloadRegAppCtrl'
+	})
+    //扫码领优惠券
+	.when('/scanReceiveCoupon', {
+		templateUrl : 'views/contracts/scanReceiveCoupon.html',
+		controller : 'scanReceiveCouponCtrl'
+	})
 
 
 
